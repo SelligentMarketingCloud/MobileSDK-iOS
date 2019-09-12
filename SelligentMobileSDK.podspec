@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.source       = { :git => "https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git", :tag => "#{s.version}" }
   
-  s.source_files  = "iOS Lib 2.0.3/include"
-  s.vendored_libraries = "iOS Lib 2.0.3/libSelligentMobile2.0.3.a"
+  s.source_files  = "iOS Lib/include"
+  s.vendored_libraries = "iOS Lib/libSelligentMobile.a"
 end
