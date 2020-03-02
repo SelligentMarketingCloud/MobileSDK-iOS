@@ -14,12 +14,12 @@ Pod::Spec.new do |s|
   
   s.default_subspec = "Base"
 
-  subspec 'Base' do |sp|
+  s.subspec 'Base' do |sp|
       sp.source_files  = "iOS Lib/include"
       sp.vendored_libraries = "iOS Lib/libSelligentMobile.a"
   end
 
-  subspec 'Geofencing' do |spg|
+  s.subspec 'Geofencing' do |spg|
       spg.source_files  = "iOS Lib- Plot geofencing support/include"
       spg.vendored_libraries = "iOS Lib- Plot geofencing support/libSelligentMobile.a"
   end
