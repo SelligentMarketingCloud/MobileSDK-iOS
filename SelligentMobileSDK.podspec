@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
   s.subspec 'Geofencing' do |spg|
       spg.source_files  = "iOS Lib- Plot geofencing support/include"
       spg.vendored_libraries = "iOS Lib- Plot geofencing support/libSelligentMobile.a"
-      spg.dependencies = "PlotPlugin"
+      spg.dependency = "PlotPlugin"
   end
 end
