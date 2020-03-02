@@ -10,7 +10,7 @@ By incorporating our latest SDK for iOS in your app, we support you in handling 
 
 To integrate the library yourself just download  <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/iOS%20Lib" target="_blank">iOS Lib</a> or <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/iOS%20Lib-%20Plot%20geofencing%20support" target="_blank">iOS Lib- Plot geofencing support</a> depending of your needs
 
-Or you can use CocoaPods: add pod 'SelligentMobileSDK', :git => 'git@github.com:SelligentMarketingCloud/MobileSDK-iOS.git' to your main target in your Podfile. run pod install.
+Or you can use CocoaPods: add pod 'SelligentMobileSDK', :git => 'git@github.com:SelligentMarketingCloud/MobileSDK-iOS.git' to your main target in your Podfile. run pod install (Keep in mind that cocoapod will install the sdk version without plot geofencing support)
 
 Then please refer to the <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/blob/master/Documentation/Using%20the%20SDK.pdf" target="_blank">SDK full documentation</a> for a correct implementation of the sdk
 
