@@ -1,3 +1,8 @@
+- __SDK 2.3__
+
+    - Support call to didReceiveNotification Response: to allow trigger action of notification content extension without opening app
+    - Correct bug 102401 inappmessage flag was not set correctly
+
 - __SDK 2.2.1__
 
     - Correct bug 100688 manage useragent without usage of WKWebView
