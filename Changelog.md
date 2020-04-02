@@ -1,3 +1,7 @@
+- __SDK 2.3.1__
+
+    - Correct bug 102254 set way to provide app group id to the sdk
+
 - __SDK 2.3__
 
     - Support call to didReceiveNotification Response: to allow trigger action of notification content extension without opening app
