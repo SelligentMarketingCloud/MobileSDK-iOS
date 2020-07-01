@@ -1,3 +1,9 @@
+- __SDK 2.4__
+
+    - Support of rich push of type image
+    - Correct bug 104272 provide an override method to send SMEventUserLogin and avoiding login with providing empty mail
+    - Remove code that forces having to ask for camera permissions in plist file
+
 - __SDK 2.3.1__
 
     - Correct bug 102254 set way to provide app group id to the sdk
