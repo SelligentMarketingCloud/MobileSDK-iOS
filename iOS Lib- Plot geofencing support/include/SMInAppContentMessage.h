@@ -37,7 +37,10 @@
  *  NSDate instance providing the expiration date of the message
  */
 @property (nonatomic) NSDate   * contentExpiration;
-
+/*!
+ *  NSDate instance providing the creation date of the message
+ */
+@property (nonatomic) NSDate   * contentCreation;
 /*!
  *  NSArray of SMLink objects
  */

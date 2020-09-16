@@ -1,3 +1,10 @@
+- __SDK 2.4.1__
+
+    - Support of iOS 14
+    - Correct bug 109032  property contentCreation (creation date) of In AppContent public
+    - documentation update to avoid  call to serviceExtensionTimeWillExpire resulting in (Encrypted) displayed even when encryption not applied
+    - Correct bug 113738  Events are sent twice
+    
 - __SDK 2.4__
 
     - Support of rich push of type image
