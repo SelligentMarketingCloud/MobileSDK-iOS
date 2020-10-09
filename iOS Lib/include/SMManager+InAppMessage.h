@@ -118,8 +118,8 @@
 - (NSArray*) getInAppMessages;
 
 /*!
-  * @abstract This method will mark an IAM as viewed, send the Open event to the server and remove it from the sdk cache
-  * @discussion The message will be not be provided again to the device once they are set as seen
+  * @abstract This method will mark an IAM as viewed, send the Open event to the server and update  SMInAppMessage object in cache with isViewed property set to  true
+  * @discussion The message will be provided again to the device if not expired with the isViewed property set to true
   * @param inAppMessage an SMInAppMessage object
   */
 - (void) setInAppMessageAsSeen:(SMInAppMessage*)inAppMessage;
