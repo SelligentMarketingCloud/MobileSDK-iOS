@@ -1,3 +1,7 @@
+- __SDK 2.5__
+
+    - provide flexibility to In App Message by giving access to public methods and properties that will enable developer to process content
+    
 - __SDK 2.4.1__
 
     - Support of iOS 14
