@@ -1,3 +1,12 @@
+- __SDK 2.5.1__
+
+    - Provide helper method to set in app message as deleted
+    - Provide helper method to set in app message as unseen
+    - Correct bug 124219 send pushopened event when push is viewed only with notification content extension
+    - Correct bug 128940 getinappmessage not providing inapp even if they are already broadcasted
+    - Correct bug 128941 nil in body property when json in content of inappmessage
+    - Correct bug 124144 warning "nil host used in call to .." is displayed when generating inapp icon buttons
+    
 - __SDK 2.5__
 
     - provide flexibility to In App Message by giving access to public methods and properties that will enable developer to process content
