@@ -1,3 +1,7 @@
+- __SDK 2.5.2__
+
+    - Correct bug 136398 conflict with SDWebImagePDFCoder that avoid displays of images
+    
 - __SDK 2.5.1__
 
     - Provide helper method to set in app message as deleted
