@@ -24,4 +24,8 @@ Pod::Spec.new do |s|
     sg.vendored_libraries = "iOS Lib- Plot geofencing support/libSelligentMobile.a"
     sg.dependency "PlotPlugin"
   end
+  
+  s.subspec "Framework" do |sc|
+    sc.vendored_frameworks = "iOS Framework/SelligentMobileSDK.xcframework"
+  end
 end
