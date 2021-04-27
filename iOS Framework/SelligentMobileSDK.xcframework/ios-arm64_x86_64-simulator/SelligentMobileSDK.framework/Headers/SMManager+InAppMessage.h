@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Selligent. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
+
 #import "SMManager.h"
 #import "SMInAppMessage.h"
 #import "SMLink.h"
@@ -83,7 +85,9 @@
  *
  *  #SMManager+InAppMessage :#
  */
-@interface SMManager (InAppMessage)
+@interface SMManager (InAppMessage) <WKNavigationDelegate>
+
+@property (nonatomic, strong) id <WKNavigationDelegate> webViewNavigationDelegate;
 
 
 
@@ -145,5 +149,6 @@
   * @param inAppMessage  a SMInAppMessage object
   */
 - (void) executeLinkAction:(SMLink*)link InAppMessage:(SMInAppMessage*)inAppMessage;
+
 
 @end

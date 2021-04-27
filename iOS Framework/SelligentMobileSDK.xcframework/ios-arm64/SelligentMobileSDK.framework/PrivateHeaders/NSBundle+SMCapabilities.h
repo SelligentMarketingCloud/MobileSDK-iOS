@@ -16,8 +16,8 @@
 
 
 
-+ (BOOL)SM_isBacgroundModeEnable_For_BLE;
-+ (BOOL)SM_isBacgroundModeEnable_For_Location;
+//+ (BOOL)SM_isBacgroundModeEnable_For_BLE;
+//+ (BOOL)SM_isBacgroundModeEnable_For_Location;
 + (BOOL)SM_isBacgroundModeEnable_For_Fetch;
 + (BOOL)SM_isBacgroundModeEnable_For_RemoteNotification;
 

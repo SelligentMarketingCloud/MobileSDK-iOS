@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/SMDeviceInfos.h</key>
 		<data>
-		jaa3qaejHMUTc2w/pIJYaVEoRe4=
+		eyrfQkv1O+AI9TZchnr+Svvt4r8=
 		</data>
 		<key>Headers/SMDisplayMode.h</key>
 		<data>
@@ -104,10 +104,6 @@
 		<data>
 		sUSCvd1M9p09xSoFCLRJ8JYTPao=
 		</data>
-		<key>Headers/SMLocationAuthorisationType.h</key>
-		<data>
-		5gBfBHb/hHbsAFeCCZrjQ2roi4E=
-		</data>
 		<key>Headers/SMLog.h</key>
 		<data>
 		PEl/8g4jRxfNPe1Mo1LUlg1xvlM=
@@ -122,11 +118,7 @@
 		</data>
 		<key>Headers/SMManager+InAppMessage.h</key>
 		<data>
-		vnjOKomQDbZ7Uar7xWPPoBNlIug=
-		</data>
-		<key>Headers/SMManager+Location.h</key>
-		<data>
-		G0/GYZUuE6TRD15u6JinkjPfEss=
+		McReUhc4i9rmFAb+05ZlidDWBDA=
 		</data>
 		<key>Headers/SMManager+Log.h</key>
 		<data>
@@ -214,15 +206,11 @@
 		</data>
 		<key>PrivateHeaders/NSArray+SMData.h</key>
 		<data>
-		CYlkKywcL6ezQngZpL1ekgHp/wc=
+		PEtqjzw49C/HXRVfoS6tM81cTCc=
 		</data>
 		<key>PrivateHeaders/NSBundle+SMCapabilities.h</key>
 		<data>
-		t/tAWBp912CfQkoonuTDJrzh/6k=
-		</data>
-		<key>PrivateHeaders/NSBundle+SMPlistVerificator.h</key>
-		<data>
-		0Xvfj9hC8bMzhEMGg+gQKyGyt4g=
+		ceUpHmb7r1wmN5VEhUc2tdjZpRo=
 		</data>
 		<key>PrivateHeaders/NSData+SMDeviceToken.h</key>
 		<data>
@@ -250,7 +238,7 @@
 		</data>
 		<key>PrivateHeaders/NSDictionary+SMEvent.h</key>
 		<data>
-		r/KZb85q3asyOlNTh+yUXtrtVTA=
+		/BrKuehVH2VJxmq6wzjMy+IW/3w=
 		</data>
 		<key>PrivateHeaders/NSDictionary+SMEventSetInfo.h</key>
 		<data>
@@ -304,18 +292,6 @@
 		<data>
 		59mUWXhM+jRjnmRswyK24dweiGo=
 		</data>
-		<key>PrivateHeaders/NSString+SMLocation.h</key>
-		<data>
-		GOJsyJUBBa0ZWV8CGFARt7GGO4w=
-		</data>
-		<key>PrivateHeaders/NSString+SMLocationNature.h</key>
-		<data>
-		Y7l7kcYyrjxPS5owyqQkSf317yI=
-		</data>
-		<key>PrivateHeaders/NSString+SMLocationTriggerInitiatorType.h</key>
-		<data>
-		zkaEBhX0EU2qyb3fM9N1xPrdbb0=
-		</data>
 		<key>PrivateHeaders/NSString+SMManagerSetting.h</key>
 		<data>
 		X1mlFMHs0iZEK2AVBDjY31QF3FM=
@@ -356,17 +332,9 @@
 		<data>
 		BAM6dXVwegnIteCK58HBQXHXSOk=
 		</data>
-		<key>PrivateHeaders/SMCache+Location.h</key>
-		<data>
-		hJJE/R605i+6Jp7p9PgKNoWwzw0=
-		</data>
 		<key>PrivateHeaders/SMCache.h</key>
 		<data>
 		Y+kglUNnv16OM876pc474DNiNPQ=
-		</data>
-		<key>PrivateHeaders/SMCoordinate.h</key>
-		<data>
-		Y/WojTfRgOJHsp2FjDm8tcdeLjY=
 		</data>
 		<key>PrivateHeaders/SMDayOfTheWeek.h</key>
 		<data>
@@ -392,10 +360,6 @@
 		<data>
 		64giegRBQ8wPo2Y7Xd2GgZtoKKQ=
 		</data>
-		<key>PrivateHeaders/SMEventLocation.h</key>
-		<data>
-		DJCNJelREeitIIR51qw1feiRSck=
-		</data>
 		<key>PrivateHeaders/SMEventPushOpened.h</key>
 		<data>
 		GGLf9FXw9Gt1kFMrZXU0rAcOW1s=
@@ -403,14 +367,6 @@
 		<key>PrivateHeaders/SMEventPushReceived.h</key>
 		<data>
 		7vrFtXEFGPH2m5VFrn3dr+U7rUY=
-		</data>
-		<key>PrivateHeaders/SMEventRegionOnEnter.h</key>
-		<data>
-		nb50W8NnW2QncfVIVGinackG+rY=
-		</data>
-		<key>PrivateHeaders/SMEventRegionOnLeave.h</key>
-		<data>
-		6DfEaMeqwsZhQRSYXvr9p6ZDKQM=
 		</data>
 		<key>PrivateHeaders/SMEventRegister.h</key>
 		<data>
@@ -436,10 +392,6 @@
 		<data>
 		Tv8mDMrbx9IKN0iygSbBV8ejOGg=
 		</data>
-		<key>PrivateHeaders/SMEventTriggerExecution.h</key>
-		<data>
-		JiXcW1Cz8aaJXTKZ2EJifN20FEA=
-		</data>
 		<key>PrivateHeaders/SMEventType.h</key>
 		<data>
 		W3pcQNkaxxlP3j1a/6xZFh/m2IM=
@@ -456,10 +408,6 @@
 		<data>
 		dJnvn394yBlYXeH61q8g5ILRwCs=
 		</data>
-		<key>PrivateHeaders/SMGeometry.h</key>
-		<data>
-		hhIhjVHa55ZfcefdWm8XK/KQL3s=
-		</data>
 		<key>PrivateHeaders/SMHTTPRequest+IAC.h</key>
 		<data>
 		3F8+Z5kpPMVhdgOffFpoZ/h1zO8=
@@ -467,10 +415,6 @@
 		<key>PrivateHeaders/SMHTTPRequest+IAM.h</key>
 		<data>
 		4ykzda6ErwO1bz/GXc2OwVpcxkM=
-		</data>
-		<key>PrivateHeaders/SMHTTPRequest+Location.h</key>
-		<data>
-		MiSdfte8Qeijlh8gDlIQMuALMd4=
 		</data>
 		<key>PrivateHeaders/SMHTTPRequest+Optiex.h</key>
 		<data>
@@ -544,18 +488,6 @@
 		<data>
 		G6uGF2msbEc1ZOuj0yELQwY97sw=
 		</data>
-		<key>PrivateHeaders/SMLocationNature.h</key>
-		<data>
-		dlgm+xlKz52RdNh0LpF/WjgZFAA=
-		</data>
-		<key>PrivateHeaders/SMLocationRefreshType.h</key>
-		<data>
-		TaLTxKXINNgT3qv3SEJ3+1f7q+g=
-		</data>
-		<key>PrivateHeaders/SMLocationTriggerInitiatorType.h</key>
-		<data>
-		LYcPZG5j11DjjXV2lpYErb6YRHI=
-		</data>
 		<key>PrivateHeaders/SMLogManager.h</key>
 		<data>
 		gNDPlW104iLuo7oeDDCjcijSX1o=
@@ -576,22 +508,6 @@
 		<data>
 		I5G4gNfJibCyGxA5wznZso8jTXo=
 		</data>
-		<key>PrivateHeaders/SMManager+LocationDataFetch.h</key>
-		<data>
-		jUvwI1KtbzArh9/XVhv2Z9b8b0w=
-		</data>
-		<key>PrivateHeaders/SMManager+LocationRegionMonitoring.h</key>
-		<data>
-		xTM+AveleyTFr+JJe3Lew1l4nZg=
-		</data>
-		<key>PrivateHeaders/SMManager+LocationTriggers.h</key>
-		<data>
-		k110aAa8lHCc0+zOwA/4Yn54CeU=
-		</data>
-		<key>PrivateHeaders/SMManager+PlotProject.h</key>
-		<data>
-		C50j6XVrWV3Pm5guKDdgOc+XbMk=
-		</data>
 		<key>PrivateHeaders/SMManager+Utility.h</key>
 		<data>
 		k1GFPj4wMkl2gbVVWRE4TFszPgg=
@@ -611,14 +527,6 @@
 		<key>PrivateHeaders/SMManagerSettingIAM_Privat.h</key>
 		<data>
 		UKUL+RYo3IIulOTheHxRJ3w7wW8=
-		</data>
-		<key>PrivateHeaders/SMManagerSettingLocation.h</key>
-		<data>
-		m/5tk1qlu89c7yro7pKUe4bu2io=
-		</data>
-		<key>PrivateHeaders/SMManagerSettingLocation_Privat.h</key>
-		<data>
-		pNiAKQIRVvTEqeQU+p+MJhWN+4M=
 		</data>
 		<key>PrivateHeaders/SMManagerSetting_Privat.h</key>
 		<data>
@@ -648,17 +556,9 @@
 		<data>
 		b7G9a3v+sj7CnNvaAIQgZAetpkY=
 		</data>
-		<key>PrivateHeaders/SMManager_Location_Privat.h</key>
-		<data>
-		wUf6HwbtDhNJ/IYGVVc2Tauh48w=
-		</data>
-		<key>PrivateHeaders/SMManager_Location_Protocol.h</key>
-		<data>
-		wq1f5GRsX8zirJKyd3UVxrkXVO0=
-		</data>
 		<key>PrivateHeaders/SMManager_Private.h</key>
 		<data>
-		gSbbvW3kmCM7sfjHc5hgZ75HoS0=
+		/8YB/UrGRffJx2T0JXWQTIFcwxA=
 		</data>
 		<key>PrivateHeaders/SMManager_RemoteNotification_Privat.h</key>
 		<data>
@@ -764,14 +664,6 @@
 		<data>
 		7qf9dAWi5R04pM7DzDmPoX4D1kQ=
 		</data>
-		<key>PrivateHeaders/SMRegion.h</key>
-		<data>
-		V33hBCYucHuhRyoBB8j/FxGDKcY=
-		</data>
-		<key>PrivateHeaders/SMRegionEventSubscription.h</key>
-		<data>
-		C/s50dMt4ojhd/itqsvj3342JGU=
-		</data>
 		<key>PrivateHeaders/SMSDImageCache.h</key>
 		<data>
 		+GANIbIAAJw2CSZinrXtZxTVpNM=
@@ -823,18 +715,6 @@
 		<key>PrivateHeaders/SMSuccess_Privat.h</key>
 		<data>
 		mupPUvzqq/H7z2ucZMj6lWpU0gk=
-		</data>
-		<key>PrivateHeaders/SMTrigger.h</key>
-		<data>
-		i8xuPUQyd/edlF9NgYTgp1me0R0=
-		</data>
-		<key>PrivateHeaders/SMTriggerFrequency.h</key>
-		<data>
-		h7lslZEQBDSqnxIsNcFT4ud8vdU=
-		</data>
-		<key>PrivateHeaders/SMWeekScheduleEntry.h</key>
-		<data>
-		V+qcA3fvhf6JYlH+jXi9TEKRKJo=
 		</data>
 		<key>PrivateHeaders/SingletonMethods.h</key>
 		<data>
@@ -963,7 +843,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ma/eMPuvwoWPeS9tYeMwBjmudan9ig2j9VgPYyplIOM=
+			7NUlqhucJlHM0TYZmRQYX6c3lLrKDsLGzpkRmV/+j78=
 			</data>
 		</dict>
 		<key>Headers/SMDisplayMode.h</key>
@@ -1106,13 +986,6 @@
 			WjSaCeztfWTxhiI+KNhK1fnhiTuwcgy5mL3QDRc1Gxo=
 			</data>
 		</dict>
-		<key>Headers/SMLocationAuthorisationType.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			L1SVi7SGWQKghNs7rC5zxmj/Lc8KbL9tpdMUruGYOt0=
-			</data>
-		</dict>
 		<key>Headers/SMLog.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1138,14 +1011,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			shdDjS1rAoe2fqJ8ilbe/Lsv2SjLz1JSWApiJdau6cs=
-			</data>
-		</dict>
-		<key>Headers/SMManager+Location.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			MWkK8x0K7qGWNWRUO/ywnT942Qh+cQF3eq/xvZyIKg8=
+			+0w3Z3WYP5ddw4JQX+bQvTpQUr7LSiZBb92JZMSaaZQ=
 			</data>
 		</dict>
 		<key>Headers/SMManager+Log.h</key>
@@ -1292,21 +1158,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uQgDKsrcedByfuh0z2IOvJL5iO9We0Iac060GRH9fgA=
+			R66MgVsZ8yDEMKClNi1o6dj89DojGWCcFOBGNAmGt/8=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NSBundle+SMCapabilities.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jSOprK3TU3umO3I2aDGIsBocvtWIRwo/7x1+xjiJ8NE=
-			</data>
-		</dict>
-		<key>PrivateHeaders/NSBundle+SMPlistVerificator.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			t7gQfXY1+MqgF4aZrtIH6aVvkuMea+jWHCe8pufTti0=
+			muMZlcoB7y+19gSp/+9iaz+NQo7n4mECe4spk7S+TE8=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NSData+SMDeviceToken.h</key>
@@ -1355,7 +1214,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OAHOKbLO9a9CWCBS4lFqUHdQxZHU7VSHGe+m+/pIT6w=
+			QymPMyXGKgzZ2SuDNPYPTLQPq7BYNtH9VO0S9s9/1pU=
 			</data>
 		</dict>
 		<key>PrivateHeaders/NSDictionary+SMEventSetInfo.h</key>
@@ -1449,27 +1308,6 @@
 			o+V/9KctHCTu3liqaT0UgG0b0Gt/8C0KtTHoT/kbvfo=
 			</data>
 		</dict>
-		<key>PrivateHeaders/NSString+SMLocation.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			7kLRSMVLulrqoOziwGZYMjkwfGwkKtircEhoIo9YgpY=
-			</data>
-		</dict>
-		<key>PrivateHeaders/NSString+SMLocationNature.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			QNSXrvEBjdV8qb4X1f69hgG+ngmFiZWffmxDsiKQuXU=
-			</data>
-		</dict>
-		<key>PrivateHeaders/NSString+SMLocationTriggerInitiatorType.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			4K7QUvVhTdP/BkSHr/Q2AhGLdNLB97SKfLuqhy1pe3Q=
-			</data>
-		</dict>
 		<key>PrivateHeaders/NSString+SMManagerSetting.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1540,25 +1378,11 @@
 			XdhhEM6EnMGoE5NDbKC5vnAAnTsNG//XXD0MtRopk2w=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SMCache+Location.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			izkUcHIsBb43DcO8YgyBOiO/Er9uOr/OIa1CKZfIcjQ=
-			</data>
-		</dict>
 		<key>PrivateHeaders/SMCache.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			trwenKu7sZ1lRWMj+AaZyXFmmZmv0OKELYyViir2ct0=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMCoordinate.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			o3Erv/FJnKClEAMCoYRFVeHtWUcM01uFaV8bPzpJGUQ=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SMDayOfTheWeek.h</key>
@@ -1603,13 +1427,6 @@
 			L1miT+h1Ng4JTC22fcMqjyxAiGlhmQibLdRZsnIE520=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SMEventLocation.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			bwyPD1V9Qw0ZLHLBIDNytPnET2eZ4qFaDX9d5Ga9J4o=
-			</data>
-		</dict>
 		<key>PrivateHeaders/SMEventPushOpened.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1622,20 +1439,6 @@
 			<key>hash2</key>
 			<data>
 			wHH4KO8Fg/OFEyVl4xz+DbmTuA2TuLzutPydP8t/B0g=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMEventRegionOnEnter.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			k2wtAiWGyMvgbkrvnK3QoMJKtPTdqj2spkwBxR2pKPA=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMEventRegionOnLeave.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Ng1U+ofnay2qwI8Gbz6cb0Jv8s3VOIW4P07lxzYkO0A=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SMEventRegister.h</key>
@@ -1680,13 +1483,6 @@
 			ll3CiFGhOPYD1R7e4VsKPF5GiehiKmrS7QIkBLWY7nE=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SMEventTriggerExecution.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			BYie+9H0J5AH+5Tq+tU7p2Ms+aPDpu5wqwWoGuZUAq4=
-			</data>
-		</dict>
 		<key>PrivateHeaders/SMEventType.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1715,13 +1511,6 @@
 			df8JDVboBbG5sllkRxRS94W8IYbKFUJxR3WPYT30BkI=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SMGeometry.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			2iWAHbAMpXHaMDK0bPx6uyFG0EvPZQQSuns0k2dRDd0=
-			</data>
-		</dict>
 		<key>PrivateHeaders/SMHTTPRequest+IAC.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1734,13 +1523,6 @@
 			<key>hash2</key>
 			<data>
 			PIxOrokX80aRjlAyyojSTskUca17p88/+FDpzP/BC+0=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMHTTPRequest+Location.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			S9VD+diZE0UvtMb0MaskK6KdpxmDvCu63luh4L7v2Kk=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SMHTTPRequest+Optiex.h</key>
@@ -1869,27 +1651,6 @@
 			j816TwvB31Hg06FJi2z466BceTSAVczSPLogL0m+5ac=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SMLocationNature.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			N4M369ylZuuZm4v8BJKuVKsLmNSYCX4H9bs23H/tgS0=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMLocationRefreshType.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			+uc1aVTtV9d1u81dkJVl873rHglyclEI9tbVriQSYVg=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMLocationTriggerInitiatorType.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			xyR0dvpzYc+oWlPIhiJDy8Al2dzdygtNHARZhGYXrSc=
-			</data>
-		</dict>
 		<key>PrivateHeaders/SMLogManager.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1925,34 +1686,6 @@
 			7CLSlaoppZVoJvhvT6e1Ooi7glemFVRb24aSsbP3Ycs=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SMManager+LocationDataFetch.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			2UsFW3llcw/jBsRjHrNmALxMd7gCUN61EiiOcYsVAXE=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMManager+LocationRegionMonitoring.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			AKt29ODFnAB28hw0t7c2ijiSy6W7Il3fhQRjVk6vUB4=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMManager+LocationTriggers.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ZPwJSRkWDdgLJPpRvanqyKidHju3rW2fQ2kNqRd+uvo=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMManager+PlotProject.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			kgZkSkzEWL93IV2rYxuykXC+hwe2xbdyIIK0WAYsndo=
-			</data>
-		</dict>
 		<key>PrivateHeaders/SMManager+Utility.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1986,20 +1719,6 @@
 			<key>hash2</key>
 			<data>
 			y2rC95NnoE/6gRMW+/C3kYPpePYcYRtBlEMFrGFRvQM=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMManagerSettingLocation.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			EdCz4H5mPe1TqUJUUkMQFKqTGJwpxbhxKW9qutYDNFw=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMManagerSettingLocation_Privat.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			dyOPksDSQDAkEMySGcWsE6HpQeutPDxVW52Vv3eR5HQ=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SMManagerSetting_Privat.h</key>
@@ -2051,25 +1770,11 @@
 			/haQWwGT6D7df8TqDQTjm7RKakG/O4YR9qyJymHcg+Y=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SMManager_Location_Privat.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			ELw4M/V09Y7GaGMDJUwrkhr88jJalCMxpn01B6Qw3vU=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMManager_Location_Protocol.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fWhxO6yLkXYAIA1mn4CFXYUXmqemT9hcVfVoZ9ReSeo=
-			</data>
-		</dict>
 		<key>PrivateHeaders/SMManager_Private.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FuHhtvCmEhDMLUfFnD2JtkLArCwiK2FC753pC/ingTw=
+			NdNFo58jFSyOp+jBQJ7c6yL4WY2+60zbkMSEoYi4gAA=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SMManager_RemoteNotification_Privat.h</key>
@@ -2254,20 +1959,6 @@
 			3EkK98cMecUrcxDjxqoN/Zo6UPmrNAgpzeRrYOcH5Q4=
 			</data>
 		</dict>
-		<key>PrivateHeaders/SMRegion.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SIjIjlNNWPDy/9skxesp1RSXs28sqnaPkZvDo3r5faI=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMRegionEventSubscription.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			exvbK7U4Gkh/MrRBOMNMPK/NqmUPg2/wTYSsnSwIy0o=
-			</data>
-		</dict>
 		<key>PrivateHeaders/SMSDImageCache.h</key>
 		<dict>
 			<key>hash2</key>
@@ -2357,27 +2048,6 @@
 			<key>hash2</key>
 			<data>
 			K+DnyP3f4EnzfMOtwNUuHfHxWH7hgzFnX1MPzq/Fl9k=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMTrigger.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SjGOxujZnqSp98LoFG3tFBiAVYXgFW4r0IrcSReetjY=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMTriggerFrequency.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			2VU/a23wB/FodZtJGSfSIuGXxA5q7xbCpUeZj8vFha4=
-			</data>
-		</dict>
-		<key>PrivateHeaders/SMWeekScheduleEntry.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			E/hQ3mpY1cada1JO5CGoP9/4AzkFkvYlIqYjOn0EVHg=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SingletonMethods.h</key>

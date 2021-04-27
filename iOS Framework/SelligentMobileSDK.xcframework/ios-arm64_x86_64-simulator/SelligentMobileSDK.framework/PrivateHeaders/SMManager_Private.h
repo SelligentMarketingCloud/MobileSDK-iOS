@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Selligent. All rights reserved.
 //
 
+#import <WebKit/WebKit.h>
+
 #import "SMManager.h"
 
 #import "SMCache.h"
@@ -19,7 +21,7 @@
 
 @import CoreLocation;
 
-@interface SMManager () 
+@interface SMManager () <WKNavigationDelegate>
 
 /**
  *  Once a new remote-notification is displayed, the badge is automaticly reseted.
@@ -75,5 +77,7 @@
 
 @property (nonatomic, strong) void (^contentHandler)(UNNotificationContent *contentToDeliver);
 @property (nonatomic, strong) UNMutableNotificationContent *bestAttemptContent;
+
+@property (nonatomic, strong) id <WKNavigationDelegate> webViewNavigationDelegate;
 
 @end

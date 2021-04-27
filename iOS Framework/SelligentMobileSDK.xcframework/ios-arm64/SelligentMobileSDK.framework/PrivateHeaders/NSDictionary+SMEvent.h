@@ -10,10 +10,10 @@
 
 @interface NSDictionary (SMEvent)
 
-/**
- *  @return dictionary filled with longitude / latitude values. Nil if unknown coordinate
- */
-+ (instancetype)dictionaryLocationForEvent;
+///**
+// *  @return dictionary filled with longitude / latitude values. Nil if unknown coordinate
+// */
+//+ (instancetype)dictionaryLocationForEvent;
 
 /**
  *  @return dictionary filled for request header authentication payload

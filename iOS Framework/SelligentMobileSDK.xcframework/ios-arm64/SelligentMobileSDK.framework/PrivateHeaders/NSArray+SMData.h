@@ -16,9 +16,9 @@
 
 - (instancetype)createArrayNotifAnnotationData;
 
-- (instancetype)createArrayWeekScheduleTrigger;
-
-- (instancetype)createArrayRegionCoordinate;
+//- (instancetype)createArrayWeekScheduleTrigger;
+//
+//- (instancetype)createArrayRegionCoordinate;
 
 - (NSString*) jsonStringWithPrettyPrint:(BOOL)prettyPrint;
 
