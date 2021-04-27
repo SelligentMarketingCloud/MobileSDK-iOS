@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.ios.deployment_target = '9.0'
+  s.platform     = :ios, "9.0"
   s.name         = "SelligentMobileSDK"
   s.version      = "2.5.2"
   s.summary      = "Selligent Marketing Cloud - Mobile SDK for iOS"
