@@ -25,7 +25,6 @@
 #import "SMManager+SilentPush.h"
 #import "SMManager+SMEvent.h"
 #import "SMManager+Log.h"
-#import "SMManager+Location.h"
 #import "SMManager+StyleOptions.h"
 
 #import "SMInAppContentImageViewController.h"
