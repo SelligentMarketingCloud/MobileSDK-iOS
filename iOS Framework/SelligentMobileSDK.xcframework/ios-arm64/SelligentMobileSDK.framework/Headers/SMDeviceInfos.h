@@ -18,7 +18,7 @@
  *  @discussion NSString
  *  By default, it is an empty string
  */
-@property (nonatomic) NSString * _Nullable externalId;
+@property (nonatomic) NSString * externalId;
 
 /*!
  *  Create a generic deviceinfos object
