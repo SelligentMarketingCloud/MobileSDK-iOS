@@ -12,6 +12,7 @@
 #import "SMNSNotification.h"
 #import "SMLink.h"
 #import "SMNotificationButtonData.h"
+#import "SMNotificationAnnotationData.h"
 
 #import "SMManagerSetting.h"
 #import "SMManagerSettingIAM.h"

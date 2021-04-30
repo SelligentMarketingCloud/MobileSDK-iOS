@@ -58,7 +58,7 @@
 		</data>
 		<key>Headers/SMHelper.h</key>
 		<data>
-		U7dJiMWs0LUdtQdDf5eHT+JJ5lE=
+		iseH16ckXlI1H4wA6KZ+GV9QmNY=
 		</data>
 		<key>Headers/SMInAppContentHTMLViewController.h</key>
 		<data>
@@ -518,7 +518,7 @@
 		</data>
 		<key>PrivateHeaders/SMManagerHelper_Privat.h</key>
 		<data>
-		nulYNd4PSGripPyiDb81r+1QVmE=
+		I2RCBJ/S9UnPDrFe4TWmd54FurM=
 		</data>
 		<key>PrivateHeaders/SMManagerSettingIAC_Privat.h</key>
 		<data>
@@ -727,14 +727,6 @@
 		<key>PrivateHeaders/UIActivityIndicatorView+InAppContent.h</key>
 		<data>
 		fy/ZlWWz30u0MyzMiXJJbTBOi3U=
-		</data>
-		<key>PrivateHeaders/UIApplication+SMApplicationState.h</key>
-		<data>
-		y00FT9AwuZU2+1kL0XJIVxr0/lk=
-		</data>
-		<key>PrivateHeaders/UIApplication+SMNotification.h</key>
-		<data>
-		meE5doNmnLLWmhtFWuAgReM3WcM=
 		</data>
 		<key>PrivateHeaders/UIBarButtonItem+SMNavBar.h</key>
 		<data>
@@ -958,11 +950,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			U7dJiMWs0LUdtQdDf5eHT+JJ5lE=
+			iseH16ckXlI1H4wA6KZ+GV9QmNY=
 			</data>
 			<key>hash2</key>
 			<data>
-			0PSFpl+FaTjMiD1k5/gpZr3gQQJIg974TjbTfNDzK0I=
+			V/WbiBTNar68zRX8Y2FpcdzswJMbgvLjTM7cPNlK4k0=
 			</data>
 		</dict>
 		<key>Headers/SMInAppContentHTMLViewController.h</key>
@@ -2212,11 +2204,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nulYNd4PSGripPyiDb81r+1QVmE=
+			I2RCBJ/S9UnPDrFe4TWmd54FurM=
 			</data>
 			<key>hash2</key>
 			<data>
-			f5vYkKj2FzyWELy6x3UKhCsOsylHaGzCuYP3JMPHKqs=
+			j3IinN+GskBahr+YhW16F+8s3LwfoZwtrDssFQFweIM=
 			</data>
 		</dict>
 		<key>PrivateHeaders/SMManagerSettingIAC_Privat.h</key>
@@ -2789,28 +2781,6 @@
 			<key>hash2</key>
 			<data>
 			B8aFo7M0hNCUFYaXiLH657WgxievlQNlac58PgVRQ4I=
-			</data>
-		</dict>
-		<key>PrivateHeaders/UIApplication+SMApplicationState.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			y00FT9AwuZU2+1kL0XJIVxr0/lk=
-			</data>
-			<key>hash2</key>
-			<data>
-			EunYhQ6Jjtc4ttcv0O5wJmMn3dx9lWF/sEogRK8Jmkk=
-			</data>
-		</dict>
-		<key>PrivateHeaders/UIApplication+SMNotification.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			meE5doNmnLLWmhtFWuAgReM3WcM=
-			</data>
-			<key>hash2</key>
-			<data>
-			WKXTCoyChmuH6Zv1C/r3LRTcsopUwjYAx/+Xd9AkWVc=
 			</data>
 		</dict>
 		<key>PrivateHeaders/UIBarButtonItem+SMNavBar.h</key>

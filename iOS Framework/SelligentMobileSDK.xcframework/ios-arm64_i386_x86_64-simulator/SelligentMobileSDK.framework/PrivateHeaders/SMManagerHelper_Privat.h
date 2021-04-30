@@ -11,7 +11,7 @@
 
 #import "SMLog_Privat.h"
 
-static NSString* kSMVerionNumber = @"2.5.2";
+static NSString* kSMVerionNumber = @"2.6";
 static NSString* kSMApiVersionNumber = @"1.7";
 
 
