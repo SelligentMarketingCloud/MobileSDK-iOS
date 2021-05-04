@@ -140,13 +140,5 @@
  */
 - (void)configureInAppContentServiceWithSetting:(SMManagerSettingIAC*)settingIAC;
 
-/**
- *  @discussion This call is optional. It is not needed to successfully start the SDK.
- *  However, it is the first step to enable Location service.
- *  It is the first step to inform the sdk that geo location services are going to be used by the 
- *
- *  @warning To use location service you will need to have PlotProject.framework in your app.
- */
-- (void)configureLocationService;
 
 @end
