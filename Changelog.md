@@ -1,3 +1,8 @@
+- __SDK 2.6__
+
+    - Provide the sdk as a .xcframework
+    - Remove geolocalisation api references from core sdk
+    
 - __SDK 2.5.2__
 
     - Correct bug 136398 conflict with SDWebImagePDFCoder that avoid displays of images
