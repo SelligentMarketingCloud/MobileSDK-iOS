@@ -18,6 +18,9 @@
 #import "SMManagerSettingIAM.h"
 #import "SMManagerSettingIAC.h"
 
+#ifdef BUILD_FOR_PLOT
+#import "SMManager+Location.h"
+#endif
 #import "SMManager+DataTransaction.h"
 #import "SMManager+RemoteNotification.h"
 #import "SMManager+UserNotification.h"
@@ -27,6 +30,8 @@
 #import "SMManager+SMEvent.h"
 #import "SMManager+Log.h"
 #import "SMManager+StyleOptions.h"
+
+#import "SMManagerInAppMessageDelegate.h"
 
 #import "SMInAppContentImageViewController.h"
 #import "SMInAppContentURLViewController.h"
