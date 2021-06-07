@@ -14,7 +14,7 @@
 #import "SMManagerInAppMessageDelegate.h"
 
 @class SMManagerSettingIAM;
-
+@class WKNavigationDelegate;
 
 /*!
  *  #Introduction :#
@@ -86,7 +86,7 @@
  *
  *  #SMManager+InAppMessage :#
  */
-@interface SMManager (InAppMessage) <WKNavigationDelegate>
+@interface SMManager (InAppMessage)
 
 /**
  *  Call this API in order to enable / disable the IAM-service according to your application's need.
