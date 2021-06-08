@@ -18,9 +18,8 @@
 #import "SMManagerSettingIAM.h"
 #import "SMManagerSettingIAC.h"
 
-#ifdef BUILD_FOR_PLOT
 #import "SMManager+Location.h"
-#endif
+
 #import "SMManager+DataTransaction.h"
 #import "SMManager+RemoteNotification.h"
 #import "SMManager+UserNotification.h"
