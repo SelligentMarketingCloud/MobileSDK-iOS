@@ -1,3 +1,10 @@
+- __SDK 2.6.1__
+    
+    - Provide device id to main app
+    - Provide delegate to allow app to process links contained in an inapp message of type url
+    - Add Push InApp Message payload to InApp Message cache
+    - Provide a delegate to allow app to manage display on app side of InApp Message linked to a remote notification
+    
 - __SDK 2.6__
 
     - Provide the sdk as a .xcframework
