@@ -9,9 +9,7 @@
 #import "SMEventUser.h"
 
 /*!
- * @class SMEventUserLogout
- * @inherits SMEventUser
- * @discussion user logout event class
+ * @discussion User logout event class
  * #SMEventUserLogout:#
  */
 @interface SMEventUserLogout : SMEventUser

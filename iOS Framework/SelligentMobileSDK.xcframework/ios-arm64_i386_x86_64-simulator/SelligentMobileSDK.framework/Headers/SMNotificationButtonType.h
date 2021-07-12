@@ -8,7 +8,7 @@
 
 
 /*!
- *  This enumeration declares all known buttun-type
+ *  This enumeration declares all known button-type
 */
 typedef NS_ENUM(NSInteger, SMNotificationButtonType) {
     /*!

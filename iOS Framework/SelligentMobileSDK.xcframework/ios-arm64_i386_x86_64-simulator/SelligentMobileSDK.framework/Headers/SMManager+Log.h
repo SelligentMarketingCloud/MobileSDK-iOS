@@ -28,7 +28,7 @@
  *  @discussion This is an optional setting that may help you debug the library calls.
  *  This call can be done at any time (before or after starting the library).
  *  However, in order to avoid missing any error log, we recommand setting this value before starting the library.
- *  @param logLevel SMLogLevel enumeration type. Default = kSMLoLevel_None
+ *  @param logLevel SMLogLevel enumeration type. Default = kSMLogLevel_None
  *  @warning It is developer's responsability to enable log-level in Debug or release mode. 
  *  No distinction are being aplied by the library.
  *  For obvious performance reason, it is always recommended to turn log off in release mode.
