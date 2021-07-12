@@ -11,6 +11,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ *  This protocol will help you intercept the inapp messages and allow you to display them your own way or store them somewhere to be shown later.
+ *
+ *  #SMManagerInAppMessageDelegate <NSObject> :#
+ */
 @protocol SMManagerInAppMessageDelegate <NSObject>
 @optional
 

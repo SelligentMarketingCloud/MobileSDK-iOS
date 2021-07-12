@@ -40,7 +40,7 @@
  *  @param completionHandler The block-completion to be processed after the download. Provided by the delegate call
  *  @discussion It is recommended to use this API over didReceiveRemoteNotification: as it handles silent-remote-notificaitons.
  *  @warning You must enable "Remote notifications" in your application's Capabilities in order to use this API. 
- *  If this capability is not usefull to your application, you must use didReceiveRemoteNotification: instead.
+ *  If this capability is not useful to your application, you must use didReceiveRemoteNotification: instead.
  */
 - (void)didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
 
@@ -56,7 +56,7 @@
  *  Use it only if your application need to overide the service. 
  *  Otherwise, please use didReceiveRemoteNotification:fetchCompletionHandler:
  *  @warning You must enable "Remote notifications" in your application's Capabilities in order to use this API.
- *  If this capability is not usefull to your application, you must use didReceiveRemoteNotification: instead.
+ *  If this capability is not useful to your application, you must use didReceiveRemoteNotification: instead.
  */
 - (void)didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler ForceResultFetch:(UIBackgroundFetchResult)resultFetch;
 

@@ -9,9 +9,7 @@
 #import "SMEventUser.h"
 
 /*!
- * @class SMEventUserUnregistration
- * @inherits SMEventUser
- * @discussion user unregistration event class
+ * @discussion User unregistration event class
  * #SMEventUserUnregistration:#
  */
 @interface SMEventUserUnregistration : SMEventUser

@@ -1,18 +1,26 @@
+# SDK Changelog
+
+- __SDK 2.6.2__
+    
+    - Correct bug 121236 inapp/mainaction from push not called without connectivity
+    - Correct bug 143115 inapp message webview navigation arrows disabled
+    - Removed processing of optiex url from inside sdk
+    
 - __SDK 2.6.1__
     
     - Provide device id to main app
     - Provide delegate to allow app to process links contained in an inapp message of type url
     - Add Push InApp Message payload to InApp Message cache
     - Provide a delegate to allow app to manage display on app side of InApp Message linked to a remote notification
-    
+
 - __SDK 2.6__
 
-    - Provide the sdk as a .xcframework
+    - Provide the SDK as a .xcframework
     - Remove geolocalisation api references from core sdk
     
 - __SDK 2.5.2__
 
-    - Correct bug 136398 conflict with SDWebImagePDFCoder that avoid displays of images
+    - Correct bug 136398 conflict with `SDWebImagePDFCoder` that avoid displays of images
     
 - __SDK 2.5.1__
 
@@ -25,11 +33,11 @@
     
 - __SDK 2.5__
 
-    - provide flexibility to In App Message by giving access to public methods and properties that will enable developer to process content
-    
+    - Provide flexibility to In App Message by giving access to public methods and properties that will enable developer to process content
+
 - __SDK 2.4.1__
 
-    - Support of iOS 14
+    - Support of iOS14
     - Correct bug 109032  property contentCreation (creation date) of In AppContent public
     - documentation update to avoid  call to serviceExtensionTimeWillExpire resulting in (Encrypted) displayed even when encryption not applied
     - Correct bug 113738  Events are sent twice
@@ -37,25 +45,25 @@
 - __SDK 2.4__
 
     - Support of rich push of type image
-    - Correct bug 104272 provide an override method to send SMEventUserLogin and avoiding login with providing empty mail
+    - Correct bug 104272 provide an override method to send `SMEventUserLogin` and avoiding login with providing empty mail
     - Remove code that forces having to ask for camera permissions in plist file
 
 - __SDK 2.3.1__
 
-    - Correct bug 102254 set way to provide app group id to the sdk
+    - Correct bug 102254 set way to provide App Group Id to the SDK
 
 - __SDK 2.3__
-
-    - Support call to didReceiveNotification Response: to allow trigger action of notification content extension without opening app
+    
+    - Support call to `didReceiveNotification Response:` to allow trigger action of notification content extension without opening app
     - Correct bug 102401 inappmessage flag was not set correctly
 
 - __SDK 2.2.1__
 
-    - Correct bug 100688 manage useragent without usage of WKWebView
+    - Correct bug 100688 manage useragent without usage of `WKWebView`
 
 - __SDK 2.2__
 
-    - Correct bug 96667 UIWebView deprecation - use WKWebView instead
+    - Correct bug 96667 `UIWebView` deprecation - use `WKWebView` instead
     - Correct bug 96827 Buttons inside inapp messages (url/html/image) don't work in SwiftUI
     - Correct bug 90501 add robustness to check if device was already registered 
     - Add robustness when parsing plotID
@@ -66,11 +74,11 @@
 
 - __SDK 2.0.3__
 
-    - format devicetoken without using of NSData description property for better support of Xcode11 and iOS 13
+    - format devicetoken without using of `NSData` description property for better support of Xcode11 and iOS 13
 
 - __SDK 2.0.2.1__
 
-    - Correct bug  86049 User are optouted when app is reinstalled with v2.0.2
+    - Correct bug  86049 User are optouted when App is reinstalled with v2.0.2
 
 - __SDK 2.0.2__
 
@@ -81,7 +89,7 @@
     - Correct all swift warnings
     - Correct mainaction value of open browser type is not decrypted in a simple push
     - Correct bug  73088 inapp message controller not dismissed when clicking on deeplink button
-    - Correct bug  77309 conflict with anvato sdk due to  common crypto library
+    - Correct bug  77309 conflict with anvato SDK due to  common crypto library
     - Correct bug  74898 inapp message of type map is not displayed
     - Correct bug  70428 shouldDisplayRemoteNotification impeach send pushopened event
     - Correct bug  69351 unregister notification functionality in not working correctly
@@ -95,7 +103,7 @@
 - __SDK 2.0__
 
     - Support decryption of remote notification
-    - Changed the way the sdk is initialized from inside a notification extension
+    - Changed the way the SDK is initialized from inside a notification extension
 
 - __SDK 1.9__
 
@@ -103,18 +111,18 @@
 
 - __SDK 1.8__
 
-    - Support push only without in app message
+    - Support push only without InApp Message
     - Support deeplinking and main action when user click on push notification
 
 - __SDK 1.7.4__
 
-    - Improve how In App Content are managed in cache
-    - Correction on dismiss of inapp content viewcontroller when it is not wrapped inside other controller and when a link is present
+    - Improve how InApp Content are managed in cache
+    - Correction on dismiss of InApp Content viewcontroller when it is not wrapped inside other controller and when a link is present
 
 - __SDK 1.7.3__
 
-    - Improve behavior and robustness of the way In App messages are fetch
-    - Add a type for In App refresh only for dev use: .Minutely
+    - Improve behavior and robustness of the way InApp Messages are fetch
+    - Add a type for InApp refresh only for dev use: `.Minutely`
 
 - __SDK 1.7.2__
 
@@ -140,7 +148,7 @@
 
 - __SDK 1.5.2__
 
-    - correct bug for in app content that must be displayed only once
+    - correct bug for InApp Content that must be displayed only once
 
 - __SDK 1.5.1__
 
@@ -148,12 +156,12 @@
 
 - __SDK 1.5__
 
-    - sendDeviceInfo deprecated method replaced with sendDeviceInfo:(SMDeviceInfos*)deviceInfos method
-    - New SMManager category for DataTransaction with back-end
-    - public SMDeviceInfos object
-    - iOS 10 support of UserNotifications framework
+    - `sendDeviceInfo` deprecated method replaced with `sendDeviceInfo:(SMDeviceInfos*)deviceInfos` method
+    - New `SMManager` category for `DataTransaction` with back-end
+    - public `SMDeviceInfos` object
+    - iOS 10 support of `UserNotifications` framework
     - stop supporting of iOS 7
-    - cache on last sent UserCustomEvent
+    - cache on last sent `UserCustomEvent`
     - Update deviceID with the one received from platform
 
 - __SDK 1.4.5__
@@ -162,18 +170,18 @@
 
 - __SDK 1.4.4__
 
-    -  compare device token based on string instead of NSData (bug swift 3 and Data class)
+    -  compare device token based on string instead of `NSData` (bug swift 3 and Data class)
 
 - __SDK 1.4.3__
 
     - correction for max number of InApp Content crash when max > number of messages received
-    - creation date of in app content
+    - creation date of InApp Content
     - dismiss when no button in notification payload
 
 - __SDK 1.4.2__
 
-    - correction on unregisterForRemoteNotification method
-    - issue with the notification when the application was killed
+    - correction on `unregisterForRemoteNotification` method
+    - issue with the notification when the App was killed
 
 - __SDK 1.4.1__
 
@@ -181,17 +189,17 @@
 
 - __SDK 1.4__
 
-    - enum SMInAppMessageRefreshType has been renamed in SMInAppRefreshType (this enum is used both for InApp Message and for InApp Content) possible values are :
+    - enum `SMInAppMessageRefreshType` has been renamed to `SMInAppRefreshType` (this enum is used both for InApp Message and for InApp Content) possible values are :
 
-        - kSMIA_RefreshType_None
-        - kSMIA_RefreshType_Hourly
-        - kSMIA_RefreshType_Daily
+        - `kSMIA_RefreshType_None`
+        - `kSMIA_RefreshType_Hourly`
+        - `kSMIA_RefreshType_Daily`
 
 - __SDK 1.3__
 
-    - To access easily all API methods you will need to replace #import SMManager.h by #import SMHelper.h
+    - To access easily all API methods you will need to replace `#import SMManager.h` by `#import SMHelper.h`
 
 - __SDK 1.2__
 
-    - The API sendEvent: has been renamed to sendSMEvent: (This call will prevent compilation)
-    - The API registerForRemoteNotification has been added. It allows applications to register remote-notification when they really need it. This, then, becomes a mandatory call for receiving pushes (after starting the library).
+    - The API `sendEvent:` has been renamed to `sendSMEvent:` (this call will prevent compilation)
+    - The API `registerForRemoteNotification` has been added. It allows applications to register remote-notification when they really need it. This, then, becomes a mandatory call for receiving pushes (after starting the library).

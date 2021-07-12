@@ -27,6 +27,7 @@
 #import "SMManager+SMEvent.h"
 #import "SMManager+Log.h"
 #import "SMManager+StyleOptions.h"
+#import "SMManager+ViewController.h"
 
 #import "SMManagerInAppMessageDelegate.h"
 

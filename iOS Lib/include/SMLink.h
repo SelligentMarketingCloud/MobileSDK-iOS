@@ -35,7 +35,7 @@
 
 /*!
  *  The type (SMNotificationButtonType) of action that the button will execute.
- *  @see SMNotificationButtonType for more information about each type
+ *  @see SMNotificationButtonType 
  */
 @property (nonatomic) SMNotificationButtonType type;
 
