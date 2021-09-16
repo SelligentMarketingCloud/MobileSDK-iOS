@@ -8,6 +8,8 @@ By incorporating our latest SDK for iOS in your app, we support you in handling 
 
 # MobileSDK-iOS Integration
 
+> **Latest iOS version supported in the master branch: iOS15**
+
 To integrate the library yourself just download, depending of your needs one of those links: 
 
 ​    - <a href="iOS%20Framework">iOS Framework</a>: SDK framework
