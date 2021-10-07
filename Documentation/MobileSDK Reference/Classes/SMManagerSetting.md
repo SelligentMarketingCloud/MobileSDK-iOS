@@ -5,21 +5,21 @@
 
 ## Overview
 
-<h1>Note about the SMManagerSetting object :</h1>
-
-Creating an SMManagerSetting&rsquo;s instance is pretty straightforward as there&rsquo;s only <a href="#//api/name/settingWithUrl:ClientID:PrivateKey:">one constructor for doing so</a>.
+This class allow you to configure the <a href="../Classes/SMManager.md">SMManager</a>.
+Such instance must be created before starting the library.
+Creating an SMManagerSetting&rsquo;s instance is pretty straightforward as there&rsquo;s only <a href="#/api/name/settingWithUrl:ClientID:PrivateKey:">one constructor for doing so</a>.
 This sole constructor is sufficent to get you started.
 
 Additional parameters described in this header will provide you with additional control and <strong><em>are all optional</em></strong>.
 
-<h1>Being user-friendly :</h1>
+<h2>Being user-friendly</h2>
 
 When the application is in foreground and receive a remote-notification, by default, the library will display it on the current visible UIViewController. This behaviour might be unwanted and may disturb the user if he appears to navigate in a different context. Should you want to prevent that behaviour and display the remote-notification shortly after (when the user will be in a more appropriate context), please follow these steps :
 
 <ul>
 <li>Create an SMManagerSetting with the default constructor as usual.</li>
-<li>Set <a href="#//api/name/shouldDisplayRemoteNotification">shouldDisplayRemoteNotification</a> to FALSE.</li>
-<li>Start the library as usual <a href="../Classes/SMManager.md#//api/name/startWithLaunchOptions:Setting:">[SMManager startWithLaunchOptions:Setting:]</a></li>
+<li>Set <a href="#/api/name/shouldDisplayRemoteNotification">shouldDisplayRemoteNotification</a> to FALSE.</li>
+<li>Start the library as usual <a href="../Classes/SMManager.md#/api/name/startWithLaunchOptions:Setting:">[SMManager startWithLaunchOptions:Setting:]</a></li>
 <li>Listen to NSNotification-name: <em>kSMNotification_Event_DidReceiveRemoteNotification</em> (declared in SMNSNotification)</li>
 </ul>
 
@@ -27,54 +27,51 @@ At this point, remote-notification are NOT displayed when the application is in 
 Then, displaying the remote-notification is up to the application and can be done at any time by :
 
 <ul>
-<li>Retrieve the last remote-notification with <a href="../Categories/SMManager+RemoteNotification.md#//api/name/retrieveLastRemotePushNotification">[SMManager(RemoteNotification) retrieveLastRemotePushNotification]</a></li>
-<li>Display the notification according to its ID with <a href="../Categories/SMManager+RemoteNotification.md#//api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a></li>
+<li>Retrieve the last remote-notification with <a href="../Categories/SMManager+RemoteNotification.md#/api/name/retrieveLastRemotePushNotification">[SMManager(RemoteNotification) retrieveLastRemotePushNotification]</a></li>
+<li>Display the notification according to its ID with <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a></li>
 </ul>
 
 Or, more straightforwardly :
 
 <ul>
-<li>Display the last known remote notification by calling : <a href="../Categories/SMManager+RemoteNotification.md#//api/name/displayLastReceivedRemotePushNotification">[SMManager(RemoteNotification) displayLastReceivedRemotePushNotification]</a></li>
+<li>Display the last known remote notification by calling : <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayLastReceivedRemotePushNotification">[SMManager(RemoteNotification) displayLastReceivedRemotePushNotification]</a></li>
 </ul>
 
-<h1>IAM :</h1>
+<h2>IAM</h2>
 
 In-Application-Message-service is configurable using SMManagerSettingIAM which you&rsquo;ll inject using the API configureInAppMessageServiceWithSetting:
 A dedicated topic regarding this topic can be found in <a href="../Categories/SMManager+InAppMessage.md">SMManager(InAppMessage)</a>
 
-<h1>IAC :</h1>
+<h2>IAC</h2>
 
 In-Application-Content-service is configurable using SMManagerSettingIAC which you&rsquo;ll inject using the API configureInAppContentServiceWithSetting:
 A dedicated topic regarding this topic can be found in <a href="../Categories/SMManager+InAppContent.md">SMManager(InAppContent)</a>
-
-<h1>SMManagerSetting :</h1>
-
-This class allow you to configure the <a href="../Classes/SMManager.md">SMManager</a>.
-Such instance must be created before starting the library.
 
 ## Tasks
 
 ### 
 
-[&nbsp;&nbsp;shouldClearBadge](#//api/name/shouldClearBadge) *property* 
+[&nbsp;&nbsp;shouldClearBadge](#/api/name/shouldClearBadge) *property* 
 
-[&nbsp;&nbsp;shouldDisplayRemoteNotification](#//api/name/shouldDisplayRemoteNotification) *property* 
+[&nbsp;&nbsp;shouldDisplayRemoteNotification](#/api/name/shouldDisplayRemoteNotification) *property* 
 
-[&nbsp;&nbsp;shouldAddInAppMessageFromPushToInAppMessageList](#//api/name/shouldAddInAppMessageFromPushToInAppMessageList) *property* 
+[&nbsp;&nbsp;shouldAddInAppMessageFromPushToInAppMessageList](#/api/name/shouldAddInAppMessageFromPushToInAppMessageList) *property* 
 
-[&nbsp;&nbsp;clearCacheIntervalValue](#//api/name/clearCacheIntervalValue) *property* 
+[&nbsp;&nbsp;clearCacheIntervalValue](#/api/name/clearCacheIntervalValue) *property* 
 
-[&nbsp;&nbsp;appGroupId](#//api/name/appGroupId) *property* 
+[&nbsp;&nbsp;appGroupId](#/api/name/appGroupId) *property* 
 
-[+&nbsp;settingWithUrl:ClientID:PrivateKey:](#//api/name/settingWithUrl:ClientID:PrivateKey:)  
+[&nbsp;&nbsp;remoteMessageDisplayType](#/api/name/remoteMessageDisplayType) *property* 
 
-[&ndash;&nbsp;configureInAppMessageServiceWithSetting:](#//api/name/configureInAppMessageServiceWithSetting:)  
+[+&nbsp;settingWithUrl:ClientID:PrivateKey:](#/api/name/settingWithUrl:ClientID:PrivateKey:)  
 
-[&ndash;&nbsp;configureInAppContentServiceWithSetting:](#//api/name/configureInAppContentServiceWithSetting:)  
+[&ndash;&nbsp;configureInAppMessageServiceWithSetting:](#/api/name/configureInAppMessageServiceWithSetting:)  
+
+[&ndash;&nbsp;configureInAppContentServiceWithSetting:](#/api/name/configureInAppContentServiceWithSetting:)  
 
 ## Properties
 
-<a name="//api/name/appGroupId" title="appGroupId"></a>
+<a name="/api/name/appGroupId" title="appGroupId"></a>
 ### appGroupId
 
 This value provides to the sdk  the app group id that you have previously defined in your apple developer portal.
@@ -88,7 +85,7 @@ The deviceid provided by selligent mobile platform is stored encrypted in this c
 #### Declared In
 * `SMManagerSetting.h`
 
-<a name="//api/name/clearCacheIntervalValue" title="clearCacheIntervalValue"></a>
+<a name="/api/name/clearCacheIntervalValue" title="clearCacheIntervalValue"></a>
 ### clearCacheIntervalValue
 
 This value tells how often the SDK&rsquo;s cache mechanism should clear itself.
@@ -103,14 +100,14 @@ More recent ones are kept in memory until their life-span expires and a new clea
 By default, this value is set to kSMClearCache_Auto.
 Configuring this value highly depends of how frequently the application will query specific notification-messages.
 As if the application query a notification-message which is not in the cache anymore, it will automaticaly fetch it from the backend.
-In other words, it depends how often you call the API <a href="../Categories/SMManager+RemoteNotification.md#//api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a>.
+In other words, it depends how often you call the API <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a>.
 
 In a nutshell:
 
 <ul>
-<li>If the application will never query <a href="../Categories/SMManager+RemoteNotification.md#//api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a>, we recommend keeping this value to default.</li>
+<li>If the application will never query <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a>, we recommend keeping this value to default.</li>
 <li>If the application use IAM-service, we recommend keeping this value to default.</li>
-<li>On the other hand, if the application abuse <a href="../Categories/SMManager+RemoteNotification.md#//api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a>, we recommend selecting a value higher than the default one according to your application&rsquo;s need.</li>
+<li>On the other hand, if the application abuse <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a>, we recommend selecting a value higher than the default one according to your application&rsquo;s need.</li>
 </ul>
 
 
@@ -118,10 +115,60 @@ In a nutshell:
 In 99% of the cases, you should not overide this property as the SDK is smart enough to handle the cache mechanism by itself.
 Keep also in mind that this behavior  is only applicable for notification and IAM that doesn&rsquo;t have a n expiration date set
 
+#### See Also
+
+* <code><a href="../Constants/SMClearCache.md">SMClearCache</a></code>
+
 #### Declared In
 * `SMManagerSetting.h`
 
-<a name="//api/name/shouldAddInAppMessageFromPushToInAppMessageList" title="shouldAddInAppMessageFromPushToInAppMessageList"></a>
+<a name="/api/name/remoteMessageDisplayType" title="remoteMessageDisplayType"></a>
+### remoteMessageDisplayType
+
+This value defines the behaviour that the SDK will adopt when a remote-notification is received when in Foreground.
+
+<code>@property (nonatomic) SMRemoteMessageDisplayType remoteMessageDisplayType</code>
+
+#### Discussion
+The behaviour will be as:
+
+iOS 10+:
+
+<ul>
+<li>kSMRemoteMessageDisplayType_None: nothing will be displayed.</li>
+<li>kSMRemoteMessageDisplayType_Notification: a Push Notification will be displayed.</li>
+<li>kSMRemoteMessageDisplayType_Automatic:<br/>
+&ldquo;Push + in-app notifications&rdquo;:<br/>
+1) With &ldquo;Message Action&rdquo;: a Push Notification will be displayed (UNNotificationPresentationOptionAlert and UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList for iOS 14+).<br/>
+2) With &ldquo;Push Notification Buttons&rdquo;: a Push Notification will be displayed (UNNotificationPresentationOptionAlert and UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList for iOS 14+).<br/>
+3) With &ldquo;Rich Push Content&rdquo;: a Push Notification will be displayed (UNNotificationPresentationOptionAlert and UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList for iOS 14+).<br/>
+4) Others: an in-app message will be displayed (UNNotificationPresentationOptionNone).<br/><br/>
+&ldquo;Mobile push&rdquo;: a Push Notification will be displayed (UNNotificationPresentationOptionAlert and UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList for iOS 14+).</li>
+</ul>
+
+iOS 9-:
+
+<ul>
+<li>kSMRemoteMessageDisplayType_None: nothing will be displayed.</li>
+<li>kSMRemoteMessageDisplayType_Notification: nothing will be displayed.</li>
+<li>kSMRemoteMessageDisplayType_Automatic:<br/>
+&ldquo;Push + in-app notifications&rdquo;: an in-app message will be displayed.<br/>
+&ldquo;Mobile push&rdquo;: the &ldquo;Message Action&rdquo; will be executed<br/></li>
+</ul>
+
+
+<strong>Warning:</strong> For iOS 10+, the SDK will only take this setting into account when the UNNotificationPresentationOptions delegate is provided (see <a href="../Categories/SMManager+UserNotification.md">SMManager(UserNotification)</a> for more information).
+
+<strong>Warning:</strong> If not set, the default value (kSMRemoteMessageDisplayType_Unknown) will use kSMRemoteMessageDisplayType_Notification for iOS 10+ and kSMRemoteMessageDisplayType_Automatic for iOS 9-.
+
+#### See Also
+
+* <code><a href="../Constants/SMRemoteMessageDisplayType.md">SMRemoteMessageDisplayType</a></code>
+
+#### Declared In
+* `SMManagerSetting.h`
+
+<a name="/api/name/shouldAddInAppMessageFromPushToInAppMessageList" title="shouldAddInAppMessageFromPushToInAppMessageList"></a>
 ### shouldAddInAppMessageFromPushToInAppMessageList
 
 Used to add the inapp message associated to a remote notification to the inapp message list
@@ -130,13 +177,13 @@ Used to add the inapp message associated to a remote notification to the inapp m
 
 #### Discussion
 Once a new remote-notification is received, if it contains in the payload  datas for an inapp message, this setting will add the inapp message to the in app messages list . You will need to listen to  kSMNotification_Event_DidReceiveInAppMessage NSNotification  to be informed  that an inapp message is available and you can then retrieve it with [SMManager(InAppMessages) getInAppMessages]  helper method and use in an inbox for example
-by default the in app message will be displayed if you wish to display it by yourself you will need to provide a class by calling <a href="../Categories/SMManager+InAppMessage.md#//api/name/inAppMessageDelegate:">[SMManager(InAppMessage) inAppMessageDelegate:]</a> . This class will conform to SMManagerInAppMessageDelegate protocol and implement <a href="../Protocols/SMManagerInAppMessageDelegate.md#//api/name/displayInAppMessage:">[SMManagerInAppMessageDelegate displayInAppMessage:]</a> method
+by default the in app message will be displayed if you wish to display it by yourself you will need to provide a class by calling <a href="../Categories/SMManager+InAppMessage.md#/api/name/inAppMessageDelegate:">[SMManager(InAppMessage) inAppMessageDelegate:]</a> . This class will conform to SMManagerInAppMessageDelegate protocol and implement <a href="../Protocols/SMManagerInAppMessageDelegate.md#/api/name/displayInAppMessage:">[SMManagerInAppMessageDelegate displayInAppMessage:]</a> method
 Default value is set to FALSE
 
 #### Declared In
 * `SMManagerSetting.h`
 
-<a name="//api/name/shouldClearBadge" title="shouldClearBadge"></a>
+<a name="/api/name/shouldClearBadge" title="shouldClearBadge"></a>
 ### shouldClearBadge
 
 Once a new remote-notification is displayed, the badge is automaticly reseted.
@@ -148,20 +195,23 @@ Default value is set to TRUE
 #### Declared In
 * `SMManagerSetting.h`
 
-<a name="//api/name/shouldDisplayRemoteNotification" title="shouldDisplayRemoteNotification"></a>
+<a name="/api/name/shouldDisplayRemoteNotification" title="shouldDisplayRemoteNotification"></a>
 ### shouldDisplayRemoteNotification
 
-Used to configure the remote-notification-display
+This property does not have an impact when <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a> or  <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayLastReceivedRemotePushNotification">[SMManager(RemoteNotification) displayLastReceivedRemotePushNotification]</a> are called.
+Once you set this value to TRUE, the application becomes responsable about displaying the inapp-notification linked to the received remote-notification.
 
 <code>@property (nonatomic) BOOL shouldDisplayRemoteNotification</code>
 
 #### Discussion
-When the app is active, once a new remote-notification is received, it is automatically diplayed on the device
+This setting will enable or disable the display of inapp-messages linked to a remote-notification by the SDK.
+In iOS 10+ after tapping a notification, the inapp will be displayed (if any).
+In iOS 9-, and when the app is in foreground, once a new remote-notification is received, the linked inapp-notification will be displayed (if any).
 Should you want to prevent that behaviour, you can set this property to FALSE before starting the library.
 Default value is set to TRUE.
 
-<strong>Warning:</strong> This property does not have an impact when app is open from a notification selected by user in the notification center or when <a href="../Categories/SMManager+RemoteNotification.md#//api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a> or  <a href="../Categories/SMManager+RemoteNotification.md#//api/name/displayLastReceivedRemotePushNotification">[SMManager(RemoteNotification) displayLastReceivedRemotePushNotification]</a> are called.
-Once you set this value to TRUE, the application becomes responsable about displaying the remote-notification. (Make sure to read the header file of SMManagerSetting before doing so).
+<strong>Warning:</strong> This property does not have an impact when <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayNotificationID:">[SMManager(RemoteNotification) displayNotificationID:]</a> or  <a href="../Categories/SMManager+RemoteNotification.md#/api/name/displayLastReceivedRemotePushNotification">[SMManager(RemoteNotification) displayLastReceivedRemotePushNotification]</a> are called.
+Once you set this value to TRUE, the application becomes responsable about displaying the inapp-notification linked to the received remote-notification.
 
 #### Declared In
 * `SMManagerSetting.h`
@@ -169,12 +219,12 @@ Once you set this value to TRUE, the application becomes responsable about displ
 <a title="Class Methods" name="class_methods"></a>
 ## Class Methods
 
-<a name="//api/name/settingWithUrl:ClientID:PrivateKey:" title="settingWithUrl:ClientID:PrivateKey:"></a>
+<a name="/api/name/settingWithUrl:ClientID:PrivateKey:" title="settingWithUrl:ClientID:PrivateKey:"></a>
 ### settingWithUrl:ClientID:PrivateKey:
 
 Default-mandatory constructor to start the <a href="../Classes/SMManager.md">SMManager</a> shared-instance
 
-<code>+ (instancetype)settingWithUrl:(NSString *)*urlName* ClientID:(NSString *)*clientID* PrivateKey:(NSString *)*privateKey*</code>
+<code>+ (instancetype _Nonnull)settingWithUrl:(NSString *_Nullable)*urlName* ClientID:(NSString *_Nullable)*clientID* PrivateKey:(NSString *_Nullable)*privateKey*</code>
 
 #### Parameters
 
@@ -203,13 +253,13 @@ Please contact our support to get valid configuration-setting.
 <a title="Instance Methods" name="instance_methods"></a>
 ## Instance Methods
 
-<a name="//api/name/configureInAppContentServiceWithSetting:" title="configureInAppContentServiceWithSetting:"></a>
+<a name="/api/name/configureInAppContentServiceWithSetting:" title="configureInAppContentServiceWithSetting:"></a>
 ### configureInAppContentServiceWithSetting:
 
 An invalid or nil setting is considered as an error and will not startUp the IAC-service.
 Don&rsquo;t forget to enable In App content according to application need by calling [SMManager(InAppContent) enableInAppContent:]
 
-<code>- (void)configureInAppContentServiceWithSetting:(SMManagerSettingIAC *)*settingIAC*</code>
+<code>- (void)configureInAppContentServiceWithSetting:(SMManagerSettingIAC *_Nullable)*settingIAC*</code>
 
 #### Parameters
 
@@ -224,16 +274,20 @@ Please read <a href="../Categories/SMManager+InAppContent.md">SMManager(InAppCon
 <strong>Warning:</strong> An invalid or nil setting is considered as an error and will not startUp the IAC-service.
 Don&rsquo;t forget to enable In App content according to application need by calling [SMManager(InAppContent) enableInAppContent:]
 
+#### See Also
+
+* <code><a href="../Classes/SMManagerSettingIAC.md">SMManagerSettingIAC</a></code>
+
 #### Declared In
 * `SMManagerSetting.h`
 
-<a name="//api/name/configureInAppMessageServiceWithSetting:" title="configureInAppMessageServiceWithSetting:"></a>
+<a name="/api/name/configureInAppMessageServiceWithSetting:" title="configureInAppMessageServiceWithSetting:"></a>
 ### configureInAppMessageServiceWithSetting:
 
 An invalid or nil setting is considered as an error and will not startUp the IAM-service.
-Don&rsquo;t forget to enable In App message according to application need by calling <a href="../Categories/SMManager+InAppMessage.md#//api/name/enableInAppMessage:">[SMManager(InAppMessage) enableInAppMessage:]</a>
+Don&rsquo;t forget to enable In App message according to application need by calling <a href="../Categories/SMManager+InAppMessage.md#/api/name/enableInAppMessage:">[SMManager(InAppMessage) enableInAppMessage:]</a>
 
-<code>- (void)configureInAppMessageServiceWithSetting:(SMManagerSettingIAM *)*settingIAM*</code>
+<code>- (void)configureInAppMessageServiceWithSetting:(SMManagerSettingIAM *_Nullable)*settingIAM*</code>
 
 #### Parameters
 
@@ -246,7 +300,11 @@ However, it is required to enable In-Application-Message.
 Please read <a href="../Categories/SMManager+InAppMessage.md">SMManager(InAppMessage)</a> for additional information.
 
 <strong>Warning:</strong> An invalid or nil setting is considered as an error and will not startUp the IAM-service.
-Don&rsquo;t forget to enable In App message according to application need by calling <a href="../Categories/SMManager+InAppMessage.md#//api/name/enableInAppMessage:">[SMManager(InAppMessage) enableInAppMessage:]</a>
+Don&rsquo;t forget to enable In App message according to application need by calling <a href="../Categories/SMManager+InAppMessage.md#/api/name/enableInAppMessage:">[SMManager(InAppMessage) enableInAppMessage:]</a>
+
+#### See Also
+
+* <code><a href="../Classes/SMManagerSettingIAM.md">SMManagerSettingIAM</a></code>
 
 #### Declared In
 * `SMManagerSetting.h`

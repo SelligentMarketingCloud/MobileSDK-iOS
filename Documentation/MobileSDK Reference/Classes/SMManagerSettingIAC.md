@@ -12,21 +12,21 @@ Such instance must be created before starting the library.
 
 ### 
 
-[+&nbsp;settingWithBackgroundFetchOnly](#//api/name/settingWithBackgroundFetchOnly)  
+[+&nbsp;settingWithBackgroundFetchOnly](#/api/name/settingWithBackgroundFetchOnly)  
 
-[+&nbsp;settingWithRefreshType:](#//api/name/settingWithRefreshType:)  
+[+&nbsp;settingWithRefreshType:](#/api/name/settingWithRefreshType:)  
 
-[+&nbsp;settingWithRefreshType:ShouldPerformBackgroundFetch:](#//api/name/settingWithRefreshType:ShouldPerformBackgroundFetch:)  
+[+&nbsp;settingWithRefreshType:ShouldPerformBackgroundFetch:](#/api/name/settingWithRefreshType:ShouldPerformBackgroundFetch:)  
 
 <a title="Class Methods" name="class_methods"></a>
 ## Class Methods
 
-<a name="//api/name/settingWithBackgroundFetchOnly" title="settingWithBackgroundFetchOnly"></a>
+<a name="/api/name/settingWithBackgroundFetchOnly" title="settingWithBackgroundFetchOnly"></a>
 ### settingWithBackgroundFetchOnly
 
 Constructor to be used in order to create the SMManagerSettingIAC instance
 
-<code>+ (instancetype)settingWithBackgroundFetchOnly</code>
+<code>+ (instancetype _Nonnull)settingWithBackgroundFetchOnly</code>
 
 #### Discussion
 use this constructor to enable background-mode only.
@@ -38,12 +38,12 @@ See <a href="../Categories/SMManager+InAppContent.md">SMManager(InAppContent)</a
 #### Declared In
 * `SMManagerSettingIAC.h`
 
-<a name="//api/name/settingWithRefreshType:" title="settingWithRefreshType:"></a>
+<a name="/api/name/settingWithRefreshType:" title="settingWithRefreshType:"></a>
 ### settingWithRefreshType:
 
 Constructor to be used in order to create the SMManagerSettingIAC instance
 
-<code>+ (instancetype)settingWithRefreshType:(SMInAppRefreshType)*refreshType*</code>
+<code>+ (instancetype _Nonnull)settingWithRefreshType:(SMInAppRefreshType)*refreshType*</code>
 
 #### Parameters
 
@@ -52,17 +52,21 @@ Constructor to be used in order to create the SMManagerSettingIAC instance
 
 #### Discussion
 Use this constructor should you want to perform periodic refresh when the application is in foreground-state only.
-For enabling backgroundState, use <a href="#//api/name/settingWithRefreshType:ShouldPerformBackgroundFetch:">settingWithRefreshType:ShouldPerformBackgroundFetch:</a> instead
+For enabling backgroundState, use <a href="#/api/name/settingWithRefreshType:ShouldPerformBackgroundFetch:">settingWithRefreshType:ShouldPerformBackgroundFetch:</a> instead
+
+#### See Also
+
+* <code><a href="../Constants/SMInAppRefreshType.md">SMInAppRefreshType</a></code>
 
 #### Declared In
 * `SMManagerSettingIAC.h`
 
-<a name="//api/name/settingWithRefreshType:ShouldPerformBackgroundFetch:" title="settingWithRefreshType:ShouldPerformBackgroundFetch:"></a>
+<a name="/api/name/settingWithRefreshType:ShouldPerformBackgroundFetch:" title="settingWithRefreshType:ShouldPerformBackgroundFetch:"></a>
 ### settingWithRefreshType:ShouldPerformBackgroundFetch:
 
 Constructor to be used in order to create the SMManagerSettingIAC instance
 
-<code>+ (instancetype)settingWithRefreshType:(SMInAppRefreshType)*refreshType* ShouldPerformBackgroundFetch:(BOOL)*shouldPerformBackgroundFetch*</code>
+<code>+ (instancetype _Nonnull)settingWithRefreshType:(SMInAppRefreshType)*refreshType* ShouldPerformBackgroundFetch:(BOOL)*shouldPerformBackgroundFetch*</code>
 
 #### Parameters
 
@@ -75,6 +79,10 @@ Constructor to be used in order to create the SMManagerSettingIAC instance
 #### Discussion
 This constructor provides you with more control on foreground / background fetch.
 Should you want to restrict to only one fetch-mode, feel free to use other constructors.
+
+#### See Also
+
+* <code><a href="../Constants/SMInAppRefreshType.md">SMInAppRefreshType</a></code>
 
 #### Declared In
 * `SMManagerSettingIAC.h`

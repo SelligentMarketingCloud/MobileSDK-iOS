@@ -6,8 +6,6 @@
 
 Enumeration used to define how often the SDK&rsquo;s cache should automaticaly clear itself
 
-<h1>SMClearCache :</h1>
-
 #### Definition
     typedef NS_ENUM(NSInteger, SMClearCache ) {   
         

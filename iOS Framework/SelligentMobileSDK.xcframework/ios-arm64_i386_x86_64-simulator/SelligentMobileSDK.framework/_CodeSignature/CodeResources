@@ -6,31 +6,31 @@
 	<dict>
 		<key>Headers/SMBaseMessage.h</key>
 		<data>
-		GyZxMO83sNScmGofzQc7xObvLEg=
+		RbnrTmYNGF4itJ2yu6AXtIlG1kE=
 		</data>
 		<key>Headers/SMBlock.h</key>
 		<data>
-		INtbhkZuwtY/49rGKCx+kACwDfE=
+		MqA+o7fXOBkl/q8vh344wEhIywo=
 		</data>
 		<key>Headers/SMClearCache.h</key>
 		<data>
-		09SqkNV0qlM8WxfaEk+5HFSyQ4Y=
+		xeMuof6Ar0SZwEOqJIJZ0p579EI=
 		</data>
 		<key>Headers/SMContentAlignment.h</key>
 		<data>
-		8pZ1GqHFofVg300wFXk0KNpRDnU=
+		LE76JOthUDbYoBIDlYG4DPvhSrk=
 		</data>
 		<key>Headers/SMDeviceInfos.h</key>
 		<data>
-		J7RAlOj7MraZFOOQLz/ClIs203o=
+		xoBSbko5Ra23p2zmx1Ht0IFGSsU=
 		</data>
 		<key>Headers/SMDisplayMode.h</key>
 		<data>
-		/hUku81/seiFy/6vmdhsfvqCFtM=
+		+sbUybU6oRxaI8iR72vvjpB4I/4=
 		</data>
 		<key>Headers/SMEvent.h</key>
 		<data>
-		+4aT+jjJlDQqpz65qnU7Z+UBaN0=
+		pVAmkPwix1n12Iybpq8f9u7dLH0=
 		</data>
 		<key>Headers/SMEventUser.h</key>
 		<data>
@@ -38,127 +38,131 @@
 		</data>
 		<key>Headers/SMEventUserLogin.h</key>
 		<data>
-		W9j8jeSRkG2pqVehtka02sXpguw=
+		O3Egbt8QqN1fFnQzjyXP9uOnBSM=
 		</data>
 		<key>Headers/SMEventUserLogout.h</key>
 		<data>
-		Y6qKNTUusCBr311+9V4fskeINXs=
+		qxpUSOCBmYI8YGgfSXHoUnetin0=
 		</data>
 		<key>Headers/SMEventUserRegistration.h</key>
 		<data>
-		pviYcpwHxNdHXjcDpPuWv7mea44=
+		P/+pz94DJcyQ3hJQqMsKnTzbrNY=
 		</data>
 		<key>Headers/SMEventUserUnregistration.h</key>
 		<data>
-		ihWe0AlRnFeozBGyDDENLYSKXBY=
+		xdFvkXgVBIqAJW/sLndTcGXkpJk=
 		</data>
 		<key>Headers/SMFailure.h</key>
 		<data>
-		Kh4rFecr7WESNcprkgqpLR34EBA=
+		A5ozglTa9Jr69DccQgv63ayN26w=
 		</data>
 		<key>Headers/SMHelper+Location.h</key>
 		<data>
-		reTMXRAclxCgvZbrtsgo/SuhsPM=
+		GFUvAh7MWNOsJtJc/Cil0OPeRJo=
 		</data>
 		<key>Headers/SMHelper.h</key>
 		<data>
-		N43V04HF6AvPCTQVJ4hz+VTzSwE=
+		McvowTrV0YGZHxeLGe+fNCnxQP4=
 		</data>
 		<key>Headers/SMInAppContentHTMLViewController.h</key>
 		<data>
-		34Zs/4yteerxCAT679dJZvrS3B8=
+		c/HcCdy2lMGMoM0S6W5tuN2B/nI=
 		</data>
 		<key>Headers/SMInAppContentImageViewController.h</key>
 		<data>
-		pugBlEFnHt8qZxZOSVpCWrI6Crk=
+		9dBxM8qUMZbIuq4ceOSBDsfZ0O8=
 		</data>
 		<key>Headers/SMInAppContentMessage.h</key>
 		<data>
-		ynaPi2WlNQ8QW57KC6hPLwgIdJ8=
+		2QCl5Edk0CevCvrBfAcHR3GwzbA=
 		</data>
 		<key>Headers/SMInAppContentStyleOptions.h</key>
 		<data>
-		vPhHbMhJqBJjJHmqarVcd/0h7LY=
+		fmOPSosCFUTlRDqJYVP8Whwuf8Q=
 		</data>
 		<key>Headers/SMInAppContentType.h</key>
 		<data>
-		4ODoPwZeWTrKEstvUqcq8WKXJfk=
+		ZHEtLlz78UwJuYFAqyP+g7t53oA=
 		</data>
 		<key>Headers/SMInAppContentURLViewController.h</key>
 		<data>
-		yJZisSulusrgvrnv1EunkNQoHns=
+		7xhJbqrTWIm1Yx22lK5cB3fkcQY=
 		</data>
 		<key>Headers/SMInAppContentViewController.h</key>
 		<data>
-		LhyLxcbJyxz06NwAZSCjGs8CXMA=
+		VYhD0dAM1hPvG4HcULuF6J1iY0g=
 		</data>
 		<key>Headers/SMInAppMessage.h</key>
 		<data>
-		qsIFTLi77SGLyq6B6XE5rMmXqS8=
+		hmR0Yc+c46lIn8PHbfCvIeJX4Ek=
 		</data>
 		<key>Headers/SMInAppMessageType.h</key>
 		<data>
-		GQhHiSev+J9d573o0v0GHYvniTY=
+		xIr+ydubDX4ZO5zM4fOY3Pp1iJg=
 		</data>
 		<key>Headers/SMInAppRefreshType.h</key>
 		<data>
-		RZd7PZmDJRzjciRgb96oT2WUgAM=
+		nck6YhRA0u2rS9bp9Ujlb9xSmbI=
 		</data>
 		<key>Headers/SMLink.h</key>
 		<data>
-		juktIw07ZswmrHgAv1bUixiNvuI=
+		bK4Hn/qYNtUxZAeMKmPWA23yaiM=
 		</data>
 		<key>Headers/SMLog.h</key>
 		<data>
-		PEl/8g4jRxfNPe1Mo1LUlg1xvlM=
+		3mtA3fpxvCB4olELg1eE1yD28WM=
 		</data>
 		<key>Headers/SMManager+DataTransaction.h</key>
 		<data>
-		pdtnkwL0fHH3E6UzytFYilxx4pI=
+		kLUvNTljNWY1V+AjaKm231/Au2U=
 		</data>
 		<key>Headers/SMManager+InAppContent.h</key>
 		<data>
-		6zPJo6/rf4+Og46MASWHQhisgVY=
+		3wR46WX/KhRfwiTrpYvjwP/vafs=
 		</data>
 		<key>Headers/SMManager+InAppMessage.h</key>
 		<data>
-		9lrQeCnJO1Wcl8JQ0ep8+ClX1yw=
+		by0jTz3JTVJDSXQ5dQz0JjhO83w=
 		</data>
 		<key>Headers/SMManager+Location.h</key>
 		<data>
-		W0lgX6L69BXhuxNW0cCXVXRZ71s=
+		wlR4TQA7PPvDJ+TXOuJ/RZqb+Vk=
 		</data>
 		<key>Headers/SMManager+Log.h</key>
 		<data>
-		/UEwMd++uLifjY7nUqlZdN2+L40=
+		QOpgMpWyFzB5kjK6VVmgZbnCmYs=
 		</data>
 		<key>Headers/SMManager+RemoteNotification.h</key>
 		<data>
-		1/FR1grxD3NN4csl0oFX15PpVTI=
+		c7SWfEp8eXa5yVf+WIjMkh+8ljc=
 		</data>
 		<key>Headers/SMManager+SMEvent.h</key>
 		<data>
-		KbrgIALjwsKWl8BW9vMk6vUdtB0=
+		DYo2CDJZDl1j/cJ/FipaxkOhOzA=
+		</data>
+		<key>Headers/SMManager+SMLink.h</key>
+		<data>
+		NPzL31fHAAesio0X8Rkb2cb22yw=
 		</data>
 		<key>Headers/SMManager+SilentPush.h</key>
 		<data>
-		Oo88Yu5Hen8Id9bxUgKhp7l+u44=
+		QA3aS8TXgUhuq7rzdx/ao1EweEw=
 		</data>
 		<key>Headers/SMManager+StyleOptions.h</key>
 		<data>
-		HSEC8s0HE/RrlaDHf4GMoE+pkL4=
+		YoetQ2NsOSSsE/Marf0Mhy0TV6o=
 		</data>
 		<key>Headers/SMManager+UserNotification.h</key>
 		<data>
-		VeZhjK//8VyoTtEGWEV4/KEzJ34=
+		1MqGDzooSoBHb+w3va18fVjOQpc=
 		</data>
 		<key>Headers/SMManager+ViewController.h</key>
 		<data>
-		5+F3LBfcIB2e0XlTZa7lOv7Fe3g=
+		uxaKpBAXgzm41UjzsYWLLfNB76g=
 		</data>
 		<key>Headers/SMManager.h</key>
 		<data>
-		LgJtjPK807MfzGq5HHqLX999Shc=
+		TC9lz/SB7w5PbJxb9uD+abW6txw=
 		</data>
 		<key>Headers/SMManagerHelper.h</key>
 		<data>
@@ -166,27 +170,31 @@
 		</data>
 		<key>Headers/SMManagerInAppMessageDelegate.h</key>
 		<data>
-		852o07y/yOKUd9MDAzxc64YV/o0=
+		MifN/c996AyDhKwOK3ifiLJfjZc=
 		</data>
 		<key>Headers/SMManagerSetting+Location.h</key>
 		<data>
-		EPtPs3mG7PugLofX6U6SYEWNfTc=
+		NdB3BLSztHY5brXXUVUDLpuB+lY=
 		</data>
 		<key>Headers/SMManagerSetting.h</key>
 		<data>
-		FcqrXyfr2FE5y/c9EctIM2D01qM=
+		dCvHemQ9bh1BHXlnGiFE7IJucmA=
 		</data>
 		<key>Headers/SMManagerSettingIAC.h</key>
 		<data>
-		zcMbksSSa7AzjNZoSEnpFIpWyV0=
+		coL7NU3IbjWRgTPue7wLThIFHkU=
 		</data>
 		<key>Headers/SMManagerSettingIAM.h</key>
 		<data>
-		wimmbq8SbzaRFSm9Awu2Nqs8puw=
+		0/MRH2lhdwVBkqHawsQrD1k5ptk=
+		</data>
+		<key>Headers/SMManagerUniversalLinksDelegate.h</key>
+		<data>
+		I2ZAfRtKBCKa665r8Gi3uoyVVNk=
 		</data>
 		<key>Headers/SMMessage.h</key>
 		<data>
-		vZmWIcPPxOHXUmuYyMaoVLoug3U=
+		pYI3lNWZYjAIdiCqiwu06laaGO4=
 		</data>
 		<key>Headers/SMNSNotification.h</key>
 		<data>
@@ -194,19 +202,27 @@
 		</data>
 		<key>Headers/SMNotificationAnnotationData.h</key>
 		<data>
-		TVZ95G9BYzJzWC0U2Yj1Epbs3Sg=
+		EsZjM0VUrD7tTUt597IXU+rcs7E=
 		</data>
 		<key>Headers/SMNotificationButtonData.h</key>
 		<data>
-		r2iEzHtDUotXL+EcbJJmlFkXD28=
+		8CSOueqkp0V7XItXO25vYEjH3uk=
 		</data>
 		<key>Headers/SMNotificationButtonType.h</key>
 		<data>
-		+dYL0+UvUAxbXdQ2+NonUVJV+9Q=
+		v4872b8CZ0VWuLevYsdvdXCUh+o=
+		</data>
+		<key>Headers/SMNotificationMessage.h</key>
+		<data>
+		eDHtbfyN/4h+qg6vWVEWuJhdXmA=
+		</data>
+		<key>Headers/SMRemoteMessageDisplayType.h</key>
+		<data>
+		DHVQ/H4LYFz4tsetu/okAxtpHOI=
 		</data>
 		<key>Headers/SMSuccess.h</key>
 		<data>
-		PocDfxW4HOCvVCs4PGiQ5pbPWPw=
+		dXt7qAnmoAv7y27EqwkPlh/EqGE=
 		</data>
 		<key>Headers/SelligentMobileSDK.h</key>
 		<data>
@@ -214,7 +230,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		F/zpw4ajsUiUUyA0vD60oU3+lRQ=
+		4Ifbr/92Lugrw2B3dIBLRLJs3y8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -227,77 +243,77 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GyZxMO83sNScmGofzQc7xObvLEg=
+			RbnrTmYNGF4itJ2yu6AXtIlG1kE=
 			</data>
 			<key>hash2</key>
 			<data>
-			QI1HrA7Tiz0TwFwD6GlHjplpK/Ed1A1CuNqIJdXXCzE=
+			frXq21+cQPWXW5kC5X875MzLZqBQELj/PB67WX036t0=
 			</data>
 		</dict>
 		<key>Headers/SMBlock.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			INtbhkZuwtY/49rGKCx+kACwDfE=
+			MqA+o7fXOBkl/q8vh344wEhIywo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Tot4+Abow71tWWrTbSEp3xt3PXn4GlfPEGTfKen6O1o=
+			gnA4UUBsG9p0huN8yblayPZziC0mRwswtIMvJCT+xOc=
 			</data>
 		</dict>
 		<key>Headers/SMClearCache.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			09SqkNV0qlM8WxfaEk+5HFSyQ4Y=
+			xeMuof6Ar0SZwEOqJIJZ0p579EI=
 			</data>
 			<key>hash2</key>
 			<data>
-			OcX6t8ARtvjMzqQEza+7fah82XU5v50QRnDzY53zJ7U=
+			p0IfyPZO+HTqCSQYmG5KkMjgTD5FgHcMnfLhpfY2mAk=
 			</data>
 		</dict>
 		<key>Headers/SMContentAlignment.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8pZ1GqHFofVg300wFXk0KNpRDnU=
+			LE76JOthUDbYoBIDlYG4DPvhSrk=
 			</data>
 			<key>hash2</key>
 			<data>
-			oQd5dE7hM8StWVt7j2d163IUOku4CRuNm1D74uSzNCs=
+			+weVT9vzHl+fMH8Hr/WhlK/wuf5tnBOz4sxt1+zA3SI=
 			</data>
 		</dict>
 		<key>Headers/SMDeviceInfos.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			J7RAlOj7MraZFOOQLz/ClIs203o=
+			xoBSbko5Ra23p2zmx1Ht0IFGSsU=
 			</data>
 			<key>hash2</key>
 			<data>
-			LPLPpJQGe2gDGwrmk4PcA7EZXmzWPVQVJ/9OvQDnlR0=
+			z2G0wJeeUZjW8YfbRJhHVpkt+73QIvBsdXE9lQqhicc=
 			</data>
 		</dict>
 		<key>Headers/SMDisplayMode.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/hUku81/seiFy/6vmdhsfvqCFtM=
+			+sbUybU6oRxaI8iR72vvjpB4I/4=
 			</data>
 			<key>hash2</key>
 			<data>
-			jh/uHZJZs02g/XgJGntZEKdbMUfld59I7VU8x8HhnUY=
+			3pMnDfMgcA/VX8Usv4fSO7P456xzJoAYZ6XLgXR3rEY=
 			</data>
 		</dict>
 		<key>Headers/SMEvent.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+4aT+jjJlDQqpz65qnU7Z+UBaN0=
+			pVAmkPwix1n12Iybpq8f9u7dLH0=
 			</data>
 			<key>hash2</key>
 			<data>
-			TcZ0v/ElxpM83lUjkXp5RCumtwqeTXEykywQ6fSgmlw=
+			psSAQ5/yqOnKMQFFt9w/6eD5USmiXg+iucebgTvHJ/w=
 			</data>
 		</dict>
 		<key>Headers/SMEventUser.h</key>
@@ -315,341 +331,352 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			W9j8jeSRkG2pqVehtka02sXpguw=
+			O3Egbt8QqN1fFnQzjyXP9uOnBSM=
 			</data>
 			<key>hash2</key>
 			<data>
-			7i54ED95jdp+HQDXaPfiazvR5MSkLOBJrmOGP+llJvU=
+			x+8mrfQMV1v6pX3O+IqUD66WbzJiXQsdu1P+ZyDGBjU=
 			</data>
 		</dict>
 		<key>Headers/SMEventUserLogout.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Y6qKNTUusCBr311+9V4fskeINXs=
+			qxpUSOCBmYI8YGgfSXHoUnetin0=
 			</data>
 			<key>hash2</key>
 			<data>
-			JdmhiD+wATc+CSQ5X1iQgmhl5nbz0UNLHgLG1IBmeAg=
+			D9X5ERy6JyfGuuk/d3G/wPJ8CLB0H+Oq8h9bZuMIlv8=
 			</data>
 		</dict>
 		<key>Headers/SMEventUserRegistration.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pviYcpwHxNdHXjcDpPuWv7mea44=
+			P/+pz94DJcyQ3hJQqMsKnTzbrNY=
 			</data>
 			<key>hash2</key>
 			<data>
-			p1cdBO9fkJ455+N8tUFLDP+DGVvbNilOAs1WBJ/S5kc=
+			wtA1bsadOMBg6boKZdtkP1WwJCGOAysHrLUmW07q8kQ=
 			</data>
 		</dict>
 		<key>Headers/SMEventUserUnregistration.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ihWe0AlRnFeozBGyDDENLYSKXBY=
+			xdFvkXgVBIqAJW/sLndTcGXkpJk=
 			</data>
 			<key>hash2</key>
 			<data>
-			24z6NFalUTgdBxc3gQci6zVF5Ji4APjTigKZNeQHZZE=
+			W+4KSXuOzrAem6WsanBODI/7MSOpK62sY8seJgjngDg=
 			</data>
 		</dict>
 		<key>Headers/SMFailure.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Kh4rFecr7WESNcprkgqpLR34EBA=
+			A5ozglTa9Jr69DccQgv63ayN26w=
 			</data>
 			<key>hash2</key>
 			<data>
-			Iyi1Yf8FshMbGAyXhQIPPN1I609J2FTNJVNW0QSTqSg=
+			0/68JAz+p/TU9UMvuy9e4IbRjxEOapxzPPOTUeThkKA=
 			</data>
 		</dict>
 		<key>Headers/SMHelper+Location.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			reTMXRAclxCgvZbrtsgo/SuhsPM=
+			GFUvAh7MWNOsJtJc/Cil0OPeRJo=
 			</data>
 			<key>hash2</key>
 			<data>
-			qm2l8S3J9XiAw5ZtAt4qoB+0w//7rSzyL63uQpWA/zU=
+			1mcgYkQFimQ5Aa2PQz6y5J/dsrf4cHd+6eTZFhJaCf0=
 			</data>
 		</dict>
 		<key>Headers/SMHelper.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			N43V04HF6AvPCTQVJ4hz+VTzSwE=
+			McvowTrV0YGZHxeLGe+fNCnxQP4=
 			</data>
 			<key>hash2</key>
 			<data>
-			DsLNzQY8nBoaQX/0sONv9N1Gxfrt0tTzGFAWxmgpYCc=
+			tmZnUI68YUHEh5P0SF7247V5LUg9dYFuNvUhqyFIbaI=
 			</data>
 		</dict>
 		<key>Headers/SMInAppContentHTMLViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			34Zs/4yteerxCAT679dJZvrS3B8=
+			c/HcCdy2lMGMoM0S6W5tuN2B/nI=
 			</data>
 			<key>hash2</key>
 			<data>
-			weCjS4WPbCZrGrQKExyfPOOExz0MVeFos0NIMSAj4Go=
+			Hkv9ft6ao5dPkz1a0ZoUMOlICulkvj52x4sSPWR6wlo=
 			</data>
 		</dict>
 		<key>Headers/SMInAppContentImageViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pugBlEFnHt8qZxZOSVpCWrI6Crk=
+			9dBxM8qUMZbIuq4ceOSBDsfZ0O8=
 			</data>
 			<key>hash2</key>
 			<data>
-			+Lp+IdjuwDUNHrhmCH5CKEIM1EprrUPGEOi3bmn2aVM=
+			fP9gSI/0dgPoz5T5/YoQG/zI2v2HxokWJowwIIBG6YQ=
 			</data>
 		</dict>
 		<key>Headers/SMInAppContentMessage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ynaPi2WlNQ8QW57KC6hPLwgIdJ8=
+			2QCl5Edk0CevCvrBfAcHR3GwzbA=
 			</data>
 			<key>hash2</key>
 			<data>
-			9TKjvtDJXtkkHmOV8udN4Lhl02pIRnCv7yglJSDs5cs=
+			msiagKE3ZynGmSpuSNDHDkx7F5Y+LakSPZxDgO9a6ic=
 			</data>
 		</dict>
 		<key>Headers/SMInAppContentStyleOptions.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vPhHbMhJqBJjJHmqarVcd/0h7LY=
+			fmOPSosCFUTlRDqJYVP8Whwuf8Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			RIzVJnxmKPzdWDIE6Cab50kQIb2mMOol+LyHjSYohBg=
+			0+jsfRykikI9QhgdiSakjA+zP3fyPXtCeus0GAz0xVM=
 			</data>
 		</dict>
 		<key>Headers/SMInAppContentType.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4ODoPwZeWTrKEstvUqcq8WKXJfk=
+			ZHEtLlz78UwJuYFAqyP+g7t53oA=
 			</data>
 			<key>hash2</key>
 			<data>
-			H7xKGX3/D54OCBJaWlklBggMsN2HYyze5JnoGaSm6VI=
+			DMUGW77X/Sa0D+7B7dki7FpwKXyH/oaUwezIIrCvzBE=
 			</data>
 		</dict>
 		<key>Headers/SMInAppContentURLViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yJZisSulusrgvrnv1EunkNQoHns=
+			7xhJbqrTWIm1Yx22lK5cB3fkcQY=
 			</data>
 			<key>hash2</key>
 			<data>
-			7Benpzj5GIb78prFIdomLtiWhlxZww7A7wNvhnO7czQ=
+			1V9QQm6ysrajZkh6Ch8kavTXKaLH19aJQ6m4CsyReOo=
 			</data>
 		</dict>
 		<key>Headers/SMInAppContentViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LhyLxcbJyxz06NwAZSCjGs8CXMA=
+			VYhD0dAM1hPvG4HcULuF6J1iY0g=
 			</data>
 			<key>hash2</key>
 			<data>
-			CTICIeVlMaRHl+VaepWYOzI9ht7dvwJWAqRmR0/Vkbw=
+			c7P67glF2MxKUoHxv3fdsnIWKaj8uoiNE/EXtF+grvw=
 			</data>
 		</dict>
 		<key>Headers/SMInAppMessage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qsIFTLi77SGLyq6B6XE5rMmXqS8=
+			hmR0Yc+c46lIn8PHbfCvIeJX4Ek=
 			</data>
 			<key>hash2</key>
 			<data>
-			udj6ptLPM0D9FdnnuhMBwro+ryCYx8TdJSrhU5LUeak=
+			5HAu8P8KRinzuoiEbKivDKnHDT/H7pw+TkodcuympTc=
 			</data>
 		</dict>
 		<key>Headers/SMInAppMessageType.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GQhHiSev+J9d573o0v0GHYvniTY=
+			xIr+ydubDX4ZO5zM4fOY3Pp1iJg=
 			</data>
 			<key>hash2</key>
 			<data>
-			uZECdDrUWpZbXnA78H7yiiUQpLKJx+/tQz6i3KV2kuk=
+			yYt+he4joxyyIp6GPDZVPNUiEkolM93ecfMVnYGgApY=
 			</data>
 		</dict>
 		<key>Headers/SMInAppRefreshType.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RZd7PZmDJRzjciRgb96oT2WUgAM=
+			nck6YhRA0u2rS9bp9Ujlb9xSmbI=
 			</data>
 			<key>hash2</key>
 			<data>
-			4evAZt17Dfn+JwjpQa9hsfAGZb4kBO/sPOVYYMlQxLM=
+			sBdIwoHY3KisSB5ogHSJXJwXnHwPVeEQIxaxuKwvQ/E=
 			</data>
 		</dict>
 		<key>Headers/SMLink.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			juktIw07ZswmrHgAv1bUixiNvuI=
+			bK4Hn/qYNtUxZAeMKmPWA23yaiM=
 			</data>
 			<key>hash2</key>
 			<data>
-			pB9yIA98Fb6Oj7J6Nawb32MrIHP0LCd0aeV54CQ7qgM=
+			zE3szAamOsf3NlIerhOnp5qGfguzMnYm7VYzCWUdJLU=
 			</data>
 		</dict>
 		<key>Headers/SMLog.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PEl/8g4jRxfNPe1Mo1LUlg1xvlM=
+			3mtA3fpxvCB4olELg1eE1yD28WM=
 			</data>
 			<key>hash2</key>
 			<data>
-			ndx3407QLI/5Y2lQFmlnQ+vuleC0+jaM3PB4Kr86HzQ=
+			JSYSx3mF36lMXQ9aC1LLKic2p2nJ5oo2OLhxyuzQAzY=
 			</data>
 		</dict>
 		<key>Headers/SMManager+DataTransaction.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pdtnkwL0fHH3E6UzytFYilxx4pI=
+			kLUvNTljNWY1V+AjaKm231/Au2U=
 			</data>
 			<key>hash2</key>
 			<data>
-			YUNZ8sKtcVddr1Cz9pWy0MGzNjWGL2vA+soDkU4G4BM=
+			9K9nq6IfKCzTmaqn6XdRKLlGDFcLb033JCHjBI712Pk=
 			</data>
 		</dict>
 		<key>Headers/SMManager+InAppContent.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6zPJo6/rf4+Og46MASWHQhisgVY=
+			3wR46WX/KhRfwiTrpYvjwP/vafs=
 			</data>
 			<key>hash2</key>
 			<data>
-			JBcq91bE9yvmWxzdiIhvHVjYGu+8E4iX5GAdYdjNk0o=
+			/Y/gs8N8GChit/+p7OXAM4XncKbOlqZ44TT2N02ClKg=
 			</data>
 		</dict>
 		<key>Headers/SMManager+InAppMessage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9lrQeCnJO1Wcl8JQ0ep8+ClX1yw=
+			by0jTz3JTVJDSXQ5dQz0JjhO83w=
 			</data>
 			<key>hash2</key>
 			<data>
-			hneW7Y/rhar7lyE6P4TC75QqTb/yz7E7AU8KlqaEnmU=
+			ZSEjJlof/PPVPp7C70jwK5sEJyI7ibYt3KrWQ4BB5qs=
 			</data>
 		</dict>
 		<key>Headers/SMManager+Location.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			W0lgX6L69BXhuxNW0cCXVXRZ71s=
+			wlR4TQA7PPvDJ+TXOuJ/RZqb+Vk=
 			</data>
 			<key>hash2</key>
 			<data>
-			O9M01XjkzBTYZXHx8dU2EnkUvFEgtFYClXDMPCyenOY=
+			QsGYbf/EEbZ2RXHj8vG7zIYnLkt6J31K8zcJO73tiwM=
 			</data>
 		</dict>
 		<key>Headers/SMManager+Log.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/UEwMd++uLifjY7nUqlZdN2+L40=
+			QOpgMpWyFzB5kjK6VVmgZbnCmYs=
 			</data>
 			<key>hash2</key>
 			<data>
-			qSI9oK0LtxfWjLgyeZLD0URImUa0WluoTbODpnxugvs=
+			E24ys5S1vPj0GglfRufSWmsrekUQro9vieI6+eMGDO8=
 			</data>
 		</dict>
 		<key>Headers/SMManager+RemoteNotification.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1/FR1grxD3NN4csl0oFX15PpVTI=
+			c7SWfEp8eXa5yVf+WIjMkh+8ljc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ArTnS0njtO62QyyZXPjrjIy6JU+xqQC/e2qkmU6uaH4=
+			HmfQiBx432JmT7UNAFb96JJUILblbtcmDjE5z9h+3xE=
 			</data>
 		</dict>
 		<key>Headers/SMManager+SMEvent.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KbrgIALjwsKWl8BW9vMk6vUdtB0=
+			DYo2CDJZDl1j/cJ/FipaxkOhOzA=
 			</data>
 			<key>hash2</key>
 			<data>
-			bI2Aqqi9BbC8c3RaPnTOMqWQ6pm/rLYGlLoDlDpCj7s=
+			N0ccg9jB5qXHA6uVZ+1num4sWxdlQLfX+iVP+TcszqY=
+			</data>
+		</dict>
+		<key>Headers/SMManager+SMLink.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			NPzL31fHAAesio0X8Rkb2cb22yw=
+			</data>
+			<key>hash2</key>
+			<data>
+			DGRF9C/QeVCmLhrQolPV3A62dns1X45P8BfS82J2qB4=
 			</data>
 		</dict>
 		<key>Headers/SMManager+SilentPush.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Oo88Yu5Hen8Id9bxUgKhp7l+u44=
+			QA3aS8TXgUhuq7rzdx/ao1EweEw=
 			</data>
 			<key>hash2</key>
 			<data>
-			QwcrdX+JL+Vmf6qIMHTXcBCatySaUSvG0rUEpcBqWEQ=
+			OSOYnSCu2H5KNDStMNowP+61KxAUc83HVCEkvVTyF98=
 			</data>
 		</dict>
 		<key>Headers/SMManager+StyleOptions.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HSEC8s0HE/RrlaDHf4GMoE+pkL4=
+			YoetQ2NsOSSsE/Marf0Mhy0TV6o=
 			</data>
 			<key>hash2</key>
 			<data>
-			Yphi/OlYynzO3LC0sehZnAZ4cqwTvvB+roZfXGhVKo4=
+			M35PieZUkpqOewknT6f5EOnDI9ityVjnnqJ0JtHO6kU=
 			</data>
 		</dict>
 		<key>Headers/SMManager+UserNotification.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VeZhjK//8VyoTtEGWEV4/KEzJ34=
+			1MqGDzooSoBHb+w3va18fVjOQpc=
 			</data>
 			<key>hash2</key>
 			<data>
-			AiZU/vSxwpHnhQvDM/AFlLvXC15jOB+gIxzeIYR9XzA=
+			kxTtPpXAbNunlh44Zit/adEPhaUose7lOgjsHuS7PjI=
 			</data>
 		</dict>
 		<key>Headers/SMManager+ViewController.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5+F3LBfcIB2e0XlTZa7lOv7Fe3g=
+			uxaKpBAXgzm41UjzsYWLLfNB76g=
 			</data>
 			<key>hash2</key>
 			<data>
-			DN2qVwYe4YjbcsBYRObRI/aPUhCT/8klIvuNF+cgW3M=
+			GcVB/Xs97G409IXz2czKdLl5PisM2lB+Q7MUv841L88=
 			</data>
 		</dict>
 		<key>Headers/SMManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LgJtjPK807MfzGq5HHqLX999Shc=
+			TC9lz/SB7w5PbJxb9uD+abW6txw=
 			</data>
 			<key>hash2</key>
 			<data>
-			HX+1oa3LJjA6qfx42oKarPdL+16uUCwgpM+cqYS5yFo=
+			u3AQDmmbVan1zqjPFreeFrOp8QLLaxR/qBX+GPY8e7Q=
 			</data>
 		</dict>
 		<key>Headers/SMManagerHelper.h</key>
@@ -667,66 +694,77 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			852o07y/yOKUd9MDAzxc64YV/o0=
+			MifN/c996AyDhKwOK3ifiLJfjZc=
 			</data>
 			<key>hash2</key>
 			<data>
-			mVKJBgG7Gt+/ZXvC9RpbobCSZv4C+QDk9P1YAinhwss=
+			ITPtsfg2Hln1kfIhuSvTOFFlgaU49eFOQW/vbU9BbFw=
 			</data>
 		</dict>
 		<key>Headers/SMManagerSetting+Location.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EPtPs3mG7PugLofX6U6SYEWNfTc=
+			NdB3BLSztHY5brXXUVUDLpuB+lY=
 			</data>
 			<key>hash2</key>
 			<data>
-			ybdKtgs4+B3Nw8yOXTygMDItmcQTG33ieRIbl84jv84=
+			ZWALf/7aHBhAhwzSqDiptwaMoJXSzPuk1hRtLF676hc=
 			</data>
 		</dict>
 		<key>Headers/SMManagerSetting.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FcqrXyfr2FE5y/c9EctIM2D01qM=
+			dCvHemQ9bh1BHXlnGiFE7IJucmA=
 			</data>
 			<key>hash2</key>
 			<data>
-			cTWmsNeDMXNgsv8k1dAwOtdOOlg+ydo5OxCr6Hpm4YQ=
+			Dm9ji/TpcWNf8R492GMPz9WABbyGh+jLM6iwSnUT4Cw=
 			</data>
 		</dict>
 		<key>Headers/SMManagerSettingIAC.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zcMbksSSa7AzjNZoSEnpFIpWyV0=
+			coL7NU3IbjWRgTPue7wLThIFHkU=
 			</data>
 			<key>hash2</key>
 			<data>
-			f6dHIud491AWDVV9R56hTfDmIJX/wvsYq3BejfwVSHM=
+			JKEFeafFroypOB8Fg/H+JnBVwhlNqnRWfTbrQuE33Ys=
 			</data>
 		</dict>
 		<key>Headers/SMManagerSettingIAM.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wimmbq8SbzaRFSm9Awu2Nqs8puw=
+			0/MRH2lhdwVBkqHawsQrD1k5ptk=
 			</data>
 			<key>hash2</key>
 			<data>
-			EVLOMrSGn78jxJtfwlpFjhEDD+2LIG52sE+/m9M/er8=
+			T5qvebusVuItCQL8VYROT5MqV+DbZCwftrqfhrHWDaY=
+			</data>
+		</dict>
+		<key>Headers/SMManagerUniversalLinksDelegate.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			I2ZAfRtKBCKa665r8Gi3uoyVVNk=
+			</data>
+			<key>hash2</key>
+			<data>
+			XNQx2vuwNjdYjgrdG7vJxQGELZNd89lkp2Dt9RHUDgI=
 			</data>
 		</dict>
 		<key>Headers/SMMessage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vZmWIcPPxOHXUmuYyMaoVLoug3U=
+			pYI3lNWZYjAIdiCqiwu06laaGO4=
 			</data>
 			<key>hash2</key>
 			<data>
-			NEqPvEQDzjH6JeJr4+GFW7/MHZqcwwsMRmuHA3UdtWQ=
+			wXdSOWi1jdwdCVso+utjEOAdoQV0hW6RATWHVCpI+yo=
 			</data>
 		</dict>
 		<key>Headers/SMNSNotification.h</key>
@@ -744,44 +782,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TVZ95G9BYzJzWC0U2Yj1Epbs3Sg=
+			EsZjM0VUrD7tTUt597IXU+rcs7E=
 			</data>
 			<key>hash2</key>
 			<data>
-			abw7p8rhvtE/UTAil5RcIU+TKKVHeC2xoPtCIx9OuuI=
+			/HHBVjfxnKAKcK1NQWuZf4+OSLK3KB8WAdNqb5JSI6w=
 			</data>
 		</dict>
 		<key>Headers/SMNotificationButtonData.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			r2iEzHtDUotXL+EcbJJmlFkXD28=
+			8CSOueqkp0V7XItXO25vYEjH3uk=
 			</data>
 			<key>hash2</key>
 			<data>
-			vki4FBHg2Q1+ioheAlGaL6kDL3cEphC4qIf3ugI1QvI=
+			ynKAiorO2LI9unlQZGb6RHm7g4U49u60FEUqS1N53XU=
 			</data>
 		</dict>
 		<key>Headers/SMNotificationButtonType.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+dYL0+UvUAxbXdQ2+NonUVJV+9Q=
+			v4872b8CZ0VWuLevYsdvdXCUh+o=
 			</data>
 			<key>hash2</key>
 			<data>
-			dkiNCOo9Gowv/vK1gUFIxh6LYakE7KKvtZJs7zQZgCU=
+			U3urc4Wd//nQyIRGdrQ03H265BQryFlA+40FBdr/k5M=
+			</data>
+		</dict>
+		<key>Headers/SMNotificationMessage.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eDHtbfyN/4h+qg6vWVEWuJhdXmA=
+			</data>
+			<key>hash2</key>
+			<data>
+			qMnfmdZKYfkZpvbU5XWbalBnd4K2wINijnhajdghJxM=
+			</data>
+		</dict>
+		<key>Headers/SMRemoteMessageDisplayType.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			DHVQ/H4LYFz4tsetu/okAxtpHOI=
+			</data>
+			<key>hash2</key>
+			<data>
+			npWk8ve+eiXgpaMTV7mH2B6Tq+XtkW3j1z9/gFYgnts=
 			</data>
 		</dict>
 		<key>Headers/SMSuccess.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PocDfxW4HOCvVCs4PGiQ5pbPWPw=
+			dXt7qAnmoAv7y27EqwkPlh/EqGE=
 			</data>
 			<key>hash2</key>
 			<data>
-			VBEaV5cfrDdAej6D65VnN9nKsdOw7FCkA2eKGErfgog=
+			fZ5ot48jswU0Eu6TtToht/tcshtakx/L5XMiFj1BHyY=
 			</data>
 		</dict>
 		<key>Headers/SelligentMobileSDK.h</key>

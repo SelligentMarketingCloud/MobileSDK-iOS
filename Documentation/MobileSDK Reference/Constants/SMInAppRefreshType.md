@@ -4,8 +4,6 @@
 
 ### SMInAppRefreshType
 
-<h1>SMInAppRefreshType :</h1>
-
 #### Definition
     typedef NS_ENUM(NSInteger, SMInAppRefreshType ) {   
         

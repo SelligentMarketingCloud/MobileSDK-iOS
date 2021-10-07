@@ -2,8 +2,6 @@
 
 **Declared in** SMNSNotification.h  
 
-### SMNSNotification
-
 This file gathers all kSMNotification values used as NSNotification-names and NSNotification data keys
 
 #### Constants

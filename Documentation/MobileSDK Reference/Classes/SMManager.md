@@ -5,7 +5,7 @@
 
 ## Overview
 
-<h1>Start Library :</h1>
+<h2>Start Library</h2>
 
 In order to start the library, please follow the steps bellow (will mainly happen in your UIApplication&rsquo;s delegate):
 
@@ -20,30 +20,28 @@ Don&rsquo;t forget to call registerForRemoteNotification according to your appli
 
 From there, your application is ready to handle all incoming remote-notifications.
 
-<h1>SMManager Singleton :</h1>This manager is the main interface third party developers will be using.
-
 ## Tasks
 
 ### 
 
-[&nbsp;&nbsp;versionLib](#//api/name/versionLib) *property* 
+[&nbsp;&nbsp;versionLib](#/api/name/versionLib) *property* 
 
-[+&nbsp;sharedInstance](#//api/name/sharedInstance)  
+[+&nbsp;sharedInstance](#/api/name/sharedInstance)  
 
-[&ndash;&nbsp;startWithLaunchOptions:Setting:](#//api/name/startWithLaunchOptions:Setting:)  
+[&ndash;&nbsp;startWithLaunchOptions:Setting:](#/api/name/startWithLaunchOptions:Setting:)  
 
-[&ndash;&nbsp;reloadSetting:](#//api/name/reloadSetting:)  
+[&ndash;&nbsp;reloadSetting:](#/api/name/reloadSetting:)  
 
-[&ndash;&nbsp;deviceID](#//api/name/deviceID)  
+[&ndash;&nbsp;deviceID](#/api/name/deviceID)  
 
 ## Properties
 
-<a name="//api/name/versionLib" title="versionLib"></a>
+<a name="/api/name/versionLib" title="versionLib"></a>
 ### versionLib
 
 The current version of the library
 
-<code>@property (strong, nonatomic) NSString *versionLib</code>
+<code>@property (readonly, nonatomic) NSString *versionLib</code>
 
 #### Declared In
 * `SMManager.h`
@@ -51,7 +49,7 @@ The current version of the library
 <a title="Class Methods" name="class_methods"></a>
 ## Class Methods
 
-<a name="//api/name/sharedInstance" title="sharedInstance"></a>
+<a name="/api/name/sharedInstance" title="sharedInstance"></a>
 ### sharedInstance
 
 Singleton for SellMobileSDK Class which allow to access public SellMobileSDK methods and properties
@@ -59,7 +57,7 @@ Singleton for SellMobileSDK Class which allow to access public SellMobileSDK met
 <code>+ (instancetype _Nonnull)sharedInstance</code>
 
 #### Return Value
-SMManager : singleton instance of SMManager class
+SMManager: singleton instance of SMManager class
 
 #### Declared In
 * `SMManager.h`
@@ -67,20 +65,17 @@ SMManager : singleton instance of SMManager class
 <a title="Instance Methods" name="instance_methods"></a>
 ## Instance Methods
 
-<a name="//api/name/deviceID" title="deviceID"></a>
+<a name="/api/name/deviceID" title="deviceID"></a>
 ### deviceID
 
 Device id  used by the sdk
 
 <code>- (NSString *_Nullable)deviceID</code>
 
-#### Discussion
-NSString
-
 #### Declared In
 * `SMManager.h`
 
-<a name="//api/name/reloadSetting:" title="reloadSetting:"></a>
+<a name="/api/name/reloadSetting:" title="reloadSetting:"></a>
 ### reloadSetting:
 
 Optional + used for testing only. This method will re-configure the SMManager with the newly provided information
@@ -98,10 +93,14 @@ This is a handy API in case you would like to switch between two backend environ
 <strong>Warning:</strong> This API is provided for testing purposes only. Never use it in production.
 Make sure to re-enable any service after calling this API.
 
+#### See Also
+
+* <code><a href="../Classes/SMManagerSetting.md">SMManagerSetting</a></code>
+
 #### Declared In
 * `SMManager.h`
 
-<a name="//api/name/startWithLaunchOptions:Setting:" title="startWithLaunchOptions:Setting:"></a>
+<a name="/api/name/startWithLaunchOptions:Setting:" title="startWithLaunchOptions:Setting:"></a>
 ### startWithLaunchOptions:Setting:
 
 Mandatory method which allows sdk initialisation. To be included in application:didFinishLaunchingWithOptions:

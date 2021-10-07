@@ -8,5 +8,5 @@
 
 @typedef type of block that will be triggered when an event has failed to be sent
 
-<code>typedef void (^SMCompletionBlockFailure) (SMFailure *failure)</code>
+<code>typedef void (^SMCompletionBlockFailure) (SMFailure *_Nullable, failure )</code>
 

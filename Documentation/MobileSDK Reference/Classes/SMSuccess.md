@@ -8,5 +8,3 @@ NSObject
 
 This class is used to return a successfull action
 
-<h1>SMSuccess:</h1>
-

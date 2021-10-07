@@ -8,8 +8,6 @@
 
 /**
  *  This category will help our SDK making the WKWebView navigation buttons enabled/disabled when needed, if inAppMessageWKNavigationDelegate is set.
- *
- *  #SMManager+ViewController :#
  */
 @interface SMManager (ViewController)
 
@@ -21,7 +19,7 @@
  *  @param navigation The WKNavigation from the WKNavigationDelegate.
  *  @param error The NSError from the WKNavigationDelegate.
  */
-- (void) webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error;
+- (void) webView:(WKWebView *_Nonnull)webView didFailNavigation:(WKNavigation *_Nonnull)navigation withError:(NSError *_Nonnull)error;
 
 /*!
  *  Use this API inside the corresponding method in your WKNavigationDelegate when inAppMessageWKNavigationDelegate is set.
@@ -30,7 +28,7 @@
  *  @param webView The WKWebView from the WKNavigationDelegate.
  *  @param navigation The WKNavigation from the WKNavigationDelegate
  */
-- (void) webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation;
+- (void) webView:(WKWebView *_Nonnull)webView didFinishNavigation:(WKNavigation *_Nonnull)navigation;
 
 /*!
  *  Use this API inside the corresponding method in your WKNavigationDelegate when inAppMessageWKNavigationDelegate is set.
@@ -39,7 +37,7 @@
  *  @param webView The WKWebView from the WKNavigationDelegate.
  *  @param navigation The WKNavigation from the WKNavigationDelegate.
  */
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation;
+- (void) webView:(WKWebView *_Nonnull)webView didCommitNavigation:(WKNavigation *_Nonnull)navigation;
 
 @end
 

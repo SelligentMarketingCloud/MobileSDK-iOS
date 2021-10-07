@@ -4,20 +4,18 @@
 
 ## Overview
 
-<h1>Introduction :</h1>
-
 In-Application-Content (IAC) is an optional service which will retrieve messages from the back-end each time the application enters foregrounds at specific frequencies and if connection is available.
 
 Once new messages were retrieved, the library notifies the application about it.
 
-Each IAC is is from a specific type [SMInAppContentType] and is also linked to a category defined by yourself
+Each IAC is is from a specific type (<a href="../Constants/SMInAppContentType.md">SMInAppContentType</a>) and is also linked to a category defined by yourself
 
-<h1>Implementation :</h1>
+<h2>Implementation</h2>
 
 In a nutshell, activate the IAC-service is a one step process:
 
 <ul>
-<li>Create an SMManagerSettingIAC instance and inject it in SMManagerSetting with <a href="../Classes/SMManagerSetting.md#//api/name/configureInAppContentServiceWithSetting:">[SMManagerSetting configureInAppContentServiceWithSetting:]</a></li>
+<li>Create an SMManagerSettingIAC instance and inject it in SMManagerSetting with <a href="../Classes/SMManagerSetting.md#/api/name/configureInAppContentServiceWithSetting:">[SMManagerSetting configureInAppContentServiceWithSetting:]</a></li>
 </ul>
 
 In order to be notified about new IAC, the application must register to correct notification <em>kSMNotification_Event_DidReceiveInAppContent</em>
@@ -25,7 +23,7 @@ In order to be notified about new IAC, the application must register to correct 
 This notification will provide you with the number of IAC&rsquo;s by category.
 Please be aware that it’s the unique application’s chance to capture and store that information.
 
-<h1>Displaying IAC :</h1>
+<h2>Displaying IAC</h2>
 
 <ul>
 <li>With the SDK view controllers:</li>
@@ -49,7 +47,7 @@ Once the sdk has provided you with the correct view controller
 
 <code>SMInAppContentURLViewController* vc = [SMInAppContentURLViewController viewControllerForCategory:@"anycategory"];</code>
 
-You can call <a href="#//api/name/showSMController:InContainerView:OfParentViewController:">showSMController:InContainerView:OfParentViewController:</a> if you expect to display the In App Content in a UIContainerView that is defined in your app :
+You can call <a href="#/api/name/showSMController:InContainerView:OfParentViewController:">showSMController:InContainerView:OfParentViewController:</a> if you expect to display the In App Content in a UIContainerView that is defined in your app :
 
 <code>[[SMManager sharedInstance] showSMController:vc InContainerView:_containerView OfParentViewController:self];</code>
 
@@ -61,7 +59,7 @@ Be aware that if your UIContainerView is defined in storyboard and that no categ
 
 <code>-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-if([segue.identifier isEqualToString:@"YourSegue"]){
+if ([segue.identifier isEqualToString:@"YourSegue"]) {
 _sminappcontentviewcontroller = segue.destinationViewController;
 [self.sminappcontentviewcontroller setCategory:@"anycategory"];
 }
@@ -71,13 +69,13 @@ _sminappcontentviewcontroller = segue.destinationViewController;
 <li>With your own view controllers</li>
 </ul>
 
-In this case you can call <a href="#//api/name/getInAppContentsForCategory:Type:">getInAppContentsForCategory:Type:</a> or <a href="#//api/name/getInAppContentsForCategory:Type:Max:">getInAppContentsForCategory:Type:Max:</a>
+In this case you can call <a href="#/api/name/getInAppContentsForCategory:Type:">getInAppContentsForCategory:Type:</a> or <a href="#/api/name/getInAppContentsForCategory:Type:Max:">getInAppContentsForCategory:Type:Max:</a>
 
 Those methods will present you an NSArray of <a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a> with all (or a maximum number, precised by the Max parameter) IAC for a category and for a type.
 
-If you decide to use this way of interacting with IAC it is important that you keep in mind that you will be responsible of the display of the content and you will have to call to <a href="#//api/name/setInAppContentAsSeen:">setInAppContentAsSeen:</a> whenever an InAppContent is showed to the user and to <a href="#//api/name/executeLinkAction:InAppContent:">executeLinkAction:InAppContent:</a> whenever user interact with an action link of the in app content.
+If you decide to use this way of interacting with IAC it is important that you keep in mind that you will be responsible of the display of the content and you will have to call to <a href="#/api/name/setInAppContentAsSeen:">setInAppContentAsSeen:</a> whenever an InAppContent is showed to the user and to <a href="#/api/name/executeLinkAction:InAppContent:">executeLinkAction:InAppContent:</a> whenever user interact with an action link of the in app content.
 
-<h1>Fetching modes :</h1>
+<h2>Fetching modes</h2>
 
 IAC may be retrieved from two different modes corresponding to the application&rsquo;s state:
 
@@ -92,7 +90,7 @@ Off course, to allow the SDK to retrieve IAC as fast as possible, we recommand u
 
 Following documentation explains how to activate each mode:
 
-<h1>Fetching IAC in foreground :</h1>
+<h2>Fetching IAC in foreground</h2>
 
 In order to retrieve IAC while the application is running, make sure to do the folllowing:
 
@@ -101,7 +99,7 @@ In order to retrieve IAC while the application is running, make sure to do the f
 <li>Provide the created <a href="../Classes/SMManagerSettingIAC.md">SMManagerSettingIAC</a> instance to <a href="../Classes/SMManager.md">SMManager</a> before starting the library</li>
 </ul>
 
-<h1>Fetching IAC in background :</h1>
+<h2>Fetching IAC in background</h2>
 
 Initially, this mode has been added as a complementary-option to the foreground-mode.
 However, it can be used as a single-fetch-mode if fits best your application&rsquo;s need.
@@ -117,33 +115,31 @@ In order to support this mode, make sure to :
 <li>Implement performFetchWithCompletionHandler: in UIApplication&rsquo;s delegate (under delegate method application:performFetchWithCompletionHandler:)</li>
 </ul>
 
-<h1>SMManager+InAppContent :</h1>
-
 ## Tasks
 
 ### 
 
-[&ndash;&nbsp;showSMController:InContainerView:OfParentViewController:](#//api/name/showSMController:InContainerView:OfParentViewController:)  
+[&ndash;&nbsp;showSMController:InContainerView:OfParentViewController:](#/api/name/showSMController:InContainerView:OfParentViewController:)  
 
-[&ndash;&nbsp;getInAppContentsForCategory:Type:](#//api/name/getInAppContentsForCategory:Type:)  
+[&ndash;&nbsp;getInAppContentsForCategory:Type:](#/api/name/getInAppContentsForCategory:Type:)  
 
-[&ndash;&nbsp;getInAppContentsForCategory:Type:Max:](#//api/name/getInAppContentsForCategory:Type:Max:)  
+[&ndash;&nbsp;getInAppContentsForCategory:Type:Max:](#/api/name/getInAppContentsForCategory:Type:Max:)  
 
-[&ndash;&nbsp;setInAppContentAsSeen:](#//api/name/setInAppContentAsSeen:)  
+[&ndash;&nbsp;setInAppContentAsSeen:](#/api/name/setInAppContentAsSeen:)  
 
-[&ndash;&nbsp;executeLinkAction:InAppContent:](#//api/name/executeLinkAction:InAppContent:)  
+[&ndash;&nbsp;executeLinkAction:InAppContent:](#/api/name/executeLinkAction:InAppContent:)  
 
-[&ndash;&nbsp;performIACFetchWithCompletionHandler:](#//api/name/performIACFetchWithCompletionHandler:)  
+[&ndash;&nbsp;performIACFetchWithCompletionHandler:](#/api/name/performIACFetchWithCompletionHandler:)  
 
 <a title="Instance Methods" name="instance_methods"></a>
 ## Instance Methods
 
-<a name="//api/name/executeLinkAction:InAppContent:" title="executeLinkAction:InAppContent:"></a>
+<a name="/api/name/executeLinkAction:InAppContent:" title="executeLinkAction:InAppContent:"></a>
 ### executeLinkAction:InAppContent:
 
 This method must be called whenever a user has clicked on a link that you  manage to display
 
-<code>- (void)executeLinkAction:(SMLink *)*link* InAppContent:(SMInAppContentMessage *)*inAppContent*</code>
+<code>- (void)executeLinkAction:(SMLink *_Nullable)*link* InAppContent:(SMInAppContentMessage *_Nullable)*inAppContent*</code>
 
 #### Parameters
 
@@ -151,21 +147,27 @@ This method must be called whenever a user has clicked on a link that you  manag
 &nbsp;&nbsp;&nbsp;a <a href="../Classes/SMLink.md">SMLink</a> object  
 
 *inAppContent*  
-&nbsp;&nbsp;&nbsp;a <a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a> object
-   
+&nbsp;&nbsp;&nbsp;a <a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a> object  
 
 #### Discussion
 This will allow the sdk to inform the services that a link has been clicked and to process the action associated with the link
 
+#### See Also
+
+* <code><a href="../Classes/SMLink.md">SMLink</a></code>
+
+* <code><a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a>
+ </code>
+
 #### Declared In
 * `SMManager+InAppContent.h`
 
-<a name="//api/name/getInAppContentsForCategory:Type:" title="getInAppContentsForCategory:Type:"></a>
+<a name="/api/name/getInAppContentsForCategory:Type:" title="getInAppContentsForCategory:Type:"></a>
 ### getInAppContentsForCategory:Type:
 
 This will return an array of In App Contents
 
-<code>- (NSArray *)getInAppContentsForCategory:(NSString *)*category* Type:(SMInAppContentType)*type*</code>
+<code>- (NSArray *_Nonnull)getInAppContentsForCategory:(NSString *_Nullable)*category* Type:(SMInAppContentType)*type*</code>
 
 #### Parameters
 
@@ -177,20 +179,24 @@ This will return an array of In App Contents
 
 #### Return Value
 returns an NSArray of <a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a>
- 
 
 #### Discussion
 All the IAC will be retrieved
 
+#### See Also
+
+* <code><a href="../Constants/SMInAppContentType.md">SMInAppContentType</a>
+ </code>
+
 #### Declared In
 * `SMManager+InAppContent.h`
 
-<a name="//api/name/getInAppContentsForCategory:Type:Max:" title="getInAppContentsForCategory:Type:Max:"></a>
+<a name="/api/name/getInAppContentsForCategory:Type:Max:" title="getInAppContentsForCategory:Type:Max:"></a>
 ### getInAppContentsForCategory:Type:Max:
 
 This will return an array of In App Contents
 
-<code>- (NSArray *)getInAppContentsForCategory:(NSString *)*category* Type:(SMInAppContentType)*type* Max:(int)*max*</code>
+<code>- (NSArray *_Nonnull)getInAppContentsForCategory:(NSString *_Nullable)*category* Type:(SMInAppContentType)*type* Max:(int)*max*</code>
 
 #### Parameters
 
@@ -205,20 +211,24 @@ This will return an array of In App Contents
 
 #### Return Value
 returns an NSArray of <a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a>
- 
 
 #### Discussion
 This overload allows you to define the max number of IAC to retrieve
 
+#### See Also
+
+* <code><a href="../Constants/SMInAppContentType.md">SMInAppContentType</a>
+ </code>
+
 #### Declared In
 * `SMManager+InAppContent.h`
 
-<a name="//api/name/performIACFetchWithCompletionHandler:" title="performIACFetchWithCompletionHandler:"></a>
+<a name="/api/name/performIACFetchWithCompletionHandler:" title="performIACFetchWithCompletionHandler:"></a>
 ### performIACFetchWithCompletionHandler:
 
 This will allow the SDK to fetch the IAC when the OS will allow so.
 
-<code>- (void)performIACFetchWithCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult ))*completionHandler*</code>
+<code>- (void)performIACFetchWithCompletionHandler:(void ( ^ _Nullable ) ( UIBackgroundFetchResult ))*completionHandler*</code>
 
 #### Parameters
 
@@ -233,31 +243,34 @@ To be included in application:performFetchWithCompletionHandler:
 #### Declared In
 * `SMManager+InAppContent.h`
 
-<a name="//api/name/setInAppContentAsSeen:" title="setInAppContentAsSeen:"></a>
+<a name="/api/name/setInAppContentAsSeen:" title="setInAppContentAsSeen:"></a>
 ### setInAppContentAsSeen:
 
 This method will mark an IAC as viewed, save it in the cache and send the Open event to the server
 
-<code>- (void)setInAppContentAsSeen:(SMInAppContentMessage *)*inAppContent*</code>
+<code>- (void)setInAppContentAsSeen:(SMInAppContentMessage *_Nullable)*inAppContent*</code>
 
 #### Parameters
 
 *inAppContent*  
-&nbsp;&nbsp;&nbsp;an <a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a> object
-   
+&nbsp;&nbsp;&nbsp;an <a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a> object  
 
 #### Discussion
-If the display mode is set to 0 (display once), the IAC will be discarded from the cache and will not be provided to you anymore with <a href="#//api/name/getInAppContentsForCategory:Type:">getInAppContentsForCategory:Type:</a> or <a href="#//api/name/getInAppContentsForCategory:Type:Max:">getInAppContentsForCategory:Type:Max:</a>
+If the display mode is set to 0 (display once), the IAC will be discarded from the cache and will not be provided to you anymore with <a href="#/api/name/getInAppContentsForCategory:Type:">getInAppContentsForCategory:Type:</a> or <a href="#/api/name/getInAppContentsForCategory:Type:Max:">getInAppContentsForCategory:Type:Max:</a>
+
+#### See Also
+
+* <code><a href="../Classes/SMInAppContentMessage.md">SMInAppContentMessage</a></code>
 
 #### Declared In
 * `SMManager+InAppContent.h`
 
-<a name="//api/name/showSMController:InContainerView:OfParentViewController:" title="showSMController:InContainerView:OfParentViewController:"></a>
+<a name="/api/name/showSMController:InContainerView:OfParentViewController:" title="showSMController:InContainerView:OfParentViewController:"></a>
 ### showSMController:InContainerView:OfParentViewController:
 
 Call when SDK has already provided you with a <a href="../Classes/SMInAppContentViewController.md">SMInAppContentViewController</a> (of any type : <a href="../Classes/SMInAppContentHTMLViewController.md">SMInAppContentHTMLViewController</a> , <a href="../Classes/SMInAppContentImageViewController.md">SMInAppContentImageViewController</a> or <a href="../Classes/SMInAppContentURLViewController.md">SMInAppContentURLViewController</a>) and you want to display it in a UIContainerView defined anywhere in your app.
 
-<code>- (void)showSMController:(SMInAppContentViewController *)*smViewController* InContainerView:(UIView *)*containerView* OfParentViewController:(UIViewController *)*parentViewController*</code>
+<code>- (void)showSMController:(SMInAppContentViewController *_Nullable)*smViewController* InContainerView:(UIView *_Nullable)*containerView* OfParentViewController:(UIViewController *_Nullable)*parentViewController*</code>
 
 #### Parameters
 
@@ -272,6 +285,10 @@ Call when SDK has already provided you with a <a href="../Classes/SMInAppContent
 
 #### Discussion
 The viewcontroller will take all available space in  the UIContainerView
+
+#### See Also
+
+* <code><a href="../Classes/SMInAppContentViewController.md">SMInAppContentViewController</a></code>
 
 #### Declared In
 * `SMManager+InAppContent.h`
