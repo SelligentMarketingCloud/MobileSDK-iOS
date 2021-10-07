@@ -4,8 +4,6 @@
 
 ### SMInAppMessageType
 
-<h1>SMInAppMessageType :</h1>
-
 #### Definition
     typedef NS_ENUM(NSInteger, SMInAppMessageType ) {   
         

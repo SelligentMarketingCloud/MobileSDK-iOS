@@ -1,10 +1,20 @@
 # SDK Changelog
 
+- __SDK 2.7.0__
+    - Add extra SDK headers in the communications with the platform
+    - Add possibility to handle universal link from push/inapp (from Selligent Marketing Cloud, "deeplink" button type only)
+    - Fix access level of SMBaseMessage, SMInAppContentMessage, SMInAppMessage, SMLink, SMManager, SMMessage and SMNotificationAnnotationData
+    - Correct bug 143908 PushOpened is sent twice sometimes and not removed correctly from resend cache mechanism
+    - Add SMRemoteMessageDisplayType to control the SDK behaviour when receiving push in foreground
+    - Add helper methods to get the SMNotificationMessage from the userInfo and to send Clicked and Opened events
+    - Add helper method to get the Provisional push authorization (registerForProvisionalRemoteNotification)
+    - Correct bug where for some devices the data was not properly stored for the AppGroup causing the extensions to not work properly (i.e Rich Push)
+
 - __SDK 2.6.2__
     
     - Correct bug 121236 inapp/mainaction from push not called without connectivity
     - Correct bug 143115 inapp message webview navigation arrows disabled
-    - Removed processing of optiex url from inside sdk
+    - Removed processing of optiex url from inside SDK
     
 - __SDK 2.6.1__
     
@@ -16,7 +26,7 @@
 - __SDK 2.6__
 
     - Provide the SDK as a .xcframework
-    - Remove geolocalisation api references from core sdk
+    - Remove geolocalisation api references from core SDK
     
 - __SDK 2.5.2__
 
@@ -70,7 +80,7 @@
 
 - __SDK 2.1__
     
-    - support of plot projects sdk v3.2.0
+    - support of plot projects SDK v3.2.0
 
 - __SDK 2.0.3__
 

@@ -6,10 +6,12 @@
 * [SMManager(Location)](Categories/SMManager+Location.md)
 * [SMManager(Log)](Categories/SMManager+Log.md)
 * [SMManager(RemoteNotification)](Categories/SMManager+RemoteNotification.md)
-* [SMManager(SMEvent)](Categories/SMManager+SMEvent.md)
 * [SMManager(SilentPush)](Categories/SMManager+SilentPush.md)
+* [SMManager(SMEvent)](Categories/SMManager+SMEvent.md)
+* [SMManager(SMLink)](Categories/SMManager+SMLink.md)
 * [SMManager(StyleOptions)](Categories/SMManager+StyleOptions.md)
 * [SMManager(UserNotification)](Categories/SMManager+UserNotification.md)
+* [SMManager(ViewController)](Categories/SMManager+ViewController.md)
 * [SMManagerSetting(Location)](Categories/SMManagerSetting+Location.md)
 
 ## Constant References
@@ -22,6 +24,7 @@
 * [SMLogLevel](Constants/SMLogLevel.md)
 * [SMNotificationButtonType](Constants/SMNotificationButtonType.md)
 * [SMNSNotification](Constants/SMNSNotification.md)
+* [SMRemoteMessageDisplayType](Constants/SMRemoteMessageDisplayType.md)
 
 ## Class References
 * [SMBaseMessage](Classes/SMBaseMessage.md)
@@ -48,7 +51,9 @@
 * [SMMessage](Classes/SMMessage.md)
 * [SMNotificationAnnotationData](Classes/SMNotificationAnnotationData.md)
 * [SMNotificationButtonData](Classes/SMNotificationButtonData.md)
+* [SMNotificationMessage](Classes/SMNotificationMessage.md)
 * [SMSuccess](Classes/SMSuccess.md)
 
 ## Protocol References
 * [SMManagerInAppMessageDelegate](Protocols/SMManagerInAppMessageDelegate.md)
+* [SMManagerUniversalLinksDelegate](Protocols/SMManagerUniversalLinksDelegate.md)

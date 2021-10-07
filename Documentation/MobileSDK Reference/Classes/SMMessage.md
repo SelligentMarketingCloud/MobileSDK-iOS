@@ -11,16 +11,16 @@ This Class is provided as a root Class and should not be used.
 
 ### 
 
-[&nbsp;&nbsp;messageSM](#//api/name/messageSM) *property* 
+[&nbsp;&nbsp;messageSM](#/api/name/messageSM) *property* 
 
 ## Properties
 
-<a name="//api/name/messageSM" title="messageSM"></a>
+<a name="/api/name/messageSM" title="messageSM"></a>
 ### messageSM
 
 NSString instance providing a brief description of the message
 
-<code>@property (nonatomic, strong) NSString *messageSM</code>
+<code>@property (readonly, nonatomic) NSString *messageSM</code>
 
 #### Declared In
 * `SMMessage.h`

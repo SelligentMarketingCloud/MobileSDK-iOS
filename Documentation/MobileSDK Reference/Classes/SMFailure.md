@@ -8,5 +8,3 @@ NSObject
 
 This class is used to return any error
 
-<h1>SMFailure:</h1>
-

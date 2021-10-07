@@ -4,8 +4,6 @@
 
 ### SMContentAlignment
 
-<h1>SMContentAlignment :</h1>
-
 #### Definition
     typedef NS_ENUM(NSInteger, SMContentAlignment ) {   
         

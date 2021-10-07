@@ -4,8 +4,6 @@
 
 ### SMInAppContentType
 
-<h1>SMInAppContentType :</h1>
-
 #### Definition
     typedef NS_OPTIONS(NSInteger, SMInAppContentType ) {   
         

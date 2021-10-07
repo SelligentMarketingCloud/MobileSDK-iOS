@@ -9,22 +9,20 @@ NSObject
 
 User unregistration event class
 
-<h1>SMEventUserUnregistration:</h1>
-
 ## Tasks
 
 ### 
 
-[+&nbsp;eventWithEmail:](#//api/name/eventWithEmail:)  
+[+&nbsp;eventWithEmail:](#/api/name/eventWithEmail:)  
 
-[+&nbsp;eventWithEmail:Dictionary:](#//api/name/eventWithEmail:Dictionary:)  
+[+&nbsp;eventWithEmail:Dictionary:](#/api/name/eventWithEmail:Dictionary:)  
 
-[+&nbsp;eventWithDictionary:](#//api/name/eventWithDictionary:)  
+[+&nbsp;eventWithDictionary:](#/api/name/eventWithDictionary:)  
 
 <a title="Class Methods" name="class_methods"></a>
 ## Class Methods
 
-<a name="//api/name/eventWithDictionary:" title="eventWithDictionary:"></a>
+<a name="/api/name/eventWithDictionary:" title="eventWithDictionary:"></a>
 ### eventWithDictionary:
 
 Create a UserUnregistration event object that will be sent to platform
@@ -34,16 +32,15 @@ Create a UserUnregistration event object that will be sent to platform
 #### Parameters
 
 *dict*  
-&nbsp;&nbsp;&nbsp;a Dictionary containing an alternate key/value field to search for the user
-example: [SMEventUserUnregistration eventWithDictionary:@{@&ldquo;userID&rdquo;: @&ldquo;1234&rdquo;}];  
+&nbsp;&nbsp;&nbsp;A Dictionary containing an alternate key/value field to search for the user  
 
 #### Return Value
-a SMEventUserUnregistration object
+An SMEventUserUnregistration object
 
 #### Declared In
 * `SMEventUserUnregistration.h`
 
-<a name="//api/name/eventWithEmail:" title="eventWithEmail:"></a>
+<a name="/api/name/eventWithEmail:" title="eventWithEmail:"></a>
 ### eventWithEmail:
 
 Create a UserUnregistration event object that will be sent to selligent platform when user unregistered
@@ -53,15 +50,15 @@ Create a UserUnregistration event object that will be sent to selligent platform
 #### Parameters
 
 *mail*  
-&nbsp;&nbsp;&nbsp;the e-mail of the user  
+&nbsp;&nbsp;&nbsp;The e-mail of the user  
 
 #### Return Value
-a SMEventUserUnregistration object
+An SMEventUserUnregistration object
 
 #### Declared In
 * `SMEventUserUnregistration.h`
 
-<a name="//api/name/eventWithEmail:Dictionary:" title="eventWithEmail:Dictionary:"></a>
+<a name="/api/name/eventWithEmail:Dictionary:" title="eventWithEmail:Dictionary:"></a>
 ### eventWithEmail:Dictionary:
 
 Create a UserUnregistration event object that will be sent to selligent platform when user unregistered
@@ -71,15 +68,14 @@ Create a UserUnregistration event object that will be sent to selligent platform
 #### Parameters
 
 *mail*  
-&nbsp;&nbsp;&nbsp;the e-mail of the user  
+&nbsp;&nbsp;&nbsp;The e-mail of the user  
 
 *dict*  
-&nbsp;&nbsp;&nbsp;a Dictionary containing a string as data that must be stored and managed by platform
-If email is not provided you can use in the dictionary an alternate key/value field to search for the user
-example: [SMEventUserUnregistration eventWithEmail @&ldquo;&rdquo; Dictionary: @{@&ldquo;userID&rdquo;: @&ldquo;1234&rdquo;}];  
+&nbsp;&nbsp;&nbsp;A Dictionary containing a string as data that must be stored and managed by platform
+If email is not provided you can use in the dictionary an alternate key/value field to search for the user  
 
 #### Return Value
-a SMEventUserUnregistration object
+An SMEventUserUnregistration object
 
 #### Declared In
 * `SMEventUserUnregistration.h`

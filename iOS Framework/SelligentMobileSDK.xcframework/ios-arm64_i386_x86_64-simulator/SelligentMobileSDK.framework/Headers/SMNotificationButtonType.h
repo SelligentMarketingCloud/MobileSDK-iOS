@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Selligent. All rights reserved.
 //
 
-
 /*!
  *  This enumeration declares all known button-type
 */

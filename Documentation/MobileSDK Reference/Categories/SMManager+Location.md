@@ -4,27 +4,23 @@
 
 ## Overview
 
-<h1>Introduction :</h1>
-
 In order to use the location services features provided by the sdk you will mandatory need to use the lsdk library supporting the plotproject framework .
 Otherwise calling the method in this <a href="../Classes/SMManager.md">SMManager</a> category will have no effect and no ios api related to geofencing will be called (as this is all done by the plot project framework)
-
-<h1>SMManager+Location :</h1>
 
 ## Tasks
 
 ### 
 
-[&ndash;&nbsp;enableGeoLocation](#//api/name/enableGeoLocation)  
+[&ndash;&nbsp;enableGeoLocation](#/api/name/enableGeoLocation)  
 
-[&ndash;&nbsp;disableGeoLocation](#//api/name/disableGeoLocation)  
+[&ndash;&nbsp;disableGeoLocation](#/api/name/disableGeoLocation)  
 
-[&ndash;&nbsp;isGeoLocationEnabled](#//api/name/isGeoLocationEnabled)  
+[&ndash;&nbsp;isGeoLocationEnabled](#/api/name/isGeoLocationEnabled)  
 
 <a title="Instance Methods" name="instance_methods"></a>
 ## Instance Methods
 
-<a name="//api/name/disableGeoLocation" title="disableGeoLocation"></a>
+<a name="/api/name/disableGeoLocation" title="disableGeoLocation"></a>
 ### disableGeoLocation
 
 Disable geolocation services
@@ -38,7 +34,7 @@ Call this API according to your application&rsquo;s need.
 #### Declared In
 * `SMManager+Location.h`
 
-<a name="//api/name/enableGeoLocation" title="enableGeoLocation"></a>
+<a name="/api/name/enableGeoLocation" title="enableGeoLocation"></a>
 ### enableGeoLocation
 
 Enable geolocation services
@@ -53,10 +49,10 @@ Call this API according to your application&rsquo;s need.
 #### Declared In
 * `SMManager+Location.h`
 
-<a name="//api/name/isGeoLocationEnabled" title="isGeoLocationEnabled"></a>
+<a name="/api/name/isGeoLocationEnabled" title="isGeoLocationEnabled"></a>
 ### isGeoLocationEnabled
 
-check geolocation services status
+Check the geolocation services status
 
 <code>- (BOOL)isGeoLocationEnabled</code>
 

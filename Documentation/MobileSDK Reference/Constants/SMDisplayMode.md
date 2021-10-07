@@ -4,8 +4,6 @@
 
 ### SMDisplayMode
 
-<h1>SMDisplayMode :</h1>
-
 #### Definition
     typedef NS_ENUM(NSInteger, SMDisplayMode ) {   
         

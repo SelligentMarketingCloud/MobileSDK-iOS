@@ -5,22 +5,18 @@
 ## Overview
 
 This category will help you debug the library.
-Please check <a href="../Constants/SMLogLevel.md">SMLogLevel</a> for all available possibilities.
-
 Should you want to get back to us, please set logLevel to kSMLogLevel_All and provide with console logs.
-
-<h1>SMManager+Log :</h1>
 
 ## Tasks
 
 ### 
 
-[&ndash;&nbsp;applyLogLevel:](#//api/name/applyLogLevel:)  
+[&ndash;&nbsp;applyLogLevel:](#/api/name/applyLogLevel:)  
 
 <a title="Instance Methods" name="instance_methods"></a>
 ## Instance Methods
 
-<a name="//api/name/applyLogLevel:" title="applyLogLevel:"></a>
+<a name="/api/name/applyLogLevel:" title="applyLogLevel:"></a>
 ### applyLogLevel:
 
 Set the log level of the library console
@@ -40,6 +36,10 @@ However, in order to avoid missing any error log, we recommand setting this valu
 <strong>Warning:</strong> It is developer&rsquo;s responsability to enable log-level in Debug or release mode.
 No distinction are being aplied by the library.
 For obvious performance reason, it is always recommended to turn log off in release mode.
+
+#### See Also
+
+* <code><a href="../Constants/SMLogLevel.md">SMLogLevel</a></code>
 
 #### Declared In
 * `SMManager+Log.h`
