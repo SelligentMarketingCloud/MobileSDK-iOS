@@ -270,7 +270,7 @@ NSURL *url = [NSURL URLWithString:@"yourscheme://anypage"];
 [[UIApplication sharedApplication] openURL:url];
 
 // What you need to implement in your AppDelegate:
-- (bool) application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+- (BOOL) application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
     // Here you will be able to parse your url
     NSLog(@"%@", [url absoluteString]);
     return true;
@@ -286,7 +286,7 @@ By default, universal links in a button from a Push/IAM/IAC will open the defaul
 
 > The delegate will only get triggered from `deeplink` button types defined in Selligent Marketing Cloud UI, whose URL scheme is `http` or `https`.
 
-> When talking about Push notification buttons (and if the `didReceive` was implemented inside the `Notification Content Extension`), the universal link delegate won't be triggered in that case and the universal link execution will follow the standard [Apple process](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app) (like if it was clicked from an external website).
+> When talking about Push notification buttons (and if the `didReceiveNotificationResponse` was implemented inside the `Notification Content Extension`), the universal link delegate won't be triggered in that case and the universal link execution will follow the standard [Apple process](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app) (like if it was clicked from an external website).
 
 **Swift**
 ```swift
@@ -306,16 +306,27 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 
 **Objective-C**
 ```objective-c
-// When the SDK calls for example:
-NSURL *url = [NSURL URLWithString:@"yourscheme://anypage"];
-[[UIApplication sharedApplication] openURL:url];
+// Provide an instance of a class implementing SMManagerUniversalLinksDelegate to the SDK (you can do that for example at launch time)
+[[SMManager sharedInstance] universalLinksDelegate:[AppUniversalLinksDelegateExample new]];
 
-// What you need to implement in your AppDelegate:
-- (bool) application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    // Here you will be able to parse your url
-    NSLog(@"%@", [url absoluteString]);
-    return true;
+// Your class will look like
+// AppUniversalLinksDelegateExample.h
+#import "SMHelper.h"
+
+@interface AppUniversalLinksDelegateExample : NSObject <SMManagerUniversalLinksDelegate>
+@end
+
+// AppUniversalLinksDelegateExample.m
+#import "AppUniversalLinksDelegateExample.h"
+
+@implementation AppUniversalLinksDelegateExample
+
+- (void) executeLinkAction:(NSURL *)url {
+    // Your code to handle the universal link being executed
+    NSLog(@"%@", url);
 }
+
+@end
 ```
 
 <a name="external_framework"></a>
@@ -345,7 +356,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 **Objective-C**
 ```objective-c
-- (bool) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 ```
 
 * Create an instance of `SMManagerSetting` with the **url**, **clientID** and **privateKey** provided by Selligent.
@@ -468,7 +479,7 @@ This can be called whenever you need to do it in your App.
 
 <a name="register_for_provisional_push"></a>
 ### Register for Provisional Push Notifications
-> This option is only available for iOS 12+
+> This option is only available for iOS 12+.
 
 You can also decide to first ask for the Provisional push authorization (which will provide a valid push token but will not show any prompt to the user) if you want to contact users that did not decide about the Push permission yet (you can call `registerForRemoteNotification` later and it will still display the push permission prompt to the user).
 
@@ -481,7 +492,7 @@ SMManager.sharedInstance().registerForProvisionalRemoteNotification()
 ```objective-c
 [[SMManager sharedInstance] registerForProvisionalRemoteNotification];
 ```
-> If you want to segmentate your campaigns based on the type of authorization (provisional/normal) you can contact your Selligent TC or our support team to make the necessary configurations to have it available.
+> If you want to segmentate your campaigns based on the type of authorization (provisional/normal), you can contact your Selligent TC or our support team to make the necessary configurations in the platform, to have it available.
 
 <a name="provide_device_token"></a>
 ### Provide the Device token to the SDK
@@ -504,7 +515,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 <a name="provide_information_sdk"></a>
 ### Provide Push Notifications status to the SDK
 > Optional, the SDK is able to get this information by itself.<br>
-> **Since iOS 10 didRegisterUserNotificationSettings has been deprecated.**
+> **Since iOS 10, didRegisterUserNotificationSettings has been deprecated.**
 
 **Swift**
 ```swift
@@ -551,8 +562,8 @@ Keep in mind that if, at device level, the Push Notifications are not registered
 <a name="displaying_push"></a>
 ### Listening and displaying the Push Notifications
 <a name="builds_against_ios10"></a>
-### App that builds against iOS + 10
-Besides the implementation described in [App that doesn't build against iOS + 10](#doesnt_build_against_ios10) (in case you need to support iOS 8 and 9), you will also need to implement a few methods from `UNUserNotificationCenterDelegate`.
+### App that builds against iOS 10+
+Besides the implementation described in [App that doesn't build against iOS 10+](#doesnt_build_against_ios10) (in case you need to support iOS 8 and 9), you will also need to implement a few methods from `UNUserNotificationCenterDelegate`.
 
 **Swift**
 ```swift
@@ -590,7 +601,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 @interface AppDelegate: UIResponder<UIApplicationDelegate, UNUserNotificationCenterDelegate>
 
 // AppDelegate.m
-- (bool) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Other code
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
     center.delegate = self;
@@ -618,7 +629,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 ```
 
 <a name="doesnt_build_against_ios10"></a>
-### App that doesn't build against iOS + 10
+### App that doesn't build against iOS 10+
 Implement the methods described in [SMManager(RemoteNotification)](MobileSDK%20Reference/Categories/SMManager%2BRemoteNotification.md) in your `UIApplication`'s delegate.
 
 **Swift**
@@ -732,7 +743,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveInApp
 ```objective-c
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveInAppMessage:) name:kSMNotification_Event_DidReceiveInAppMessage object:nil];
 
--(void)didReceiveInAppMessage:(NSNotification *)notif {
+- (void) didReceiveInAppMessage:(NSNotification *)notif {
     NSDictionary *dictIAM = [notif userInfo];
     NSMutableArray *arrayIAM = [dictIAM objectForKey:kSMNotification_Data_InAppMessage];
 }
@@ -892,15 +903,15 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
 }
 
 // The below functions are necessary to keep the SDK webview's navigation arrows working
--(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+- (void) webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     [[SMManager sharedInstance] webView:webView didFailNavigation: navigation withError: error];
 }
 
--(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+- (void) webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [[SMManager sharedInstance] webView:webView didFinishNavigation: navigation];
 }
 
--(void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
+- (void) webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
     [[SMManager sharedInstance] webView:webView didCommitNavigation: navigation];
 }
 
@@ -951,7 +962,7 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 @implementation AppInAppMessageDelegateExample
 
 // This will be called when the IAM (from a Push Notification) would be about to be displayed
--(void)displayInAppMessage:(SMInAppMessage *)inAppMessage {
+- (void) displayInAppMessage:(SMInAppMessage *)inAppMessage {
     NSLog(@"title :%@", inAppMessage.title);
     NSLog(@"content :%@", inAppMessage.body);
     //NSLog(@"links :%@", inAppMessage.arrayIAMLinks);
@@ -1312,23 +1323,23 @@ NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDi
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameDidReceiveRemoteNotification:) name:kSMNotification_Event_DidReceiveRemoteNotification object:nil];
 
 // Notifications selectors
--(void)anyMethodNameDidReceiveInAppMessage:(NSNotification *)notif {
+- (void) anyMethodNameDidReceiveInAppMessage:(NSNotification *)notif {
     NSDictionary *dict =[notif userInfo];
     NSDictionary *inAppData = dict[kSMNotification_Data_InAppMessage];
 }
 
--(void)anyMethodNameButtonClicked:(NSNotification *)notif {
+- (void) anyMethodNameButtonClicked:(NSNotification *)notif {
     NSDictionary *dict =[notif userInfo];
     SMNotificationButtonData *btnData = dict[kSMNotification_Data_ButtonData];
 }
 
--(void)anyMethodNameDidReceiveRemoteNotification:(NSNotification *)notif {
+- (void) anyMethodNameDidReceiveRemoteNotification:(NSNotification *)notif {
     NSDictionary *dict =[notif userInfo];
     NSDictionary *notifData = dict[kSMNotification_Data_RemoteNotification];
 }
 
--(void)anyMethodNameWillDisplayNotification:(NSNotification *)notif {}
--(void)anyMethodNameWillDismissNotification:(NSNotification *)notif {}
+- (void) anyMethodNameWillDisplayNotification:(NSNotification *)notif {}
+- (void) anyMethodNameWillDismissNotification:(NSNotification *)notif {}
 ```
 
 <a name="miscellaneous"></a>
@@ -1404,7 +1415,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveDevic
 // Listen to the broadcast in case device ID has changed and retrieve new device ID
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveDeviceId:) name: kSMNotification_Event_DidReceiveDeviceId object:nil];
 
--(void)didReceiveDeviceId:(NSNotification *)notif {
+- (void) didReceiveDeviceId:(NSNotification *)notif {
     NSDictionary *dict = [notif userInfo];
     NSString *deviceID = [dict objectForKey:kSMNotification_Data_DeviceId];
 }
@@ -1418,7 +1429,7 @@ Those functionalities available through Selligent Marketing Cloud are:
 * Decrypt an encrypted payload.
 * Rich Push content.
 
-These features are also only available for iOS + 10 devices.
+These features are also only available for iOS 10+ devices.
 
 They are also only configurable in Selligent Marketing Cloud.
 
@@ -1588,7 +1599,7 @@ class NotificationService: UNNotificationServiceExtension {
 
 @implementation NotificationService
 
--(void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void(^)(UNNotificationContent *_Nonnull))contentHandler {
+- (void) didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void(^)(UNNotificationContent *_Nonnull))contentHandler {
     self.contentHandler = contentHandler;
     self.bestAttemptContent = request.content.mutableCopy;
     
@@ -1614,7 +1625,7 @@ class NotificationService: UNNotificationServiceExtension {
 }
 
 // Don't implement if you are not using the Encryption feature
--(void)serviceExtensionTimeWillExpire {
+- (void) serviceExtensionTimeWillExpire {
     // Mark the message as still encrypted.
     self.bestAttemptContent.subtitle = @"(Encrypted)";
     self.bestAttemptContent.body = @"";
@@ -1652,6 +1663,7 @@ class NotificationService: UNNotificationServiceExtension {
 
     // Don't implement if you are not using the Encryption feature
     override func serviceExtensionTimeWillExpire() {
+        // Mark the message as still encrypted.
         SMManager.sharedInstance().serviceExtensionTimeWillExpire()
     }
 }
@@ -1664,7 +1676,7 @@ class NotificationService: UNNotificationServiceExtension {
 
 @implementation NotificationService
 
--(void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void(^)(UNNotificationContent *_Nonnull))contentHandler {
+- (void) didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void(^)(UNNotificationContent *_Nonnull))contentHandler {
     // Init and start the SDK
     NSString *url = @"YourProvidedURL";
     NSString *clientID  = @"YourClientID";
@@ -1684,8 +1696,8 @@ class NotificationService: UNNotificationServiceExtension {
 }
 
 // Don't implement if you are not using the Encryption feature
--(void)serviceExtensionTimeWillExpire {
-    // Called just before the extension will be terminated by the system.
+- (void) serviceExtensionTimeWillExpire {
+    // Mark the message as still encrypted.
     [[SMManager sharedInstance] serviceExtensionTimeWillExpire];
 }
  
@@ -1818,9 +1830,14 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
     
     // If you want the Push Notification buttons to be processed without the need of opening the App
+    // Make sure you have read the Universal Links section of the documentation before implementing this
     func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping(UNNotificationContentExtensionResponseOption) -> Void) {
-        SMManager.sharedInstance().didReceive(response)
-        completion(.dismiss)
+        SMManager.sharedInstance().didReceive(response, withCompletionHandler: completion)
+        
+        // OR
+        // If you want to handle the completion handler on your own
+        // SMManager.sharedInstance().didReceive(response)
+        // completion(.dismiss)
     }
 }
 ```
@@ -1842,12 +1859,12 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
      
 @implementation NotificationViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     // Do any required interface initialization here.
 }
  
-- (void)didReceiveNotification:(UNNotification *)notification {
+- (void) didReceiveNotification:(UNNotification *)notification {
     self.titleLabel.text = notification.request.content.title;
     self.bodyLabel.text = notification.request.content.body;
     
@@ -1884,11 +1901,15 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 }
 
 // If you want the Push Notification buttons to be processed without the need of opening the App
--(void)didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void(^)(UNNotificationContentExtensionResponseOption option))completion {
-    [[SMManager sharedInstance] didReceiveNotificationResponse:response];
-    completion(UNNotificationContentExtensionResponseOptionDismiss);
+// Make sure you have read the Universal Links section of the documentation before implementing this
+- (void) didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void(^)(UNNotificationContentExtensionResponseOption option))completion {
+    [[SMManager sharedInstance] didReceiveNotificationResponse:response withCompletionHandler:completion];
+    
+    // OR
+    // If you want to handle the completion handler on your own
+    // [[SMManager sharedInstance] didReceiveNotificationResponse:response];
+    // completion(UNNotificationContentExtensionResponseOptionDismiss);
 } 
     
 @end
 ```
-
