@@ -7,7 +7,9 @@
 //
 
 #import "SMManagerUniversalLinksDelegate.h"
-#import "SMLink.h"
+
+@class SMNotificationMessage;
+@class SMLink;
 
 /**
  *  This category will help you to manage specific behaviour related to SMLink.

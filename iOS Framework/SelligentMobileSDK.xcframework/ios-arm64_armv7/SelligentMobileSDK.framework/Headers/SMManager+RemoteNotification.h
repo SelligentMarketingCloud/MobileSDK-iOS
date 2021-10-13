@@ -7,7 +7,8 @@
 //
 
 #import "SMManager.h"
-#import "SMLink.h"
+
+@class SMNotificationMessage;
 
 /**
  *  This category contains the basic step-by-step implementation to get you started.
