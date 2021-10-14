@@ -55,6 +55,10 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
   * [**Registration / Unregistration**](#events_register_unregister)
   * [**Login/Logout**](#events_login_logout)
   * [**Custom**](#events_custom)
+* [**Notification Extensions**](#notification_extensions)
+  * [**General set up**](#extensions_setup)
+  * [**Notification Service Extension**](#service_extension)
+  * [**Notification Content Extension**](#content_extension)
 * [**Broadcasts summary**](#broadcasts_summary)
   * [**Event broadcasts**](#event_broadcasts)
   * [**Data broadcasts**](#data_broadcasts)
@@ -63,10 +67,6 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
   * [**Reload**](#reload)
   * [**LogLevel**](#loglevel)
   * [**Retrieve Device ID**](#deviceId)
-* [**Notification Extensions**](#notification_extensions)
-  * [**General set up**](#extensions_setup)
-  * [**Notification Service Extension**](#service_extension)
-  * [**Notification Content Extension**](#content_extension)
 
 <a name="intro"></a>
 ## Intro
@@ -1258,171 +1258,10 @@ event.shouldCache = true; // Not necessary as it is the default value
 [[SMManager sharedInstance] sendSMEvent:event];
 ```
 
-<a name="broadcasts_summary"></a>
-## Broadcasts summary
-You can listen to some `NSNotification` by observing the correct notification name.
-<a name="event_broadcasts"></a>
-### Event broadcasts
-
-| Name | Type | Description |
-| --------- | --------- | --------- |
-| `kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. Useful to retrieve user's actions on a received Remote Notification. |
-| `kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification. Primary Application may use this notification to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/shouldDisplayRemoteNotification)). |
-| `kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. Primary Application may use this notification to resume any paused work (see `kSMNotification_Event_WillDisplayNotification`). |
-| `kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. Primary Application may use this notification to decide when to display any Remote Notification. |
-| `kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving InApp Messages. Primary Application may use this notification to manage the received InApp Messages. |
-    
-<a name="data_broadcasts"></a>
-### Data broadcasts
-
-| Name | Type | Description |
-| --------- | --------- | --------- |
-| `kSMNotification_Data_ButtonData` | `NSString` Key | Use this Key to retrieve the object [SMNotificationButtonData](MobileSDK%20Reference/Classes/SMNotificationButtonData.md), from the NSNotification-name `kSMNotification_Event_ButtonClicked`. |
-| `kSMNotification_Data_RemoteNotification` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with push ID and name, from the NSNotification-name `kSMNotification_Event_DidReceiveRemoteNotification`. |
-| `kSMNotification_Data_InAppMessage` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with an array of `SMNotificationMessage` with title and id as properties, from the NSNotification-name `kSMNotification_Event_DidReceiveInAppMessage`. |
-
-<a name="broadcasts_examples"></a>
-### Examples
-
-**Swift**
-```swift
-// Listen to broadcasting
-NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDidReceiveInAppMessage(notif:)), name: NSNotification.Name(rawValue: kSMNotification_Event_DidReceiveInAppMessage), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameButtonClicked(notif:)), name: NSNotification.Name(rawValue: kSMNotification_Event_ButtonClicked), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDidReceiveRemoteNotification(notif:)), name: .smNotification_Event_DidReceiveRemote, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWillDisplayNotification(notif:)), name: NSNotification.Name.smNotification_Event_WillDisplay, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWillDismissNotification(notif:)), name: NSNotification.Name.smNotification_Event_WillDismiss, object: nil)
-
-// Notifications selectors
-@objc func anyMethodNameDidReceiveInAppMessage(notif: NSNotification) {
-        let dict = notif.userInfo
-        let inAppData = dict![kSMNotification_Data_InAppMessage];
-}
-
-@objc func anyMethodNameButtonClicked(notif: NSNotification) {
-    let dict = notif.userInfo
-    let btnData: SMNotificationButtonData = dict![kSMNotification_Data_ButtonData] as! SMNotificationButtonData;
-}
-
-@objc func anyMethodNameDidReceiveRemoteNotification(notif: NSNotification) {
-    let dict = notif.userInfo
-    let notifData = dict![NSNotification.Name.smNotification_Data_Remote];
-}
-
-@objc func anyMethodNameWillDisplayNotification(notif: NSNotification) {}
-@objc func anyMethodNameWillDismissNotification(notif: NSNotification) {}
-```
-
-**Objective-C**
-```objective-c
-// Listen to broadcasting
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameDidReceiveInAppMessage:) name:kSMNotification_Event_DidReceiveInAppMessage object:nil];
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameButtonClicked:) name:kSMNotification_Event_ButtonClicked object:nil];
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameWillDisplayNotification:) name:kSMNotification_Event_WillDisplayNotification object:nil];
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameWillDismissNotification :) name:kSMNotification_Event_WillDismissNotification object:nil];
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameDidReceiveRemoteNotification:) name:kSMNotification_Event_DidReceiveRemoteNotification object:nil];
-
-// Notifications selectors
-- (void) anyMethodNameDidReceiveInAppMessage:(NSNotification *)notif {
-    NSDictionary *dict =[notif userInfo];
-    NSDictionary *inAppData = dict[kSMNotification_Data_InAppMessage];
-}
-
-- (void) anyMethodNameButtonClicked:(NSNotification *)notif {
-    NSDictionary *dict =[notif userInfo];
-    SMNotificationButtonData *btnData = dict[kSMNotification_Data_ButtonData];
-}
-
-- (void) anyMethodNameDidReceiveRemoteNotification:(NSNotification *)notif {
-    NSDictionary *dict =[notif userInfo];
-    NSDictionary *notifData = dict[kSMNotification_Data_RemoteNotification];
-}
-
-- (void) anyMethodNameWillDisplayNotification:(NSNotification *)notif {}
-- (void) anyMethodNameWillDismissNotification:(NSNotification *)notif {}
-```
-
-<a name="miscellaneous"></a>
-## Miscellaneous
-<a name="reload"></a>
-### Reload
-In case you want to change the web service URL, there is a reload method to restart the SDK.
-It takes as parameter the same `SMSetting` object as the start method (all the values must be set in the object, even if they did not change).
-> **IMPORTANT**: This method is for development purposes only, not meant to be used in production.
-
-**Swift**
-```swift
-let settings = SMManagerSetting(url: currentUrl, clientID: clientID, privateKey: privateKey)
-SMManager.sharedInstance().reload(settings)
-```
-
-**Objective-C**
-```objective-c
-SMManagerSetting *settings = [SMManagerSetting settingWithUrl:currentUrl ClientID:clientID PrivateKey:privateKey];
-[[SMManager sharedInstance] reloadSetting:settings];
-```
-
-<a name="loglevel"></a>
-### LogLevel
-This method `SMManager applyLogLevel` will allow you to debug the library.<br>
-`SMLogLevel` values:
-
-| Property | Description |
-| --------- | --------- |
-| `kSMLogLevel_None` | No log printed at all. This is the suggested log-level for release. |
-| `kSMLogLevel_Info` | Default log-entry. Basically, informs when the library starts/ends. |
-| `kSMLogLevel_Warning` | Only warning messages are printed. |
-| `kSMLogLevel_Error` | Only error messages are printed. |
-| `kSMLogLevel_HTTPCall` | Print only HTTP-requests stuff. |
-| `kSMLogLevel_All` | Print everything. Do not use for release!!! |
-
-**Swift**
-```swift
-SMManager.sharedInstance().apply(.all)
-```
-
-**Objective-C**
-```objective-c
-[[SMManager sharedInstance] applyLogLevel:kSMLogLevel_All];
-```
-
-<a name="deviceId"></a>
-### Retrieve Device ID
-In case you need the Selligent device ID, you can use this helper method `SMManager deviceID`.<br>
-To be notified if the device ID has changed, the App must register to the correct notification `kSMNotification_Event_DidReceiveInDeviceId`.
-
-The Notification will provide the new device ID to the App (Key `kSMNotification_Data_DeviceId`).
-
-**Swift**
-```swift
-// Retrieve the device ID
-SMManager.sharedInstance().deviceID()
-
-// Listen to the broadcast in case device ID has changed and retrieve new device ID
-NotificationCenter.default.addObserver(self, selector: #selector(didReceiveDeviceId(_:)), name: NSNotification.Name(rawValue: kSMNotification_Event_DidReceiveDeviceId), object: nil)
-
-@objc func didReceiveDeviceId (_ notif: Notification) {
-    let dict = notif.userInfo
-    let deviceid: String = dict![kSMNotification_Data_DeviceId] as! String
-}
-```
-
-**Objective-C**
-```objective-c
-// Retrieve the device ID
-[[SMManager sharedInstance] deviceID];
-
-// Listen to the broadcast in case device ID has changed and retrieve new device ID
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveDeviceId:) name: kSMNotification_Event_DidReceiveDeviceId object:nil];
-
-- (void) didReceiveDeviceId:(NSNotification *)notif {
-    NSDictionary *dict = [notif userInfo];
-    NSString *deviceID = [dict objectForKey:kSMNotification_Data_DeviceId];
-}
-```
-
 <a name="notification_extensions"></a>
 ## Notification Extensions
+> Remember, for the correct behaviour of the Extensions, the `appGroupId` needs to *also* be set when [starting the SDK](#starting_sdk) from your App target.
+
 Some SDK functionalities are only possible with the implementation of Notification Extension targets.
 Those functionalities available through Selligent Marketing Cloud are:
 * Push action buttons: buttons to be displayed inside the notification center.
@@ -1912,4 +1751,167 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 } 
     
 @end
+```
+
+<a name="broadcasts_summary"></a>
+## Broadcasts summary
+You can listen to some `NSNotification` by observing the correct notification name.
+<a name="event_broadcasts"></a>
+### Event broadcasts
+
+| Name | Type | Description |
+| --------- | --------- | --------- |
+| `kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. Useful to retrieve user's actions on a received Remote Notification. |
+| `kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification. Primary Application may use this notification to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/shouldDisplayRemoteNotification)). |
+| `kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. Primary Application may use this notification to resume any paused work (see `kSMNotification_Event_WillDisplayNotification`). |
+| `kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. Primary Application may use this notification to decide when to display any Remote Notification. |
+| `kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving InApp Messages. Primary Application may use this notification to manage the received InApp Messages. |
+    
+<a name="data_broadcasts"></a>
+### Data broadcasts
+
+| Name | Type | Description |
+| --------- | --------- | --------- |
+| `kSMNotification_Data_ButtonData` | `NSString` Key | Use this Key to retrieve the object [SMNotificationButtonData](MobileSDK%20Reference/Classes/SMNotificationButtonData.md), from the NSNotification-name `kSMNotification_Event_ButtonClicked`. |
+| `kSMNotification_Data_RemoteNotification` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with push ID and name, from the NSNotification-name `kSMNotification_Event_DidReceiveRemoteNotification`. |
+| `kSMNotification_Data_InAppMessage` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with an array of `SMNotificationMessage` with title and id as properties, from the NSNotification-name `kSMNotification_Event_DidReceiveInAppMessage`. |
+
+<a name="broadcasts_examples"></a>
+### Examples
+
+**Swift**
+```swift
+// Listen to broadcasting
+NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDidReceiveInAppMessage(notif:)), name: NSNotification.Name(rawValue: kSMNotification_Event_DidReceiveInAppMessage), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameButtonClicked(notif:)), name: NSNotification.Name(rawValue: kSMNotification_Event_ButtonClicked), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDidReceiveRemoteNotification(notif:)), name: .smNotification_Event_DidReceiveRemote, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWillDisplayNotification(notif:)), name: NSNotification.Name.smNotification_Event_WillDisplay, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWillDismissNotification(notif:)), name: NSNotification.Name.smNotification_Event_WillDismiss, object: nil)
+
+// Notifications selectors
+@objc func anyMethodNameDidReceiveInAppMessage(notif: NSNotification) {
+        let dict = notif.userInfo
+        let inAppData = dict![kSMNotification_Data_InAppMessage];
+}
+
+@objc func anyMethodNameButtonClicked(notif: NSNotification) {
+    let dict = notif.userInfo
+    let btnData: SMNotificationButtonData = dict![kSMNotification_Data_ButtonData] as! SMNotificationButtonData;
+}
+
+@objc func anyMethodNameDidReceiveRemoteNotification(notif: NSNotification) {
+    let dict = notif.userInfo
+    let notifData = dict![NSNotification.Name.smNotification_Data_Remote];
+}
+
+@objc func anyMethodNameWillDisplayNotification(notif: NSNotification) {}
+@objc func anyMethodNameWillDismissNotification(notif: NSNotification) {}
+```
+
+**Objective-C**
+```objective-c
+// Listen to broadcasting
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameDidReceiveInAppMessage:) name:kSMNotification_Event_DidReceiveInAppMessage object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameButtonClicked:) name:kSMNotification_Event_ButtonClicked object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameWillDisplayNotification:) name:kSMNotification_Event_WillDisplayNotification object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameWillDismissNotification :) name:kSMNotification_Event_WillDismissNotification object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameDidReceiveRemoteNotification:) name:kSMNotification_Event_DidReceiveRemoteNotification object:nil];
+
+// Notifications selectors
+- (void) anyMethodNameDidReceiveInAppMessage:(NSNotification *)notif {
+    NSDictionary *dict =[notif userInfo];
+    NSDictionary *inAppData = dict[kSMNotification_Data_InAppMessage];
+}
+
+- (void) anyMethodNameButtonClicked:(NSNotification *)notif {
+    NSDictionary *dict =[notif userInfo];
+    SMNotificationButtonData *btnData = dict[kSMNotification_Data_ButtonData];
+}
+
+- (void) anyMethodNameDidReceiveRemoteNotification:(NSNotification *)notif {
+    NSDictionary *dict =[notif userInfo];
+    NSDictionary *notifData = dict[kSMNotification_Data_RemoteNotification];
+}
+
+- (void) anyMethodNameWillDisplayNotification:(NSNotification *)notif {}
+- (void) anyMethodNameWillDismissNotification:(NSNotification *)notif {}
+```
+
+<a name="miscellaneous"></a>
+## Miscellaneous
+<a name="reload"></a>
+### Reload
+In case you want to change the web service URL, there is a reload method to restart the SDK.
+It takes as parameter the same `SMSetting` object as the start method (all the values must be set in the object, even if they did not change).
+> **IMPORTANT**: This method is for development purposes only, not meant to be used in production.
+
+**Swift**
+```swift
+let settings = SMManagerSetting(url: currentUrl, clientID: clientID, privateKey: privateKey)
+SMManager.sharedInstance().reload(settings)
+```
+
+**Objective-C**
+```objective-c
+SMManagerSetting *settings = [SMManagerSetting settingWithUrl:currentUrl ClientID:clientID PrivateKey:privateKey];
+[[SMManager sharedInstance] reloadSetting:settings];
+```
+
+<a name="loglevel"></a>
+### LogLevel
+This method `SMManager applyLogLevel` will allow you to debug the library.<br>
+`SMLogLevel` values:
+
+| Property | Description |
+| --------- | --------- |
+| `kSMLogLevel_None` | No log printed at all. This is the suggested log-level for release. |
+| `kSMLogLevel_Info` | Default log-entry. Basically, informs when the library starts/ends. |
+| `kSMLogLevel_Warning` | Only warning messages are printed. |
+| `kSMLogLevel_Error` | Only error messages are printed. |
+| `kSMLogLevel_HTTPCall` | Print only HTTP-requests stuff. |
+| `kSMLogLevel_All` | Print everything. Do not use for release!!! |
+
+**Swift**
+```swift
+SMManager.sharedInstance().apply(.all)
+```
+
+**Objective-C**
+```objective-c
+[[SMManager sharedInstance] applyLogLevel:kSMLogLevel_All];
+```
+
+<a name="deviceId"></a>
+### Retrieve Device ID
+In case you need the Selligent device ID, you can use this helper method `SMManager deviceID`.<br>
+To be notified if the device ID has changed, the App must register to the correct notification `kSMNotification_Event_DidReceiveInDeviceId`.
+
+The Notification will provide the new device ID to the App (Key `kSMNotification_Data_DeviceId`).
+
+**Swift**
+```swift
+// Retrieve the device ID
+SMManager.sharedInstance().deviceID()
+
+// Listen to the broadcast in case device ID has changed and retrieve new device ID
+NotificationCenter.default.addObserver(self, selector: #selector(didReceiveDeviceId(_:)), name: NSNotification.Name(rawValue: kSMNotification_Event_DidReceiveDeviceId), object: nil)
+
+@objc func didReceiveDeviceId (_ notif: Notification) {
+    let dict = notif.userInfo
+    let deviceid: String = dict![kSMNotification_Data_DeviceId] as! String
+}
+```
+
+**Objective-C**
+```objective-c
+// Retrieve the device ID
+[[SMManager sharedInstance] deviceID];
+
+// Listen to the broadcast in case device ID has changed and retrieve new device ID
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveDeviceId:) name: kSMNotification_Event_DidReceiveDeviceId object:nil];
+
+- (void) didReceiveDeviceId:(NSNotification *)notif {
+    NSDictionary *dict = [notif userInfo];
+    NSString *deviceID = [dict objectForKey:kSMNotification_Data_DeviceId];
+}
 ```
