@@ -1766,7 +1766,8 @@ You can listen to some `NSNotification` by observing the correct notification na
 | `kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. Primary Application may use this notification to resume any paused work (see `kSMNotification_Event_WillDisplayNotification`). |
 | `kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. Primary Application may use this notification to decide when to display any Remote Notification. |
 | `kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving InApp Messages. Primary Application may use this notification to manage the received InApp Messages. |
-    
+| `kSMNotification_Event_DidReceiveDeviceId` | `NSNotification` name | It is broadcasted shortly after receiving a Selligent deviceId value. |
+
 <a name="data_broadcasts"></a>
 ### Data broadcasts
 
@@ -1775,6 +1776,7 @@ You can listen to some `NSNotification` by observing the correct notification na
 | `kSMNotification_Data_ButtonData` | `NSString` Key | Use this Key to retrieve the object [SMNotificationButtonData](MobileSDK%20Reference/Classes/SMNotificationButtonData.md), from the NSNotification-name `kSMNotification_Event_ButtonClicked`. |
 | `kSMNotification_Data_RemoteNotification` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with push ID and name, from the NSNotification-name `kSMNotification_Event_DidReceiveRemoteNotification`. |
 | `kSMNotification_Data_InAppMessage` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with an array of `SMNotificationMessage` with title and id as properties, from the NSNotification-name `kSMNotification_Event_DidReceiveInAppMessage`. |
+| `kSMNotification_Data_DeviceId` | `NSString` Key | Use this Key to retrieve an `NSString` instance with the Selligent deviceId value, from the NSNotification-name `kSMNotification_Event_DidReceiveDeviceId`. |
 
 <a name="broadcasts_examples"></a>
 ### Examples
