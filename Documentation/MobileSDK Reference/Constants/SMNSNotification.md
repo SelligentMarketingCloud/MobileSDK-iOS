@@ -10,13 +10,19 @@ This file gathers all kSMNotification values used as NSNotification-names and NS
 <code>kSMNotification_Event_ButtonClicked</code>
 
 An NSNotification with this name is broadcasted when the user interacts with a remote-notification.
-Useful to retrieve user's actions on a received remote-notification, developers may listen to kSMNotification_Event_ButtonClicked from NSNotificationCenter.
+Useful to retrieve user's actions on a received remote-notification.
 
 <a name="" title="kSMNotification_Event_WillDisplayNotification"></a>
 <code>kSMNotification_Event_WillDisplayNotification</code>
 
-An NSNotification with this name is broadcasted shortly before Dismissing the current remote-notification.
-Primary-application may use this notification to resume any paused work (see kSMNotification_Event_WillDisplayNotification).
+An NSNotification with this name is broadcasted shortly before displaying a remote-notification.
+Primary-application may use this notification to pause any ongoing work before the Remote Notification is displayed.
+
+<a name="" title="kSMNotification_Event_WillDismissNotification"></a>
+<code>kSMNotification_Event_WillDismissNotification</code>
+
+An NSNotification with this name is broadcasted shortly before dismissing the current remote-notification.
+Primary-application may use this notification to resume any paused work.
 
 <a name="" title="kSMNotification_Event_DidReceiveRemoteNotification"></a>
 <code>kSMNotification_Event_DidReceiveRemoteNotification</code>
@@ -36,8 +42,20 @@ Primary-application may use this notification to manage the received InApp messa
 An NSNotification with this name is broadcasted shortly after receiving device id from mobile platform.
 Primary-application may use this notification to manage the received device id.
 
+<a name="" title="kSMNotification_Event_DidReceiveDeviceId"></a>
+<code>kSMNotification_Event_DidReceiveDeviceId</code>
+
+An NSNotification with this name is broadcasted shortly after receiving device id from mobile platform.
+Primary-application may use this notification to manage the received device id.
+
 <a name="" title="kSMNotification_Data_ButtonData"></a>
 <code>kSMNotification_Data_ButtonData</code>
+
+NSString representing a key to retrieve an object inside NSNotification.
+Use the key kSMNotification_Data_ButtonData to retrieve an SMNotificationButtonData instance.
+
+<a name="" title="kSMNotification_Data_RemoteNotification"></a>
+<code>kSMNotification_Data_RemoteNotification</code>
 
 NSString representing a key to retrieve an object inside NSNotification.
 Use the key kSMNotification_Data_RemoteNotification to retrieve an NSDictionary instance with push ID and name.
