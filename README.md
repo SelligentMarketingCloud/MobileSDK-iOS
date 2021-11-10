@@ -44,3 +44,4 @@ Please check our <a href="Documentation#ios--using-the-sdk">SDK full documentati
 Use our <a href="Documentation/MobileSDK%20Reference#mobilesdk-reference">Reference manual</a> to quickly check all our available methods
 
 Download our <a href="Documentation/iOSSDKTemplate.zip">iOS example application</a> to see how our SDK needs to be implemented - The swift target (and the extensions inside the project) embed the sdk framework, and the objective c target use the static library.
+
