@@ -28,8 +28,6 @@ Pod::Spec.new do |s|
   s.subspec "Framework" do |sc|
     sc.vendored_frameworks = "iOS Framework/SelligentMobileSDK.xcframework"
     
-    sp.subspec "Geofencing" do |ssp|
-      sc.vendored_frameworks = "iOS Framework- Plot geofencing support/SelligentMobileSDK.xcframework"
-    end
+   
   end
 end
