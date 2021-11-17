@@ -27,7 +27,5 @@ Pod::Spec.new do |s|
   
   s.subspec "Framework" do |sc|
     sc.vendored_frameworks = "iOS Framework/SelligentMobileSDK.xcframework"
-    
-   
   end
 end
