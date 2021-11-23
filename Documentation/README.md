@@ -26,14 +26,14 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
   * [**Enable Push Notifications**](#enable_push_notifications)
   * [**Create a Key**](#create_key)
 * [**Include the SDK in your target**](#include_sdk)
-  * [**Import the library**](#import_library)
-  * [**Install the SDK as a framework**](#install_sdk)
-  * [**Note for Swift projects**](#note_for_swift)
-  * [**Deep Linking**](#deep_linking)
-    * [**Add entries to your app .plist file**](#plist_entries)
-    * [**Universal Links**](#universal_links)
-  * [**External framework**](#external_framework)
-    * [**Permission for geolocation**](#geolocation_permission)
+  * [**Swift package import**](#import_swift_package)
+  * [**CocoaPods import**](#import_cocoa)
+  * [**Manual import**](#import_manual)
+* [**Deep Linking**](#deep_linking)
+  * [**Add entries to your app .plist file**](#plist_entries)
+  * [**Universal Links**](#universal_links)
+* [**External framework**](#external_framework)
+  * [**Permission for geolocation**](#geolocation_permission)
 * [**Starting the SDK**](#starting_sdk)
   * [**Push Notifications**](#push_notifications)
     * [**Register for Push Notifications**](#register_for_push)
@@ -145,8 +145,56 @@ To use Selligent Push services you will need to provide to us:
 
 <a name="include_sdk"></a>
 ## Include the SDK in your target
-<a name="import_library"></a>
-### Import the library
+Import the library using one of the below explained procedures and then start using it by:
+
+- Importing the module (when using the `Framework` version)
+
+    **Swift**
+    ```swift
+    import SelligentMobileSDK
+    // OR
+    import SelligentMobileSDK_Geofencing
+    ```
+
+    **Objective-C**
+    ```swift
+    @import SelligentMobileSDK;
+    // OR
+    @import SelligentMobileSDK_Geofencing;
+    ```
+
+- Importing the header file
+    ```objective-c
+    // Static Library
+    #import "SMHelper.h"
+
+    // Framework
+    #import <SelligentMobileSDK/SelligentMobileSDK.h>
+    // OR
+    #import <SelligentMobileSDK_Geofencing/SelligentMobileSDK.h>
+    ```
+
+    In Swift, you will need to create a **Bridging-Header** file first.
+    To create it automatically, add an Objective-C file to your Swift App and Xcode will offer you the possibility to create this header file.
+
+    <details>
+      <summary>If you accept, Xcode creates the header file along with the file you were creating, and names it by your product module name followed by "-Bridging-Header.h".</summary><br/>
+        
+  ![](images/Picture16.png)
+    </details>
+
+    You can also create it manually by adding a header file to your project, named `[MyProjectName]-Bridging-Header.h`. In your project build settings, find `Swift Compiler – Code Generation`, and next to `Objective-C Bridging Header` add the path to your bridging header file from the project's root folder. So, it could be `MyProject/MyProject-Bridging-Header.h` or simply `MyProject-Bridging-Header.h` if the file is in the project root folder.
+
+<a name="import_swift_package"></a>
+#### Swift package import
+To install the `Framework` version of our SDK via Swift Package Manager, refer to the ([README](../README.md)).
+
+<a name="import_cocoa"></a>
+#### Cocoapods import
+To install any version of our SDK via Cocoapods, refer to the ([README](../README.md)).
+
+<a name="import_manual"></a>
+#### Manual import
 <details>
   <summary>Right click (CTRL + Left click) on your App target and select "Add Files to YOURTARGET".</summary><br/>
     
@@ -154,7 +202,7 @@ To use Selligent Push services you will need to provide to us:
 </details>
 
 <details>
-  <summary>Select the lib folder (the main folder containing the header and the lib files). Depending on your project, check the option "Copy items if needed" and select the "Create groups" option.</summary><br/>
+  <summary>Select the lib/framework folder (the main folder containing the header and the lib files). Depending on your project, check the option "Copy items if needed" and select the "Create groups" option.</summary><br/>
     
   ![](images/Picture13.png)
 </details>
@@ -171,57 +219,8 @@ To use Selligent Push services you will need to provide to us:
   ![](images/Picture15.png)
 </details>
 
-> For Objective-C Apps, import `SMHelper.h` where needed, for Swift Apps refer to [Note for Swift projects](#note_for_swift)
-
-<a name="install_sdk"></a>
-### Install the SDK as a framework
-Since version 2.6, the SDK is also available on github as a **.xcframework**.
-
-You can either install it via cocoapod ([learn more](../README.md)) or as a stand alone by downloading and dropping the .xcframework package into your project (don't forget to add it into the App and the Notification Extensions where you will use the framework).
-
-To use it, you will need to import the following where needed:
-
-**Swift**
-```swift
-import SelligentMobileSDK
-```
-
-**Objective-C**
-```objective-c
-#import <SelligentMobileSDK/SelligentMobileSDK.h>;
-// Or
-@import SelligentMobileSDK;
-```
-
-<a name="note_for_swift"></a>
-### Note for Swift projects
-For a Swift App, you need to create a **Bridging-Header** file.
-> Unless you are using the framework, in which case you can import it as a module (as shown above).
-
-To create it automatically, add an Objective-C file to your Swift App and Xcode will offer you the possibility to create this header file.
-
-<details>
-  <summary>If you accept, Xcode creates the header file along with the file you were creating, and names it by your product module name followed by "-Bridging-Header.h".</summary><br/>
-    
-  ![](images/Picture16.png)
-</details>
-
-You can also create it manually by adding a header file to your project, named `[MyProjectName]-Bridging-Header.h`. In your project build settings, find `Swift Compiler – Code Generation`, and next to `Objective-C Bridging Header` add the path to your bridging header file from the project's root folder. So, it could be `MyProject/MyProject-Bridging-Header.h` or simply `MyProject-Bridging-Header.h` if the file is in the project root folder.
-
-In both cases, you will need to import a header file to expose the SDK APIs to Swift. Do it by adding this line:
-
-```objective-c
-// Static Library
-#import "SMHelper.h"
-
-// Framework
-#import <SelligentMobileSDK/SelligentMobileSDK.h>
-```
-
-More information about this configuration in [Apple documentation](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
-
 <a name="deep_linking"></a>
-### Deep Linking
+## Deep Linking
 <a name="plist_entries"></a>
 ### Add entries to your App .plist file
 You should configure correctly the **plist** of your App to allow this to work, by registering a custom URL scheme:
@@ -330,7 +329,7 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 ```
 
 <a name="external_framework"></a>
-### External framework
+## External framework
 If you consider using the Geolocation module of the library and you have the correct version of the Selligent SDK, you will need to embed **PlotProjects.framework** besides the Selligent library in your App.
 > Since SDK v2.1, minimum supported version of PlotProjects is v3.2.0.
 
@@ -410,10 +409,10 @@ settings.configureLocationService()
 ```objective-c
 NSString *url = @"YourProvidedURL";
 NSString *clientID = @"YourClientID";
-NSString *privatKey = @"YourPrivateKey";
+NSString *privateKey = @"YourPrivateKey";
 
 // Create the SMManagerSetting instance
-SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privatKey];
+SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privateKey];
 
 // Optional - Default value is true
 settings.shouldClearBadge = true;
@@ -1357,10 +1356,10 @@ SMManager.sharedInstance().startExtension(with: settings)
 ```objective-c
 NSString *url = @"YourProvidedURL";
 NSString *clientID = @"YourClientID";
-NSString *privatKey = @"YourPrivateKey";
+NSString *privateKey = @"YourPrivateKey";
     
 // Create the SMManagerSetting instance
-SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privatKey];
+SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privateKey];
     
 // Provide the App Groupd Id to the SDK
 settings.appGroupId = @"group.yourGroupName";
@@ -1445,10 +1444,10 @@ class NotificationService: UNNotificationServiceExtension {
     // Init and start the SDK
     NSString *url = @"YourProvidedURL";
     NSString *clientID  = @"YourClientID";
-    NSString *privatKey = @"YourPrivateKey";
+    NSString *privateKey = @"YourPrivateKey";
     
     // Create the SMManagerSetting instance
-    SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privatKey];
+    SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privateKey];
     
     // Provide the App Group Id to the SDK
     settings.appGroupId = @"group.yourGroupName";
@@ -1519,10 +1518,10 @@ class NotificationService: UNNotificationServiceExtension {
     // Init and start the SDK
     NSString *url = @"YourProvidedURL";
     NSString *clientID  = @"YourClientID";
-    NSString *privatKey = @"YourPrivateKey";
+    NSString *privateKey = @"YourPrivateKey";
     
     // Create the SMManagerSetting instance
-    SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privatKey];
+    SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privateKey];
     
     // Provide the App Group Id to the SDK
     settings.appGroupId = @"group.yourGroupName";
@@ -1723,10 +1722,10 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     // Init and start the SDK
     NSString *url = @"YourProvidedURL";
     NSString *clientID  = @"YourClientID";
-    NSString *privatKey = @"YourPrivateKey";
+    NSString *privateKey = @"YourPrivateKey";
     
     // Create the SMManagerSetting instance
-    SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privatKey];
+    SMManagerSetting *settings = [SMManagerSetting settingWithUrl:url ClientID:clientID PrivateKey:privateKey];
     
     // Provide the App Group Id to the SDK
     settings.appGroupId = @"group.yourGroupName";

@@ -1,5 +1,10 @@
 # SDK Changelog
 
+- __SDK 2.7.1__
+    - Add framework version with geolocation
+    - Add push provider name in the communication with the platform
+    - Add Swift package support
+    
 - __SDK 2.7.0__
     - Add extra SDK headers in the communications with the platform
     - Add possibility to handle universal link from push/inapp (from Selligent Marketing Cloud, "deeplink" button type only)

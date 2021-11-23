@@ -1,0 +1,6 @@
+framework module SelligentMobileSDK_Geofencing {
+  umbrella header "SelligentMobileSDK.h"
+
+  export *
+  module * { export * }
+}

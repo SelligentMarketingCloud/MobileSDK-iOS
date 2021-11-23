@@ -134,7 +134,7 @@ Handle the selligent payload before displaying it to the user
 &nbsp;&nbsp;&nbsp;The block to execute with the modified content  
 
 #### Discussion
-This allows the SDK to decrypt the payload before displaying it to the user if you have activated the encryption of push.you can use this method if you want the sdk to manage the display of the notification after teh decryption has been processed
+This allows the SDK to decrypt the payload before displaying it to the user if you have activated the encryption of push.you can use this method if you want the sdk to manage the display of the notification after the decryption has been processed
 
 #### Declared In
 * `SMManager+UserNotification.h`

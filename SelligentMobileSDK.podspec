@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.platform     = :ios, "10.0"
   s.name         = "SelligentMobileSDK"
-  s.version      = "2.7.0"
+  s.version      = "2.7.1"
   s.summary      = "Selligent Marketing Cloud - Mobile SDK for iOS"
   s.description  = <<-DESC
     The Selligent Marketing Cloud - Mobile SDK is a tool that enables you to use the Selligent Marketing Cloud - Mobile feature in a very easy and straightforward way.
@@ -15,17 +15,22 @@ Pod::Spec.new do |s|
   s.default_subspec = "Core"
 
   s.subspec "Core" do |sc|
-    sc.source_files  = "iOS Lib/include"
-    sc.vendored_libraries = "iOS Lib/libSelligentMobile.a"
+    sc.source_files  = "StaticLib/include"
+    sc.vendored_libraries = "StaticLib/libSelligentMobile.a"
   end
   
   s.subspec "Geofencing" do |sg|
-    sg.source_files  = "iOS Lib- Plot geofencing support/include"
-    sg.vendored_libraries = "iOS Lib- Plot geofencing support/libSelligentMobile.a"
+    sg.source_files  = "StaticLib_Geofencing/include"
+    sg.vendored_libraries = "StaticLib_Geofencing/libSelligentMobile_Geofencing.a"
     sg.dependency "PlotPlugin"
   end
   
-  s.subspec "Framework" do |sc|
-    sc.vendored_frameworks = "iOS Framework/SelligentMobileSDK.xcframework"
+  s.subspec "Framework" do |sf|
+    sf.vendored_frameworks = "Framework/SelligentMobileSDK.xcframework"
+  end
+  
+  s.subspec "Framework_Geofencing" do |sfg|
+    sfg.vendored_frameworks = "Framework_Geofencing/SelligentMobileSDK_Geofencing.xcframework"
+    sfg.dependency "PlotPlugin"
   end
 end
