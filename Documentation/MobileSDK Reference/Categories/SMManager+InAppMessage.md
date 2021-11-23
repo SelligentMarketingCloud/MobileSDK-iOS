@@ -38,7 +38,7 @@ Please read the documentation in <a href="../Categories/SMManager+RemoteNotifica
 Since sdk v 2.5 you have the possibility to store the In App Message on your side and process them the way you want
 In order to do that, once you are notified that In App Messages are available you can call <a href="#/api/name/getInAppMessages">getInAppMessages</a> to receive a NSArray of <a href="../Classes/SMInAppMessage.md">SMInAppMessage</a>
 Once a <a href="../Classes/SMInAppMessage.md">SMInAppMessage</a> has been displayed and has been seen by the user you need to call <a href="#/api/name/setInAppMessageAsSeen:">setInAppMessageAsSeen:</a> to inform Selligent that the In App message has been opened
-In case there is links in the In App Message and in case one of the link is triggered by user please call executeLinkAction:: to process teh action related to the link and inform Selligent that the link has been clicked
+In case there is links in the In App Message and in case one of the link is triggered by user please call executeLinkAction:: to process the action related to the link and inform Selligent that the link has been clicked
 
 <h2>Fetching modes</h2>
 
