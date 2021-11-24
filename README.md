@@ -30,21 +30,21 @@ To integrate the library yourself just download, depending of your needs one of 
 
     for the framework:
 
-        pod 'SelligentMobileSDK/Framework', :git => 'https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git' 
+        pod 'SelligentMobileSDK/Framework'
 
     for the static library: 
 
-        pod 'SelligentMobileSDK', :git => 'https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git' 
+        pod 'SelligentMobileSDK'
 
     or if you are using geofencing capabilities (it will also install dependency to PlotPlugin):
 
     for the framework:
 
-        pod 'SelligentMobileSDK/Framework_Geofencing', :git => 'https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git' 
+        pod 'SelligentMobileSDK/Framework_Geofencing' 
 
     for the static library: 
 
-        pod 'SelligentMobileSDK/Geofencing', :git => 'https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git' 
+        pod 'SelligentMobileSDK/Geofencing'
 
     then run
         
