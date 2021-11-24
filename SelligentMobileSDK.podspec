@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage                    = "https://www.selligent.com"
   s.license                     = { :type => "MIT", :file => "LICENSE" }
-  s.author                      = {"SelligentMarketingCloud" => "mobile@selligent.com"}
-  s.source                      = { :git => "https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git", :tag => "v#{s.version}" }
+  s.author                      = { "SelligentMarketingCloud" => "mobile@selligent.com" }
+  s.source                      = { :git => "https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git", :tag => "v" + s.version.to_s }
   s.social_media_url            = "https://twitter.com/Selligent"
   s.default_subspec             = "Core"
 
