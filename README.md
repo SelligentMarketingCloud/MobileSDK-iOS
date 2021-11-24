@@ -11,13 +11,13 @@ By incorporating our latest SDK for iOS in your app, we support you in handling 
 
 To integrate the library yourself just download, depending of your needs one of those links: 
 
-​    - <a href="Framework">Framework</a>: SDK framework
+​    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Framework">Framework</a>: SDK framework
 
-​    - <a href="Framework_Geofencing">Framework_Geofencing</a>: SDK framework with support of geofencing
+​    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Framework_Geofencing">Framework_Geofencing</a>: SDK framework with support of geofencing
 
-​    - <a href="StaticLib">StaticLib</a>: SDK static library
+​    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/StaticLib">StaticLib</a>: SDK static library
 
-​    - <a href="StaticLib_Geofencing">StaticLib_Geofencing</a>: SDK static library with support of geofencing
+​    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/StaticLib_Geofencing">StaticLib_Geofencing</a>: SDK static library with support of geofencing
 ​    
 ​    
 - To install the SDK via Swift Package Manager, use the Github repository URL (below) put the dependency rule to target branch `master`, and choose the version with or without Geofencing:
@@ -50,12 +50,12 @@ To integrate the library yourself just download, depending of your needs one of 
         
         pod install
 
-Finally please refer to the <a href="Documentation#ios--using-the-sdk">SDK full documentation</a> for a correct implementation of the SDK.
+Finally please refer to the <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation#ios--using-the-sdk">SDK full documentation</a> for a correct implementation of the SDK.
 
 # MobileSDK-iOS Documentation
 
-Please check our <a href="Documentation#ios--using-the-sdk">SDK full documentation</a>.
+Please check our <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation#ios--using-the-sdk">SDK full documentation</a>.
 
-Use our <a href="Documentation/MobileSDK%20Reference#mobilesdk-reference">Reference manual</a> to quickly check all our available methods.
+Use our <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation/MobileSDK%20Reference#mobilesdk-reference">Reference manual</a> to quickly check all our available methods.
 
-Download our <a href="Documentation/IOSSDKTemplate.zip">example application</a> to see how our SDK needs to be implemented - The swift target (and the extensions inside the project) embed the sdk framework, and the objective c target use the static library.
+Download our <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation/IOSSDKTemplate.zip">example application</a> to see how our SDK needs to be implemented - The swift target (and the extensions inside the project) embed the sdk framework, and the objective c target use the static library.
