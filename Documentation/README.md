@@ -44,7 +44,7 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
     * [**Listening and displaying the Push Notifications**](#displaying_push)
     * [**Helper methods**](#notification_helper_methods)
     * [**Broadcasts**](#push_broadcasts)
-* [**InApp Messages**](#inapp_messages)
+* [**In-App Messages**](#inapp_messages)
   * [**Enable IAM**](#enable_iam)
   * [**Display IAM**](#display_iam)
   * [**Implement WKNavigationDelegate**](#wknavigationdelegate)
@@ -71,13 +71,10 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
 <a name="intro"></a>
 ## Intro
 The purpose of this document is to detail how to install the SDK into your App and how to easily start using it.
-* For more detailed technical reference of the SDK please refer to <a href="MobileSDK Reference/#mobilesdk-reference">**iOS - MobileSDK Reference**</a>.
-* For an example of implementation check the <a href="iOSSDKTemplate.zip">**iOSSDKTemplate**</a> project.
+* For more detailed technical reference of the SDK please refer to <a href="MobileSDK Reference/#mobilesdk-reference">**MobileSDK Reference**</a>.
+* For an example of implementation check the <a href="IOSSDKTemplate.zip">**IOSSDKTemplate**</a> project.
 
->**Important Remark:** Core version of the SDK is fully compliant to AppTrackingTransparency framework (starting from iOS and iPadOS 14.5) as we never 
->make any usage of [data used to track the device](https://developer.apple.com/app-store/app-privacy-details/) (except if you are using the geolocation 
->version of the SDK). The device ID is for example a generated ID provided by the Selligent platform to the SDK at launch time.<br/>
->About the PlotProjects Geolocation version of the SDK please refer to [PlotProjects FAQs](https://www.plotprojects.com/faqs/) for more information.
+>**Important Remark:** Core version of the SDK is fully compliant to AppTrackingTransparency framework as we never make any usage of [data used to track the device](https://developer.apple.com/app-store/app-privacy-details/) (except if you are using the geolocation version of the SDK). The device ID is for example a generated ID provided by the Selligent platform to the SDK at launch time.<br/> About the PlotProjects Geolocation version of the SDK please refer to [PlotProjects FAQs](https://www.plotprojects.com/faqs/) for more information.
 
 <a name="apns_key"></a>
 ## Create an APNS Key
@@ -137,7 +134,7 @@ To enable Push Notifications, go to the [Apple Developer Portal](https://develop
   ![](images/Picture11.png)
 </details>
 
-To use Selligent Push services you will need to provide to us:
+To use Selligent Push services you will need to provide us with:
 - the downloaded **.p8** file
 - the **Key ID**
 - your **Team ID**
@@ -196,13 +193,13 @@ To install any version of our SDK via Cocoapods, refer to the ([README](../READM
 <a name="import_manual"></a>
 #### Manual import
 <details>
-  <summary>Right click (CTRL + Left click) on your App target and select "Add Files to YOURTARGET".</summary><br/>
+  <summary>Right click on your App target and select "Add Files to YOURTARGET".</summary><br/>
     
   ![](images/Picture12.png)
 </details>
 
 <details>
-  <summary>Select the lib/framework folder (the main folder containing the header and the lib files). Depending on your project, check the option "Copy items if needed" and select the "Create groups" option.</summary><br/>
+  <summary>Select the library/framework folder (the main folder containing the header and the lib files). Depending on your project, check the option "Copy items if needed" and select the "Create groups" option.</summary><br/>
     
   ![](images/Picture13.png)
 </details>
@@ -275,15 +272,15 @@ NSURL *url = [NSURL URLWithString:@"yourscheme://anypage"];
     return true;
 }
 ```
-If all is correctly set then when the user receives a Push and clicks it, the App will open, and will trigger the `appscheme://anypage`.
+If everything is correctly set then when the user receives a Push and clicks it, the App will open, and it will trigger the `appscheme://anypage`.
 
 <a name="universal_links"></a>
 ### Universal Links
 By default, universal links in a button from a Push/IAM/IAC will open the default browser, to avoid this and catch them on the App and apply any logic you want, you will need to create a class that implements the `SMManagerUniversalLinksDelegate` and provide it to the SDK.
 
-> **Do not set this delegate when starting the SDK from  `Notification Extensions`.**
+> **Do not set this delegate when starting the SDK from `Notification Extensions`.**
 
-> The delegate will only get triggered from `deeplink` button types defined in Selligent Marketing Cloud UI, whose URL scheme is `http` or `https`.
+> The delegate will only get triggered from `deeplink` button types defined in Selligent Marketing Cloud, whose URL scheme is `http` or `https`.
 
 > When talking about Push notification buttons (and if the `didReceiveNotificationResponse` was implemented inside the `Notification Content Extension`), the universal link delegate won't be triggered in that case and the universal link execution will follow the standard [Apple process](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app) (like if it was clicked from an external website).
 
@@ -365,12 +362,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   | --------- | --------- |
   | `shouldClearBadge` | If you want the SDK to manage badge clearance. |
   | `shouldDisplayRemoteNotification` | If you want to prevent the display of Push Notifications by the SDK and manage it in your App ([learn more](#notification_helper_methods)). |
-  | `shouldAddInAppMessageFromPushToInAppMessageList` | If you want to add the InApp Message associated to a Push Notification to the InApp Message list ([learn more](#display_iam)). |
+  | `shouldAddInAppMessageFromPushToInAppMessageList` | If you want to add the In-App Message associated to a Push Notification to the In-App Message list ([learn more](#display_iam)). |
   | `clearCacheIntervalValue` | Define the interval value to clear the SDK internal cache (this setting is only used for messages that do not have an expiration date – otherwise expiration date of the message will be taken into account for lifetime of the message in cache). |
   | `appGroupId` | Provide the App GroupId to the SDK (`group.yourGroupName`) that you will have previously configured in your Apple Developer Portal. This is mandatory when you use one Notification extension (service and/or content) ([learn more](#notification_extensions)). |
   | `remoteMessageDisplayType` | This value defines the behaviour that the SDK will adopt when a remote-notification is received when in Foreground ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/remoteMessageDisplayType)). |
   
-* Optionally initialise and configure InApp Messages.
+* Optionally initialize and configure In-App Messages.
 * Optionally configure location services (may not be available depending on your SDK version).
 
 **Swift**
@@ -393,7 +390,7 @@ settings.clearCacheIntervalValue = .auto
 // Only mandatory when you want to use a Notification extension (service or/and content)
 settings.appGroupId = "group.yourGroupName";
 
-// Optional - Initialize InApp Messages settings
+// Optional - Initialize In-App Messages settings
 let settingIAM = SMManagerSettingIAM.setting(with: .smia_RefreshType_Daily)
 settings.configureInAppMessageService(withSetting: settingIAM)
 
@@ -424,7 +421,7 @@ settings.clearCacheIntervalValue = kSMClearCache_Auto;
 // Only mandatory when you want to use a Notification extension (Services or/and Content)
 settings.appGroupId = @"group.yourGroupName";
 
-// Initialize InApp Messages settings - other constructors exist (cf. documentation)
+// Initialize In-App Messages settings - other constructors exist (cf. documentation)
 SMManagerSettingIAM *iamSetting = [SMManagerSettingIAM settingWithRefreshType:kSMIA_RefreshType_Daily];
 [settings configureInAppMessageServiceWithSetting:iamSetting];
 
@@ -467,8 +464,8 @@ SMManager.sharedInstance().registerForRemoteNotification()
 ```
 
 This can be called whenever you need to do it in your App.
-> If you plan to trigger this when a certain page or criteria is met, do take into account to trigger it for users that might have already given the permission in a previous version of your App without the Selligent SDK.<br>
-> Not doing so, would make it impossible for Selligent to receive the necessary **device push token**, to be used when sending Push Notifications.
+> If you plan to trigger this when a certain page or criteria is met, do take into account to also trigger it for users that have already given the Push permission in a previous version of the App without the Selligent SDK.<br>
+> Not doing so would make it impossible for Selligent to receive the necessary **device push token**, to be used when sending Push Notifications.
 
 <details>
   <summary>You can then customize the way you inform the user before the display of iOS alert which will let the user allow Push Notifications for the App on the device (the iOS alert is displayed only once).</summary><br/>
@@ -480,7 +477,7 @@ This can be called whenever you need to do it in your App.
 ### Register for Provisional Push Notifications
 > This option is only available for iOS 12+.
 
-You can also decide to first ask for the Provisional push authorization (which will provide a valid push token but will not show any prompt to the user) if you want to contact users that did not decide about the Push permission yet (you can call `registerForRemoteNotification` later and it will still display the push permission prompt to the user).
+You can also decide to first ask for the Provisional push authorization (which will provide a valid push token but will not show any prompt to the user), if you want to contact users that did not decide about the Push permission yet (you can call `registerForRemoteNotification` later and it will still display the push permission prompt to the user).
 
 **Swift**
 ```swift
@@ -513,8 +510,7 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 
 <a name="provide_information_sdk"></a>
 ### Provide Push Notifications status to the SDK
-> Optional, the SDK is able to get this information by itself.<br>
-> **Since iOS 10, didRegisterUserNotificationSettings has been deprecated.**
+> Optional, the SDK is able to get this information by itself.<br>**Since iOS 10, didRegisterUserNotificationSettings has been deprecated.**
 
 **Swift**
 ```swift
@@ -694,20 +690,20 @@ SMManager.sharedInstance().retrieveLastRemotePushNotification()
 
 | Name | Type | Description |
 | --------- | --------- | --------- |
-| `kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. Useful to retrieve user's actions on a received Remote Notification. |
-| `kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification. Primary Application may use this notification to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md)). |
-| `kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. Primary application may use this notification to resume any paused work (see `kSMNotification_Event_WillDisplayNotification`). |
-| `kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. Primary Application may use this notification to decide when to display any Remote Notification. |
+| `kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification. |
+| `kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md)). |
+| `kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work (see `kSMNotification_Event_WillDisplayNotification`). |
+| `kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification. |
 | `kSMNotification_Data_ButtonData` | `NSString` Key | Use this Key to retrieve the object [SMNotificationButtonData](MobileSDK%20Reference/Classes/SMNotificationButtonData.md), from the NSNotification-name `kSMNotification_Event_ButtonClicked`. |
-| `kSMNotification_Data_RemoteNotification` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with the Push ID and name, from the NSNotification-name `kSMNotification_Event_DidReceiveRemoteNotification`. |
+| `kSMNotification_Data_RemoteNotification` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with the Push ID and title, from the NSNotification-name `kSMNotification_Event_DidReceiveRemoteNotification`. |
 
 Examples can be found [here](#broadcasts_examples).
 
 <a name="inapp_messages"></a>
-## InApp Messages
+## In-App Messages
 <a name="enable_iam"></a>
 ### Enable IAM
-If InApp Messages (we will refer to them with IAM) are correctly configured ([learn more](#starting_sdk)), you will need to enable them once, wherever you want in your App, by calling:
+If In-App Messages (we will refer to them with IAM) are correctly configured ([learn more](#starting_sdk)), you will need to enable them once, wherever you want in your App, by calling:
 
 **Swift**
 ```swift
@@ -761,7 +757,7 @@ SMManager.sharedInstance().displayNotificationID("notificationID")
 ```
 
 ### With your own layout
-Since SDK v.2.5, once notified that new IAM are available, you can access all their properties from App side (so you can display them with your own UI), you can also request for the full list of `not-expired` IAM to the SDK. This will give you more flexibility when displaying them.
+Once notified that new IAM are available, you can access all their properties from App side (so you can display them with your own UI), you can also request for the full list of `not-expired` IAM to the SDK. This will give you more flexibility when displaying them.
 
 **Swift**
 ```swift
@@ -921,7 +917,7 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
 ### Display IAM linked to a Push Notification
 When an IAM is available with the payload of a Push Notification, you can also decide to process its content and display it on App side.
 
-To achieve this, you can call the method `inAppMessageDelegate` and give the instance of the class that will be in charge of implementing the `SMManagerInAppMessageDelegate ` methods as a parameter.
+To achieve this, you can call the method `inAppMessageDelegate` and give the instance of the class that will be in charge of implementing the `SMManagerInAppMessageDelegate` methods as a parameter.
 
 **Swift**
 ```swift
@@ -975,8 +971,8 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 
 | Name | Type | Description |
 | --------- | --------- | --------- |
-| `kSMNotification_Event_DidReceiveInAppMessage ` | `NSNotification` name | It is broadcasted shortly after receiving an IAM. Primary application may use this notification to manage the received IAM. |
-| `kSMNotification_Data_InAppMessage ` | `NSString` Key | Use this Key to retrieve an `NSArray` instance with an `NSDictionary` of `SMNotificationMessage` with title and id as properties, from the NSNotification-name `kSMNotification_Event_DidReceiveInAppMessage`. |
+| `kSMNotification_Event_DidReceiveInAppMessage ` | `NSNotification` name | It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages. |
+| `kSMNotification_Data_InAppMessage ` | `NSString` Key | Use this Key to retrieve an `NSArray` instance with an `NSDictionary` of `SMNotificationMessage` with id and title as properties, from the NSNotification-name `kSMNotification_Event_DidReceiveInAppMessage`. |
 
 Examples can be found [here](#broadcasts_examples).
 
@@ -1760,12 +1756,12 @@ You can listen to some `NSNotification` by observing the correct notification na
 
 | Name | Type | Description |
 | --------- | --------- | --------- |
-| `kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. Useful to retrieve user's actions on a received Remote Notification. |
-| `kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification. Primary Application may use this notification to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/shouldDisplayRemoteNotification)). |
-| `kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. Primary Application may use this notification to resume any paused work (see `kSMNotification_Event_WillDisplayNotification`). |
-| `kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. Primary Application may use this notification to decide when to display any Remote Notification. |
-| `kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving InApp Messages. Primary Application may use this notification to manage the received InApp Messages. |
-| `kSMNotification_Event_DidReceiveDeviceId` | `NSNotification` name | It is broadcasted shortly after receiving a Selligent deviceId value. |
+| `kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification. |
+| `kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/shouldDisplayRemoteNotification)). |
+| `kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work (see `kSMNotification_Event_WillDisplayNotification`). |
+| `kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification. |
+| `kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages. |
+| `kSMNotification_Event_DidReceiveDeviceId` | `NSNotification` name | It is broadcasted shortly after receiving a Selligent deviceId value. It can be used to manage the received device id. |
 
 <a name="data_broadcasts"></a>
 ### Data broadcasts
@@ -1773,8 +1769,8 @@ You can listen to some `NSNotification` by observing the correct notification na
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | `kSMNotification_Data_ButtonData` | `NSString` Key | Use this Key to retrieve the object [SMNotificationButtonData](MobileSDK%20Reference/Classes/SMNotificationButtonData.md), from the NSNotification-name `kSMNotification_Event_ButtonClicked`. |
-| `kSMNotification_Data_RemoteNotification` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with push ID and name, from the NSNotification-name `kSMNotification_Event_DidReceiveRemoteNotification`. |
-| `kSMNotification_Data_InAppMessage` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with an array of `SMNotificationMessage` with title and id as properties, from the NSNotification-name `kSMNotification_Event_DidReceiveInAppMessage`. |
+| `kSMNotification_Data_RemoteNotification` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with push ID and title, from the NSNotification-name `kSMNotification_Event_DidReceiveRemoteNotification`. |
+| `kSMNotification_Data_InAppMessage` | `NSString` Key | Use this Key to retrieve an `NSDictionary` instance with an array of `SMNotificationMessage` with id and title as properties, from the NSNotification-name `kSMNotification_Event_DidReceiveInAppMessage`. |
 | `kSMNotification_Data_DeviceId` | `NSString` Key | Use this Key to retrieve an `NSString` instance with the Selligent deviceId value, from the NSNotification-name `kSMNotification_Event_DidReceiveDeviceId`. |
 
 <a name="broadcasts_examples"></a>
@@ -1784,10 +1780,10 @@ You can listen to some `NSNotification` by observing the correct notification na
 ```swift
 // Listen to broadcasting
 NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDidReceiveInAppMessage(notif:)), name: NSNotification.Name(rawValue: kSMNotification_Event_DidReceiveInAppMessage), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameButtonClicked(notif:)), name: NSNotification.Name(rawValue: kSMNotification_Event_ButtonClicked), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDidReceiveRemoteNotification(notif:)), name: .smNotification_Event_DidReceiveRemote, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWillDisplayNotification(notif:)), name: NSNotification.Name.smNotification_Event_WillDisplay, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWillDismissNotification(notif:)), name: NSNotification.Name.smNotification_Event_WillDismiss, object: nil)
+NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameButtonClicked(notif:)), name: NSNotification.Name(rawValue: kSMNotification_Event_ButtonClicked), object: nil)
+NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDidReceiveRemoteNotification(notif:)), name: .smNotification_Event_DidReceiveRemote, object: nil)
+NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWillDisplayNotification(notif:)), name: NSNotification.Name.smNotification_Event_WillDisplay, object: nil)
+NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWillDismissNotification(notif:)), name: NSNotification.Name.smNotification_Event_WillDismiss, object: nil)
 
 // Notifications selectors
 @objc func anyMethodNameDidReceiveInAppMessage(notif: NSNotification) {

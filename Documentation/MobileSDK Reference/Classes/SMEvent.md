@@ -62,7 +62,7 @@ An SMEvent object
 <a name="/api/name/applyBlockSuccess:BlockFailure:" title="applyBlockSuccess:BlockFailure:"></a>
 ### applyBlockSuccess:BlockFailure:
 
-Allow to initialise a success block and/or a failure block that will be triggered after an event is sent to the platform
+Allow to initialize a success block and/or a failure block that will be triggered after an event is sent to the platform
 
 <code>- (void)applyBlockSuccess:(SMCompletionBlockSuccess _Nullable)*blockSuccess* BlockFailure:(SMCompletionBlockFailure _Nullable)*blockFailure*</code>
 

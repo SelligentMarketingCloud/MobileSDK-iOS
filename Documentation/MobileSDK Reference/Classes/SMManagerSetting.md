@@ -171,12 +171,12 @@ iOS 9-:
 <a name="/api/name/shouldAddInAppMessageFromPushToInAppMessageList" title="shouldAddInAppMessageFromPushToInAppMessageList"></a>
 ### shouldAddInAppMessageFromPushToInAppMessageList
 
-Used to add the inapp message associated to a remote notification to the inapp message list
+Used to add the in-app message associated to a remote notification to the in-app message list
 
 <code>@property (nonatomic) BOOL shouldAddInAppMessageFromPushToInAppMessageList</code>
 
 #### Discussion
-Once a new remote-notification is received, if it contains in the payload  datas for an inapp message, this setting will add the inapp message to the in app messages list . You will need to listen to  kSMNotification_Event_DidReceiveInAppMessage NSNotification  to be informed  that an inapp message is available and you can then retrieve it with [SMManager(InAppMessages) getInAppMessages]  helper method and use in an inbox for example
+Once a new remote-notification is received, if it contains in the payload  datas for an in-app message, this setting will add the in-app message to the in app messages list . You will need to listen to  kSMNotification_Event_DidReceiveInAppMessage NSNotification  to be informed  that an in-app message is available and you can then retrieve it with [SMManager(InAppMessages) getInAppMessages]  helper method and use in an inbox for example
 by default the in app message will be displayed if you wish to display it by yourself you will need to provide a class by calling <a href="../Categories/SMManager+InAppMessage.md#/api/name/inAppMessageDelegate:">[SMManager(InAppMessage) inAppMessageDelegate:]</a> . This class will conform to SMManagerInAppMessageDelegate protocol and implement <a href="../Protocols/SMManagerInAppMessageDelegate.md#/api/name/displayInAppMessage:">[SMManagerInAppMessageDelegate displayInAppMessage:]</a> method
 Default value is set to FALSE
 
