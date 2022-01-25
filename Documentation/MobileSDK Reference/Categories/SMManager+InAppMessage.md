@@ -182,7 +182,7 @@ All the valid IAM will be retrieved even if they were already provided to the de
 <a name="/api/name/inAppMessageDelegate:" title="inAppMessageDelegate:"></a>
 ### inAppMessageDelegate:
 
-this setting will allow you to  manage on app side the display of the inapp message linked to a push remote notification
+this setting will allow you to  manage on app side the display of the in-app message linked to a push remote notification
 In order to display it in your side the delegate object should implement <a href="../Protocols/SMManagerInAppMessageDelegate.md#/api/name/displayInAppMessage:">[SMManagerInAppMessageDelegate displayInAppMessage:]</a> method it will provide tha app with a <a href="../Classes/SMInAppMessage.md">SMInAppMessage</a> object
 
 <code>- (void)inAppMessageDelegate:(id&lt;SMManagerInAppMessageDelegate&gt; _Nullable)*delegate*</code>

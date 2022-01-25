@@ -1,5 +1,9 @@
 # SDK Changelog
 
+- __SDK 2.7.2__
+    - Fix some arm64 + simulator compatibility issues for StaticLibrary + podspec and for geolocation version of the SDK
+    - Fix PushOpened sent twice if same notification ID is clicked more than once from notification center
+    
 - __SDK 2.7.1__
     - Add framework version with geolocation
     - Add push provider name in the communication with the platform
@@ -18,15 +22,15 @@
 - __SDK 2.6.2__
     
     - Correct bug 121236 inapp/mainaction from push not called without connectivity
-    - Correct bug 143115 inapp message webview navigation arrows disabled
+    - Correct bug 143115 in-app message webview navigation arrows disabled
     - Removed processing of optiex url from inside SDK
     
 - __SDK 2.6.1__
     
     - Provide device id to main app
-    - Provide delegate to allow app to process links contained in an inapp message of type url
-    - Add Push InApp Message payload to InApp Message cache
-    - Provide a delegate to allow app to manage display on app side of InApp Message linked to a remote notification
+    - Provide delegate to allow app to process links contained in an in-app message of type url
+    - Add Push in-app message payload to in-app message cache
+    - Provide a delegate to allow app to manage display on app side of in-app message linked to a remote notification
 
 - __SDK 2.6__
 
@@ -79,7 +83,7 @@
 - __SDK 2.2__
 
     - Correct bug 96667 `UIWebView` deprecation - use `WKWebView` instead
-    - Correct bug 96827 Buttons inside inapp messages (url/html/image) don't work in SwiftUI
+    - Correct bug 96827 Buttons inside in-app messages (url/html/image) don't work in SwiftUI
     - Correct bug 90501 add robustness to check if device was already registered 
     - Add robustness when parsing plotID
 
@@ -103,9 +107,9 @@
     - Correct bug  75572 decryption issues in a swift project
     - Correct all swift warnings
     - Correct mainaction value of open browser type is not decrypted in a simple push
-    - Correct bug  73088 inapp message controller not dismissed when clicking on deeplink button
+    - Correct bug  73088 in-app message controller not dismissed when clicking on deeplink button
     - Correct bug  77309 conflict with anvato SDK due to  common crypto library
-    - Correct bug  74898 inapp message of type map is not displayed
+    - Correct bug  74898 in-app message of type map is not displayed
     - Correct bug  70428 shouldDisplayRemoteNotification impeach send pushopened event
     - Correct bug  69351 unregister notification functionality in not working correctly
 
@@ -126,17 +130,17 @@
 
 - __SDK 1.8__
 
-    - Support push only without InApp Message
+    - Support push only without in-app message
     - Support deeplinking and main action when user click on push notification
 
 - __SDK 1.7.4__
 
-    - Improve how InApp Content are managed in cache
-    - Correction on dismiss of InApp Content viewcontroller when it is not wrapped inside other controller and when a link is present
+    - Improve how in-app content are managed in cache
+    - Correction on dismiss of in-app content viewcontroller when it is not wrapped inside other controller and when a link is present
 
 - __SDK 1.7.3__
 
-    - Improve behavior and robustness of the way InApp Messages are fetch
+    - Improve behavior and robustness of the way in-app ,essages are fetched
     - Add a type for InApp refresh only for dev use: `.Minutely`
 
 - __SDK 1.7.2__
@@ -163,7 +167,7 @@
 
 - __SDK 1.5.2__
 
-    - correct bug for InApp Content that must be displayed only once
+    - correct bug for in-app content that must be displayed only once
 
 - __SDK 1.5.1__
 
@@ -189,8 +193,8 @@
 
 - __SDK 1.4.3__
 
-    - correction for max number of InApp Content crash when max > number of messages received
-    - creation date of InApp Content
+    - correction for max number of in-app content crash when max > number of messages received
+    - creation date of in-app content
     - dismiss when no button in notification payload
 
 - __SDK 1.4.2__
@@ -204,7 +208,7 @@
 
 - __SDK 1.4__
 
-    - enum `SMInAppMessageRefreshType` has been renamed to `SMInAppRefreshType` (this enum is used both for InApp Message and for InApp Content) possible values are :
+    - enum `SMInAppMessageRefreshType` has been renamed to `SMInAppRefreshType` (this enum is used both for in-app message and for in-app content) possible values are :
 
         - `kSMIA_RefreshType_None`
         - `kSMIA_RefreshType_Hourly`

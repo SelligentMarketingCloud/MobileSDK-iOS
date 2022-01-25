@@ -4,7 +4,7 @@ What is the Selligent Marketing Cloud - Mobile SDK for iOS?
 
 The Selligent Marketing Cloud - Mobile SDK is a tool that enables you to use the Selligent Marketing Cloud - Mobile feature in a very easy and straightforward way. 
 
-By incorporating our latest SDK for iOS in your app, we support you in handling Push Notifications, InApp Messages, standard and custom events as well as registrations, unregistrations, logins and logouts in the App.
+By incorporating our latest SDK for iOS in your app, we support you in handling Push Notifications, In-App Messages, standard and custom events as well as registrations, unregistrations, logins and logouts in the App.
 
 # MobileSDK-iOS Integration
 > **Maximum iOS version supported in the master branch: iOS15**

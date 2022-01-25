@@ -117,7 +117,7 @@ Make sure to provide the launchOptions dictionary
 &nbsp;&nbsp;&nbsp;mandatory <a href="../Classes/SMManagerSetting.md">SMManagerSetting</a> instance to start-up the library  
 
 #### Discussion
-This method is mandatory in order to start / initialise the library and should be called in application:didFinishLaunchingWithOptions:
+This method is mandatory in order to start / initialize the library and should be called in application:didFinishLaunchingWithOptions:
 
 #### See Also
 

@@ -228,10 +228,10 @@ To be included in <a href="#/api/name/didReceiveNotification:">didReceiveNotific
 #### Parameters
 
 *setting*  
-&nbsp;&nbsp;&nbsp;mandatory <a href="../Classes/SMManagerSetting.md">SMManagerSetting</a> instance to start-up the library - this setting mus tbe initialised with only url, clienID and privateKet provided by selligent  
+&nbsp;&nbsp;&nbsp;mandatory <a href="../Classes/SMManagerSetting.md">SMManagerSetting</a> instance to start-up the library - this setting mus tbe initialized with only url, clienID and privateKet provided by selligent  
 
 #### Discussion
-This method is mandatory in order to start / initialise the library and should be called in in <a href="#/api/name/didReceiveNotification:">didReceiveNotification:</a> when implementing Notification content extension and/or in <a href="#/api/name/didReceiveNotificationRequest:withContentHandler:">didReceiveNotificationRequest:withContentHandler:</a> when implementing Notification service extension
+This method is mandatory in order to start / initialize the library and should be called in in <a href="#/api/name/didReceiveNotification:">didReceiveNotification:</a> when implementing Notification content extension and/or in <a href="#/api/name/didReceiveNotificationRequest:withContentHandler:">didReceiveNotificationRequest:withContentHandler:</a> when implementing Notification service extension
 
 #### See Also
 
