@@ -579,12 +579,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
 }
 
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping() -> Void) {
-    SMManager.sharedInstance().didReceive(response, withCompletionHandler: completionHandler)
-    
-    // OR
-    // SMManager.sharedInstance().didReceive(response)
-    // completionHandler()
-    // In this case the App will be in charge to call completionHandler
+    SMManager.sharedInstance().didReceive(response)
+    completionHandler()
 }
 ```
 
@@ -614,12 +610,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 }
 
 - (void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
-    [[SMManager sharedInstance] didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-    
-    // OR 
-    // [[SMManager sharedInstance] didReceiveNotificationResponse:response];
-    // completionHandler();
-    // In this case the App will be in charge to call completionHandler:
+    [[SMManager sharedInstance] didReceiveNotificationResponse:response];
+    completionHandler();
 }
 ```
 
