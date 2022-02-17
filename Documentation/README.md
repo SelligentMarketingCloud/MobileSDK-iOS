@@ -1247,7 +1247,7 @@ event.shouldCache = true; // Not necessary as it is the default value
 
 <a name="notification_extensions"></a>
 ## Notification Extensions
-> Remember, for the correct behaviour of the Extensions, the `appGroupId` needs to *also* be set when [starting the SDK](#starting_sdk) from your App target.
+> Remember, for the correct behaviour of the Extensions, the `appGroupId` needs to *also* be set when [starting the SDK](#starting_sdk) from your App target. <br> Make sure the setting `LD_RUNPATH_SEARCH_PATHS`, in your extension targets, contains both `@executable_path/Frameworks` and `@executable_path/../../Frameworks` to properly load the library from the main app target.
 
 Some SDK functionalities are only possible with the implementation of Notification Extension targets.
 Those functionalities available through Selligent Marketing Cloud are:
