@@ -571,7 +571,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping(UNNotificationPresentationOptions) -> Void) {
     // See SMManagerSetting reference for more information about how the SDK handles the display of pushs in foreground
-    SMManager.sharedInstance().willPresent(response, withCompletionHandler: completionHandler)
+    SMManager.sharedInstance().willPresent(notification, withCompletionHandler: completionHandler)
     // OR
     // SMManager.sharedInstance().willPresent(notification)
     // completionHandler(.alert) // or any UNNotificationPresentationOptions
