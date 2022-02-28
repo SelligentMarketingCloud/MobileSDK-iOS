@@ -154,7 +154,7 @@
 		</data>
 		<key>Headers/SMManager+UserNotification.h</key>
 		<data>
-		3RRuKDy2FAXYvuODDhl+sh5HHag=
+		Rgnohhc9gOFczRg6Ssk7J2PSkk0=
 		</data>
 		<key>Headers/SMManager+ViewController.h</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		p0iDUTu/7Qg3Q82xWvpzYnGj/mE=
+		+ue7X8adEBW7DfguEyW38jWnMVo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -650,11 +650,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3RRuKDy2FAXYvuODDhl+sh5HHag=
+			Rgnohhc9gOFczRg6Ssk7J2PSkk0=
 			</data>
 			<key>hash2</key>
 			<data>
-			xcOqiep3qg3HfOkQ8g+9KNqdr8P3mkUDomEXwsZQhKI=
+			ahfM7quDhVVQUnU36SBO3d5YBwdS4uL3daCcyRwiftE=
 			</data>
 		</dict>
 		<key>Headers/SMManager+ViewController.h</key>

@@ -211,6 +211,12 @@ To install any version of our SDK via Cocoapods, refer to the ([README](../READM
 </details>
 
 <details>
+  <summary>When importing the framework version of the SDK, instead, make sure it is embedded in your main App target and set as "Do Not Embed" in your App extensions.</summary><br/>
+    
+  ![](images/Picture37.png)
+</details>
+
+<details>
   <summary>Then, go to the "Build Settings" of your App target, search for "Other Linker Flags" property and set the value to "–ObjC".</summary><br/>
     
   ![](images/Picture15.png)
@@ -308,6 +314,11 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 // Your class will look like
 // AppUniversalLinksDelegateExample.h
 #import "SMHelper.h"
+// OR
+// @import SelligentMobileSDK;
+// @import SelligentMobileSDK_Geofencing;
+// #import <SelligentMobileSDK/SelligentMobileSDK.h>
+// #import <SelligentMobileSDK_Geofencing/SelligentMobileSDK.h>
 
 @interface AppUniversalLinksDelegateExample : NSObject <SMManagerUniversalLinksDelegate>
 @end
@@ -579,8 +590,12 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
 }
 
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping() -> Void) {
-    SMManager.sharedInstance().didReceive(response)
-    completionHandler()
+    SMManager.sharedInstance().didReceive(response, withCompletionHandler: completionHandler)
+    
+    // OR
+    // SMManager.sharedInstance().didReceive(response)
+    // completionHandler()
+    // In this case the App will be in charge to call completionHandler
 }
 ```
 
@@ -610,8 +625,12 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 }
 
 - (void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
-    [[SMManager sharedInstance] didReceiveNotificationResponse:response];
-    completionHandler();
+    [[SMManager sharedInstance] didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+    
+    // OR 
+    // [[SMManager sharedInstance] didReceiveNotificationResponse:response];
+    // completionHandler();
+    // In this case the App will be in charge to call completionHandler:
 }
 ```
 
@@ -870,6 +889,11 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
 // AppWKNavigationDelegateExample.m
 #import "AppWKNavigationDelegateExample.h"
 #import "SMHelper.h"
+// OR
+// @import SelligentMobileSDK;
+// @import SelligentMobileSDK_Geofencing;
+// #import <SelligentMobileSDK/SelligentMobileSDK.h>
+// #import <SelligentMobileSDK_Geofencing/SelligentMobileSDK.h>
 
 @implementation AppWKNavigationDelegateExample
 
@@ -938,6 +962,11 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 // AppInAppMessageDelegateExample.h
 #import <Foundation/Foundation.h>
 #import "SMHelper.h"
+// OR
+// @import SelligentMobileSDK;
+// @import SelligentMobileSDK_Geofencing;
+// #import <SelligentMobileSDK/SelligentMobileSDK.h>
+// #import <SelligentMobileSDK_Geofencing/SelligentMobileSDK.h>
 
 @interface AppInAppMessageDelegateExample: NSObject<SMManagerInAppMessageDelegate>
 @end
@@ -945,6 +974,11 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 // AppInAppMessageDelegateExample.m
 #import "AppInAppMessageDelegateExample.h"
 #import "SMHelper.h"
+// OR
+// @import SelligentMobileSDK;
+// @import SelligentMobileSDK_Geofencing;
+// #import <SelligentMobileSDK/SelligentMobileSDK.h>
+// #import <SelligentMobileSDK_Geofencing/SelligentMobileSDK.h>
 
 @implementation AppInAppMessageDelegateExample
 
@@ -1217,7 +1251,7 @@ This object is used to send a custom event to the server with some data and a ca
 
 **Swift**
 ```swift
-let event = SMEvent.init(dictionary: ["key": "value"])
+let event = SMEvent(dictionary: ["key": "value"])
 
 // Optional
 event.shouldCache = true // Not necessary as it is the default value
@@ -1417,6 +1451,11 @@ class NotificationService: UNNotificationServiceExtension {
 ```objective-c
 #import "NotificationService.h"
 #import "SMHelper.h"
+// OR
+// @import SelligentMobileSDK;
+// @import SelligentMobileSDK_Geofencing;
+// #import <SelligentMobileSDK/SelligentMobileSDK.h>
+// #import <SelligentMobileSDK_Geofencing/SelligentMobileSDK.h>
 
 @interface NotificationService()
 @property(nonatomic, strong)void(^contentHandler)(UNNotificationContent *contentToDeliver);
@@ -1499,6 +1538,11 @@ class NotificationService: UNNotificationServiceExtension {
 ```objective-c
 #import "NotificationService.h"
 #import "SMHelper.h"
+// OR
+// @import SelligentMobileSDK;
+// @import SelligentMobileSDK_Geofencing;
+// #import <SelligentMobileSDK/SelligentMobileSDK.h>
+// #import <SelligentMobileSDK_Geofencing/SelligentMobileSDK.h>
 
 @implementation NotificationService
 
@@ -1551,9 +1595,9 @@ This extension will:
 </details>
 
 You will notice the creation of those files (in Objective C in this example):
-* `MainInterface.storyboard`: where you will be able to design the notification.
-* `NotificationViewController.m`: an `UIViewController` subclassz
-* `Info.plist`.
+* `MainInterface.storyboard`: where you will be able to design the notification
+* `NotificationViewController.m`: an `UIViewController` subclass
+* `Info.plist`
 
 <details>
   <summary>In the capabilities of your target enable App groups and check "group.yourGroupName".</summary><br/>
@@ -1569,10 +1613,10 @@ It is mandatory to have one once a button is present in the payload and should b
 
 By default, the Selligent category will be `SELLIGENT_BUTTON`. If you plan to also send Rich Push, Selligent provides you the ability to have a specific extension to manage the way you want to display it in the UI. The category will be named `SELLIGENT_IMAGE` in this case.
 
-To set the category in your content extension, just open the `Info.plist` of the extension, find the `NSExtensionAttributes` dictionary and set the value of the `UNNotificationExtensionCategory` Key to `SELLIGENT_BUTTON` or `SELLIGENT_IMAGE`.
+To set the category in your content extension, just open the `Info.plist` of the extension, find the `NSExtensionAttributes` dictionary and set the value of the `UNNotificationExtensionCategory` Key.
 
 <details>
-  <summary>You can also have both category in one extension as `UNNotificationExtensionCategory` can be an Array type.</summary><br/>
+  <summary>You can add both categories by making UNNotificationExtensionCategory an Array.</summary><br/>
     
   ![](images/Picture33.png)
 </details>
@@ -1652,7 +1696,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         
         // SDK API to add Push Notification buttons
         // "SELLIGENT_BUTTON" category must be configured
-        SMManager.sharedInstance().didReceive(notification)
+        SMManager.sharedInstance().didReceive(notification, with: self.extensionContext)
     }
     
     // If you want the Push Notification buttons to be processed without the need of opening the App
@@ -1674,6 +1718,11 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 #import <UserNotifications/UserNotifications.h>
 #import <UserNotificationsUI/UserNotificationsUI.h>
 #import "SMHelper.h"
+// OR
+// @import SelligentMobileSDK;
+// @import SelligentMobileSDK_Geofencing;
+// #import <SelligentMobileSDK/SelligentMobileSDK.h>
+// #import <SelligentMobileSDK_Geofencing/SelligentMobileSDK.h>
 
 @interface NotificationViewController () <UNNotificationContentExtension>
 // UI elements from the storyboard
@@ -1723,7 +1772,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
     // SDK API to add Push Notification buttons
     // "SELLIGENT_BUTTON" category must be configured
-    [[SMManager sharedInstance] didReceiveNotification:notification];
+    [[SMManager sharedInstance] didReceiveNotification:notification withContext:self.extensionContext];
 }
 
 // If you want the Push Notification buttons to be processed without the need of opening the App
