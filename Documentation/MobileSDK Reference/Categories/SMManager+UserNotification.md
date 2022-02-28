@@ -63,6 +63,8 @@ Notification service extension :
 
 [&ndash;&nbsp;didReceiveNotification:](#/api/name/didReceiveNotification:)  
 
+[&ndash;&nbsp;didReceiveNotification:withContext:](#/api/name/didReceiveNotification:withContext:)  
+
 [&ndash;&nbsp;didReceiveNotificationRequest:](#/api/name/didReceiveNotificationRequest:)  
 
 [&ndash;&nbsp;didReceiveNotificationRequest:withContentHandler:](#/api/name/didReceiveNotificationRequest:withContentHandler:)  
@@ -86,6 +88,30 @@ Handle the push action buttons that may be present in the selligent notification
 
 *notification*  
 &nbsp;&nbsp;&nbsp;A UNNotification that contains information about the notification.  
+
+#### Discussion
+This allows the SDK to display the action buttons in the push notification outside of the app.
+
+The category that must be added to Info.plist of the Notification Content Extension target is mandatory and must be SELLIGENT_BUTTON.
+
+#### Declared In
+* `SMManager+UserNotification.h`
+
+<a name="/api/name/didReceiveNotification:withContext:" title="didReceiveNotification:withContext:"></a>
+### didReceiveNotification:withContext:
+
+Optional API, when building against iOS 10+ and using a Notification Content Extension target, to be included in NotificationViewController <a href="#/api/name/didReceiveNotification:">didReceiveNotification:</a>
+Handle the push action buttons that may be present in the selligent notification payload
+
+<code>- (void)didReceiveNotification:(UNNotification *_Nonnull)*notification* withContext:(NSExtensionContext *_Nullable)*context*</code>
+
+#### Parameters
+
+*notification*  
+&nbsp;&nbsp;&nbsp;A UNNotification that contains information about the notification.  
+
+*context*  
+&nbsp;&nbsp;&nbsp;A NSExtensionContext that contains the context information of the extension.  
 
 #### Discussion
 This allows the SDK to display the action buttons in the push notification outside of the app.
