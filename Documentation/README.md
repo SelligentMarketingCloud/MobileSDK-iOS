@@ -1700,15 +1700,16 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
     
     // If you want the Push Notification buttons to be processed without the need of opening the App
+    // Be aware that Push Notification buttons of type "Rate app" or "Open a method in your app" will not work if this method is implemented
     // Make sure you have read the Universal Links section of the documentation before implementing this
-    func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping(UNNotificationContentExtensionResponseOption) -> Void) {
+    /*func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping(UNNotificationContentExtensionResponseOption) -> Void) {
         SMManager.sharedInstance().didReceive(response, withCompletionHandler: completion)
         
         // OR
         // If you want to handle the completion handler on your own
         // SMManager.sharedInstance().didReceive(response)
         // completion(.dismiss)
-    }
+    }*/
 }
 ```
 
@@ -1776,15 +1777,16 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 }
 
 // If you want the Push Notification buttons to be processed without the need of opening the App
+// Be aware that Push Notification buttons of type "Rate app" or "Open a method in your app" will not work if this method is implemented
 // Make sure you have read the Universal Links section of the documentation before implementing this
-- (void) didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void(^)(UNNotificationContentExtensionResponseOption option))completion {
+/*- (void) didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void(^)(UNNotificationContentExtensionResponseOption option))completion {
     [[SMManager sharedInstance] didReceiveNotificationResponse:response withCompletionHandler:completion];
     
     // OR
     // If you want to handle the completion handler on your own
     // [[SMManager sharedInstance] didReceiveNotificationResponse:response];
     // completion(UNNotificationContentExtensionResponseOptionDismiss);
-} 
+}*/
     
 @end
 ```
