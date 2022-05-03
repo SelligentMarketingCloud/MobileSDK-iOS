@@ -1,5 +1,9 @@
 # SDK Changelog
 
+- __SDK 2.7.4__
+    - Correct bug where "Rate app" links (when included as Push Notification buttons) were not being shown
+    - Add support for "Close button" links
+    
 - __SDK 2.7.3__
     - Correct bug where action buttons were not refreshing properly for iOS +12
     - Correct bug where instantiating events before starting SDK produced deviceId to not be loaded
