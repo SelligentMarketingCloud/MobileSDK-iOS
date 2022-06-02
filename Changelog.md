@@ -1,9 +1,14 @@
 # SDK Changelog
 
+- __SDK 2.7.5__
+    - Update PlotProjects integration to support arm64 for simulator, from now on, minimum PlotProjects version supported is 3.5.0
+    - Fix bug where clicked events could be sent more than once under certain circumstances
+    - Fix bug where some url requests could get cancelled when moving to the background
+
 - __SDK 2.7.4__
     - Correct bug where "Rate app" links (when included as Push Notification buttons) were not being shown
     - Add support for "Close button" links
-    
+        
 - __SDK 2.7.3__
     - Correct bug where action buttons were not refreshing properly for iOS +12
     - Correct bug where instantiating events before starting SDK produced deviceId to not be loaded
