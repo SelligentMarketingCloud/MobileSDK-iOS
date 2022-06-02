@@ -340,12 +340,13 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 ## External framework
 If you consider using the Geolocation module of the library and you have the correct version of the Selligent SDK, you will need to embed **PlotProjects.framework** besides the Selligent library in your App.
 > Since SDK v2.1, minimum supported version of PlotProjects is v3.2.0.
+> Since SDK v2.7.5, minimum supported version of PlotProjects is v3.5.0.
 
 You will also need to configure it with the **plotconfig.json** file in the root folder of your project ([learn more](#geolocation)).
 
 <a name="geolocation_permission"></a>
 ### Permission for geolocation
-Add the `NSLocationWhenInUseUsageDescription` and the `NSLocationAlwaysAndWhenInUseUsageDescription` Keys in your **Info.plist** file (Xcode displays these Keys as `Privacy - Location When In Use Usage Description` and `Privacy - Location Always and When In Use Usage Description` in the editor).
+Add the `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription` and `NSMotionUsageDescription` Keys in your **Info.plist** file (Xcode displays these Keys as `Privacy - Location When In Use Usage Description`, `Privacy - Location Always and When In Use Usage Description` and `Privacy - Motion Usage Description` in the editor).
 
 If your App supports iOS 10 and earlier, add the `NSLocationAlwaysUsageDescription` Key to your Info.plist file (Xcode displays this Key as `Privacy - Location Always Usage Description` in the editor).
 
@@ -1006,6 +1007,7 @@ Examples can be found [here](#broadcasts_examples).
 ## Geolocation
 Geolocation is managed through a 3rd party framework: `PlotProjects.framework`. To fully use this feature, you will have to download a **specific version of the SDK**, contact Selligent support for more information and embed the `PlotProjects.framework` in your App.
 > Since SDK v2.1, minimum supported version of PlotProjects is v3.2.0).
+> Since SDK v2.7.5, minimum supported version of PlotProjects is v3.5.0.
 
 Beside this, PlotProjects framework needs the presence of a config file `plotconfig.json` ([learn more](https://www.plotprojects.com/documentation/#ConfigurationFile)) at the root of your project. 
 The content of this file will look like:
