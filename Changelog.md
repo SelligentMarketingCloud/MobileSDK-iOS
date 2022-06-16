@@ -1,5 +1,8 @@
 # SDK Changelog
 
+- __SDK 2.7.6__
+    - Fix bug where InAppMessage isViewed flag wasn't correctly updated in cache
+
 - __SDK 2.7.5__
     - Update PlotProjects integration to support arm64 for simulator, from now on, minimum PlotProjects version supported is 3.5.0
     - Fix bug where clicked events could be sent more than once under certain circumstances
