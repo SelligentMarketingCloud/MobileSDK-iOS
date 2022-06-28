@@ -1,5 +1,9 @@
 # SDK Changelog
 
+- __SDK 2.7.6__
+    - Fix bug where InAppMessage isViewed flag wasn't correctly updated in cache
+    - Fix bug introduced in 2.7.4 where sometimes, after uninstalling the app, the device Id was not properly loaded from keyChain
+
 - __SDK 2.7.5__
     - Update PlotProjects integration to support arm64 for simulator, from now on, minimum PlotProjects version supported is 3.5.0
     - Fix bug where clicked events could be sent more than once under certain circumstances
