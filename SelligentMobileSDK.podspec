@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.platform                    = :ios, "10.0"
   s.name                        = "SelligentMobileSDK"
-  s.version                     = "2.7.6"
+  s.version                     = "2.7.7_beta"
   s.summary                     = "Selligent Marketing Cloud - Mobile SDK for iOS"
   s.description                 = <<-DESC
     The Selligent Marketing Cloud - Mobile SDK is a tool that enables you to use the Selligent Marketing Cloud - Mobile feature in a very easy and straightforward way.
