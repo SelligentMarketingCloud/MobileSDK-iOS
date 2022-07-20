@@ -1,5 +1,8 @@
 # SDK Changelog
 
+- __SDK 2.7.7__
+    - Fix bug where the SDK was incorrectly flagged as not-safe to use in Application Extensions
+    
 - __SDK 2.7.6__
     - Fix bug where InAppMessage isViewed flag wasn't correctly updated in cache
     - Fix bug introduced in 2.7.4 where sometimes, after uninstalling the app, the device Id was not properly loaded from keyChain
