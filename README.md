@@ -24,7 +24,7 @@ To integrate the library yourself just download, depending of your needs one of 
 
         https://github.com/SelligentMarketingCloud/MobileSDK-iOS
         
-    > If you are using the Geofencing version, the PlotProjects framework will also need to be added to your target(s) either [manually](https://files.plotprojects.com/download-page/) or using CocoaPods (pod 'PlotPlugin').
+    > If you are using the Geofencing version, the PlotProjects framework will also need to be added to your target(s) either [manually](https://files.plotprojects.com/documentation/ios/3.5.0/history/release-notes/) or using CocoaPods (pod 'PlotPlugin').
 
 - To install the SDK via CocoaPods, add one of these pod to your target(s) in your Podfile: 
 
