@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "SelligentMobileSDK",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v11)
     ],
     products: [
         .library(
@@ -12,7 +12,10 @@ let package = Package(
             targets: ["SelligentMobileSDK"]),
         .library(
             name: "SelligentMobileSDK_Geofencing",
-            targets: ["SelligentMobileSDK_Geofencing"])
+            targets: ["SelligentMobileSDK_Geofencing"]),
+        .library(
+            name: "SelligentMobileExtensionsSDK",
+            targets: ["SelligentMobileExtensionsSDK"])
     ],
     targets: [
         .binaryTarget(
@@ -20,6 +23,9 @@ let package = Package(
            path: "Framework/SelligentMobileSDK.xcframework"),
         .binaryTarget(
            name: "SelligentMobileSDK_Geofencing",
-           path: "Framework_Geofencing/SelligentMobileSDK_Geofencing.xcframework")
+           path: "Framework_Geofencing/SelligentMobileSDK_Geofencing.xcframework"),
+        .binaryTarget(
+           name: "SelligentMobileExtensionsSDK",
+           path: "FrameworkExtension/SelligentMobileExtensionsSDK.xcframework")
     ]
 )

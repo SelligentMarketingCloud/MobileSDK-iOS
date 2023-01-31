@@ -1,100 +1,51 @@
-# SMInAppMessage Class Reference
-
-**Inherits from** <a href="../Classes/SMBaseMessage.md">SMBaseMessage</a> :   
-NSObject  
-**Declared in** SMInAppMessage.h  
-
-## Tasks
-
-### 
-
-[&nbsp;&nbsp;title](#/api/name/title) *property* 
-
-[&nbsp;&nbsp;body](#/api/name/body) *property* 
-
-[&nbsp;&nbsp;arrayMapAnnotations](#/api/name/arrayMapAnnotations) *property* 
-
-[&nbsp;&nbsp;arrayIAMLinks](#/api/name/arrayIAMLinks) *property* 
-
-[&nbsp;&nbsp;iamType](#/api/name/iamType) *property* 
-
-[&nbsp;&nbsp;apsTitle](#/api/name/apsTitle) *property* 
-
-[&nbsp;&nbsp;apsBody](#/api/name/apsBody) *property* 
+# SMInAppMessage
 
 ## Properties
+```swift
+@objc var title: String { get }
+```
 
-<a name="/api/name/apsBody" title="apsBody"></a>
-### apsBody
+>String value providing the title of the message
 
-NSString instance providing the <a href="#/api/name/body">body</a> of the remote-notification
+```swift
+@objc var body: String { get }
+```
 
-<code>@property (readonly, nonatomic) NSString *apsBody</code>
+>String value providing the content of the message
 
-#### Declared In
-* `SMInAppMessage.h`
+```swift
+@objc var arrayMapAnnotations: [SMNotificationAnnotationData] { get }
+```
 
-<a name="/api/name/apsTitle" title="apsTitle"></a>
-### apsTitle
+>Array of ``SMNotificationAnnotationData`` objects for map inapp-notification
 
-NSString instance providing the <a href="#/api/name/title">title</a> of the remote-notification
+```swift
+@objc var arrayIAMLinks: [SMLink] { get }
+```
 
-<code>@property (readonly, nonatomic) NSString *apsTitle</code>
+>Array of ``SMLink`` objects
 
-#### Declared In
-* `SMInAppMessage.h`
+```swift
+@objc var apsTitle: String { get }
+```
 
-<a name="/api/name/arrayIAMLinks" title="arrayIAMLinks"></a>
-### arrayIAMLinks
+>String value providing the title of the remote-notification
 
-NSArray of <a href="../Classes/SMLink.md">SMLink</a> objects from the inapp-notification
+```swift
+@objc var apsBody: String { get }
+```
 
-<code>@property (readonly, nonatomic) NSArray *arrayIAMLinks</code>
+>String value providing the body of the remote-notification
 
-#### Declared In
-* `SMInAppMessage.h`
+## Methods
+```swift
+override func encode(with coder: NSCoder)
+```
 
-<a name="/api/name/arrayMapAnnotations" title="arrayMapAnnotations"></a>
-### arrayMapAnnotations
+>Inherited from NSCoding.encode(with:).
 
-NSArray of <a href="../Classes/SMNotificationAnnotationData.md">SMNotificationAnnotationData</a>  objects for map inapp-notification
+```swift
+required init(coder: NSCoder)
+```
 
-<code>@property (readonly, nonatomic) NSArray *arrayMapAnnotations</code>
-
-#### Declared In
-* `SMInAppMessage.h`
-
-<a name="/api/name/body" title="body"></a>
-### body
-
-NSString instance providing the content of the inapp-notification
-
-<code>@property (readonly, nonatomic) NSString *body</code>
-
-#### Declared In
-* `SMInAppMessage.h`
-
-<a name="/api/name/iamType" title="iamType"></a>
-### iamType
-
-<a href="../Constants/SMInAppMessageType.md">SMInAppMessageType</a> instance providing the in inapp-notification type
-
-<code>@property (readonly, nonatomic) SMInAppMessageType iamType</code>
-
-#### See Also
-
-* <code><a href="../Constants/SMInAppMessageType.md">SMInAppMessageType</a></code>
-
-#### Declared In
-* `SMInAppMessage.h`
-
-<a name="/api/name/title" title="title"></a>
-### title
-
-NSString instance providing the title of the inapp-notification
-
-<code>@property (readonly, nonatomic) NSString *title</code>
-
-#### Declared In
-* `SMInAppMessage.h`
-
+>Inherited from NSCoding.encode(with:).

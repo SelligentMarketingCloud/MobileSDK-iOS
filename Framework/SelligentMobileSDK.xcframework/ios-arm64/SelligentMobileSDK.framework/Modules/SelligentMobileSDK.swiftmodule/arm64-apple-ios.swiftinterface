@@ -1,0 +1,612 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SelligentMobileSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import CoreLocation
+import Foundation
+import MapKit
+import Network
+@_exported import SelligentMobileSDK
+import StoreKit
+import Swift
+import SystemConfiguration
+import UIKit
+import UserNotifications
+import UserNotificationsUI
+import WebKit
+import _Concurrency
+import _StringProcessing
+@objc(kSMClearCache_) public enum SMClearCache : Swift.Int {
+  case none = 0
+  case auto = 1
+  case week = 2
+  case month = 3
+  case quarter = 4
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class SMLink : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc public var idButtonData: Swift.String {
+    get
+  }
+  @objc public var label: Swift.String {
+    get
+  }
+  @objc public var value: Swift.String {
+    get
+  }
+  @objc public var type: SelligentMobileSDK.SMNotificationButtonType {
+    get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SMInAppContentURLViewController : SelligentMobileSDK.SMInAppContentViewController, WebKit.WKNavigationDelegate {
+  @objc @_Concurrency.MainActor(unsafe) public init(category: Swift.String, options: SelligentMobileSDK.SMInAppContentStyleOptions? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class SMEventUserRegistration : SelligentMobileSDK.SMEventUser {
+  @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
+  @objc deinit
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func registerForRemoteNotification()
+  @available(iOS 12.0, *)
+  @objc dynamic public func registerForProvisionalRemoteNotification()
+  @objc dynamic public func enableRemoteNotification()
+  @objc dynamic public func disableRemoteNotification()
+  @objc dynamic public func didRegisterForRemoteNotifications(deviceToken: Foundation.Data)
+  @objc dynamic public func didFailToRegisterForRemoteNotifications(with error: Swift.Error)
+  @objc dynamic public func displayNotification(id: Swift.String)
+  @objc dynamic public func displayLastReceivedRemoteNotification()
+  @objc dynamic public func retrieveLastRemoteNotification() -> [Swift.String : Swift.String]?
+  @objc dynamic public func setNotificationMessageAsSeen(_ message: SelligentMobileSDK.SMNotificationMessage)
+  @objc dynamic public func didReceiveRemoteNotification(_ userInfo: [Swift.AnyHashable : Any], completionHandler: ((UIKit.UIBackgroundFetchResult) -> ())?)
+}
+@_hasMissingDesignatedInitializers @objc public class SMEventUserLogin : SelligentMobileSDK.SMEventUser {
+  @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
+  @objc deinit
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func enable(inAppMessage: Swift.Bool)
+  @objc dynamic public func performIAMFetch(completion: @escaping (UIKit.UIBackgroundFetchResult) -> ())
+  @objc dynamic public func getInAppMessages() -> [SelligentMobileSDK.SMInAppMessage]
+  @objc dynamic public func setInAppMessageAsSeen(_ message: SelligentMobileSDK.SMInAppMessage)
+  @objc dynamic public func setInAppMessageAsUnseen(_ message: SelligentMobileSDK.SMInAppMessage)
+  @objc dynamic public func setInAppMessageAsDeleted(_ message: SelligentMobileSDK.SMInAppMessage)
+  @objc dynamic public func executeLinkAction(_ link: SelligentMobileSDK.SMLink, inAppMessage: SelligentMobileSDK.SMInAppMessage)
+  @objc dynamic public func inAppMessageWKNavigationDelegate(_ delegate: WebKit.WKNavigationDelegate)
+  @objc dynamic public func inAppMessageDelegate(_ delegate: SelligentMobileSDK.SMManagerInAppMessageDelegate)
+  @objc dynamic public func removeViewController()
+}
+@_hasMissingDesignatedInitializers @objc public class SMEventUser : SelligentMobileSDK.SMEvent {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class SMInAppContentMessage : SelligentMobileSDK.SMBaseMessage {
+  @objc public var title: Swift.String {
+    get
+  }
+  @objc public var body: Swift.String {
+    get
+  }
+  @objc public var category: Swift.String {
+    get
+  }
+  @objc public var iacType: SelligentMobileSDK.SMInAppContentType {
+    get
+  }
+  @objc public var arrayIACLinks: [SelligentMobileSDK.SMLink] {
+    get
+  }
+  @objc override public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc(kSMNotificationButtonType_) public enum SMNotificationButtonType : Swift.Int {
+  case unknown = -1
+  case simple = 0
+  case openPhoneCall = 1
+  case openSms = 2
+  case openMail = 3
+  case openBrowser = 4
+  case openApplication = 5
+  case rateApplication = 6
+  case customActionBroadcastEvent = 7
+  case passbook = 11
+  case deepLink = 13
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class SMFailure : ObjectiveC.NSObject, SelligentMobileSDK.SMMessage {
+  @objc public var messageSM: Swift.String {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class SMInAppMessage : SelligentMobileSDK.SMBaseMessage {
+  @objc public var title: Swift.String {
+    get
+  }
+  @objc public var body: Swift.String {
+    get
+  }
+  @objc public var arrayMapAnnotations: [SelligentMobileSDK.SMNotificationAnnotationData] {
+    get
+  }
+  @objc public var arrayIAMLinks: [SelligentMobileSDK.SMLink] {
+    get
+  }
+  @objc public var apsTitle: Swift.String {
+    get
+  }
+  @objc public var apsBody: Swift.String {
+    get
+  }
+  @objc override public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func apply(_ logLevel: SelligentMobileSDK.SMLogLevel)
+}
+@objc(kSMDisplayMode_) public enum SMDisplayMode : Swift.Int {
+  case unknown = -1
+  case onlyOnce = 0
+  case untilReplaced = 1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(kSMMN_) public enum SMMessageNature : Swift.Int, Swift.CustomStringConvertible {
+  case push = 0
+  case iaContent = 1
+  case iaMessage = 2
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func send(_ event: SelligentMobileSDK.SMEvent)
+}
+@objc(kSMLogLevel_) public enum SMLogLevel : Swift.Int {
+  case none = 0
+  case info = 1
+  case warning = 2
+  case error = 3
+  case httpCall = 4
+  case location = 5
+  case all = -1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class SMConstants : ObjectiveC.NSObject {
+  @objc public static let kSMErrorDomain: Swift.String
+  @objc public static let kSMNotification_Event_ButtonClicked: Swift.String
+  @objc public static let kSMNotification_Event_WillDisplayNotification: Swift.String
+  @objc public static let kSMNotification_Event_WillDismissNotification: Swift.String
+  @objc public static let kSMNotification_Event_DidReceiveRemoteNotification: Swift.String
+  @objc public static let kSMNotification_Event_DidReceiveInAppMessage: Swift.String
+  @objc public static let kSMNotification_Event_DidReceiveInAppContent: Swift.String
+  @objc public static let kSMNotification_Event_DidReceiveDeviceId: Swift.String
+  @objc public static let kSMNotification_Data_ButtonData: Swift.String
+  @objc public static let kSMNotification_Data_RemoteNotification: Swift.String
+  @objc public static let kSMNotification_Data_InAppMessage: Swift.String
+  @objc public static let kSMNotification_Data_InAppContent: Swift.String
+  @objc public static let kSMNotification_Data_DeviceId: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SMInAppMessageStyleOptions : ObjectiveC.NSObject {
+  @objc public var navigationTitleColor: UIKit.UIColor?
+  @objc public var navigationTitleFont: UIKit.UIFont?
+  @objc public var navigationBackgroundColor: UIKit.UIColor?
+  @objc public var navigationMenuButtonColor: UIKit.UIColor?
+  @objc public var navigationCloseButtonColor: UIKit.UIColor?
+  @objc public var navigationArrowButtonsColor: UIKit.UIColor?
+  @objc public var viewBackgroundColor: UIKit.UIColor?
+  @objc public var linksColor: UIKit.UIColor?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(kSMAlign) public enum SMContentAlignment : Swift.Int {
+  case left = 0
+  case right = 1
+  case center = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SMInAppContentImageViewController : SelligentMobileSDK.SMInAppContentViewController {
+  @objc @_Concurrency.MainActor(unsafe) public init(category: Swift.String, options: SelligentMobileSDK.SMInAppContentStyleOptions? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SMSuccess : ObjectiveC.NSObject, SelligentMobileSDK.SMMessage {
+  @objc public var messageSM: Swift.String {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SMNotificationAnnotationData : ObjectiveC.NSObject, Foundation.NSCoding, MapKit.MKAnnotation {
+  @objc public var coordinate: CoreLocation.CLLocationCoordinate2D {
+    get
+  }
+  @objc public var title: Swift.String? {
+    get
+  }
+  @objc public var subtitle: Swift.String? {
+    get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public protocol SMManagerUniversalLinksDelegate {
+  @objc func executeLinkAction(_ url: Foundation.URL)
+}
+@objc public class SMManagerSettingIAC : ObjectiveC.NSObject {
+  @objc public var styleOptions: SelligentMobileSDK.SMInAppContentStyleOptions
+  @objc public init(refreshType: SelligentMobileSDK.SMInAppRefreshType)
+  @objc public init(refreshType: SelligentMobileSDK.SMInAppRefreshType, backgroundFetch: Swift.Bool) throws
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SMInAppContentViewController : SelligentMobileSDK.SMUIViewController {
+  @objc @_Concurrency.MainActor(unsafe) final public let category: Swift.String
+  @objc @_Concurrency.MainActor(unsafe) public var isEmpty: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var prefersStatusBarHidden: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SMUIViewController : UIKit.UIViewController {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SMManager : ObjectiveC.NSObject {
+  @objc public var versionLib: Swift.String {
+    @objc get
+  }
+  @objc public var deviceId: Swift.String {
+    @objc get
+  }
+  @objc public static let shared: SelligentMobileSDK.SMManager
+  @objc public func start(with settings: SelligentMobileSDK.SMManagerSetting)
+  @objc public func reload(settings: SelligentMobileSDK.SMManagerSetting)
+  @objc deinit
+}
+@objc(kSMNotificationMessageType_) public enum SMNotificationMessageType : Swift.Int, Swift.Codable {
+  case unknown = -2
+  case hidden = -1
+  case alert = 0
+  case html = 1
+  case url = 2
+  case image = 3
+  case map = 4
+  case passbook = 5
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(kSMInAppContentType_) public enum SMInAppContentType : Swift.Int {
+  case unknown = -2
+  case html = 1
+  case url = 2
+  case image = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func sendDeviceInfo(_ deviceInfos: SelligentMobileSDK.SMDeviceInfos)
+}
+@objc public protocol SMMessage {
+  @objc var messageSM: Swift.String { get }
+}
+@objc(kSMIA_RefreshType_) public enum SMInAppRefreshType : Swift.Int {
+  case none
+  case minutely
+  case hourly
+  case daily
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class SMEventUserLogout : SelligentMobileSDK.SMEventUser {
+  @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
+  @objc deinit
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation, withError error: Swift.Error)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didCommit navigation: WebKit.WKNavigation)
+}
+@_hasMissingDesignatedInitializers @objc public class SMEventUserUnregistration : SelligentMobileSDK.SMEventUser {
+  @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
+  @objc deinit
+}
+@objc(kSMFrameworkType_) public enum SMFrameworkType : Swift.Int, Swift.CustomStringConvertible {
+  case none = 0
+  case reactNative = 1
+  case cordova = 2
+  case xamarinNative = 3
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class SMNotificationMessage : SelligentMobileSDK.SMInAppMessage {
+  @objc public var mediaUrl: Swift.String {
+    get
+  }
+  @objc public var mainAction: SelligentMobileSDK.SMLink? {
+    get
+  }
+  @objc public var notificationButtons: [SelligentMobileSDK.SMLink] {
+    get
+  }
+  @objc override public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func universalLinksDelegate(_ delegate: SelligentMobileSDK.SMManagerUniversalLinksDelegate)
+  @objc dynamic public func setLinkAsClicked(_ link: SelligentMobileSDK.SMLink, from notificationMessage: SelligentMobileSDK.SMNotificationMessage)
+}
+@objc public class SMDeviceInfos : ObjectiveC.NSObject {
+  @objc public init(externalId: Swift.String)
+  @objc deinit
+}
+@objc public protocol SMManagerInAppMessageDelegate {
+  @objc func display(_ inAppMessage: SelligentMobileSDK.SMInAppMessage)
+}
+@objc public enum SMError : Swift.Int {
+  case missingParameters = 1000
+  case wrongParameters = 1001
+  case wrongAppSettings = 2000
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class SMInAppContentStyleOptions : ObjectiveC.NSObject {
+  @objc public var mainViewIsScrollable: Swift.Bool
+  @objc public var mainViewBackgroundColor: UIKit.UIColor?
+  @objc public var activityIndicatorStyle: UIKit.UIActivityIndicatorView.Style
+  @objc public var isStatusBarHidden: Swift.Bool
+  @objc public var boxLeading: CoreFoundation.CGFloat
+  @objc public var boxTrailing: CoreFoundation.CGFloat
+  @objc public var marginBetweenBoxes: CoreFoundation.CGFloat
+  @objc public var marginBetweenFirstBoxAndTopOfView: CoreFoundation.CGFloat
+  @objc public var marginBetweenLastBoxAndBottomOfView: CoreFoundation.CGFloat
+  @objc public var boxBorderWidth: CoreFoundation.CGFloat
+  @objc public var boxBorderColor: UIKit.UIColor?
+  @objc public var boxCornerRadius: CoreFoundation.CGFloat
+  @objc public var boxBackgroundColor: UIKit.UIColor?
+  @objc public var boxShadowColor: UIKit.UIColor?
+  @objc public var boxShadowOpacity: Swift.Float
+  @objc public var boxShadowRadius: CoreFoundation.CGFloat
+  @objc public var boxShadowOffset: CoreFoundation.CGSize
+  @objc public var titleBorderWidth: CoreFoundation.CGFloat
+  @objc public var titleBorderColor: UIKit.UIColor?
+  @objc public var titleCornerRadius: CoreFoundation.CGFloat
+  @objc public var titleBackgroundColor: UIKit.UIColor?
+  @objc public var titleNumberOfLines: Swift.Int
+  @objc public var titleLineBreakMode: UIKit.NSLineBreakMode
+  @objc public var titleTextAlignment: UIKit.NSTextAlignment
+  @objc public var titleAttributes: [Swift.AnyHashable : Any]?
+  @objc public var titleTextColor: UIKit.UIColor?
+  @objc public var titleFont: UIKit.UIFont?
+  @objc public var titleTrailing: CoreFoundation.CGFloat
+  @objc public var titleLeading: CoreFoundation.CGFloat
+  @objc public var titleTop: CoreFoundation.CGFloat
+  @objc public var titleShadowColor: UIKit.UIColor?
+  @objc public var titleShadowOpacity: Swift.Float
+  @objc public var titleShadowRadius: CoreFoundation.CGFloat
+  @objc public var titleShadowOffset: CoreFoundation.CGSize
+  @objc public var showTitleBorderBottom: Swift.Bool
+  @objc public var titleBorderBottomColor: UIKit.UIColor?
+  @objc public var textViewTrailing: CoreFoundation.CGFloat
+  @objc public var textViewLeading: CoreFoundation.CGFloat
+  @objc public var textViewTop: CoreFoundation.CGFloat
+  @objc public var textViewContentOffset: CoreFoundation.CGPoint
+  @objc public var textViewContentInset: UIKit.UIEdgeInsets
+  @objc public var textViewBorderWidth: CoreFoundation.CGFloat
+  @objc public var textViewBorderColor: UIKit.UIColor?
+  @objc public var textViewCornerRadius: CoreFoundation.CGFloat
+  @objc public var textViewBackgroundColor: UIKit.UIColor?
+  @objc public var linksAlignment: SelligentMobileSDK.SMContentAlignment
+  @objc public var linksMargin: CoreFoundation.CGFloat
+  @objc public var linksTop: CoreFoundation.CGFloat
+  @objc public var linksBottom: CoreFoundation.CGFloat
+  @objc public var marginBetweenLinks: CoreFoundation.CGFloat
+  @objc public var linkBorderWidth: CoreFoundation.CGFloat
+  @objc public var linkBorderColor: UIKit.UIColor?
+  @objc public var linkCornerRadius: CoreFoundation.CGFloat
+  @objc public var linkShadowColor: UIKit.UIColor?
+  @objc public var linkShadowOpacity: Swift.Float
+  @objc public var linkShadowRadius: CoreFoundation.CGFloat
+  @objc public var linkShadowOffset: CoreFoundation.CGSize
+  @objc public var linkBackgroundColor: UIKit.UIColor?
+  @objc public var linkTextColor: UIKit.UIColor?
+  @objc public var linkFont: UIKit.UIFont?
+  @objc public var linkContentEdgeInsets: UIKit.UIEdgeInsets
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SMEvent : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc public var shouldCache: Swift.Bool
+  @objc public init(name: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
+  @objc public func apply(successBlock: ((SelligentMobileSDK.SMSuccess) -> ())? = nil, failureBlock: ((SelligentMobileSDK.SMFailure) -> ())? = nil)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func didReceive(_ response: UserNotifications.UNNotificationResponse)
+  @objc dynamic public func willPresent(_ notification: UserNotifications.UNNotification, completionHandler: ((UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)?)
+  @objc dynamic public func retrieveNotificationMessage(_ userInfo: [Swift.AnyHashable : Any]) -> SelligentMobileSDK.SMNotificationMessage?
+}
+@objc(kSMRemoteMessageDisplayType_) public enum SMRemoteMessageDisplayType : Swift.Int {
+  case unknown = 0
+  case none = 1
+  case notification = 2
+  case automatic = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class SMManagerSettingIAM : ObjectiveC.NSObject {
+  @objc public var styleOptions: SelligentMobileSDK.SMInAppMessageStyleOptions
+  @objc public init(refreshType: SelligentMobileSDK.SMInAppRefreshType)
+  @objc public init(refreshType: SelligentMobileSDK.SMInAppRefreshType, backgroundFetch: Swift.Bool) throws
+  @objc deinit
+}
+extension SelligentMobileSDK.SMManager {
+  @objc dynamic public func show(controller: SelligentMobileSDK.SMInAppContentViewController, in view: UIKit.UIView, of viewController: UIKit.UIViewController)
+  @objc dynamic public func getInAppContents(for category: Swift.String, type: SelligentMobileSDK.SMInAppContentType) -> [SelligentMobileSDK.SMInAppContentMessage]
+  @objc dynamic public func setInAppContentAsSeen(_ content: SelligentMobileSDK.SMInAppContentMessage)
+  @objc dynamic public func executeLinkAction(_ link: SelligentMobileSDK.SMLink, inAppContent: SelligentMobileSDK.SMInAppContentMessage)
+  @objc dynamic public func performIACFetch(completion: @escaping (UIKit.UIBackgroundFetchResult) -> ())
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SMInAppContentHTMLViewController : SelligentMobileSDK.SMInAppContentViewController {
+  @objc @_Concurrency.MainActor(unsafe) public init(category: Swift.String, boxes: Swift.Int = -1, options: SelligentMobileSDK.SMInAppContentStyleOptions? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SMBaseMessage : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc public var idMessage: Swift.String {
+    get
+  }
+  @objc public var receptionDate: Foundation.Date {
+    get
+  }
+  @objc public var expirationDate: Foundation.Date? {
+    get
+  }
+  @objc public var creationDate: Foundation.Date {
+    get
+  }
+  @objc public var isViewed: Swift.Bool {
+    get
+  }
+  @objc public var type: SelligentMobileSDK.SMNotificationMessageType {
+    get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SMManagerSetting : ObjectiveC.NSObject {
+  @objc public var shouldClearBadge: Swift.Bool
+  @objc public var shouldDisplayRemoteNotification: Swift.Bool
+  @objc public var shouldAddInAppMessageFromPushToInAppMessageList: Swift.Bool
+  @objc public var remoteMessageDisplayType: SelligentMobileSDK.SMRemoteMessageDisplayType
+  @objc public var frameworkType: SelligentMobileSDK.SMFrameworkType
+  @objc public var clearCacheIntervalValue: SelligentMobileSDK.SMClearCache
+  @objc public var appGroupId: Swift.String
+  @objc public init(url: Swift.String, clientId: Swift.String, privateKey: Swift.String) throws
+  @objc public init(url: Swift.String, appId: Swift.String, apiKey: Swift.String, legacyPrivateKey: Swift.String? = nil) throws
+  @objc public func configureInAppMessageService(with settings: SelligentMobileSDK.SMManagerSettingIAM)
+  @objc public func configureInAppContentService(with settings: SelligentMobileSDK.SMManagerSettingIAC)
+  @objc deinit
+}
+extension SelligentMobileSDK.SMClearCache : Swift.Equatable {}
+extension SelligentMobileSDK.SMClearCache : Swift.Hashable {}
+extension SelligentMobileSDK.SMClearCache : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMNotificationButtonType : Swift.Equatable {}
+extension SelligentMobileSDK.SMNotificationButtonType : Swift.Hashable {}
+extension SelligentMobileSDK.SMNotificationButtonType : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMDisplayMode : Swift.Equatable {}
+extension SelligentMobileSDK.SMDisplayMode : Swift.Hashable {}
+extension SelligentMobileSDK.SMDisplayMode : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMMessageNature : Swift.Equatable {}
+extension SelligentMobileSDK.SMMessageNature : Swift.Hashable {}
+extension SelligentMobileSDK.SMMessageNature : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMLogLevel : Swift.Equatable {}
+extension SelligentMobileSDK.SMLogLevel : Swift.Hashable {}
+extension SelligentMobileSDK.SMLogLevel : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMContentAlignment : Swift.Equatable {}
+extension SelligentMobileSDK.SMContentAlignment : Swift.Hashable {}
+extension SelligentMobileSDK.SMContentAlignment : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMNotificationMessageType : Swift.Equatable {}
+extension SelligentMobileSDK.SMNotificationMessageType : Swift.Hashable {}
+extension SelligentMobileSDK.SMNotificationMessageType : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMInAppContentType : Swift.Equatable {}
+extension SelligentMobileSDK.SMInAppContentType : Swift.Hashable {}
+extension SelligentMobileSDK.SMInAppContentType : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMInAppRefreshType : Swift.Equatable {}
+extension SelligentMobileSDK.SMInAppRefreshType : Swift.Hashable {}
+extension SelligentMobileSDK.SMInAppRefreshType : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMFrameworkType : Swift.Equatable {}
+extension SelligentMobileSDK.SMFrameworkType : Swift.Hashable {}
+extension SelligentMobileSDK.SMFrameworkType : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMError : Swift.Equatable {}
+extension SelligentMobileSDK.SMError : Swift.Hashable {}
+extension SelligentMobileSDK.SMError : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMRemoteMessageDisplayType : Swift.Equatable {}
+extension SelligentMobileSDK.SMRemoteMessageDisplayType : Swift.Hashable {}
+extension SelligentMobileSDK.SMRemoteMessageDisplayType : Swift.RawRepresentable {}

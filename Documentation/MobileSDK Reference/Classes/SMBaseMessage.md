@@ -1,92 +1,63 @@
-# SMBaseMessage Class Reference
-
-**Inherits from** NSObject  
-**Declared in** SMBaseMessage.h  
-
-## Overview
-
-This is the Base class for message (push notif, in app message and in app content)
-
-## Tasks
-
-### 
-
-[&nbsp;&nbsp;idMessage](#/api/name/idMessage) *property* 
-
-[&nbsp;&nbsp;)](#/api/name/)) *property* 
-
-[&nbsp;&nbsp;receptionDate](#/api/name/receptionDate) *property* 
-
-[&nbsp;&nbsp;expirationDate](#/api/name/expirationDate) *property* 
-
-[&nbsp;&nbsp;creationDate](#/api/name/creationDate) *property* 
-
-[&nbsp;&nbsp;isViewed](#/api/name/isViewed) *property* 
+# SMBaseMessage
 
 ## Properties
+```swift
+@objc var idMessage: String { get }
+```
 
-<a name="/api/name/)" title=")"></a>
-### )
+>String value of the message Id
 
-NSDate instance providing the creation date of the message
+```swift
+@objc var receptionDate: Date { get }
+```
 
-<code>@property (readonly, nonatomic) NSDate *dateCreation __deprecated __deprecated_msg ( &quot;Use receptionDate instead&quot; )</code>
+>Date value of the message reception date
 
-#### Discussion
+```swift
+@objc var expirationDate: Date? { get }
+```
 
+>Date value of the message expiration date, if any
 
-<strong>Warning:</strong> Deprecated - use <a href="#/api/name/receptionDate">receptionDate</a>  instead
+```swift
+@objc var creationDate: Date { get }
+```
 
-#### Declared In
-* `SMBaseMessage.h`
+>Date value of the message creation date
 
-<a name="/api/name/creationDate" title="creationDate"></a>
-### creationDate
+```swift
+@objc var isViewed: Bool { get }
+```
 
-NSDate instance providing the creation date of the message
+>Bool value indication whether the message has been viewed (at least once), or not
 
-<code>@property (readonly, nonatomic) NSDate *creationDate</code>
+```swift
+@objc var type: SMNotificationMessageType { get }
+```
 
-#### Declared In
-* `SMBaseMessage.h`
+>The inapp-message type (if any)
 
-<a name="/api/name/expirationDate" title="expirationDate"></a>
-### expirationDate
+```swift
+var hash: Int { get }
+```
 
-NSDate instance providing the expiration date of the message
+>Returns an integer that can be used as a table address in a hash table structure.
 
-<code>@property (readonly, nonatomic) NSDate *expirationDate</code>
+## Methods
+```swift
+func encode(with coder: NSCoder)
+```
 
-#### Declared In
-* `SMBaseMessage.h`
+>Inherited from NSCoding.encode(with:).
 
-<a name="/api/name/idMessage" title="idMessage"></a>
-### idMessage
+```swift
+required init(coder: NSCoder)
+```
 
-NSString instance providing the id of the message
+>Inherited from NSCoding.encode(with:).
 
-<code>@property (readonly, nonatomic) NSString *idMessage</code>
+```swift
+override func isEqual(_ object: Any?) -> Bool
+```
 
-#### Declared In
-* `SMBaseMessage.h`
-
-<a name="/api/name/isViewed" title="isViewed"></a>
-### isViewed
-
-bool instance infiorming if the message has already been displayed and viewed by user
-
-<code>@property (readonly, nonatomic) bool isViewed</code>
-
-#### Declared In
-* `SMBaseMessage.h`
-
-<a name="/api/name/receptionDate" title="receptionDate"></a>
-### receptionDate
-
-NSDate instance providing the reception date on sdk side of the message
-
-<code>@property (readonly, nonatomic) NSDate *receptionDate</code>
-
-#### Declared In
-* `SMBaseMessage.h`
-
+>Returns a Boolean value that indicates whether the receiver and a given object are equal.

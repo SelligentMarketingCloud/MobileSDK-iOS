@@ -1,53 +1,33 @@
-# SMNotificationMessage Class Reference
-
-**Inherits from** <a href="../Classes/SMInAppMessage.md">SMInAppMessage</a> :   
-<a href="../Classes/SMBaseMessage.md">SMBaseMessage</a> :   
-NSObject  
-**Declared in** SMNotificationMessage.h  
-
-## Tasks
-
-### 
-
-[&nbsp;&nbsp;mediaUrl](#/api/name/mediaUrl) *property* 
-
-[&nbsp;&nbsp;mainAction](#/api/name/mainAction) *property* 
-
-[&nbsp;&nbsp;notificationButtons](#/api/name/notificationButtons) *property* 
+# SMNotificationMessage
 
 ## Properties
+```swift
+@objc var mediaUrl: String { get }
+```
 
-<a name="/api/name/mainAction" title="mainAction"></a>
-### mainAction
+>String value providing the title of the message
 
-<a href="../Classes/SMNotificationButtonData.md">SMNotificationButtonData</a> instance providing the main action behind the remote-notification banner
+```swift
+@objc var mainAction: SMLink? { get }
+```
 
-<code>@property (readonly, nonatomic) SMNotificationButtonData *mainAction</code>
+>String value providing the content of the message
 
-#### See Also
+```swift
+@objc var notificationButtons: [SMLink] { get }
+```
 
-* <code><a href="../Classes/SMNotificationButtonData.md">SMNotificationButtonData</a></code>
+>String value providing the category of the message
 
-#### Declared In
-* `SMNotificationMessage.h`
+## Methods
+```swift
+override func encode(with coder: NSCoder)
+```
 
-<a name="/api/name/mediaUrl" title="mediaUrl"></a>
-### mediaUrl
+>Inherited from NSCoding.encode(with:).
 
-NSString instance providing url of the Rich media attached to the remote-notification
+```swift
+required init(coder: NSCoder)
+```
 
-<code>@property (readonly, nonatomic) NSString *mediaUrl</code>
-
-#### Declared In
-* `SMNotificationMessage.h`
-
-<a name="/api/name/notificationButtons" title="notificationButtons"></a>
-### notificationButtons
-
-NSArray of <a href="../Classes/SMLink.md">SMLink</a> objects from the remote-notification
-
-<code>@property (readonly, nonatomic) NSArray *notificationButtons</code>
-
-#### Declared In
-* `SMNotificationMessage.h`
-
+>Inherited from NSCoding.encode(with:).

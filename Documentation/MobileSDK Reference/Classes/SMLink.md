@@ -1,63 +1,39 @@
-# SMLink Class Reference
-
-**Inherits from** NSObject  
-**Declared in** SMLink.h  
-
-## Tasks
-
-### 
-
-[&nbsp;&nbsp;idButtonData](#/api/name/idButtonData) *property* 
-
-[&nbsp;&nbsp;label](#/api/name/label) *property* 
-
-[&nbsp;&nbsp;value](#/api/name/value) *property* 
-
-[&nbsp;&nbsp;type](#/api/name/type) *property* 
+# SMLink
 
 ## Properties
+```swift
+@objc var idButtonData: String { get }
+```
 
-<a name="/api/name/idButtonData" title="idButtonData"></a>
-### idButtonData
+>String value providing the id of the button
 
-NSString instance providing the id of the button
+```swift
+@objc var label: String { get }
+```
 
-<code>@property (readonly, nonatomic, strong) NSString *idButtonData</code>
+>String value providing the label of the button
 
-#### Declared In
-* `SMLink.h`
+```swift
+@objc var value: String { get }
+```
 
-<a name="/api/name/label" title="label"></a>
-### label
+>String value providing the value of the button
 
-NSString instance providing the label of the button
+```swift
+@objc var type: SMNotificationButtonType { get }
+```
 
-<code>@property (readonly, nonatomic, strong) NSString *label</code>
+>The ``SMNotificationButtonType`` type of action that the button will execute.
 
-#### Declared In
-* `SMLink.h`
+## Methods
+```swift
+func encode(with coder: NSCoder)
+```
 
-<a name="/api/name/type" title="type"></a>
-### type
+>Inherited from NSCoding.encode(with:).
 
-The type (<a href="../Constants/SMNotificationButtonType.md">SMNotificationButtonType</a>) of action that the button will execute.
+```swift
+required init(coder: NSCoder)
+```
 
-<code>@property (readonly, nonatomic) SMNotificationButtonType type</code>
-
-#### See Also
-
-* <code><a href="../Constants/SMNotificationButtonType.md">SMNotificationButtonType</a></code>
-
-#### Declared In
-* `SMLink.h`
-
-<a name="/api/name/value" title="value"></a>
-### value
-
-NSString instance providing the value of the button
-
-<code>@property (readonly, nonatomic, strong) NSString *value</code>
-
-#### Declared In
-* `SMLink.h`
-
+>Inherited from NSCoding.encode(with:).

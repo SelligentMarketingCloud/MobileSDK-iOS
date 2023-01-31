@@ -1,10 +1,14 @@
-# SMSuccess Class Reference
+# SMSuccess
 
-**Inherits from** <a href="../Classes/SMMessage.md">SMMessage</a> :   
-NSObject  
-**Declared in** SMSuccess.h  
+## Properties
+```swift
+var messageSM: String { get }
+```
 
-## Overview
+>Description of the success
 
-This class is used to return a successfull action
+```swift
+var description: String { get }
+```
 
+>A textual representation of the receiver.

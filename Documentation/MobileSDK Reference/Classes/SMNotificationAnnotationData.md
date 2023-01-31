@@ -1,59 +1,33 @@
-# SMNotificationAnnotationData Class Reference
-
-**Inherits from** NSObject  
-**Declared in** SMNotificationAnnotationData.h  
-
-## Tasks
-
-### 
-
-[&nbsp;&nbsp;titleAnnotation](#/api/name/titleAnnotation) *property* 
-
-[&nbsp;&nbsp;descriptionAnnotation](#/api/name/descriptionAnnotation) *property* 
-
-[&nbsp;&nbsp;latitude](#/api/name/latitude) *property* 
-
-[&nbsp;&nbsp;longitude](#/api/name/longitude) *property* 
+# SMNotificationAnnotationData
 
 ## Properties
+```swift
+@objc var coordinate: CLLocationCoordinate2D { get }
+```
 
-<a name="/api/name/descriptionAnnotation" title="descriptionAnnotation"></a>
-### descriptionAnnotation
+>  CLLocationCoordinate2D instance providing the annotation's coordinate<br/>
 
-NSString instance providing the description of the annotation
+```swift
+@objc var title: String? { get }
+```
 
-<code>@property (readonly, nonatomic) NSString *descriptionAnnotation</code>
+>  String value providing the annotation's title<br/>
 
-#### Declared In
-* `SMNotificationAnnotationData.h`
+```swift
+@objc var subtitle: String? { get }
+```
 
-<a name="/api/name/latitude" title="latitude"></a>
-### latitude
+>  String value providing the annotation's subtitle<br/>
 
-NSString instance providing the latitude of the annotation
+## Methods
+```swift
+func encode(with coder: NSCoder)
+```
 
-<code>@property (readonly, nonatomic) float latitude</code>
+>Inherited from NSCoding.encode(with:).
 
-#### Declared In
-* `SMNotificationAnnotationData.h`
+```swift
+required init(coder: NSCoder)
+```
 
-<a name="/api/name/longitude" title="longitude"></a>
-### longitude
-
-NSString instance providing the longitude of the message
-
-<code>@property (readonly, nonatomic) float longitude</code>
-
-#### Declared In
-* `SMNotificationAnnotationData.h`
-
-<a name="/api/name/titleAnnotation" title="titleAnnotation"></a>
-### titleAnnotation
-
-NSString instance providing the title of the annotation
-
-<code>@property (readonly, nonatomic) NSString *titleAnnotation</code>
-
-#### Declared In
-* `SMNotificationAnnotationData.h`
-
+>Inherited from NSCoding.encode(with:).

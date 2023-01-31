@@ -1,129 +1,27 @@
-# SMInAppContentHTMLViewController Class Reference
+# SMInAppContentHTMLViewController
 
-**Inherits from** <a href="../Classes/SMInAppContentViewController.md">SMInAppContentViewController</a> :   
-UIViewController  
-**Declared in** SMInAppContentHTMLViewController.h  
+## Properties
+```swift
+var description: String { get }
+```
 
-## Overview
+>A textual representation of the receiver.
 
-A view controller for HTML In App Content
+## Methods
+```swift
+@objc init(category: String, boxes: Int = -1, options: SMInAppContentStyleOptions? = nil)
+```
 
-## Tasks
+>This will provide you a custom viewcontroller with all HTML in app content available<br/>    
 
-### 
+```swift
+override func viewDidLoad()
+```
 
-[+&nbsp;viewControllerForCategory:](#/api/name/viewControllerForCategory:)  
+>Called after the controller's view is loaded into memory.
 
-[+&nbsp;viewControllerForCategory:AndOptions:](#/api/name/viewControllerForCategory:AndOptions:)  
+```swift
+override func viewDidAppear(_ animated: Bool)
+```
 
-[+&nbsp;viewControllerForCategory:InNumberOfBoxes:](#/api/name/viewControllerForCategory:InNumberOfBoxes:)  
-
-[+&nbsp;viewControllerForCategory:InNumberOfBoxes:AndOptions:](#/api/name/viewControllerForCategory:InNumberOfBoxes:AndOptions:)  
-
-<a title="Class Methods" name="class_methods"></a>
-## Class Methods
-
-<a name="/api/name/viewControllerForCategory:" title="viewControllerForCategory:"></a>
-### viewControllerForCategory:
-
-This will provide you a custom viewcontroller with all HTML in app content for a specific category
-
-<code>+ (instancetype _Nonnull)viewControllerForCategory:(NSString *_Nullable)*category*</code>
-
-#### Parameters
-
-*category*  
-&nbsp;&nbsp;&nbsp;a NSString of the desired category of In App Content  
-
-#### Return Value
-a SMInAppContentHTMLViewController
-
-#### Discussion
-The viewcontroller will take all available space in screen and will contain a close button if it is presented as it is. Otherwise the app will have to define a UIContainerView which will contain the view controller
-
-#### Declared In
-* `SMInAppContentHTMLViewController.h`
-
-<a name="/api/name/viewControllerForCategory:AndOptions:" title="viewControllerForCategory:AndOptions:"></a>
-### viewControllerForCategory:AndOptions:
-
-This will provide you a custom viewcontroller with all HTML in app content for a specific category
-
-<code>+ (instancetype _Nonnull)viewControllerForCategory:(NSString *_Nullable)*category* AndOptions:(SMInAppContentStyleOptions *_Nullable)*options*</code>
-
-#### Parameters
-
-*category*  
-&nbsp;&nbsp;&nbsp;a NSString of the desired category of In App Content  
-
-*options*  
-&nbsp;&nbsp;&nbsp;a <a href="../Classes/SMInAppContentStyleOptions.md">SMInAppContentStyleOptions</a> object allowing you to customise the in app content  
-
-#### Return Value
-a SMInAppContentHTMLViewController
-
-#### Discussion
-The viewcontroller will take all available space in screen and will contain a close button if it is presented as it is. Otherwise the app will have to define a UIContainerView which will contain the view controller
-
-#### See Also
-
-* <code><a href="../Classes/SMInAppContentStyleOptions.md">SMInAppContentStyleOptions</a></code>
-
-#### Declared In
-* `SMInAppContentHTMLViewController.h`
-
-<a name="/api/name/viewControllerForCategory:InNumberOfBoxes:" title="viewControllerForCategory:InNumberOfBoxes:"></a>
-### viewControllerForCategory:InNumberOfBoxes:
-
-This will provide you a custom viewcontroller with HTML in app content for a specific category
-
-<code>+ (instancetype _Nonnull)viewControllerForCategory:(NSString *_Nullable)*category* InNumberOfBoxes:(int)*numberofboxes*</code>
-
-#### Parameters
-
-*category*  
-&nbsp;&nbsp;&nbsp;a NSString of the desired category of In App Content  
-
-*numberofboxes*  
-&nbsp;&nbsp;&nbsp;an int corresponding to the maximum numbers of.md boxes that the view controller must contain  
-
-#### Return Value
-a SMInAppContentHTMLViewController
-
-#### Discussion
-The viewcontroller will take all available space in screen and will contain a close button if it is presented as it is. Otherwise the app will have to provide a UIContainerView which will contain the view controller
-
-#### Declared In
-* `SMInAppContentHTMLViewController.h`
-
-<a name="/api/name/viewControllerForCategory:InNumberOfBoxes:AndOptions:" title="viewControllerForCategory:InNumberOfBoxes:AndOptions:"></a>
-### viewControllerForCategory:InNumberOfBoxes:AndOptions:
-
-This will provide you a custom viewcontroller with HTML in app content for a specific category
-
-<code>+ (instancetype _Nonnull)viewControllerForCategory:(NSString *_Nullable)*category* InNumberOfBoxes:(int)*numberofboxes* AndOptions:(SMInAppContentStyleOptions *_Nullable)*options*</code>
-
-#### Parameters
-
-*category*  
-&nbsp;&nbsp;&nbsp;a NSString of the desired category of In App Content  
-
-*numberofboxes*  
-&nbsp;&nbsp;&nbsp;an int corresponding to the maximum numbers of.md boxes that the view controller must contain  
-
-*options*  
-&nbsp;&nbsp;&nbsp;a <a href="../Classes/SMInAppContentStyleOptions.md">SMInAppContentStyleOptions</a> object allowing you to customise the in app content  
-
-#### Return Value
-a SMInAppContentHTMLViewController
-
-#### Discussion
-The viewcontroller will take all available space in screen and will contain a close button if it is presented as it is. Otherwise the app will have to provide a UIContainerView which will contain the view controller
-
-#### See Also
-
-* <code><a href="../Classes/SMInAppContentStyleOptions.md">SMInAppContentStyleOptions</a></code>
-
-#### Declared In
-* `SMInAppContentHTMLViewController.h`
-
+>Notifies the view controller that its view was added to a view hierarchy.

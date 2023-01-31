@@ -1,39 +1,27 @@
-# SMInAppContentViewController Class Reference
-
-**Inherits from** UIViewController  
-**Declared in** SMInAppContentViewController.h  
-
-## Overview
-
-Parent class for <a href="../Classes/SMInAppContentURLViewController.md">SMInAppContentURLViewController</a>, <a href="../Classes/SMInAppContentHTMLViewController.md">SMInAppContentHTMLViewController</a>, <a href="../Classes/SMInAppContentImageViewController.md">SMInAppContentImageViewController</a>
-
-## Tasks
-
-### 
-
-[&nbsp;&nbsp;category](#/api/name/category) *property* 
-
-[&nbsp;&nbsp;isEmpty](#/api/name/isEmpty) *property* 
+# SMInAppContentViewController
 
 ## Properties
+```swift
+@objc let category: String { get }
+```
 
-<a name="/api/name/category" title="category"></a>
-### category
+>String containing the category of the ``SMInAppContentViewController``
 
-NSString containing the category of the SMInAppContentViewController
+```swift
+@objc var isEmpty: Bool { get set }
+```
 
-<code>@property (nonatomic, strong) NSString *category</code>
+>Bool set with true when the ``SMInAppContentViewController`` is empty
 
-#### Declared In
-* `SMInAppContentViewController.h`
+```swift
+var prefersStatusBarHidden: Bool { get }
+```
 
-<a name="/api/name/isEmpty" title="isEmpty"></a>
-### isEmpty
+>Specifies whether the view controller prefers the status bar to be hidden or shown.
 
-bool set with true when the SMInAppContentViewController is empty
+## Methods
+```swift
+override func viewDidLoad()
+```
 
-<code>@property (nonatomic) bool isEmpty</code>
-
-#### Declared In
-* `SMInAppContentViewController.h`
-
+>Called after the controller's view is loaded into memory.

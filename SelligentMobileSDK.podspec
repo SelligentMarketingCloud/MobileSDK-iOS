@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.platform                    = :ios, "10.0"
+  s.platform                    = :ios, "11.0"
   s.name                        = "SelligentMobileSDK"
-  s.version                     = "2.7.7"
+  s.version                     = "3.0.0"
   s.summary                     = "Selligent Marketing Cloud - Mobile SDK for iOS"
   s.description                 = <<-DESC
     The Selligent Marketing Cloud - Mobile SDK is a tool that enables you to use the Selligent Marketing Cloud - Mobile feature in a very easy and straightforward way.
@@ -12,23 +12,9 @@ Pod::Spec.new do |s|
   s.author                      = { "SelligentMarketingCloud" => "mobile@selligent.com" }
   s.source                      = { :git => "https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git", :tag => "v" + s.version.to_s }
   s.social_media_url            = "https://twitter.com/Selligent"
-  s.default_subspec             = "Core"
+  s.default_subspec             = "Framework"
+  s.swift_version               = "5.0"
 
-  s.subspec "Core" do |sc|
-    sc.source_files             = "StaticLib/include"
-    sc.vendored_libraries       = "StaticLib/libSelligentMobile.a"
-    sc.pod_target_xcconfig      = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
-    sc.user_target_xcconfig     = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
-  end
-  
-  s.subspec "Geofencing" do |sg|
-    sg.source_files             = "StaticLib_Geofencing/include"
-    sg.vendored_libraries       = "StaticLib_Geofencing/libSelligentMobile_Geofencing.a"
-    sg.pod_target_xcconfig      = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
-    sg.user_target_xcconfig     = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
-    sg.dependency "PlotPlugin"
-  end
-  
   s.subspec "Framework" do |sf|
     sf.vendored_frameworks      = "Framework/SelligentMobileSDK.xcframework"
   end
@@ -36,5 +22,9 @@ Pod::Spec.new do |s|
   s.subspec "Framework_Geofencing" do |sfg|
     sfg.vendored_frameworks     = "Framework_Geofencing/SelligentMobileSDK_Geofencing.xcframework"
     sfg.dependency "PlotPlugin"
+  end
+  
+  s.subspec "FrameworkExtension" do |sf|
+    sf.vendored_frameworks      = "FrameworkExtension/SelligentMobileExtensionsSDK.xcframework"
   end
 end

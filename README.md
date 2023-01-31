@@ -7,48 +7,29 @@ The Selligent Marketing Cloud - Mobile SDK is a tool that enables you to use the
 By incorporating our latest SDK for iOS in your app, we support you in handling Push Notifications, In-App Messages, standard and custom events as well as registrations, unregistrations, logins and logouts in the App.
 
 # MobileSDK-iOS Integration
-> **Maximum iOS version supported in the master branch: iOS15**
+> **Minimum iOS version supported in the master branch: 11**<br/>
+> **Maximum iOS version supported in the master branch: 16**
 
-To integrate the library yourself just download, depending of your needs one of those links: 
-
-​    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Framework">Framework</a>: SDK framework
-
-​    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Framework_Geofencing">Framework_Geofencing</a>: SDK framework with support of geofencing
-
-​    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/StaticLib">StaticLib</a>: SDK static library
-
-​    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/StaticLib_Geofencing">StaticLib_Geofencing</a>: SDK static library with support of geofencing
-​    
-​    
-- To install the SDK via Swift Package Manager, use the Github repository URL (below) put the dependency rule to target branch `master`, and choose the version with or without Geofencing:
+- To integrate the library yourself just download, depending of your needs one of those links: 
+    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Framework">Framework</a>: The main SDK to include in your App target
+    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Framework_Geofencing">Framework_Geofencing</a>: The main SDK to include in your App target (with geofencing support)
+    - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/FrameworkExtension">FrameworkExtension</a>: The SDK to include in your App target and to be used in your extension target(s)
+    
+- To install the SDK via Swift Package Manager, use the Github repository URL (below) put the dependency rule to target branch `master`, and choose the version with or without geofencing (plus the extensions SDK if you have any notification extension target). Add both to the main App target.
 
         https://github.com/SelligentMarketingCloud/MobileSDK-iOS
         
-    > If you are using the Geofencing version, the PlotProjects framework will also need to be added to your target(s) either [manually](https://files.plotprojects.com/documentation/ios/3.5.0/history/release-notes/) or using CocoaPods (pod 'PlotPlugin').
+    > If you are using the geofencing version, the PlotProjects framework will also need to be added to your target(s) either [manually](http://files.plotprojects.com/documentation/ios/3.5.0/history/release-notes/) or using CocoaPods (pod 'PlotPlugin').
 
 - To install the SDK via CocoaPods, add one of these pod to your target(s) in your Podfile: 
 
-    for the framework:
+    for the framework: ``pod 'SelligentMobileSDK/Framework'``
 
-        pod 'SelligentMobileSDK/Framework'
-
-    for the static library: 
-
-        pod 'SelligentMobileSDK'
-
-    or if you are using geofencing capabilities (it will also install dependency to PlotPlugin):
-
-    for the framework:
-
-        pod 'SelligentMobileSDK/Framework_Geofencing' 
-
-    for the static library: 
-
-        pod 'SelligentMobileSDK/Geofencing'
-
-    then run
+    if you are using geofencing capabilities (it will also install dependency to PlotPlugin): ``pod 'SelligentMobileSDK/Framework_Geofencing'``
         
-        pod install
+    if you have app extensions (to be included in the App target): ``pod 'SelligentMobileSDK/FrameworkExtension'``
+
+    and then run ``pod install`` or ``pod update``
 
 Finally please refer to the <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation#ios--using-the-sdk">SDK full documentation</a> for a correct implementation of the SDK.
 

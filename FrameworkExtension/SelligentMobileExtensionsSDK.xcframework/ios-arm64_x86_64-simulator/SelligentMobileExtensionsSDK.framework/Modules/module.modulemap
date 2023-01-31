@@ -1,0 +1,11 @@
+framework module SelligentMobileExtensionsSDK {
+  umbrella header "SelligentMobileExtensionsSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module SelligentMobileExtensionsSDK.Swift {
+  header "SMHelperSwift.h"
+  requires objc
+}

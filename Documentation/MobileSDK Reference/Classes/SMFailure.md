@@ -1,10 +1,14 @@
-# SMFailure Class Reference
+# SMFailure
 
-**Inherits from** <a href="../Classes/SMMessage.md">SMMessage</a> :   
-NSObject  
-**Declared in** SMFailure.h  
+## Properties
+```swift
+var messageSM: String { get }
+```
 
-## Overview
+>Description of the failure
 
-This class is used to return any error
+```swift
+var description: String { get }
+```
 
+>A textual representation of the receiver.

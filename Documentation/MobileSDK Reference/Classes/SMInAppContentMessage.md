@@ -1,93 +1,45 @@
-# SMInAppContentMessage Class Reference
-
-**Inherits from** <a href="../Classes/SMBaseMessage.md">SMBaseMessage</a> :   
-NSObject  
-**Declared in** SMInAppContentMessage.h  
-
-## Tasks
-
-### 
-
-[&nbsp;&nbsp;title](#/api/name/title) *property* 
-
-[&nbsp;&nbsp;body](#/api/name/body) *property* 
-
-[&nbsp;&nbsp;category](#/api/name/category) *property* 
-
-[&nbsp;&nbsp;iacType](#/api/name/iacType) *property* 
-
-[&nbsp;&nbsp;)](#/api/name/)) *property* 
-
-[&nbsp;&nbsp;arrayIACLinks](#/api/name/arrayIACLinks) *property* 
+# SMInAppContentMessage
 
 ## Properties
+```swift
+@objc var title: String { get }
+```
 
-<a name="/api/name/)" title=")"></a>
-### )
+>String value providing the title of the message
 
-NSDate instance providing the expiration date of the message
+```swift
+@objc var body: String { get }
+```
 
-<code>@property (readonly, nonatomic) NSDate *contentExpiration __deprecated __deprecated_msg ( &quot;Use expirationDate instead.&quot; )</code>
+>String value providing the content of the message
 
-#### Discussion
+```swift
+@objc var category: String { get }
+```
 
+>String value providing the category of the message
 
-<strong>Warning:</strong> Deprecated - use expirationDate on <a href="../Classes/SMBaseMessage.md">SMBaseMessage</a> instead
+```swift
+@objc var iacType: SMInAppContentType { get }
+```
 
-#### Declared In
-* `SMInAppContentMessage.h`
+>``SMInAppContentType`` instance providing the in app content type of the message
 
-<a name="/api/name/arrayIACLinks" title="arrayIACLinks"></a>
-### arrayIACLinks
+```swift
+@objc var arrayIACLinks: [SMLink] { get }
+```
 
-NSArray of <a href="../Classes/SMLink.md">SMLink</a> objects
+>Array of SMLink objects
 
-<code>@property (readonly, nonatomic) NSArray *arrayIACLinks</code>
+## Methods
+```swift
+override func encode(with coder: NSCoder)
+```
 
-#### Declared In
-* `SMInAppContentMessage.h`
+>Inherited from NSCoding.encode(with:).
 
-<a name="/api/name/body" title="body"></a>
-### body
+```swift
+required init(coder: NSCoder)
+```
 
-NSString instance providing the content of the message
-
-<code>@property (readonly, nonatomic) NSString *body</code>
-
-#### Declared In
-* `SMInAppContentMessage.h`
-
-<a name="/api/name/category" title="category"></a>
-### category
-
-NSString instance providing the category of the message
-
-<code>@property (readonly, nonatomic) NSString *category</code>
-
-#### Declared In
-* `SMInAppContentMessage.h`
-
-<a name="/api/name/iacType" title="iacType"></a>
-### iacType
-
-<a href="../Constants/SMInAppContentType.md">SMInAppContentType</a> instance providing the in app content type of the message
-
-<code>@property (readonly, nonatomic) SMInAppContentType iacType</code>
-
-#### See Also
-
-* <code><a href="../Constants/SMInAppContentType.md">SMInAppContentType</a></code>
-
-#### Declared In
-* `SMInAppContentMessage.h`
-
-<a name="/api/name/title" title="title"></a>
-### title
-
-NSString instance providing the title of the message
-
-<code>@property (readonly, nonatomic) NSString *title</code>
-
-#### Declared In
-* `SMInAppContentMessage.h`
-
+>Inherited from NSCoding.encode(with:).

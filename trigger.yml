@@ -6,4 +6,4 @@ trigger:
 pr: none
 
 steps:
-  - checkout: none
+  - checkout: none 
