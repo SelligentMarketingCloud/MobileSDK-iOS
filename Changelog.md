@@ -1,7 +1,7 @@
 # SDK Changelog
 
 - __SDK 3.0.1__
-    - Fix bug where the deeplink as a main action of a push message would not execute when having both `SelligentMobileSDK` and `SelligentMobileExtensionsSDK`` included in the same target (i.e Cocoapods)
+    - Fix bug where the deeplink as a main action of a push message would not execute when having both `SelligentMobileSDK` and `SelligentMobileExtensionsSDK` included in the same target (i.e Cocoapods)
     
 - __SDK 3.0.0__
     - Migrate SDK to Swift: introduce breaking changes, mostly signature changes: <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation/Migration_v3.0.0.md">migration document</a>
