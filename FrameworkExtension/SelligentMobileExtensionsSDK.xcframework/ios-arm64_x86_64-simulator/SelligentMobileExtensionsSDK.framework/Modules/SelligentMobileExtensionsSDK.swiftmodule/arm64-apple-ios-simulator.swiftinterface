@@ -20,7 +20,7 @@ import _StringProcessing
 @objc @_hasMissingDesignatedInitializers public class SMEvent : ObjectiveC.NSObject, Foundation.NSCoding {
   @objc public var shouldCache: Swift.Bool
   @objc public init(name: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
-  @objc public func apply(successBlock: ((SelligentMobileExtensionsSDK.SMSuccess) -> ())? = nil, failureBlock: ((SelligentMobileExtensionsSDK.SMFailure) -> ())? = nil)
+  @objc public func apply(successBlock: ((SelligentMobileExtensionsSDK.SMSuccess) -> Swift.Void)? = nil, failureBlock: ((SelligentMobileExtensionsSDK.SMFailure) -> Swift.Void)? = nil)
   @objc public func encode(with coder: Foundation.NSCoder)
   @objc required public init(coder: Foundation.NSCoder)
   @objc override dynamic public var description: Swift.String {
@@ -42,7 +42,7 @@ import _StringProcessing
   @objc required public init(coder: Foundation.NSCoder)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class SMNotificationMessage : SelligentMobileExtensionsSDK.SMInAppMessage {
+@objc @_hasMissingDesignatedInitializers public class SMNotificationMessage : SelligentMobileExtensionsSDK.SMInAppMessage {
   @objc public var mediaUrl: Swift.String {
     get
   }
@@ -92,12 +92,12 @@ extension SelligentMobileExtensionsSDK.SMManager {
   @objc dynamic public func startExtension(with settings: SelligentMobileExtensionsSDK.SMManagerSetting)
   @objc dynamic public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
   @objc dynamic public func didReceive(_ notification: UserNotifications.UNNotification, context: Foundation.NSExtensionContext?)
-  @objc dynamic public func didReceive(request: UserNotifications.UNNotificationRequest) -> UserNotifications.UNMutableNotificationContent
+  @objc dynamic public func didReceive(request: UserNotifications.UNNotificationRequest, completion: @escaping (UserNotifications.UNMutableNotificationContent) -> Swift.Void)
   @objc dynamic public func didReceive(_ request: UserNotifications.UNNotificationRequest, contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
   @objc dynamic public func serviceExtensionTimeWillExpire()
   @objc dynamic public func retrieveNotificationMessage(_ userInfo: [Swift.AnyHashable : Any]) -> SelligentMobileExtensionsSDK.SMNotificationMessage?
 }
-@_hasMissingDesignatedInitializers @objc public class SMEventUser : SelligentMobileExtensionsSDK.SMEvent {
+@objc @_hasMissingDesignatedInitializers public class SMEventUser : SelligentMobileExtensionsSDK.SMEvent {
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class SMLink : ObjectiveC.NSObject, Foundation.NSCoding {
@@ -116,6 +116,9 @@ extension SelligentMobileExtensionsSDK.SMManager {
   @objc public func encode(with coder: Foundation.NSCoder)
   @objc required public init(coder: Foundation.NSCoder)
   @objc deinit
+}
+extension SelligentMobileExtensionsSDK.SMManager {
+  @objc dynamic public func apply(_ logLevel: SelligentMobileExtensionsSDK.SMLogLevel)
 }
 @objc public protocol SMMessage {
   @objc var messageSM: Swift.String { get }
@@ -153,7 +156,7 @@ extension SelligentMobileExtensionsSDK.SMManager {
   @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class SMInAppMessage : SelligentMobileExtensionsSDK.SMBaseMessage {
+@objc @_hasMissingDesignatedInitializers public class SMInAppMessage : SelligentMobileExtensionsSDK.SMBaseMessage {
   @objc public var title: Swift.String {
     get
   }

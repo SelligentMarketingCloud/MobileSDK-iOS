@@ -9,13 +9,7 @@
 
 ## Methods
 ```swift
-@objc init(refreshType: SMInAppRefreshType)
-```
-
->Constructor to be used in order to create the ``SMManagerSettingIAC`` instance, when you want to implement in-app contents.<br/>
-
-```swift
-@objc init(refreshType: SMInAppRefreshType, backgroundFetch: Bool) throws
+@objc init(refreshType: SMInAppRefreshType, backgroundFetch: Bool = false)
 ```
 
 >Constructor to be used in order to create the ``SMManagerSettingIAC` instance, when you want to implement in-app contents.<br/>

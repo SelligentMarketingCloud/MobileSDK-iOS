@@ -2,13 +2,13 @@
 
 ## Methods
 ```swift
-@objc func didReceive(_ response: UNNotificationResponse)
+@objc func didReceive(_ response: UNNotificationResponse, options: SMInAppMessageStyleOptions? = nil)
 ```
 
 >Mandatory AP when using UserNotifications framework, to be included in userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler.<br/>Handles remote notification actions.<br/>
 
 ```swift
-@objc func willPresent(_ notification: UNNotification, completionHandler: ((UNNotificationPresentationOptions) -> Void)?)
+@objc func willPresent(_ notification: UNNotification, options: SMInAppMessageStyleOptions? = nil, completionHandler: ((UNNotificationPresentationOptions) -> Void)?)
 ```
 
 >Mandatory API when using UserNotifications framework, to be included in userNotificationCenter:willPresentNotification:withCompletionHandler<br/>Handles incoming remote notifications when the app is in foreground.<br/>
@@ -32,7 +32,7 @@
 >Mandatory API when using a Notification content extension, to be included in didReceiveNotification:.<br/>Handles the push action buttons and rich content that may be present in the selligent notification payload.<br/>
 
 ```swift
-@objc func didReceive(request: UNNotificationRequest) -> UNMutableNotificationContent
+@objc func didReceive(request: UNNotificationRequest, completion: @escaping (UNMutableNotificationContent) -> Void)
 ```
 
 >Optional API when using a Notification service extension, to be included in didReceiveNotificationRequest:withContentHandler:.<br/>This allows the SDK to decrypt the payload before displaying it to the user if you have activated the encryption of push, and send the proper push received event to the platform.<br/>

@@ -63,7 +63,7 @@ extension SelligentMobileSDK_Geofencing.SMManager {
   }
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class SMEventUserRegistration : SelligentMobileSDK_Geofencing.SMEventUser {
+@objc @_hasMissingDesignatedInitializers public class SMEventUserRegistration : SelligentMobileSDK_Geofencing.SMEventUser {
   @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
   @objc deinit
 }
@@ -75,32 +75,30 @@ extension SelligentMobileSDK_Geofencing.SMManager {
   @objc dynamic public func disableRemoteNotification()
   @objc dynamic public func didRegisterForRemoteNotifications(deviceToken: Foundation.Data)
   @objc dynamic public func didFailToRegisterForRemoteNotifications(with error: Swift.Error)
-  @objc dynamic public func displayNotification(id: Swift.String)
-  @objc dynamic public func displayLastReceivedRemoteNotification()
+  @objc dynamic public func displayNotification(id: Swift.String, options: SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions? = nil)
+  @objc dynamic public func displayLastReceivedRemoteNotification(options: SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions? = nil)
   @objc dynamic public func retrieveLastRemoteNotification() -> [Swift.String : Swift.String]?
   @objc dynamic public func setNotificationMessageAsSeen(_ message: SelligentMobileSDK_Geofencing.SMNotificationMessage)
-  @objc dynamic public func didReceiveRemoteNotification(_ userInfo: [Swift.AnyHashable : Any], completionHandler: ((UIKit.UIBackgroundFetchResult) -> ())?)
+  @objc dynamic public func didReceiveRemoteNotification(_ userInfo: [Swift.AnyHashable : Any], completionHandler: ((UIKit.UIBackgroundFetchResult) -> Swift.Void)?)
 }
-@_hasMissingDesignatedInitializers @objc public class SMEventUserLogin : SelligentMobileSDK_Geofencing.SMEventUser {
+@objc @_hasMissingDesignatedInitializers public class SMEventUserLogin : SelligentMobileSDK_Geofencing.SMEventUser {
   @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
   @objc deinit
 }
 extension SelligentMobileSDK_Geofencing.SMManager {
   @objc dynamic public func enable(inAppMessage: Swift.Bool)
-  @objc dynamic public func performIAMFetch(completion: @escaping (UIKit.UIBackgroundFetchResult) -> ())
+  @objc dynamic public func performIAMFetch(completion: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void)
   @objc dynamic public func getInAppMessages() -> [SelligentMobileSDK_Geofencing.SMInAppMessage]
   @objc dynamic public func setInAppMessageAsSeen(_ message: SelligentMobileSDK_Geofencing.SMInAppMessage)
   @objc dynamic public func setInAppMessageAsUnseen(_ message: SelligentMobileSDK_Geofencing.SMInAppMessage)
   @objc dynamic public func setInAppMessageAsDeleted(_ message: SelligentMobileSDK_Geofencing.SMInAppMessage)
   @objc dynamic public func executeLinkAction(_ link: SelligentMobileSDK_Geofencing.SMLink, inAppMessage: SelligentMobileSDK_Geofencing.SMInAppMessage)
-  @objc dynamic public func inAppMessageWKNavigationDelegate(_ delegate: WebKit.WKNavigationDelegate)
   @objc dynamic public func inAppMessageDelegate(_ delegate: SelligentMobileSDK_Geofencing.SMManagerInAppMessageDelegate)
-  @objc dynamic public func removeViewController()
 }
-@_hasMissingDesignatedInitializers @objc public class SMEventUser : SelligentMobileSDK_Geofencing.SMEvent {
+@objc @_hasMissingDesignatedInitializers public class SMEventUser : SelligentMobileSDK_Geofencing.SMEvent {
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class SMInAppContentMessage : SelligentMobileSDK_Geofencing.SMBaseMessage {
+@objc @_hasMissingDesignatedInitializers public class SMInAppContentMessage : SelligentMobileSDK_Geofencing.SMBaseMessage {
   @objc public var title: Swift.String {
     get
   }
@@ -148,7 +146,7 @@ extension SelligentMobileSDK_Geofencing.SMManager {
   @objc override dynamic public init()
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @objc public class SMInAppMessage : SelligentMobileSDK_Geofencing.SMBaseMessage {
+@objc @_hasMissingDesignatedInitializers public class SMInAppMessage : SelligentMobileSDK_Geofencing.SMBaseMessage {
   @objc public var title: Swift.String {
     get
   }
@@ -238,11 +236,22 @@ extension SelligentMobileSDK_Geofencing.SMManager {
   @objc public var navigationTitleColor: UIKit.UIColor?
   @objc public var navigationTitleFont: UIKit.UIFont?
   @objc public var navigationBackgroundColor: UIKit.UIColor?
+  @objc public var navigationMenuCloseButtonSwitchPosition: Swift.Bool
   @objc public var navigationMenuButtonColor: UIKit.UIColor?
+  @objc public var navigationMenuButtonAlternateAssetName: Swift.String
   @objc public var navigationCloseButtonColor: UIKit.UIColor?
+  @objc public var navigationCloseButtonAlternateAssetName: Swift.String
   @objc public var navigationArrowButtonsColor: UIKit.UIColor?
+  @objc public var navigationArrowBackButtonAlternateAssetName: Swift.String
+  @objc public var navigationArrowForwardButtonAlternateAssetName: Swift.String
   @objc public var viewBackgroundColor: UIKit.UIColor?
   @objc public var linksColor: UIKit.UIColor?
+  @objc public var presentWithTransition: Swift.Bool
+  @objc public var transition: SelligentMobileSDK_Geofencing.SMViewTransition
+  @objc public var transitioningDelegate: UIKit.UIViewControllerTransitioningDelegate?
+  @objc public var imageCanBeTapped: Swift.Bool
+  @objc public var reloadButtonColor: UIKit.UIColor?
+  @objc public var reloadButtonAlternateAssetName: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -291,10 +300,18 @@ extension SelligentMobileSDK_Geofencing.SMManager {
 @objc public protocol SMManagerUniversalLinksDelegate {
   @objc func executeLinkAction(_ url: Foundation.URL)
 }
+@objc(kSMViewTransition_) public enum SMViewTransition : Swift.Int {
+  case horizontalSlide = 1
+  case verticalSlide = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc public class SMManagerSettingIAC : ObjectiveC.NSObject {
   @objc public var styleOptions: SelligentMobileSDK_Geofencing.SMInAppContentStyleOptions
-  @objc public init(refreshType: SelligentMobileSDK_Geofencing.SMInAppRefreshType)
-  @objc public init(refreshType: SelligentMobileSDK_Geofencing.SMInAppRefreshType, backgroundFetch: Swift.Bool) throws
+  @objc public init(refreshType: SelligentMobileSDK_Geofencing.SMInAppRefreshType, backgroundFetch: Swift.Bool = false)
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SMInAppContentViewController : SelligentMobileSDK_Geofencing.SMUIViewController {
@@ -366,16 +383,19 @@ extension SelligentMobileSDK_Geofencing.SMManager {
     get
   }
 }
-@_hasMissingDesignatedInitializers @objc public class SMEventUserLogout : SelligentMobileSDK_Geofencing.SMEventUser {
+@objc @_hasMissingDesignatedInitializers public class SMEventUserLogout : SelligentMobileSDK_Geofencing.SMEventUser {
   @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
   @objc deinit
 }
 extension SelligentMobileSDK_Geofencing.SMManager {
+  @objc dynamic public func inAppMessageWKNavigationDelegate(_ delegate: WebKit.WKNavigationDelegate)
   @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation, withError error: Swift.Error)
   @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation)
+  @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: Swift.Error)
   @objc dynamic public func webView(_ webView: WebKit.WKWebView, didCommit navigation: WebKit.WKNavigation)
+  @objc dynamic public func removeViewController()
 }
-@_hasMissingDesignatedInitializers @objc public class SMEventUserUnregistration : SelligentMobileSDK_Geofencing.SMEventUser {
+@objc @_hasMissingDesignatedInitializers public class SMEventUserUnregistration : SelligentMobileSDK_Geofencing.SMEventUser {
   @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
   @objc deinit
 }
@@ -393,7 +413,7 @@ extension SelligentMobileSDK_Geofencing.SMManager {
     get
   }
 }
-@_hasMissingDesignatedInitializers @objc public class SMNotificationMessage : SelligentMobileSDK_Geofencing.SMInAppMessage {
+@objc @_hasMissingDesignatedInitializers public class SMNotificationMessage : SelligentMobileSDK_Geofencing.SMInAppMessage {
   @objc public var mediaUrl: Swift.String {
     get
   }
@@ -502,7 +522,7 @@ extension SelligentMobileSDK_Geofencing.SMManager {
 @objc @_hasMissingDesignatedInitializers public class SMEvent : ObjectiveC.NSObject, Foundation.NSCoding {
   @objc public var shouldCache: Swift.Bool
   @objc public init(name: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
-  @objc public func apply(successBlock: ((SelligentMobileSDK_Geofencing.SMSuccess) -> ())? = nil, failureBlock: ((SelligentMobileSDK_Geofencing.SMFailure) -> ())? = nil)
+  @objc public func apply(successBlock: ((SelligentMobileSDK_Geofencing.SMSuccess) -> Swift.Void)? = nil, failureBlock: ((SelligentMobileSDK_Geofencing.SMFailure) -> Swift.Void)? = nil)
   @objc public func encode(with coder: Foundation.NSCoder)
   @objc required public init(coder: Foundation.NSCoder)
   @objc override dynamic public var description: Swift.String {
@@ -511,8 +531,8 @@ extension SelligentMobileSDK_Geofencing.SMManager {
   @objc deinit
 }
 extension SelligentMobileSDK_Geofencing.SMManager {
-  @objc dynamic public func didReceive(_ response: UserNotifications.UNNotificationResponse)
-  @objc dynamic public func willPresent(_ notification: UserNotifications.UNNotification, completionHandler: ((UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)?)
+  @objc dynamic public func didReceive(_ response: UserNotifications.UNNotificationResponse, options: SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions? = nil)
+  @objc dynamic public func willPresent(_ notification: UserNotifications.UNNotification, options: SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions? = nil, completionHandler: ((UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)?)
   @objc dynamic public func retrieveNotificationMessage(_ userInfo: [Swift.AnyHashable : Any]) -> SelligentMobileSDK_Geofencing.SMNotificationMessage?
 }
 @objc(kSMRemoteMessageDisplayType_) public enum SMRemoteMessageDisplayType : Swift.Int {
@@ -528,8 +548,7 @@ extension SelligentMobileSDK_Geofencing.SMManager {
 }
 @objc public class SMManagerSettingIAM : ObjectiveC.NSObject {
   @objc public var styleOptions: SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions
-  @objc public init(refreshType: SelligentMobileSDK_Geofencing.SMInAppRefreshType)
-  @objc public init(refreshType: SelligentMobileSDK_Geofencing.SMInAppRefreshType, backgroundFetch: Swift.Bool) throws
+  @objc public init(refreshType: SelligentMobileSDK_Geofencing.SMInAppRefreshType, backgroundFetch: Swift.Bool = false)
   @objc deinit
 }
 extension SelligentMobileSDK_Geofencing.SMManager {
@@ -537,7 +556,7 @@ extension SelligentMobileSDK_Geofencing.SMManager {
   @objc dynamic public func getInAppContents(for category: Swift.String, type: SelligentMobileSDK_Geofencing.SMInAppContentType) -> [SelligentMobileSDK_Geofencing.SMInAppContentMessage]
   @objc dynamic public func setInAppContentAsSeen(_ content: SelligentMobileSDK_Geofencing.SMInAppContentMessage)
   @objc dynamic public func executeLinkAction(_ link: SelligentMobileSDK_Geofencing.SMLink, inAppContent: SelligentMobileSDK_Geofencing.SMInAppContentMessage)
-  @objc dynamic public func performIACFetch(completion: @escaping (UIKit.UIBackgroundFetchResult) -> ())
+  @objc dynamic public func performIACFetch(completion: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void)
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SMInAppContentHTMLViewController : SelligentMobileSDK_Geofencing.SMInAppContentViewController {
   @objc @_Concurrency.MainActor(unsafe) public init(category: Swift.String, boxes: Swift.Int = -1, options: SelligentMobileSDK_Geofencing.SMInAppContentStyleOptions? = nil)
@@ -607,6 +626,9 @@ extension SelligentMobileSDK_Geofencing.SMLogLevel : Swift.RawRepresentable {}
 extension SelligentMobileSDK_Geofencing.SMContentAlignment : Swift.Equatable {}
 extension SelligentMobileSDK_Geofencing.SMContentAlignment : Swift.Hashable {}
 extension SelligentMobileSDK_Geofencing.SMContentAlignment : Swift.RawRepresentable {}
+extension SelligentMobileSDK_Geofencing.SMViewTransition : Swift.Equatable {}
+extension SelligentMobileSDK_Geofencing.SMViewTransition : Swift.Hashable {}
+extension SelligentMobileSDK_Geofencing.SMViewTransition : Swift.RawRepresentable {}
 extension SelligentMobileSDK_Geofencing.SMNotificationMessageType : Swift.Equatable {}
 extension SelligentMobileSDK_Geofencing.SMNotificationMessageType : Swift.Hashable {}
 extension SelligentMobileSDK_Geofencing.SMNotificationMessageType : Swift.RawRepresentable {}

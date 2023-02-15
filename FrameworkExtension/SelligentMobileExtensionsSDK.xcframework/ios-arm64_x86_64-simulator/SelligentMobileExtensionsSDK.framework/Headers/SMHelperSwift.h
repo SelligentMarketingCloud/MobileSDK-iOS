@@ -560,13 +560,27 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Set the log level of the library console.
+/// This is an optional setting that may help you debug the library calls.
+/// This call can be done at any time (before or after starting the library).
+/// However, in order to avoid missing any error log, we recommand setting this value before starting the library.
+/// warning:
+/// It is developer’s responsability to enable log-level in Debug or release mode.  For obvious performance reason, it is always recommended to turn log off in release mode.
+/// \param logLevel Specify the appropiate <code>SMLogLevel</code> for the SDK to use.
+///
+- (void)apply:(enum kSMLogLevel_)logLevel;
+@end
+
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Send an event to the Selligent platform
 /// \param event <code>SMEvent</code> object with your event.
 ///
 - (void)send:(SMEvent * _Nonnull)event;
 @end
-
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -606,10 +620,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// This allows the SDK to decrypt the payload before displaying it to the user if you have activated the encryption of push, and send the proper push received event to the platform.
 /// \param request An UNNotificationRequest that contains the original notification request
 ///
+/// \param completion A completion block returning the UNMutableNotificationContent that contains the modified notification content
 ///
-/// returns:
-/// An UNMutableNotificationContent that contains the modified notification content
-- (UNMutableNotificationContent * _Nonnull)didReceiveWithRequest:(UNNotificationRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
+- (void)didReceiveWithRequest:(UNNotificationRequest * _Nonnull)request completion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nonnull))completion;
 /// Optional API when using a Notification service extension, to be included in didReceiveNotificationRequest:withContentHandler:.
 /// This allows the SDK to decrypt the payload before displaying it to the user if you have activated the encryption of push, and send the proper push received event to the platform.
 /// \param request An UNNotificationRequest that contains the original notification request
@@ -840,7 +853,6 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 @property (nonatomic) NSInteger applicationIconBadgeNumber;
 - (UIBackgroundTaskIdentifier)beginBackgroundTaskWithName:(NSString * _Nullable)taskName expirationHandler:(void (^ _Nullable)(void))handler SWIFT_WARN_UNUSED_RESULT;
 - (void)endBackgroundTask:(UIBackgroundTaskIdentifier)identifier;
-+ (void)customUrlOpen:(NSURL * _Nonnull)url application:(UIApplication * _Nullable)application context:(NSExtensionContext * _Nullable)context;
 - (void)setMinimumBackgroundFetchInterval:(NSTimeInterval)minimumBackgroundFetchInterval;
 - (void)registerForRemoteNotifications;
 @end
@@ -848,7 +860,6 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 
 @interface UIApplication (SWIFT_EXTENSION(SelligentMobileExtensionsSDK)) <UIApplicationProtocol>
 @property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(ios,introduced=13.0);
-+ (void)customUrlOpen:(NSURL * _Nonnull)url application:(UIApplication * _Nullable)application context:(NSExtensionContext * _Nullable)context;
 @property (nonatomic, readonly, strong) UIWindow * _Nullable currentWindow;
 @end
 
@@ -1449,13 +1460,27 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Set the log level of the library console.
+/// This is an optional setting that may help you debug the library calls.
+/// This call can be done at any time (before or after starting the library).
+/// However, in order to avoid missing any error log, we recommand setting this value before starting the library.
+/// warning:
+/// It is developer’s responsability to enable log-level in Debug or release mode.  For obvious performance reason, it is always recommended to turn log off in release mode.
+/// \param logLevel Specify the appropiate <code>SMLogLevel</code> for the SDK to use.
+///
+- (void)apply:(enum kSMLogLevel_)logLevel;
+@end
+
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Send an event to the Selligent platform
 /// \param event <code>SMEvent</code> object with your event.
 ///
 - (void)send:(SMEvent * _Nonnull)event;
 @end
-
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -1495,10 +1520,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// This allows the SDK to decrypt the payload before displaying it to the user if you have activated the encryption of push, and send the proper push received event to the platform.
 /// \param request An UNNotificationRequest that contains the original notification request
 ///
+/// \param completion A completion block returning the UNMutableNotificationContent that contains the modified notification content
 ///
-/// returns:
-/// An UNMutableNotificationContent that contains the modified notification content
-- (UNMutableNotificationContent * _Nonnull)didReceiveWithRequest:(UNNotificationRequest * _Nonnull)request SWIFT_WARN_UNUSED_RESULT;
+- (void)didReceiveWithRequest:(UNNotificationRequest * _Nonnull)request completion:(void (^ _Nonnull)(UNMutableNotificationContent * _Nonnull))completion;
 /// Optional API when using a Notification service extension, to be included in didReceiveNotificationRequest:withContentHandler:.
 /// This allows the SDK to decrypt the payload before displaying it to the user if you have activated the encryption of push, and send the proper push received event to the platform.
 /// \param request An UNNotificationRequest that contains the original notification request
@@ -1729,7 +1753,6 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 @property (nonatomic) NSInteger applicationIconBadgeNumber;
 - (UIBackgroundTaskIdentifier)beginBackgroundTaskWithName:(NSString * _Nullable)taskName expirationHandler:(void (^ _Nullable)(void))handler SWIFT_WARN_UNUSED_RESULT;
 - (void)endBackgroundTask:(UIBackgroundTaskIdentifier)identifier;
-+ (void)customUrlOpen:(NSURL * _Nonnull)url application:(UIApplication * _Nullable)application context:(NSExtensionContext * _Nullable)context;
 - (void)setMinimumBackgroundFetchInterval:(NSTimeInterval)minimumBackgroundFetchInterval;
 - (void)registerForRemoteNotifications;
 @end
@@ -1737,7 +1760,6 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 
 @interface UIApplication (SWIFT_EXTENSION(SelligentMobileExtensionsSDK)) <UIApplicationProtocol>
 @property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(ios,introduced=13.0);
-+ (void)customUrlOpen:(NSURL * _Nonnull)url application:(UIApplication * _Nullable)application context:(NSExtensionContext * _Nullable)context;
 @property (nonatomic, readonly, strong) UIWindow * _Nullable currentWindow;
 @end
 

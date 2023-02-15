@@ -26,7 +26,7 @@
 >This method must be called whenever a user has clicked on a link where you manage its display<br/>The action behind the link will be triggered, and the corresponding Clicked event will be sent to the backend<br/>
 
 ```swift
-@objc func performIACFetch(completion: @escaping (UIBackgroundFetchResult) -> ())
+@objc func performIACFetch(completion: @escaping (UIBackgroundFetchResult) -> Void)
 ```
 
 >This will tell the SDK to fetch the IAC, if the OS allows to so at that time<br/>

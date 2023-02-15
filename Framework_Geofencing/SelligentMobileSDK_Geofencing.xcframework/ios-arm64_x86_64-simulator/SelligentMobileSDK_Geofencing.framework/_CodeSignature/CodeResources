@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		vLKS4PBIc66qLw08+G4c2sK//Q0=
+		O3M73wf3P99VRfgfhEStAJmXMig=
 		</data>
 		<key>Headers/SMHelperSwift.h</key>
 		<data>
-		5MBFLskQ4+ET50AcXh1QVI/Ml5Y=
+		W51Ob6rYk/Q3qo8MH40Bw3Uds40=
 		</data>
 		<key>Headers/SelligentMobileSDK.h</key>
 		<data>
@@ -18,47 +18,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		fs/zHc+EhbXX7EtV+wrWoM0lU6Q=
+		tuVNTPcdgr8UKgxajqC6vPxRKMU=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		l3IvlIdPIkuiz0JwBwAI78+hkKw=
+		dvEr4PmX3u5GTfs0j+S8Xm5KvfE=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		q0+3FnS7k1wirbOq43o5dozmB3c=
+		BCP6PE8Wm46o4zO6214fCpVh71U=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		15xzXaFN/l7sH6YltdzWtChG0PA=
+		afaINQyEO6cr/mIndYVSuKH9/r8=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		q0+3FnS7k1wirbOq43o5dozmB3c=
+		BCP6PE8Wm46o4zO6214fCpVh71U=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		rtmd6vjrpxlWcjbN/WW1BqkaqA0=
+		zVSpmvVahSlQ6EbXqMpNzZgg1NE=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		l3IvlIdPIkuiz0JwBwAI78+hkKw=
+		dvEr4PmX3u5GTfs0j+S8Xm5KvfE=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Rt7qtZHMPUhcCKulZelgvegDMj4=
+		W8KaSxxqtG7Ctjj6o9LXaDG0wL0=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		FJIV7+y8cnoms6uMp23CfFbW0zM=
+		FbS93FfrgeYUnC642bZxJvMWGMM=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Rt7qtZHMPUhcCKulZelgvegDMj4=
+		W8KaSxxqtG7Ctjj6o9LXaDG0wL0=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		w0cIqsqgXzA3VX56fFk8ZjSc2wk=
+		dC5EACIDpiTlixYu5EkiD9DZG+Q=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -71,14 +71,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			v3Ul/HkcRc82KDBR/D4NwAGEQKJCXnC/bhDSixvyHPA=
+			uV8j6vWzivbJi47fEctJDjFQHZ5JqcpM3UsQcxlbclo=
 			</data>
 		</dict>
 		<key>Headers/SMHelperSwift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6sHfd2wEbS7B0fRGGW0kuXeO1bif70f9MXIhw9Q6K2A=
+			PnireEBh5vjPqBSCssWWvewQXNnpGReXp78ZdDaIK2c=
 			</data>
 		</dict>
 		<key>Headers/SelligentMobileSDK.h</key>
@@ -92,70 +92,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HuWUCz4YKZfdkINqRe5VOLBROelJ/Saw8LA77CQbsOA=
+			CI+3OmV32QdapTMUyPZqPFw95LB7dpZRDCLun7jfEyQ=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PhPNBuQRZoK0Ps8kvKQX1qm14p3X1n/cQG4uLtQWwR4=
+			vXC3TSpm2GJt7TAy1Cjf5ug5BaKpCpuUWxjTTL2+06k=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XD38zFcgstltLnJqgNbRJZhTx7tpFUdWwVIYO+mHdFM=
+			IthiDIjerlqXUtbsgDbBM9BWoH17hYqXOe459hfLHX4=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PhPNBuQRZoK0Ps8kvKQX1qm14p3X1n/cQG4uLtQWwR4=
+			vXC3TSpm2GJt7TAy1Cjf5ug5BaKpCpuUWxjTTL2+06k=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JX5dWAYuxmwS0sWVUrcdjr5LBsYbwl3L8u2y7jv7BME=
+			4PbXmq1T1yoEITTs6lr7hW0aY2UKm3s4NowK7mvhMZY=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HuWUCz4YKZfdkINqRe5VOLBROelJ/Saw8LA77CQbsOA=
+			CI+3OmV32QdapTMUyPZqPFw95LB7dpZRDCLun7jfEyQ=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/STrURFr/IJrm0sIAzGcCWwgwpH3X5RgN/8Xth5uo7U=
+			Om6Mt7RWim9nzdwtSJNeg6BTVIn+IAaZme5qwbB4v2U=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8NQvVyZwXopV18Aa6s/TPkOLkdN7khMrh6AD8BiQkRE=
+			zE+zVdf5BnzCavFO5id7iVbZcweQXJFLJqZQYryQhJE=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/STrURFr/IJrm0sIAzGcCWwgwpH3X5RgN/8Xth5uo7U=
+			Om6Mt7RWim9nzdwtSJNeg6BTVIn+IAaZme5qwbB4v2U=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RPHcoEYfnIx39sYljdUDUe35BhMBhgqlerOXjPxU4R0=
+			vQfvlssuaN2al7D7vIXtZevB/02P28g4k/OhX+9j8nI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

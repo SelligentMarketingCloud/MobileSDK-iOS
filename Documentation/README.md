@@ -179,18 +179,18 @@ To start using the SDK, you need to import its module:
 **Swift**
 ```swift
 import SelligentMobileSDK
-// OR
+// OR if you are using the version with geolocation
 import SelligentMobileSDK_Geofencing
-// In App extensions
+// OR In App extensions
 import SelligentMobileExtensionsSDK
 ```
 
 **Objective-C**
 ```swift
 @import SelligentMobileSDK;
-// OR
+// OR if you are using the version with geolocation
 @import SelligentMobileSDK_Geofencing;
-// In App extensions
+// OR In App extensions
 @import SelligentMobileExtensionsSDK;
 ```
 
@@ -280,6 +280,7 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 // Your class will look like
 // AppUniversalLinksDelegateExample.h
 @import SelligentMobileSDK;
+
 // OR
 // @import SelligentMobileSDK_Geofencing;
 
@@ -397,7 +398,7 @@ settings.clearCacheIntervalValue = kSMClearCache_Auto;
 settings.appGroupId = @"group.yourGroupName";
 
 // Initialize In-App Messages settings - other constructors exist (cf. documentation)
-SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshType:kSMIA_RefreshType_Daily];
+SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshType:kSMIA_RefreshType_Daily backgroundFetch:false];
 [settings configureInAppMessageServiceWith:iamSetting];
 
 // Optional - Initialize location services
@@ -537,14 +538,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping(UNNotificationPresentationOptions) -> Void) {
     // See SMManagerSetting reference for more information about how the SDK handles the display of pushs in foreground
     SMManager.shared.willPresent(notification, completionHandler: completionHandler)
-    // OR
+    
+    // OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+    // It will only work when the completionHandler is passed to the SDK and the `SMManagerSetting/remoteMessageDisplayType` value is `.automatic`
+    // SMManager.shared.willPresent(notification, options: SMInAppMessageStyleOptions, completionHandler: completionHandler)
+    
+    // OR if you want to use specific UNNotificationPresentationOptions
     // SMManager.shared.willPresent(notification, completionHandler: nil)
-    // completionHandler(.alert) // or any UNNotificationPresentationOptions
-    // In this case the App will be in charge to call completionHandler
+    // completionHandler(.alert)
 }
 
 func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping() -> Void) {
     SMManager.shared.didReceive(response)
+    
+    // OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+    // SMManager.shared.didReceive(response, options: SMInAppMessageStyleOptions)
     completionHandler()
 }
 ```
@@ -566,16 +574,22 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
 - (void) userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void(^)(UNNotificationPresentationOptions))completionHandler {
     // See SMManagerSetting reference for more information about how the SDK handles the display of pushs in foreground
-    [[SMManager shared] willPresent:notification completionHandler:completionHandler];
+    [[SMManager shared] willPresent:notification options:nil completionHandler:completionHandler];
     
-    // OR 
-    // [[SMManager shared] willPresentNotification:notification completionHandler:nil];
-    // completionHandler(UNNotificationPresentationOptionAlert); // or any UNNotificationPresentationOptions
-    // In this case the App will be in charge to call completionHandler
+    // OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+    // It will only work when the completionHandler is passed to the SDK and the `SMManagerSetting/remoteMessageDisplayType` value is `kSMRemoteMessageDisplayType_Automatic`
+    // [[SMManager shared] willPresent:notification options:SMInAppMessageStyleOptions completionHandler:completionHandler];
+        
+    // OR if you want to use specific UNNotificationPresentationOptions
+    // [[SMManager shared] willPresentNotification:notification options:nil completionHandler:nil];
+    // completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 - (void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
-    [[SMManager shared] didReceive:response];
+    [[SMManager shared] didReceive:response options:nil];
+    
+    // OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+    // [[SMManager shared] didReceive:response options:SMInAppMessageStyleOptions];
     completionHandler();
 }
 ```
@@ -599,6 +613,8 @@ SMManager.shared.setLinkAsClicked(link, from: notificationMessage)
 
 // Display last received Push Notification
 SMManager.shared.displayLastReceivedRemoteNotification()
+// OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+// SMManager.shared.displayLastReceivedRemoteNotification(options: SMInAppMessageStyleOptions?)
 
 // Retrieve last Push Notification (Dictionary with id and title)
 SMManager.shared.retrieveLastRemoteNotification()
@@ -616,7 +632,9 @@ SMManager.shared.retrieveLastRemoteNotification()
 [[SMManager shared] setLinkAsClicked:link from:notificationMessage];
 
 // Display last received Push Notification
-[[SMManager shared] displayLastReceivedRemoteNotification];
+[[SMManager shared] displayLastReceivedRemoteNotificationWithOptions:nil];
+// OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+// [[SMManager shared] displayLastReceivedRemoteNotificationWithOptions:SMInAppMessageStyleOptions];
 
 // Retrieve last Push Notification (NSDictionary with id and title)
  [[SMManager shared] retrieveLastRemoteNotification];
@@ -686,11 +704,15 @@ Once your IAM is retrieved you can for example create an inbox page and when the
 **Swift**
 ```swift
 SMManager.shared.displayNotification(id: "notificationID")
+// OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+// SMManager.shared.displayNotification(id: "notificationID", options: SMInAppMessageStyleOptions?)
 ```
 
 **Objective-C**
 ```objective-c
-[[SMManager shared] displayNotificationWithId:@"notificationID"];
+[[SMManager shared] displayNotificationWithId:@"notificationID" options:nil];
+// OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+// [[SMManager shared] displayNotificationWithId:@"notificationID" options:SMInAppMessageStyleOptions];
 ```
 
 ### With your own layout
@@ -749,7 +771,8 @@ if (inAppMessages.count > 0) {
 ### Styling IAM
 Since SDK v3.0.0 you can now easily personalize the way IAM are displayed without needing to do it via global `.appearance()`. 
 You need to set it before configuring your IAM service `SMManagerSetting/configureInAppMessageService(with:)` and before starting the SDK `SMManager/start(with:)`.
-Additionally, you can replace the default SDK images used in the navigation bar by having any of the following `image assets` in your main app's bundle: `SM.Close`, `SM.Menu`, `SM.Back`, `SM.Forward`. Make sure the width and height of these assets are equal and that they are transparent PNG/vector image.
+Additionally, you can replace the default SDK images used in the navigation bar by having any of the following `image assets` in your main app's bundle: `SM.Close`, `SM.Menu`, `SM.Back`, `SM.Forward` and `SM.Reload`. Make sure the width and height of these assets are equal and that they are transparent PNG/vector image.
+You can also use `navigationMenuButtonAlternateAssetName`, `navigationCloseButtonAlternateAssetName`, `navigationArrowBackButtonAlternateAssetName`,  `navigationArrowForwardButtonAlternateAssetName` and `reloadButtonAlternateAssetName` properties to use different images depending on the IAM (or from where is it being displayed)
 
 **Swift**
 ```swift
@@ -764,6 +787,12 @@ iamSetting.styleOptions.navigationMenuButtonColor = .blue
 iamSetting.styleOptions.navigationCloseButtonColor = .red
 iamSetting.styleOptions.navigationArrowButtonsColor = .black
 iamSetting.styleOptions.viewBackgroundColor = .cyan
+iamSetting.styleOptions.navigationMenuCloseButtonSwitchPosition = false
+iamSetting.styleOptions.presentWithTransition = true
+iamSetting.styleOptions.transition = .horizontalSlide
+iamSetting.styleOptions.transitioningDelegate = nil
+iamSetting.styleOptions.imageCanBeTapped = false
+iamSetting.styleOptions.reloadButtonColor = .cyan
 
 // Applies to any type of inapp message
 iamSetting.styleOptions.linksColor = .blue
@@ -774,7 +803,7 @@ settings.configureInAppMessageService(with: iamSetting)
 **Objective-C**
 ```objective-c
 // Switch to kSMIA_RefreshType_Hourly or kSMIA_RefreshType_Daily if you want to implement standalone inapp messages too
-SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshType:kSMIA_RefreshType_None];
+SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshType:kSMIA_RefreshType_None backgroundFetch:false];
 
 // Applies to inapp messages of type image, html, map or url
 iamSetting.styleOptions.navigationTitleColor = UIColor.blackColor;
@@ -784,6 +813,12 @@ iamSetting.styleOptions.navigationMenuButtonColor = UIColor.blueColor;
 iamSetting.styleOptions.navigationCloseButtonColor = UIColor.redColor;
 iamSetting.styleOptions.navigationArrowButtonsColor = UIColor.blackColor;
 iamSetting.styleOptions.viewBackgroundColor = UIColor.cyanColor;
+iamSetting.styleOptions.navigationMenuCloseButtonSwitchPosition = false;
+iamSetting.styleOptions.presentWithTransition = true;
+iamSetting.styleOptions.transition = kSMViewTransition_HorizontalSlide;
+iamSetting.styleOptions.transitioningDelegate = nil;
+iamSetting.styleOptions.imageCanBeTapped = false;
+iamSetting.styleOptions.reloadButtonColor = UIColor.cyanColor;
 
 // Applies to any type of inapp message
 iamSetting.styleOptions.linksColor = UIColor.blueColor;
@@ -824,7 +859,7 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
         decisionHandler(.allow)
     }
  
-    // The below functions are necessary to keep the SDK webview's navigation arrows working
+    // The below functions are necessary to keep the SDK webview working properly
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         SMManager.shared.webView(webView, didFail: navigation, withError: error)
     }
@@ -835,6 +870,10 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
         
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         SMManager.shared.webView(webView, didCommit: navigation)
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        SMManager.shared.webView(webView, didFailProvisionalNavigation: navigation, withError: error)
     }
 }
 ```
@@ -876,7 +915,7 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
-// The below functions are necessary to keep the SDK webview's navigation arrows working
+// The below functions are necessary to keep the SDK webview working properly
 - (void) webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     [[SMManager shared] webView:webView didFail: navigation withError:error];
 }
@@ -887,6 +926,10 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
 
 - (void) webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
     [[SMManager shared] webView:webView didCommit:navigation];
+}
+
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    [[SMManager shared] webView:webView didFailProvisionalNavigation:navigation withError:error];
 }
 
 @end
@@ -1357,11 +1400,11 @@ class NotificationService: UNNotificationServiceExtension {
         SMManager.shared.startExtension(with: settings)
 
         // Provide the request with the original notification content to the SDK and return the updated Notification content
-        self.bestAttemptContent = SMManager.shared.didReceive(request: request)
-
-        // Call the completion handler when done.
-        if let bestAttemptContent = self.bestAttemptContent {
-            contentHandler(bestAttemptContent)
+        SMManager.shared.didReceive(request: request) { content in
+            self.bestAttemptContent = content
+            
+            // Call the completion handler when done
+            contentHandler(self.bestAttemptContent)
         }
     }
     
@@ -1408,10 +1451,12 @@ class NotificationService: UNNotificationServiceExtension {
     [[SMManager shared] startExtensionWith:settings];
 
     // Provide the request with the original notification content to the SDK and return the updated Notification content
-    self.bestAttemptContent = [[SMManager shared] didReceiveWithRequest:request];
-
-    // Call the completion handler when done
-    contentHandler(self.bestAttemptContent);
+    [[SMManager shared] didReceiveWithRequest:request completion:^(UNMutableNotificationContent * _Nonnull content) {
+        self.bestAttemptContent = content;
+        
+        // Call the completion handler when done
+        contentHandler(self.bestAttemptContent);
+    }];
 }
 
 // Don't implement if you are not using the Encryption feature
@@ -1613,7 +1658,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
     
     // If you want the Push Notification buttons to be processed without the need of opening the App
-    // Be aware that Push Notification buttons of type "Rate app" or "Open a method in your app" will not work if this method is implemented
+    // This won't clear the application's badge, you will need to handle the badge of your app when it is opened
     // Make sure you have read the Universal Links section of the documentation before implementing this
     /*func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping(UNNotificationContentExtensionResponseOption) -> Void) {
         SMManager.shared.didReceive(response, completionHandler: completion)
@@ -1680,7 +1725,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 }
 
 // If you want the Push Notification buttons to be processed without the need of opening the App
-// Be aware that Push Notification buttons of type "Rate app" or "Open a method in your app" will not work if this method is implemented
+// This won't clear the application's badge, you will need to handle the badge of your app when it is opened
 // Make sure you have read the Universal Links section of the documentation before implementing this
 /*- (void) didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void(^)(UNNotificationContentExtensionResponseOption option))completion {
     [[SMManager shared] didReceive:response completionHandler:completionHandler];

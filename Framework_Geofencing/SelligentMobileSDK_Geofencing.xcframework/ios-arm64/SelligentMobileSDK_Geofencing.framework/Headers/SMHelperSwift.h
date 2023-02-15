@@ -262,7 +262,6 @@ using UInt = size_t;
 
 
 
-
 @class NSString;
 @class NSDate;
 enum kSMNotificationMessageType_ : NSInteger;
@@ -863,35 +862,71 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing14SMInAppMessage")
 
 
 
+enum kSMViewTransition_ : NSInteger;
+@protocol UIViewControllerTransitioningDelegate;
 
 SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptions")
 @interface SMInAppMessageStyleOptions : NSObject
-/// Sets the navigation bar title color for inapp messages of type html, url, image or map
+/// Sets the navigation bar title color for inapp messages of type html, url, image and map
 /// By default, it is set to nil to keep app’s default
 /// warning:
 /// Make sure to set <code>navigationMenuButtonColor</code>, <code>navigationCloseButtonColor</code> and <code>navigationArrowButtonsColor</code> else they will be by default colored with this property setting too
 @property (nonatomic, strong) UIColor * _Nullable navigationTitleColor;
-/// Sets the navigation bar title font for inapp messages of type html, url, image or map
+/// Sets the navigation bar title font for inapp messages of type html, url, image and map
 /// By default, it is set to nil to keep app’s default
 @property (nonatomic, strong) UIFont * _Nullable navigationTitleFont;
-/// Sets the navigation bar background color for inapp messages of type html, url, image or map
+/// Sets the navigation bar background color for inapp messages of type html, url, image and map
 /// By default, it is set to nil to keep app’s default
 @property (nonatomic, strong) UIColor * _Nullable navigationBackgroundColor;
-/// Sets the navigation bar menu button color for inapp messages of type html, url, image or map
+/// Sets whether the positions of menu and close buttons need to be switched for inapp messages of type html, url, image and map
+/// By default, it is set to false (menu button is on the left side and close button on the right side, of the navigation bar)
+@property (nonatomic) BOOL navigationMenuCloseButtonSwitchPosition;
+/// Sets the navigation bar menu button color for inapp messages of type html, url, image and map
 /// By default, it is set to nil to keep app’s default
 @property (nonatomic, strong) UIColor * _Nullable navigationMenuButtonColor;
-/// Sets the navigation bar close button color for inapp messages of type html, url, image or map
+/// Specifies a custom asset name the SDK needs to use for the menu button
+/// By default, it is set to <code>SM.Menu</code>
+@property (nonatomic, copy) NSString * _Nonnull navigationMenuButtonAlternateAssetName;
+/// Sets the navigation bar close button color for inapp messages of type html, url, image and map
 /// By default, it is set to nil to keep app’s default
 @property (nonatomic, strong) UIColor * _Nullable navigationCloseButtonColor;
-/// Sets the navigation bar navigation arrow buttons color for inapp messages of type url
+/// Specifies a custom asset name the SDK needs to use for the close button
+/// By default, it is set to <code>SM.Close</code>
+@property (nonatomic, copy) NSString * _Nonnull navigationCloseButtonAlternateAssetName;
+/// Sets the navigation bar navigation arrows button color for inapp messages of type url
 /// By default, it is set to nil to keep app’s default
 @property (nonatomic, strong) UIColor * _Nullable navigationArrowButtonsColor;
-/// Sets the view background color for inapp messages of type html, url, image or map
+/// Specifies a custom asset name the SDK needs to use for the navigation arrow back button
+/// By default, it is set to <code>SM.Back</code>
+@property (nonatomic, copy) NSString * _Nonnull navigationArrowBackButtonAlternateAssetName;
+/// Specifies a custom asset name the SDK needs to use for the navigation arrow forward button
+/// By default, it is set to <code>SM.Forward</code>
+@property (nonatomic, copy) NSString * _Nonnull navigationArrowForwardButtonAlternateAssetName;
+/// Sets the view background color for inapp messages of type html, url, image and map
 /// By default, it is set to nil to keep app’s default
 @property (nonatomic, strong) UIColor * _Nullable viewBackgroundColor;
-/// Sets the links text color for any type of inapp messages
+/// Sets the links text color for any type of inapp message
 /// By default, it is set to nil to keep app’s default
 @property (nonatomic, strong) UIColor * _Nullable linksColor;
+/// Defines whether the view controller will be presented and dismissed with a transition, for inapp messages of type html, url, image and map
+/// By default, it is set to false
+@property (nonatomic) BOOL presentWithTransition;
+/// If <code>SMInAppMessageStyleOptions/presentWithTransition</code> is set to <code>true</code> and <code>SMInAppMessageStyleOptions/transitioningDelegate</code> to <code>nil</code>, you can use one <code>SMViewTransition</code>
+/// By default, it is set to .horizontalSlide
+@property (nonatomic) enum kSMViewTransition_ transition;
+/// Defines a custom UIViewControllerTransitioningDelegate to manage the view controller transition on your own, for inapp messages of type html, url, image and map
+/// By default, it is set to nil, so SDK’s default one will be used (slide left/right)
+@property (nonatomic, strong) id <UIViewControllerTransitioningDelegate> _Nullable transitioningDelegate;
+/// Defines whether inapps of type image can be tapped.
+/// If set to true, it will use the first link defined in Selligent UI and will remove it from the list of links to show after clicking in the Menu button (hidding it if no other link has been defined)
+/// By default, it is set to false
+@property (nonatomic) BOOL imageCanBeTapped;
+/// Sets the reload button color for inapp messages of type url and image
+/// By default, it is set to nil to keep app’s default
+@property (nonatomic, strong) UIColor * _Nullable reloadButtonColor;
+/// Specifies a custom asset name the SDK needs to use for the reload button
+/// By default, it is set to <code>SM.Reload</code>
+@property (nonatomic, copy) NSString * _Nonnull reloadButtonAlternateAssetName;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -973,6 +1008,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
 /// This method allow you to send an event with pre-defined devices informations to the back-end
 /// This call can be done at any time after starting the library.
@@ -1004,16 +1040,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
-@class PlotSentNotification;
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
-/// Inherited from PlotDelegate.plotNotificationSentEvent(_:).
-- (void)plotNotificationSentEvent:(PlotSentNotification * _Nonnull)notification;
-/// Inherited from PlotDelegate.plotNotificationOpenedEvent(_:).
-- (void)plotNotificationOpenedEvent:(PlotSentNotification * _Nonnull)notification;
-@end
-
-
 @protocol SMManagerUniversalLinksDelegate;
 @class SMNotificationMessage;
 
@@ -1037,6 +1063,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+@class PlotSentNotification;
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
+/// Inherited from PlotDelegate.plotNotificationSentEvent(_:).
+- (void)plotNotificationSentEvent:(PlotSentNotification * _Nonnull)notification;
+/// Inherited from PlotDelegate.plotNotificationOpenedEvent(_:).
+- (void)plotNotificationOpenedEvent:(PlotSentNotification * _Nonnull)notification;
+@end
+
+
+
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
 /// Enable geolocation services.
@@ -1056,34 +1093,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
-/// Use this API inside the corresponding method in your WKNavigationDelegate when inAppMessageWKNavigationDelegate is set
-/// It will enable the SDK to have the navigation arrows working properly and log the error when the delegate is implemented in your App
-/// \param webView The WKWebView from the WKNavigationDelegate
-///
-/// \param navigation The WKNavigation from the WKNavigationDelegate
-///
-/// \param error The Error from the WKNavigationDelegate
-///
-- (void)webView:(WKWebView * _Nonnull)webView didFail:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
-/// Use this API inside the corresponding method in your WKNavigationDelegate when <code>SMManager/inAppMessageWKNavigationDelegate(_:)</code> is set
-/// It will enable the SDK to have the navigation arrows working properly and log the error when the delegate is implemented in your App
-/// \param webView The WKWebView from the WKNavigationDelegate
-///
-/// \param navigation The WKNavigation from the WKNavigationDelegate
-///
-- (void)webView:(WKWebView * _Nonnull)webView didFinish:(WKNavigation * _Nonnull)navigation;
-/// Use this API inside the corresponding method in your WKNavigationDelegate when <code>SMManager/inAppMessageWKNavigationDelegate(_:)</code> is set
-/// It will enable the SDK to have the navigation arrows working properly and log the error when the delegate is implemented in your App
-/// \param webView The WKWebView from the WKNavigationDelegate
-///
-/// \param navigation The WKNavigation from the WKNavigationDelegate
-///
-- (void)webView:(WKWebView * _Nonnull)webView didCommit:(WKNavigation * _Nonnull)navigation;
-@end
-
-
-
 
 @class UNNotificationResponse;
 @class UNNotification;
@@ -1093,14 +1102,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// Handles remote notification actions.
 /// \param response An UNNotificationResponse that contains information about the notification and the interaction the user has done with it, provided by the delegate call
 ///
-- (void)didReceive:(UNNotificationResponse * _Nonnull)response;
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)didReceive:(UNNotificationResponse * _Nonnull)response options:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Mandatory API when using UserNotifications framework, to be included in userNotificationCenter:willPresentNotification:withCompletionHandler
 /// Handles incoming remote notifications when the app is in foreground.
 /// \param notification An UNNotification that contains information about the notification
 ///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
 /// \param completionHandler A completion handler that will be called with a specific UNNotificationPresentationOption depending on the <code>SMManagerSetting/remoteMessageDisplayType</code> value specified when starting the SDK. If no completion is provided, the SDK will just send the push received event and won’t manage any kind of display/action after the remote notification was clicked
 ///
-- (void)willPresent:(UNNotification * _Nonnull)notification completionHandler:(void (^ _Nullable)(UNNotificationPresentationOptions))completionHandler;
+- (void)willPresent:(UNNotification * _Nonnull)notification options:(SMInAppMessageStyleOptions * _Nullable)options completionHandler:(void (^ _Nullable)(UNNotificationPresentationOptions))completionHandler;
 /// Optional API, retrieves the <code>SMNotificationMessage</code> object from a given userInfo.
 /// To be used for custom implementations when you need to get the Selligent push object from the provided userInfo to know what has been provided from the backend and use it.
 ///
@@ -1156,6 +1169,50 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
+/// In  case the sdk displays an In App Message in a WKWebView you will for example be able to process the linked click on the app side by implementing decidePolicyForNavigationAction on the provided class
+/// \param delegate An object implementing WKNavigationDelegate methods
+///
+- (void)inAppMessageWKNavigationDelegate:(id <WKNavigationDelegate> _Nonnull)delegate;
+/// Use this API inside the corresponding method in your WKNavigationDelegate when inAppMessageWKNavigationDelegate is set
+/// It will enable the SDK to have the WKWebview working properly and log the error when the delegate is implemented in your App
+/// \param webView The WKWebView from the WKNavigationDelegate
+///
+/// \param navigation The WKNavigation from the WKNavigationDelegate
+///
+/// \param error The Error from the WKNavigationDelegate
+///
+- (void)webView:(WKWebView * _Nonnull)webView didFail:(WKNavigation * _Nonnull)navigation withError:(NSError * _Nonnull)error;
+/// Use this API inside the corresponding method in your WKNavigationDelegate when <code>SMManager/inAppMessageWKNavigationDelegate(_:)</code> is set
+/// It will enable the SDK to have the WKWebview working properly and log the error when the delegate is implemented in your App
+/// \param webView The WKWebView from the WKNavigationDelegate
+///
+/// \param navigation The WKNavigation from the WKNavigationDelegate
+///
+- (void)webView:(WKWebView * _Nonnull)webView didFinish:(WKNavigation * _Nonnull)navigation;
+/// Use this API inside the corresponding method in your WKNavigationDelegate when <code>SMManager/inAppMessageWKNavigationDelegate(_:)</code> is set
+/// It will enable the SDK to have the WKWebview working properly and log the error when the delegate is implemented in your App
+/// \param webView The WKWebView from the WKNavigationDelegate
+///
+/// \param navigation The WKNavigation from the WKNavigationDelegate
+///
+/// \param error The Error from the WKNavigationDelegate
+///
+- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
+/// Use this API inside the corresponding method in your WKNavigationDelegate when <code>SMManager/inAppMessageWKNavigationDelegate(_:)</code> is set
+/// It will enable the SDK to have the WKWebview working properly and log the error when the delegate is implemented in your App
+/// \param webView The WKWebView from the WKNavigationDelegate
+///
+/// \param navigation The WKNavigation from the WKNavigationDelegate
+///
+- (void)webView:(WKWebView * _Nonnull)webView didCommit:(WKNavigation * _Nonnull)navigation;
+/// This method must be called whenever a user has clicked on a link that you  manage to display
+/// It will remove the view controller from your App hierarchy
+- (void)removeViewController;
+@end
+
+
+
 @protocol SMManagerInAppMessageDelegate;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
@@ -1193,17 +1250,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// \param inAppMessage The <code>SMInAppMessage</code> where the link is from
 ///
 - (void)executeLinkAction:(SMLink * _Nonnull)link inAppMessage:(SMInAppMessage * _Nonnull)inAppMessage;
-/// In  case the sdk displays an In App Message in a WKWebView you will for example be able to process the linked click on the app side by implementing decidePolicyForNavigationAction on the provided class
-/// \param delegate An object implementing WKNavigationDelegate methods
-///
-- (void)inAppMessageWKNavigationDelegate:(id <WKNavigationDelegate> _Nonnull)delegate;
 /// Used to let the app display the in-app message linked to a remote notification
 /// \param delegate An object implementing <code>SMManagerInAppMessageDelegate</code> methods
 ///
 - (void)inAppMessageDelegate:(id <SMManagerInAppMessageDelegate> _Nonnull)delegate;
-/// This method must be called whenever a user has clicked on a link that you  manage to display
-/// It will remove the view controller from your App hierarchy
-- (void)removeViewController;
 @end
 
 @class NSData;
@@ -1236,9 +1286,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// Display the content linked to a remote notification (usually an in-app message) or the in-app message content directly.
 /// \param id The notification Id to display
 ///
-- (void)displayNotificationWithId:(NSString * _Nonnull)id;
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)displayNotificationWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Display the content linked to the last received remote notification (usually an in-app message).
-- (void)displayLastReceivedRemoteNotification;
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)displayLastReceivedRemoteNotificationWithOptions:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Retrieves the last received remote-notification content
 ///
 /// returns:
@@ -1263,7 +1317,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
-
 SWIFT_PROTOCOL("_TtP29SelligentMobileSDK_Geofencing29SMManagerInAppMessageDelegate_")
 @protocol SMManagerInAppMessageDelegate
 /// Invoked when an in-app message linked to a remote notification should be displayed.
@@ -1285,8 +1338,8 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing16SMManagerSetting")
 /// After tapping a notification, the in-app will be displayed (if any).
 /// Should you want to prevent that behaviour, you can set this property to <em>false</em> before starting the library.
 /// warning:
-/// This property does not have an impact when <code>SMManager/displayNotification(id:)</code> or <code>SMManager/displayLastReceivedRemoteNotification()</code> are called.
-/// Once you set its value to <em>true</em>, the application becomes responsable about displaying the inapp-notification linked to the received remote-notification.
+/// This property does not have an impact when <code>SMManager/displayNotification(id:options:)</code> or <code>SMManager/displayLastReceivedRemoteNotification(options:)</code> are called.
+/// Once you set its value to <em>true</em>, the application becomes responsible about displaying the inapp-notification linked to the received remote-notification.
 @property (nonatomic) BOOL shouldDisplayRemoteNotification;
 /// Used to add the in-app message associated to a remote notification to the in-app message list
 /// Once a new remote-notification is received, if it contains in the payload data for an in-app message, this setting will add the in-app message to the in app messages list . You will need to listen to <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code> to be informed  that an in-app message is available and you can then retrieve it with <code>SMManager/getInAppMessages()</code>.
@@ -1390,19 +1443,12 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing19SMManagerSettingIAC")
 @interface SMManagerSettingIAC : NSObject
 /// <code>SMInAppContentStyleOptions</code> object allowing you to globally customize the in app content appearance.
 @property (nonatomic, strong) SMInAppContentStyleOptions * _Nonnull styleOptions;
-/// Constructor to be used in order to create the <code>SMManagerSettingIAC</code> instance, when you want to implement in-app contents.
-/// \param refreshType The type of refresh to consider when the application goes to the foreground
-///
-- (nonnull instancetype)initWithRefreshType:(enum kSMIA_RefreshType_)refreshType OBJC_DESIGNATED_INITIALIZER;
 /// Constructor to be used in order to create the ``SMManagerSettingIAC` instance, when you want to implement in-app contents.
 /// \param refreshType The type of refresh to consider when the application goes to the foreground
 ///
 /// \param backgroundFetch If set to <em>true</em>, it will activate UIApplication-BackGround-Fetch-mode automatically
 ///
-///
-/// throws:
-/// NSError (where the <em>domain</em> will be <code>SMConstants/kSMErrorDomain</code> and the <em>code</em> will be one from <code>SMError</code>). Possible thrown codes for this method: <code>SMError/wrongAppSettings</code> (when some settings are missing at App level)
-- (nullable instancetype)initWithRefreshType:(enum kSMIA_RefreshType_)refreshType backgroundFetch:(BOOL)backgroundFetch error:(NSError * _Nullable * _Nullable)error OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithRefreshType:(enum kSMIA_RefreshType_)refreshType backgroundFetch:(BOOL)backgroundFetch OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1415,16 +1461,9 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing19SMManagerSettingIAM")
 /// Constructor to be used in order to create the <code>SMManagerSettingIAM</code> instance, when you want to implement in-app messages.
 /// \param refreshType The type of refresh to consider when the application goes to the foreground
 ///
-- (nonnull instancetype)initWithRefreshType:(enum kSMIA_RefreshType_)refreshType OBJC_DESIGNATED_INITIALIZER;
-/// Constructor to be used in order to create the <code>SMManagerSettingIAM</code> instance, when you want to implement in-app messages.
-/// \param refreshType The type of refresh to consider when the application goes to the foreground
-///
 /// \param backgroundFetch If set to <em>true</em>, it will activate UIApplication-BackGround-Fetch-mode automatically
 ///
-///
-/// throws:
-/// NSError (where the <em>domain</em> will be <code>SMConstants/kSMErrorDomain</code> and the <em>code</em> will be one from <code>SMError</code>). Possible thrown codes for this method: <code>SMError/wrongAppSettings</code> (when some settings are missing at App level)
-- (nullable instancetype)initWithRefreshType:(enum kSMIA_RefreshType_)refreshType backgroundFetch:(BOOL)backgroundFetch error:(NSError * _Nullable * _Nullable)error OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithRefreshType:(enum kSMIA_RefreshType_)refreshType backgroundFetch:(BOOL)backgroundFetch OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1553,6 +1592,13 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing9SMSuccess")
 @end
 
 
+
+typedef SWIFT_ENUM_NAMED(NSInteger, kSMViewTransition_, "SMViewTransition", open) {
+/// New view enters the screen sliding form the right while current view leaves the screen sliding to the left, and the other way around when the new view is dismissed
+  kSMViewTransition_HorizontalSlide = 1,
+/// New view enters the screen sliding form the bottom while current view doesn’t move, and the other way around when the new view is dismissed
+  kSMViewTransition_VerticalSlide = 2,
+};
 
 
 

@@ -50,6 +50,7 @@
 -   [SMNotificationButtonType](enums/SMNotificationButtonType.md)
 -   [SMNotificationMessageType](enums/SMNotificationMessageType.md)
 -   [SMRemoteMessageDisplayType](enums/SMRemoteMessageDisplayType.md)
+-   [SMViewTransition](enums/SMViewTransition.md)
 
 ## Extensions
 

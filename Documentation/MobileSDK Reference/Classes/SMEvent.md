@@ -21,7 +21,7 @@ var description: String { get }
 >Create an event object that will be sent to platform<br/>
 
 ```swift
-@objc func apply(successBlock: ((SMSuccess) -> ())? = nil, failureBlock: ((SMFailure) -> ())? = nil)
+@objc func apply(successBlock: ((SMSuccess) -> Void)? = nil, failureBlock: ((SMFailure) -> Void)? = nil)
 ```
 
 >Allow to initialize a success block and/or a failure block that will be triggered after an event is sent to the platform<br/>

@@ -1226,8 +1226,8 @@
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMEventUser",
         "hasMissingDesignatedInitializers": true,
@@ -1396,8 +1396,8 @@
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMEventUser",
         "hasMissingDesignatedInitializers": true,
@@ -1681,8 +1681,8 @@
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMEvent",
         "hasMissingDesignatedInitializers": true,
@@ -2093,8 +2093,8 @@
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMBaseMessage",
         "hasMissingDesignatedInitializers": true,
@@ -3390,8 +3390,8 @@
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMBaseMessage",
         "hasMissingDesignatedInitializers": true,
@@ -4102,16 +4102,6 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "SelligentMobileSDK_Geofencing",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
@@ -5768,6 +5758,100 @@
           },
           {
             "kind": "Var",
+            "name": "navigationMenuCloseButtonSwitchPosition",
+            "printedName": "navigationMenuCloseButtonSwitchPosition",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)navigationMenuCloseButtonSwitchPosition",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationMenuCloseButtonSwitchPositionSbvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)navigationMenuCloseButtonSwitchPosition",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationMenuCloseButtonSwitchPositionSbvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setNavigationMenuCloseButtonSwitchPosition:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationMenuCloseButtonSwitchPositionSbvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationMenuCloseButtonSwitchPositionSbvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationMenuCloseButtonSwitchPositionSbvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "navigationMenuButtonColor",
             "printedName": "navigationMenuButtonColor",
             "children": [
@@ -5878,6 +5962,100 @@
                 "declKind": "Accessor",
                 "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC25navigationMenuButtonColorSo7UIColorCSgvM",
                 "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC25navigationMenuButtonColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "navigationMenuButtonAlternateAssetName",
+            "printedName": "navigationMenuButtonAlternateAssetName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)navigationMenuButtonAlternateAssetName",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC38navigationMenuButtonAlternateAssetNameSSvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)navigationMenuButtonAlternateAssetName",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC38navigationMenuButtonAlternateAssetNameSSvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setNavigationMenuButtonAlternateAssetName:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC38navigationMenuButtonAlternateAssetNameSSvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC38navigationMenuButtonAlternateAssetNameSSvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC38navigationMenuButtonAlternateAssetNameSSvM",
                 "moduleName": "SelligentMobileSDK_Geofencing",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -6004,6 +6182,100 @@
           },
           {
             "kind": "Var",
+            "name": "navigationCloseButtonAlternateAssetName",
+            "printedName": "navigationCloseButtonAlternateAssetName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)navigationCloseButtonAlternateAssetName",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationCloseButtonAlternateAssetNameSSvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)navigationCloseButtonAlternateAssetName",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationCloseButtonAlternateAssetNameSSvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setNavigationCloseButtonAlternateAssetName:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationCloseButtonAlternateAssetNameSSvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationCloseButtonAlternateAssetNameSSvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC39navigationCloseButtonAlternateAssetNameSSvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "navigationArrowButtonsColor",
             "printedName": "navigationArrowButtonsColor",
             "children": [
@@ -6114,6 +6386,194 @@
                 "declKind": "Accessor",
                 "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC27navigationArrowButtonsColorSo7UIColorCSgvM",
                 "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC27navigationArrowButtonsColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "navigationArrowBackButtonAlternateAssetName",
+            "printedName": "navigationArrowBackButtonAlternateAssetName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)navigationArrowBackButtonAlternateAssetName",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC43navigationArrowBackButtonAlternateAssetNameSSvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)navigationArrowBackButtonAlternateAssetName",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC43navigationArrowBackButtonAlternateAssetNameSSvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setNavigationArrowBackButtonAlternateAssetName:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC43navigationArrowBackButtonAlternateAssetNameSSvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC43navigationArrowBackButtonAlternateAssetNameSSvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC43navigationArrowBackButtonAlternateAssetNameSSvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "navigationArrowForwardButtonAlternateAssetName",
+            "printedName": "navigationArrowForwardButtonAlternateAssetName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)navigationArrowForwardButtonAlternateAssetName",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC46navigationArrowForwardButtonAlternateAssetNameSSvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)navigationArrowForwardButtonAlternateAssetName",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC46navigationArrowForwardButtonAlternateAssetNameSSvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setNavigationArrowForwardButtonAlternateAssetName:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC46navigationArrowForwardButtonAlternateAssetNameSSvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC46navigationArrowForwardButtonAlternateAssetNameSSvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC46navigationArrowForwardButtonAlternateAssetNameSSvM",
                 "moduleName": "SelligentMobileSDK_Geofencing",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -6350,6 +6810,618 @@
                 "declKind": "Accessor",
                 "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC10linksColorSo7UIColorCSgvM",
                 "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC10linksColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "presentWithTransition",
+            "printedName": "presentWithTransition",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)presentWithTransition",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21presentWithTransitionSbvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)presentWithTransition",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21presentWithTransitionSbvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setPresentWithTransition:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21presentWithTransitionSbvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21presentWithTransitionSbvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21presentWithTransitionSbvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "transition",
+            "printedName": "transition",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SMViewTransition",
+                "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)transition",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC10transitionAA16SMViewTransitionOvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMViewTransition",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)transition",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC10transitionAA16SMViewTransitionOvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMViewTransition",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setTransition:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC10transitionAA16SMViewTransitionOvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC10transitionAA16SMViewTransitionOvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC10transitionAA16SMViewTransitionOvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "transitioningDelegate",
+            "printedName": "transitioningDelegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIViewControllerTransitioningDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewControllerTransitioningDelegate",
+                    "printedName": "UIKit.UIViewControllerTransitioningDelegate",
+                    "usr": "c:objc(pl)UIViewControllerTransitioningDelegate"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)transitioningDelegate",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21transitioningDelegateSo029UIViewControllerTransitioningK0_pSgvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIViewControllerTransitioningDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIViewControllerTransitioningDelegate",
+                        "printedName": "UIKit.UIViewControllerTransitioningDelegate",
+                        "usr": "c:objc(pl)UIViewControllerTransitioningDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)transitioningDelegate",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21transitioningDelegateSo029UIViewControllerTransitioningK0_pSgvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIViewControllerTransitioningDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIViewControllerTransitioningDelegate",
+                        "printedName": "UIKit.UIViewControllerTransitioningDelegate",
+                        "usr": "c:objc(pl)UIViewControllerTransitioningDelegate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setTransitioningDelegate:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21transitioningDelegateSo029UIViewControllerTransitioningK0_pSgvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21transitioningDelegateSo029UIViewControllerTransitioningK0_pSgvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC21transitioningDelegateSo029UIViewControllerTransitioningK0_pSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "imageCanBeTapped",
+            "printedName": "imageCanBeTapped",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)imageCanBeTapped",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC16imageCanBeTappedSbvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)imageCanBeTapped",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC16imageCanBeTappedSbvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setImageCanBeTapped:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC16imageCanBeTappedSbvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC16imageCanBeTappedSbvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC16imageCanBeTappedSbvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "reloadButtonColor",
+            "printedName": "reloadButtonColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)reloadButtonColor",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17reloadButtonColorSo7UIColorCSgvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)reloadButtonColor",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17reloadButtonColorSo7UIColorCSgvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setReloadButtonColor:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17reloadButtonColorSo7UIColorCSgvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17reloadButtonColorSo7UIColorCSgvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17reloadButtonColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "reloadButtonAlternateAssetName",
+            "printedName": "reloadButtonAlternateAssetName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)reloadButtonAlternateAssetName",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC30reloadButtonAlternateAssetNameSSvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)reloadButtonAlternateAssetName",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC30reloadButtonAlternateAssetNameSSvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setReloadButtonAlternateAssetName:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC30reloadButtonAlternateAssetNameSSvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC30reloadButtonAlternateAssetNameSSvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC30reloadButtonAlternateAssetNameSSvM",
                 "moduleName": "SelligentMobileSDK_Geofencing",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -6815,6 +7887,16 @@
             "usr": "s:SY",
             "mangledName": "$sSY"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileSDK_Geofencing",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -7726,6 +8808,228 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "SMViewTransition",
+        "printedName": "SMViewTransition",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "horizontalSlide",
+            "printedName": "horizontalSlide",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK_Geofencing.SMViewTransition.Type) -> SelligentMobileSDK_Geofencing.SMViewTransition",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMViewTransition",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMViewTransition",
+                        "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                        "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_@kSMViewTransition_HorizontalSlide",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing16SMViewTransitionO15horizontalSlideyA2CmF",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "verticalSlide",
+            "printedName": "verticalSlide",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK_Geofencing.SMViewTransition.Type) -> SelligentMobileSDK_Geofencing.SMViewTransition",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMViewTransition",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMViewTransition",
+                        "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                        "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_@kSMViewTransition_VerticalSlide",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing16SMViewTransitionO13verticalSlideyA2CmF",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMViewTransition",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:29SelligentMobileSDK_Geofencing16SMViewTransitionO8rawValueACSgSi_tcfc",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing16SMViewTransitionO8rawValueACSgSi_tcfc",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:29SelligentMobileSDK_Geofencing16SMViewTransitionO8rawValueSivp",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing16SMViewTransitionO8rawValueSivp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing16SMViewTransitionO8rawValueSivg",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing16SMViewTransitionO8rawValueSivg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_",
+        "mangledName": "$s29SelligentMobileSDK_Geofencing16SMViewTransitionO",
+        "moduleName": "SelligentMobileSDK_Geofencing",
+        "objc_name": "kSMViewTransition_",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileSDK_Geofencing",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "WebKit",
         "printedName": "WebKit",
@@ -7736,6 +9040,16 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileSDK_Geofencing",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
@@ -7864,36 +9178,6 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(refreshType:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "SMManagerSettingIAC",
-                "printedName": "SelligentMobileSDK_Geofencing.SMManagerSettingIAC",
-                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMManagerSettingIAC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "SMInAppRefreshType",
-                "printedName": "SelligentMobileSDK_Geofencing.SMInAppRefreshType",
-                "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMIA_RefreshType_"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMManagerSettingIAC(im)initWithRefreshType:",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing19SMManagerSettingIACC11refreshTypeAcA014SMInAppRefreshI0O_tcfc",
-            "moduleName": "SelligentMobileSDK_Geofencing",
-            "objc_name": "initWithRefreshType:",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
             "printedName": "init(refreshType:backgroundFetch:)",
             "children": [
               {
@@ -7912,20 +9196,20 @@
                 "kind": "TypeNominal",
                 "name": "Bool",
                 "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
                 "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMManagerSettingIAC(im)initWithRefreshType:backgroundFetch:error:",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing19SMManagerSettingIACC11refreshType15backgroundFetchAcA014SMInAppRefreshI0O_SbtKcfc",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMManagerSettingIAC(im)initWithRefreshType:backgroundFetch:",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing19SMManagerSettingIACC11refreshType15backgroundFetchAcA014SMInAppRefreshI0O_Sbtcfc",
             "moduleName": "SelligentMobileSDK_Geofencing",
-            "objc_name": "initWithRefreshType:backgroundFetch:error:",
+            "objc_name": "initWithRefreshType:backgroundFetch:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
               "RawDocComment"
             ],
-            "throwing": true,
             "init_kind": "Designated"
           },
           {
@@ -8282,6 +9566,16 @@
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileSDK_Geofencing",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -8846,7 +10140,7 @@
           {
             "kind": "Function",
             "name": "displayNotification",
-            "printedName": "displayNotification(id:)",
+            "printedName": "displayNotification(id:options:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -8858,13 +10152,28 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMInAppMessageStyleOptions",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)displayNotificationWithId:",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC19displayNotification2idySS_tF",
+            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)displayNotificationWithId:options:",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC19displayNotification2id7optionsySS_AA26SMInAppMessageStyleOptionsCSgtF",
             "moduleName": "SelligentMobileSDK_Geofencing",
-            "objc_name": "displayNotificationWithId:",
+            "objc_name": "displayNotificationWithId:options:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -8876,18 +10185,34 @@
           {
             "kind": "Function",
             "name": "displayLastReceivedRemoteNotification",
-            "printedName": "displayLastReceivedRemoteNotification()",
+            "printedName": "displayLastReceivedRemoteNotification(options:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMInAppMessageStyleOptions",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)displayLastReceivedRemoteNotification",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC37displayLastReceivedRemoteNotificationyyF",
+            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)displayLastReceivedRemoteNotificationWithOptions:",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC37displayLastReceivedRemoteNotification7optionsyAA26SMInAppMessageStyleOptionsCSg_tF",
             "moduleName": "SelligentMobileSDK_Geofencing",
+            "objc_name": "displayLastReceivedRemoteNotificationWithOptions:",
             "declAttributes": [
               "Dynamic",
               "ObjC",
@@ -9267,35 +10592,6 @@
           },
           {
             "kind": "Function",
-            "name": "inAppMessageWKNavigationDelegate",
-            "printedName": "inAppMessageWKNavigationDelegate(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "WKNavigationDelegate",
-                "printedName": "WebKit.WKNavigationDelegate",
-                "usr": "c:objc(pl)WKNavigationDelegate"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)inAppMessageWKNavigationDelegate:",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC32inAppMessageWKNavigationDelegateyySo0iJ0_pF",
-            "moduleName": "SelligentMobileSDK_Geofencing",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "inAppMessageDelegate",
             "printedName": "inAppMessageDelegate(_:)",
             "children": [
@@ -9314,29 +10610,6 @@
             "declKind": "Func",
             "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)inAppMessageDelegate:",
             "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC20inAppMessageDelegateyyAA0e2InghI0_pF",
-            "moduleName": "SelligentMobileSDK_Geofencing",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "removeViewController",
-            "printedName": "removeViewController()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)removeViewController",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC20removeViewControlleryyF",
             "moduleName": "SelligentMobileSDK_Geofencing",
             "declAttributes": [
               "Dynamic",
@@ -9435,6 +10708,35 @@
           },
           {
             "kind": "Function",
+            "name": "inAppMessageWKNavigationDelegate",
+            "printedName": "inAppMessageWKNavigationDelegate(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKNavigationDelegate",
+                "printedName": "WebKit.WKNavigationDelegate",
+                "usr": "c:objc(pl)WKNavigationDelegate"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)inAppMessageWKNavigationDelegate:",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC32inAppMessageWKNavigationDelegateyySo0iJ0_pF",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "webView",
             "printedName": "webView(_:didFail:withError:)",
             "children": [
@@ -9512,6 +10814,55 @@
           {
             "kind": "Function",
             "name": "webView",
+            "printedName": "webView(_:didFailProvisionalNavigation:withError:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "WKWebView",
+                "printedName": "WebKit.WKWebView",
+                "usr": "c:objc(cs)WKWebView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "WebKit.WKNavigation?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WKNavigation",
+                    "printedName": "WebKit.WKNavigation",
+                    "usr": "c:objc(cs)WKNavigation"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Error",
+                "printedName": "Swift.Error",
+                "usr": "s:s5ErrorP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)webView:didFailProvisionalNavigation:withError:",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC7webView_28didFailProvisionalNavigation9withErrorySo05WKWebG0C_So12WKNavigationCSgs0M0_ptF",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "webView",
             "printedName": "webView(_:didCommit:)",
             "children": [
               {
@@ -9535,6 +10886,29 @@
             "declKind": "Func",
             "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)webView:didCommit:",
             "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC7webView_9didCommitySo05WKWebG0C_So12WKNavigationCtF",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removeViewController",
+            "printedName": "removeViewController()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)removeViewController",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC20removeViewControlleryyF",
             "moduleName": "SelligentMobileSDK_Geofencing",
             "declAttributes": [
               "Dynamic",
@@ -9671,7 +11045,7 @@
           {
             "kind": "Function",
             "name": "didReceive",
-            "printedName": "didReceive(_:)",
+            "printedName": "didReceive(_:options:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9683,11 +11057,26 @@
                 "name": "UNNotificationResponse",
                 "printedName": "UserNotifications.UNNotificationResponse",
                 "usr": "c:objc(cs)UNNotificationResponse"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMInAppMessageStyleOptions",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)didReceive:",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC10didReceiveyySo22UNNotificationResponseCF",
+            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)didReceive:options:",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC10didReceive_7optionsySo22UNNotificationResponseC_AA26SMInAppMessageStyleOptionsCSgtF",
             "moduleName": "SelligentMobileSDK_Geofencing",
             "declAttributes": [
               "Dynamic",
@@ -9700,7 +11089,7 @@
           {
             "kind": "Function",
             "name": "willPresent",
-            "printedName": "willPresent(_:completionHandler:)",
+            "printedName": "willPresent(_:options:completionHandler:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9712,6 +11101,21 @@
                 "name": "UNNotification",
                 "printedName": "UserNotifications.UNNotification",
                 "usr": "c:objc(cs)UNNotification"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMInAppMessageStyleOptions",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMInAppMessageStyleOptions",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -9741,8 +11145,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)willPresent:completionHandler:",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC11willPresent_17completionHandlerySo14UNNotificationC_ySo0J19PresentationOptionsVcSgtF",
+            "usr": "c:@CM@SelligentMobileSDK_Geofencing@objc(cs)SMManager(im)willPresent:options:completionHandler:",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing9SMManagerC11willPresent_7options17completionHandlerySo14UNNotificationC_AA26SMInAppMessageStyleOptionsCSgySo0k12PresentationP0VcSgtF",
             "moduleName": "SelligentMobileSDK_Geofencing",
             "declAttributes": [
               "Dynamic",
@@ -11382,8 +12786,8 @@
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMEventUser",
         "hasMissingDesignatedInitializers": true,
@@ -11589,8 +12993,8 @@
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMEventUser",
         "hasMissingDesignatedInitializers": true,
@@ -12302,8 +13706,8 @@
         "moduleName": "SelligentMobileSDK_Geofencing",
         "declAttributes": [
           "AccessControl",
-          "ObjC",
-          "RawDocComment"
+          "RawDocComment",
+          "ObjC"
         ],
         "superclassUsr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessage",
         "hasMissingDesignatedInitializers": true,
@@ -12550,6 +13954,16 @@
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileSDK_Geofencing",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -20149,36 +21563,6 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(refreshType:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "SMManagerSettingIAM",
-                "printedName": "SelligentMobileSDK_Geofencing.SMManagerSettingIAM",
-                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMManagerSettingIAM"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "SMInAppRefreshType",
-                "printedName": "SelligentMobileSDK_Geofencing.SMInAppRefreshType",
-                "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMIA_RefreshType_"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMManagerSettingIAM(im)initWithRefreshType:",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing19SMManagerSettingIAMC11refreshTypeAcA014SMInAppRefreshI0O_tcfc",
-            "moduleName": "SelligentMobileSDK_Geofencing",
-            "objc_name": "initWithRefreshType:",
-            "declAttributes": [
-              "AccessControl",
-              "ObjC",
-              "RawDocComment"
-            ],
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
             "printedName": "init(refreshType:backgroundFetch:)",
             "children": [
               {
@@ -20197,20 +21581,20 @@
                 "kind": "TypeNominal",
                 "name": "Bool",
                 "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
                 "usr": "s:Sb"
               }
             ],
             "declKind": "Constructor",
-            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMManagerSettingIAM(im)initWithRefreshType:backgroundFetch:error:",
-            "mangledName": "$s29SelligentMobileSDK_Geofencing19SMManagerSettingIAMC11refreshType15backgroundFetchAcA014SMInAppRefreshI0O_SbtKcfc",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMManagerSettingIAM(im)initWithRefreshType:backgroundFetch:",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing19SMManagerSettingIAMC11refreshType15backgroundFetchAcA014SMInAppRefreshI0O_Sbtcfc",
             "moduleName": "SelligentMobileSDK_Geofencing",
-            "objc_name": "initWithRefreshType:backgroundFetch:error:",
+            "objc_name": "initWithRefreshType:backgroundFetch:",
             "declAttributes": [
               "AccessControl",
               "ObjC",
               "RawDocComment"
             ],
-            "throwing": true,
             "init_kind": "Designated"
           },
           {
@@ -22649,37 +24033,44 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserRegistration.swift",
       "kind": "StringLiteral",
-      "offset": 718,
+      "offset": 712,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserRegistration.swift",
       "kind": "StringLiteral",
-      "offset": 206,
+      "offset": 200,
       "length": 23,
       "value": "\"SelligentMobileSDK_Geofencing.SMEventUserRegistration\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Manager\/SMManager+RemoteNotification.swift",
       "kind": "BooleanLiteral",
-      "offset": 7370,
+      "offset": 7931,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserLogin.swift",
       "kind": "StringLiteral",
-      "offset": 696,
+      "offset": 690,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserLogin.swift",
       "kind": "StringLiteral",
-      "offset": 199,
+      "offset": 193,
       "length": 16,
       "value": "\"SelligentMobileSDK_Geofencing.SMEventUserLogin\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/Controllers\/SMNotifAlertStandardViewController.swift",
+      "kind": "StringLiteral",
+      "offset": 201,
+      "length": 34,
+      "value": "\"SelligentMobileSDK_Geofencing.SMNotifAlertStandardViewController\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/StringExtension.swift",
@@ -22796,49 +24187,49 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUser.swift",
       "kind": "StringLiteral",
-      "offset": 194,
+      "offset": 188,
       "length": 11,
       "value": "\"SelligentMobileSDK_Geofencing.SMEventUser\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUser.swift",
       "kind": "StringLiteral",
-      "offset": 194,
+      "offset": 188,
       "length": 11,
       "value": "\"SelligentMobileSDK_Geofencing.SMEventUser\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAC\/SMInAppContentMessage.swift",
       "kind": "StringLiteral",
-      "offset": 365,
+      "offset": 359,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAC\/SMInAppContentMessage.swift",
       "kind": "StringLiteral",
-      "offset": 492,
+      "offset": 486,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAC\/SMInAppContentMessage.swift",
       "kind": "StringLiteral",
-      "offset": 624,
+      "offset": 618,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAC\/SMInAppContentMessage.swift",
       "kind": "StringLiteral",
-      "offset": 204,
+      "offset": 198,
       "length": 21,
       "value": "\"SelligentMobileSDK_Geofencing.SMInAppContentMessage\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAC\/SMInAppContentMessage.swift",
       "kind": "StringLiteral",
-      "offset": 204,
+      "offset": 198,
       "length": 21,
       "value": "\"SelligentMobileSDK_Geofencing.SMInAppContentMessage\""
     },
@@ -23006,42 +24397,42 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 351,
+      "offset": 345,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 478,
+      "offset": 472,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 950,
+      "offset": 944,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 1089,
+      "offset": 1083,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 2510,
+      "offset": 2504,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 197,
+      "offset": 191,
       "length": 14,
       "value": "\"SelligentMobileSDK_Geofencing.SMInAppMessage\""
     },
@@ -23265,7 +24656,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Globals.swift",
       "kind": "BooleanLiteral",
-      "offset": 423,
+      "offset": 429,
       "length": 5,
       "value": "false"
     },
@@ -23393,7 +24784,7 @@
       "kind": "StringLiteral",
       "offset": 3890,
       "length": 7,
-      "value": "\"3.0.1\""
+      "value": "\"3.1.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -24475,332 +25866,388 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 11448,
-      "length": 9,
-      "value": "\"SM.Menu\""
+      "kind": "BooleanLiteral",
+      "offset": 11459,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11637,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11815,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11995,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12177,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 11517,
-      "length": 10,
-      "value": "\"SM.Close\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 11586,
-      "length": 9,
-      "value": "\"SM.Back\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 11657,
-      "length": 12,
-      "value": "\"SM.Forward\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 11723,
-      "length": 7,
-      "value": "\"empty\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 11819,
+      "offset": 12493,
       "length": 11,
       "value": "\"SMNM_nsdc\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 11871,
+      "offset": 12545,
       "length": 9,
       "value": "\"SMNM_ns\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 11918,
+      "offset": 12592,
       "length": 16,
       "value": "\"IAC\/[deviceId]\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 11970,
+      "offset": 12644,
       "length": 24,
       "value": "\"devices\/[deviceId]\/iac\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12027,
+      "offset": 12701,
       "length": 16,
       "value": "\"IAM\/[deviceId]\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12079,
+      "offset": 12753,
       "length": 24,
       "value": "\"devices\/[deviceId]\/iam\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12145,
+      "offset": 12819,
       "length": 4,
       "value": "\"Id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12193,
+      "offset": 12867,
       "length": 11,
       "value": "\"device_id\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12248,
+      "offset": 12922,
       "length": 18,
       "value": "\"Devices\/Register\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12313,
+      "offset": 12987,
       "length": 9,
       "value": "\"devices\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12365,
+      "offset": 13039,
       "length": 20,
       "value": "\"Devices\/[deviceId]\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12431,
+      "offset": 13105,
       "length": 20,
       "value": "\"devices\/[deviceId]\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12486,
+      "offset": 13160,
       "length": 19,
       "value": "\"Events\/[deviceId]\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12543,
+      "offset": 13217,
       "length": 27,
       "value": "\"devices\/[deviceId]\/events\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "IntegerLiteral",
-      "offset": 12613,
+      "offset": 13287,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "FloatLiteral",
-      "offset": 12654,
+      "offset": 13328,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "FloatLiteral",
-      "offset": 12699,
+      "offset": 13373,
       "length": 5,
       "value": "120.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12756,
+      "offset": 13430,
       "length": 15,
       "value": "\"EncryptionKey\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12815,
+      "offset": 13489,
       "length": 10,
       "value": "\"SM_event\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12918,
+      "offset": 13592,
       "length": 12,
       "value": "\"SM_RN_lkrs\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 12981,
+      "offset": 13655,
       "length": 15,
       "value": "\"SM_RN_lfrakrs\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13034,
+      "offset": 13708,
       "length": 10,
       "value": "\"SM_RN_dt\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13088,
+      "offset": 13762,
       "length": 12,
       "value": "\"SM_RN_sdkv\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13141,
+      "offset": 13815,
       "length": 13,
       "value": "\"SM_RN_cntry\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13197,
+      "offset": 13871,
       "length": 11,
       "value": "\"SM_RN_tmz\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13252,
+      "offset": 13926,
       "length": 13,
       "value": "\"SM_RN_dname\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13309,
+      "offset": 13983,
       "length": 12,
       "value": "\"SM_RN_iosv\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13358,
+      "offset": 14032,
       "length": 13,
       "value": "\"SM_RN_extid\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13414,
+      "offset": 14088,
       "length": 10,
       "value": "\"SM_RN_pt\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13489,
+      "offset": 14163,
       "length": 16,
       "value": "\"SM_IAM_lkiamrs\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13564,
+      "offset": 14238,
       "length": 16,
       "value": "\"SM_IAM_lkiamfd\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13639,
+      "offset": 14313,
       "length": 16,
       "value": "\"SM_IAM_lkiacfd\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13687,
+      "offset": 14361,
       "length": 13,
       "value": "\"SM_GN_appid\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13737,
+      "offset": 14411,
       "length": 13,
       "value": "\"SM_GN_appvr\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13785,
+      "offset": 14459,
       "length": 12,
       "value": "\"SM_GN_lang\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13837,
+      "offset": 14511,
       "length": 15,
       "value": "\"SM_GN_frmkTyp\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13931,
+      "offset": 14605,
       "length": 41,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 13963,
+      "offset": 14637,
       "length": 1,
       "value": "\"\/SM_IAMP\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 14024,
+      "offset": 14698,
       "length": 41,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 14056,
+      "offset": 14730,
       "length": 1,
       "value": "\"\/SM_IACP\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 14114,
+      "offset": 14788,
       "length": 39,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
       "kind": "StringLiteral",
-      "offset": 14146,
+      "offset": 14820,
       "length": 1,
       "value": "\"\/SM_SU\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1502,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 1966,
+      "length": 9,
+      "value": "\"SM.Menu\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 2439,
+      "length": 10,
+      "value": "\"SM.Close\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 2924,
+      "length": 9,
+      "value": "\"SM.Back\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 3178,
+      "length": 12,
+      "value": "\"SM.Forward\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3869,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4936,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "StringLiteral",
+      "offset": 5364,
+      "length": 11,
+      "value": "\"SM.Reload\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Errors\/SMErrorHelper.swift",
@@ -24903,7 +26350,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/Controllers\/SMNotifMessageViewController.swift",
       "kind": "Array",
-      "offset": 2721,
+      "offset": 5098,
       "length": 2,
       "value": "[]"
     },
@@ -24941,6 +26388,34 @@
       "offset": 219,
       "length": 28,
       "value": "\"SelligentMobileSDK_Geofencing.SMNotificationAnnotationData\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMViewTransition.swift",
+      "kind": "IntegerLiteral",
+      "offset": 455,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMViewTransition.swift",
+      "kind": "IntegerLiteral",
+      "offset": 651,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMViewTransition.swift",
+      "kind": "IntegerLiteral",
+      "offset": 455,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMViewTransition.swift",
+      "kind": "IntegerLiteral",
+      "offset": 651,
+      "length": 1,
+      "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/Controllers\/SMNotifHtmlViewController.swift",
@@ -25139,6 +26614,20 @@
       "value": "9"
     },
     {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/Transitions\/SwipeInteractionController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 320,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/Transitions\/SwipeInteractionController.swift",
+      "kind": "StringLiteral",
+      "offset": 192,
+      "length": 26,
+      "value": "\"SelligentMobileSDK_Geofencing.SwipeInteractionController\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/Action\/SMEventAction.swift",
       "kind": "StringLiteral",
       "offset": 185,
@@ -25156,6 +26645,13 @@
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSettingIAC.swift",
       "kind": "BooleanLiteral",
       "offset": 466,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSettingIAC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1004,
       "length": 5,
       "value": "false"
     },
@@ -25179,6 +26675,13 @@
       "offset": 200,
       "length": 28,
       "value": "\"SelligentMobileSDK_Geofencing.SMInAppContentViewController\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/Transitions\/SlideTransition.swift",
+      "kind": "StringLiteral",
+      "offset": 189,
+      "length": 15,
+      "value": "\"SelligentMobileSDK_Geofencing.SlideTransition\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
@@ -25218,42 +26721,63 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
       "kind": "Array",
-      "offset": 1662,
+      "offset": 1658,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2050,
+      "offset": 2046,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2207,
+      "offset": 2205,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2245,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2281,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2262,
+      "offset": 2389,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2444,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2379,
+      "offset": 2561,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2407,
+      "offset": 2589,
       "length": 5,
       "value": "false"
     },
@@ -25505,14 +27029,14 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserLogout.swift",
       "kind": "StringLiteral",
-      "offset": 603,
+      "offset": 597,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserLogout.swift",
       "kind": "StringLiteral",
-      "offset": 200,
+      "offset": 194,
       "length": 17,
       "value": "\"SelligentMobileSDK_Geofencing.SMEventUserLogout\""
     },
@@ -25589,14 +27113,14 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserUnregistration.swift",
       "kind": "StringLiteral",
-      "offset": 631,
+      "offset": 625,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserUnregistration.swift",
       "kind": "StringLiteral",
-      "offset": 208,
+      "offset": 202,
       "length": 25,
       "value": "\"SelligentMobileSDK_Geofencing.SMEventUserUnregistration\""
     },
@@ -25764,14 +27288,14 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "StringLiteral",
-      "offset": 369,
+      "offset": 363,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "StringLiteral",
-      "offset": 204,
+      "offset": 198,
       "length": 21,
       "value": "\"SelligentMobileSDK_Geofencing.SMNotificationMessage\""
     },
@@ -25781,6 +27305,13 @@
       "offset": 189,
       "length": 13,
       "value": "\"SelligentMobileSDK_Geofencing.SMDeviceInfos\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/Transitions\/DefaultTransitionDelegate.swift",
+      "kind": "StringLiteral",
+      "offset": 190,
+      "length": 25,
+      "value": "\"SelligentMobileSDK_Geofencing.DefaultTransitionDelegate\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
@@ -26240,21 +27771,21 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "BooleanLiteral",
-      "offset": 901,
+      "offset": 905,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "IntegerLiteral",
-      "offset": 926,
+      "offset": 930,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1385,
+      "offset": 1389,
       "length": 2,
       "value": "\"\""
     },
@@ -26268,7 +27799,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5030,
+      "offset": 5038,
       "length": 2,
       "value": "\"\""
     },
@@ -26332,6 +27863,13 @@
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSettingIAM.swift",
       "kind": "BooleanLiteral",
       "offset": 466,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSettingIAM.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1005,
       "length": 5,
       "value": "false"
     },
@@ -26484,43 +28022,36 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
-      "kind": "StringLiteral",
-      "offset": 545,
-      "length": 7,
-      "value": "\"fetch\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "BooleanLiteral",
-      "offset": 1180,
+      "offset": 1131,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "BooleanLiteral",
-      "offset": 1482,
+      "offset": 1433,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "BooleanLiteral",
-      "offset": 2279,
+      "offset": 2246,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "BooleanLiteral",
-      "offset": 2907,
+      "offset": 2874,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "StringLiteral",
-      "offset": 6301,
+      "offset": 6268,
       "length": 2,
       "value": "\"\""
     },

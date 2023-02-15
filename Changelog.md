@@ -1,9 +1,31 @@
 # SDK Changelog
 
+- __SDK 3.1.0__
+
+    - Fix navigation bar custom icon proportions
+    - Fix IAM of type `html`, `url`, `image` and `map` view size when multiple ones are presented at the same time and its parent is of type `alert`
+    - Fix bug where navigation arrows for IAM of type `url` would not get enabled when multiple IAM are be displayed at the same time
+    - Add robustness if some SDK public APIs are wrongly implemented by calling them from a background thread
+    - Add robustness if multiple IAM are requested to be displayed and/or removed at the same time
+    - Re-add support to change logLevel from App extensions `SMManager/apply(_:)`
+    - Add `SMInAppMessageStyleOptions` style options for specific IAM displays (if you want to differ from the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`) from methods: `SMManager/displayNotification(id:options:)`, `SMManager/displayLastReceivedRemoteNotification(options:)`, `SMManager/didReceive(_:options:)`, and `SMManager/willPresent(_:options:completionHandler:)`
+    - Add `SMInAppMessageStyleOptions/navigationMenuCloseButtonSwitchPosition` to switch the position of the `Menu` and `Close` buttons
+    - Add `SMInAppMessageStyleOptions/presentWithTransition` and `SMInAppMessageStyleOptions/transitioningDelegate` to define whether the default SDK IAM view controllers will be presented with a transition and the possibility to define a custom transition
+    - Add `SMInAppMessageStyleOptions/transition` to use a predefined SDK view transition instead of a custom one
+    - Add `SMInAppMessageStyleOptions/navigationMenuButtonAlternateAssetName`, `SMInAppMessageStyleOptions/navigationCloseButtonAlternateAssetName`, `SMInAppMessageStyleOptions/navigationArrowBackButtonAlternateAssetName`, `SMInAppMessageStyleOptions/navigationArrowForwardButtonAlternateAssetName` and `SMInAppMessageStyleOptions/reloadButtonAlternateAssetName` to use different images depending on the IAM (or from where is it being displayed)
+    - Add `SMInAppMessageStyleOptions/imageCanBeTapped` to define whether IAM of type `image` can execute the (first) link action when clicking on the image directly
+    - Add support for `Rate app` and `Open a method in your app` links, when included as Push Notification buttons and implementing the `UNNotificationContentExtension/didReceive(_:completionHandler:)` delegate method
+    - Add `UIActivityIndicatorView` to IAM of type `image` and `url` before the content is fully loaded
+    - Add reload button (`SM.Relaod`) to IAM of type `image` and `url` if the content could not be loaded (i.e no connectivity) and `SMInAppMessageStyleOptions/reloadButtonColor` property to define its color
+    - Add `SMManager/webView(_:didFailProvisionalNavigation:withError:)` to properly have IAM of type `url` working (reload/navigation buttons) when using `SMManager/inAppMessageWKNavigationDelegate(_:)`
+    - Add `UIPanGestureRecognizer` to IAM of type `html`, `url`, `image` and `map` so they can be dismissed by swiping from the left/top, if `SMInAppMessageStyleOptions/presentWithTransition` is set to `true` and depending on the `SMInAppMessageStyleOptions/transition` option
+        
 - __SDK 3.0.1__
+
     - Fix bug where the deeplink as a main action of a push message would not execute when having both `SelligentMobileSDK` and `SelligentMobileExtensionsSDK` included in the same target (i.e Cocoapods)
     
 - __SDK 3.0.0__
+
     - Migrate SDK to Swift: introduce breaking changes, mostly signature changes: <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation/Migration_v3.0.0.md">migration document</a>
     - Remove `armv7`, `armv7s`, and `i386` support: Xcode 14 built
     - Raise minimum supported version to iOS 11
@@ -20,35 +42,43 @@
     - Fix bug where the type of IAM (iamType) would not be stored properly (new property to be used `type`)
     
 - __SDK 2.7.7__
+
     - Fix bug where the SDK was incorrectly flagged as not-safe to use in Application Extensions
     
 - __SDK 2.7.6__
+
     - Fix bug where InAppMessage isViewed flag wasn't correctly updated in cache
     - Fix bug introduced in 2.7.4 where sometimes, after uninstalling the app, the device Id was not properly loaded from keyChain
     
 - __SDK 2.7.5__
+
     - Update PlotProjects integration to support arm64 for simulator, from now on, minimum PlotProjects version supported is 3.5.0
     - Fix bug where clicked events could be sent more than once under certain circumstances
     - Fix bug where some url requests could get cancelled when moving to the background
 
 - __SDK 2.7.4__
+
     - Correct bug where `Rate app` links (when included as Push Notification buttons) were not being shown
     - Add support for `Close button` links
     
 - __SDK 2.7.3__
+
     - Correct bug where action buttons were not refreshing properly for iOS +12
     - Correct bug where instantiating events before starting SDK produced deviceId to not be loaded
     
 - __SDK 2.7.2__
+
     - Fix some arm64 + simulator compatibility issues for StaticLibrary + podspec and for geolocation version of the SDK
     - Fix PushOpened sent twice if same notification ID is clicked more than once from notification center
     
 - __SDK 2.7.1__
+
     - Add framework version with geolocation
     - Add push provider name in the communication with the platform
     - Add Swift package support
     
 - __SDK 2.7.0__
+
     - Add extra SDK headers in the communications with the platform
     - Add possibility to handle universal link from push/inapp (from Selligent Marketing Cloud, `deeplink` button type only)
     - Fix access level of SMBaseMessage, SMInAppContentMessage, SMInAppMessage, SMLink, SMManager, SMMessage and SMNotificationAnnotationData
@@ -132,7 +162,7 @@
 
 - __SDK 2.0.3__
 
-    - format devicetoken without using of `NSData` description property for better support of Xcode11 and iOS 13
+    - format devicetoken without using of `NSData` description property for better support of Xcode 11 and iOS 13
 
 - __SDK 2.0.2.1__
 
@@ -147,7 +177,7 @@
     - Correct all swift warnings
     - Correct mainaction value of open browser type is not decrypted in a simple push
     - Correct bug  73088 in-app message controller not dismissed when clicking on deeplink button
-    - Correct bug  77309 conflict with anvato SDK due to  common crypto library
+    - Correct bug  77309 conflict with anvato SDK due to common crypto library
     - Correct bug  74898 in-app message of type map is not displayed
     - Correct bug  70428 shouldDisplayRemoteNotification impeach send pushopened event
     - Correct bug  69351 unregister notification functionality in not working correctly
@@ -179,7 +209,7 @@
 
 - __SDK 1.7.3__
 
-    - Improve behavior and robustness of the way in-app ,essages are fetched
+    - Improve behavior and robustness of the way in-app messages are fetched
     - Add a type for InApp refresh only for dev use: `.Minutely`
 
 - __SDK 1.7.2__

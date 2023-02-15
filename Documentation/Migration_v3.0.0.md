@@ -45,17 +45,17 @@ SMManager.shared.getInAppContents(for: String, type: SMInAppContentType)
 // Old
 SMManager.sharedInstance().performIACFetch(completionHandler: ((UIBackgroundFetchResult) -> Void)?)
 // New
-SMManager.shared.performIACFetch(completion: (UIBackgroundFetchResult) -> ())
+SMManager.shared.performIACFetch(completion: (UIBackgroundFetchResult) -> Void)
 
 // Old
 SMManager.sharedInstance().didReceiveRemoteNotification([AnyHashable : Any]?, fetchCompletionHandler: ((UIBackgroundFetchResult) -> Void)?)
 // New
-SMManager.shared.didReceiveRemoteNotification([AnyHashable : Any], completionHandler: ((UIBackgroundFetchResult) -> ())) -> ())
+SMManager.shared.didReceiveRemoteNotification([AnyHashable : Any], completionHandler: ((UIBackgroundFetchResult) -> Void)) -> Void)
 
 // Old
 SMManager.sharedInstance().performIAMFetch(completionHandler: ((UIBackgroundFetchResult) -> Void)?)
 // New
-SMManager.shared.performIAMFetch(completion: (UIBackgroundFetchResult) -> ())
+SMManager.shared.performIAMFetch(completion: (UIBackgroundFetchResult) -> Void)
 
 // Old
 SMManager.sharedInstance().reload(SMManagerSetting)
