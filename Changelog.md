@@ -1,10 +1,15 @@
 # SDK Changelog
 
+- __SDK 3.1.1__
+
+    - Fix `SMInAppMessageStyleOptions/transition/.verticalSlide` crash when running on iPad
+    - Fix IAM of type `url` to not reload the initial page but the current one when cancelling the dismiss gesture
+
 - __SDK 3.1.0__
 
     - Fix navigation bar custom icon proportions
     - Fix IAM of type `html`, `url`, `image` and `map` view size when multiple ones are presented at the same time and its parent is of type `alert`
-    - Fix bug where navigation arrows for IAM of type `url` would not get enabled when multiple IAM are be displayed at the same time
+    - Fix bug where navigation arrows for IAM of type `url` would not get enabled when multiple IAM are being displayed at the same time
     - Add robustness if some SDK public APIs are wrongly implemented by calling them from a background thread
     - Add robustness if multiple IAM are requested to be displayed and/or removed at the same time
     - Re-add support to change logLevel from App extensions `SMManager/apply(_:)`
