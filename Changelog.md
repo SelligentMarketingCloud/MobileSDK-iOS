@@ -1,5 +1,10 @@
 # SDK Changelog
 
+- __SDK 3.1.2__
+
+    - Fix `SMInAppMessageStyleOptions/navigationMenuCloseButtonSwitchPosition` behavior when combined with `SMInAppMessageStyleOptions/imageCanBeTapped` set to `true` and the message contains only one link
+    - Fix links menu position when `SMInAppMessageStyleOptions/navigationMenuCloseButtonSwitchPosition` is set to `true` and running on iPad
+    
 - __SDK 3.1.1__
 
     - Fix `SMInAppMessageStyleOptions/transition/.verticalSlide` crash when running on iPad
