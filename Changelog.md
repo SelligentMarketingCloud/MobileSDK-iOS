@@ -1,5 +1,16 @@
 # SDK Changelog
 
+- __SDK 3.2.0__
+
+    - Improve `SMInAppMessageStyleOptions/transition/.verticalSlide` dismiss transition smoothness
+    - Fix `SMManagerSetting/shouldAddInAppMessageFromPushToInAppMessageList` and `SMManager/displayLastReceivedRemoteNotification` behavior: it will now work properly with notifications that have just been received but not displayed or clickd (Notification Service Extension needs to be integrated for this to correctly work)
+    - Fix bug where simple push notifications (without IAM) could get added to the IAM message list when setting `SMManagerSetting/shouldAddInAppMessageFromPushToInAppMessageList` to `true` and using `SMManager/displayLastReceivedRemoteNotification`
+    - Changed IAM of type `alert` implementation from using `UIAlertController` to a custom set of views
+    - Add `SMInAppMessageStyleOptions/alertBackgroundColor`, `SMInAppMessageStyleOptions/alertCornerRadius`, `SMInAppMessageStyleOptions/alertTitleColor`, `SMInAppMessageStyleOptions/alertTitleFont`, `SMInAppMessageStyleOptions/alertBodyColor`, `SMInAppMessageStyleOptions/alertBodyFont`, `SMInAppMessageStyleOptions/alertLinksColor`, `SMInAppMessageStyleOptions/alertLinksBackgroundColor`, `SMInAppMessageStyleOptions/alertLinksSeparatorColor` and `SMInAppMessageStyleOptions/alertLinksFont` to customize the appearance of IAM of type `alert`
+    - Add `SMInAppMessageStyleOptions/transition/.opacity` transition option
+    - Add networkManager to IAM of type `image` and `url` so the content is automatically reloaded upon regaining connectivity (if it wasn't successfully loaded before)
+    - Fix bug where the notification `SMConstants/kSMNotification_Event_DidReceiveRemoteNotification` was broadcasted shortly after calling `SMManager/didReceive(_:options:)` instead of `SMManager/willPresent(_:options:completionHandler:)`
+        
 - __SDK 3.1.2__
 
     - Fix `SMInAppMessageStyleOptions/navigationMenuCloseButtonSwitchPosition` behavior when combined with `SMInAppMessageStyleOptions/imageCanBeTapped` set to `true` and the message contains only one link
@@ -93,7 +104,7 @@
     - Add possibility to handle universal link from push/inapp (from Selligent Marketing Cloud, `deeplink` button type only)
     - Fix access level of SMBaseMessage, SMInAppContentMessage, SMInAppMessage, SMLink, SMManager, SMMessage and SMNotificationAnnotationData
     - Correct bug 143908 PushOpened is sent twice sometimes and not removed correctly from resend cache mechanism
-    - Add SMRemoteMessageDisplayType to control the SDK behaviour when receiving push in foreground
+    - Add SMRemoteMessageDisplayType to control the SDK behavior when receiving push in foreground
     - Add helper methods to get the SMNotificationMessage from the userInfo and to send Clicked and Opened events
     - Add helper method to get the Provisional push authorization (registerForProvisionalRemoteNotification)
     - Correct bug where for some devices the data was not properly stored for the AppGroup causing the extensions to not work properly (i.e Rich Push)

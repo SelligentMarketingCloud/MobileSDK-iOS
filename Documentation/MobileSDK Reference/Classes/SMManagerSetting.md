@@ -11,19 +11,19 @@
 @objc var shouldDisplayRemoteNotification: Bool { get set }
 ```
 
->This setting will enable or disable the display of inapp-messages linked to a remote-notification by the SDK.<br/>After tapping a notification, the in-app will be displayed (if any).<br/>Should you want to prevent that behaviour, you can set this property to **false** before starting the library.<br/>
+>This setting will enable or disable the display of inapp-messages linked to a remote-notification by the SDK.<br/>After tapping a notification, the in-app will be displayed (if any).<br/>Should you want to prevent that behavior, you can set this property to **false** before starting the library.<br/>
 
 ```swift
 @objc var shouldAddInAppMessageFromPushToInAppMessageList: Bool { get set }
 ```
 
->Used to add the in-app message associated to a remote notification to the in-app message list<br/>Once a new remote-notification is received, if it contains in the payload data for an in-app message, this setting will add the in-app message to the in app messages list . You will need to listen to ``SMConstants/kSMNotification_Event_DidReceiveInAppMessage`` to be informed  that an in-app message is available and you can then retrieve it with ``SMManager/getInAppMessages()``.
+>Used to add the in-app message associated to a remote notification to the in-app message list<br/>Once a new remote-notification is received, if it contains in the payload data for an in-app message, this setting will add the in-app message to the in app messages list .<br/>
 
 ```swift
 @objc var remoteMessageDisplayType: SMRemoteMessageDisplayType { get set }
 ```
 
->This value defines the behaviour that the SDK will adopt when a remote-notification is received when in Foreground.<br/>The behaviour will be as:<br/>*  **kSMRemoteMessageDisplayType_None**: nothing will be displayed.<br/>*  **kSMRemoteMessageDisplayType_Notification**: a Push Notification will be displayed.<br/>*  **kSMRemoteMessageDisplayType_Automatic**:<br/>   **"Push + in-app notifications"**:<br/>       a. With "Message Action": a Push Notification will be displayed (**UNNotificationPresentationOptionAlert** and **UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList** for iOS 14+).<br/>       b. With "Push Notification Buttons": a Push Notification will be displayed (**UNNotificationPresentationOptionAlert** and **UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList** for iOS 14+).<br/>       c. With "Rich Push Content": a Push Notification will be displayed (**UNNotificationPresentationOptionAlert** and **UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList **for iOS 14+).<br/>       d. Others: an in-app message will be displayed (**UNNotificationPresentationOptionNone**).<br/>   **"Mobile push"**: a Push Notification will be displayed (**UNNotificationPresentationOptionAlert** and **UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList** for iOS 14+).<br/>
+>This value defines the behavior that the SDK will adopt when a remote-notification is received when in Foreground.<br/>The behavior will be as:<br/>*  **kSMRemoteMessageDisplayType_None**: nothing will be displayed.<br/>*  **kSMRemoteMessageDisplayType_Notification**: a Push Notification will be displayed.<br/>*  **kSMRemoteMessageDisplayType_Automatic**:<br/>   **"Push + in-app notifications"**:<br/>       a. With "Message Action": a Push Notification will be displayed (**UNNotificationPresentationOptionAlert** and **UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList** for iOS 14+).<br/>       b. With "Push Notification Buttons": a Push Notification will be displayed (**UNNotificationPresentationOptionAlert** and **UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList** for iOS 14+).<br/>       c. With "Rich Push Content": a Push Notification will be displayed (**UNNotificationPresentationOptionAlert** and **UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList **for iOS 14+).<br/>       d. Others: an in-app message will be displayed (**UNNotificationPresentationOptionNone**).<br/>   **"Mobile push"**: a Push Notification will be displayed (**UNNotificationPresentationOptionAlert** and **UNNotificationPresentationOptionBanner | UNNotificationPresentationOptionList** for iOS 14+).<br/>
 
 ```swift
 @objc var frameworkType: SMFrameworkType { get set }

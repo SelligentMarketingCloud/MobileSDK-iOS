@@ -8889,28 +8889,28 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "BooleanLiteral",
-      "offset": 666,
+      "offset": 665,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "BooleanLiteral",
-      "offset": 905,
+      "offset": 904,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "IntegerLiteral",
-      "offset": 930,
+      "offset": 929,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1389,
+      "offset": 1388,
       "length": 2,
       "value": "\"\""
     },
@@ -8924,7 +8924,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5038,
+      "offset": 5037,
       "length": 2,
       "value": "\"\""
     },
@@ -8952,7 +8952,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Errors\/SMErrorHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1272,
+      "offset": 1255,
       "length": 4,
       "value": "\"%@\""
     },
@@ -9066,7 +9066,7 @@
       "kind": "StringLiteral",
       "offset": 3890,
       "length": 7,
-      "value": "\"3.1.2\""
+      "value": "\"3.2.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -10779,21 +10779,21 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "BooleanLiteral",
-      "offset": 2486,
+      "offset": 2600,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2515,
+      "offset": 2629,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2540,
+      "offset": 2654,
       "length": 2,
       "value": "\"\""
     },
@@ -10891,7 +10891,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "StringLiteral",
-      "offset": 6268,
+      "offset": 6162,
       "length": 2,
       "value": "\"\""
     },
@@ -11113,21 +11113,21 @@
       "value": "\"SelligentMobileExtensionsSDK.SMInAppMessage\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/StringExtension.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
       "kind": "Dictionary",
       "offset": 3064,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/StringExtension.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
       "kind": "StringLiteral",
       "offset": 3910,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/StringExtension.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
       "kind": "StringLiteral",
       "offset": 3954,
       "length": 2,

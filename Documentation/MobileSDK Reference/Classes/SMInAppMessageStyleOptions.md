@@ -89,7 +89,7 @@
 @objc var transition: SMViewTransition { get set }
 ```
 
->If ``SMInAppMessageStyleOptions/presentWithTransition`` is set to `true` and ``SMInAppMessageStyleOptions/transitioningDelegate`` to `nil`, you can use one ``SMViewTransition``<br/>By default, it is set to .horizontalSlide
+>If ``SMInAppMessageStyleOptions/presentWithTransition`` is set to `true` and ``SMInAppMessageStyleOptions/transitioningDelegate`` to `nil`, you can use one ``SMViewTransition`` to use default SDK transitions,<br/>By default, it is set to .horizontalSlide<br/>
 
 ```swift
 @objc var transitioningDelegate: UIViewControllerTransitioningDelegate? { get set }
@@ -114,3 +114,63 @@
 ```
 
 >Specifies a custom asset name the SDK needs to use for the reload button<br/>By default, it is set to `SM.Reload`
+
+```swift
+@objc var alertBackgroundColor: UIColor? { get set }
+```
+
+>Sets the background color for inapp messages of type alert<br/>By default, it is set to nil and the SDK will use .systemBackground for iOS >= 13 and .white for iOS < 13
+
+```swift
+@objc var alertCornerRadius: CGFloat { get set }
+```
+
+>Sets the corner radius for inapp messages of alert<br/>By default, it is set to 15
+
+```swift
+@objc var alertTitleColor: UIColor? { get set }
+```
+
+>Sets the title color for inapp messages of alert<br/>By default, it is set to nil and the SDK will use .label for iOS >= 13 and .black for iOS < 13
+
+```swift
+@objc var alertTitleFont: UIFont { get set }
+```
+
+>Sets the title font for inapp messages of type alert<br/>By default, it is set to .systemFont(ofSize: 17, weight: .semibold)
+
+```swift
+@objc var alertBodyColor: UIColor? { get set }
+```
+
+>Sets the body color for inapp messages of alert<br/>By default, it is set to nil and the SDK will use .label for iOS >= 13 and .black for iOS < 13
+
+```swift
+@objc var alertBodyFont: UIFont { get set }
+```
+
+>Sets the body font for inapp messages of type alert<br/>By default, it is set to .systemFont(ofSize: 17, weight: .semibold)
+
+```swift
+@objc var alertLinksColor: UIColor? { get set }
+```
+
+>Sets the links color for inapp messages of type alert<br/>By default, it is set to nil and the SDK will use whatever is defined in ``SMInAppMessageStyleOptions/linksColor``
+
+```swift
+@objc var alertLinksBackgroundColor: UIColor? { get set }
+```
+
+>Sets the links background color for inapp messages of type alert<br/>By default, it is set to nil and the SDK will use .systemBackground for iOS >= 13 and .white for iOS < 13
+
+```swift
+@objc var alertLinksSeparatorColor: UIColor { get set }
+```
+
+>Sets the links separator color for inapp messages of type alert<br/>By default, it is set to .systemGray.withAlphaComponent(0.3)
+
+```swift
+@objc var alertLinksFont: UIFont { get set }
+```
+
+>Sets the links font for inapp messages of type alert<br/>By default, it is set to .systemFont(ofSize: 17)

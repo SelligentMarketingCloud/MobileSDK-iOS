@@ -252,6 +252,16 @@ extension SelligentMobileSDK_Geofencing.SMManager {
   @objc public var imageCanBeTapped: Swift.Bool
   @objc public var reloadButtonColor: UIKit.UIColor?
   @objc public var reloadButtonAlternateAssetName: Swift.String
+  @objc public var alertBackgroundColor: UIKit.UIColor?
+  @objc public var alertCornerRadius: CoreFoundation.CGFloat
+  @objc public var alertTitleColor: UIKit.UIColor?
+  @objc public var alertTitleFont: UIKit.UIFont
+  @objc public var alertBodyColor: UIKit.UIColor?
+  @objc public var alertBodyFont: UIKit.UIFont
+  @objc public var alertLinksColor: UIKit.UIColor?
+  @objc public var alertLinksBackgroundColor: UIKit.UIColor?
+  @objc public var alertLinksSeparatorColor: UIKit.UIColor
+  @objc public var alertLinksFont: UIKit.UIFont
   @objc override dynamic public init()
   @objc deinit
 }
@@ -303,6 +313,7 @@ extension SelligentMobileSDK_Geofencing.SMManager {
 @objc(kSMViewTransition_) public enum SMViewTransition : Swift.Int {
   case horizontalSlide = 1
   case verticalSlide = 2
+  case opacity = 3
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {

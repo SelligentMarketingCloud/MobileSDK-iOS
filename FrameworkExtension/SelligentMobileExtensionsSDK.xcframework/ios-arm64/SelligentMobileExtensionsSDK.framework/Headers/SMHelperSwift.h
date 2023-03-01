@@ -388,7 +388,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK7SMEvent")
 /// Confirm if the current event should be cached or not
 /// If the event fail to be delivered to your backend, then by default, it is cached into an internal queue.
 /// After a while, the library will automaticly try to send it again.
-/// Should you want to prevent this behaviour, feel free to set this property to <em>false</em>.
+/// Should you want to prevent this behavior, feel free to set this property to <em>false</em>.
 /// By default, it is set to <em>true</em>
 @property (nonatomic) BOOL shouldCache;
 /// Create an event object that will be sent to platform
@@ -524,6 +524,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK6SMLink")
 
 @interface SMLink (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 - (void)updateLinkAndProcessFrom:(SMBaseMessage * _Nonnull)message;
+- (void)processData;
 @end
 
 

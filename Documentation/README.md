@@ -341,7 +341,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   | `shouldAddInAppMessageFromPushToInAppMessageList` | If you want to add the In-App Message associated to a Push Notification to the In-App Message list ([learn more](#display_iam)). |
   | `clearCacheIntervalValue` | Define the interval value to clear the SDK internal cache (this setting is only used for messages that do not have an expiration date – otherwise expiration date of the message will be taken into account for lifetime of the message in cache). |
   | `appGroupId` | Provide the App GroupId to the SDK (`group.yourGroupName`) that you will have previously configured in your Apple Developer Portal. This is mandatory when you use one Notification extension (service and/or content) ([learn more](#notification_extensions)). |
-  | `remoteMessageDisplayType` | This value defines the behaviour that the SDK will adopt when a remote-notification is received when in Foreground ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/remoteMessageDisplayType)). |
+  | `remoteMessageDisplayType` | This value defines the behavior that the SDK will adopt when a remote-notification is received when in Foreground ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/remoteMessageDisplayType)). |
   
 * Optionally initialize and configure In-App Messages.
 * Optionally configure location services (may not be available depending on your SDK version).
@@ -373,7 +373,7 @@ settings.configureInAppMessageService(with: settingIAM)
 // Optional - Initialize location services
 // settings.configureLocationService()
 
-// Optional - Define the SDK behaviour when receiving push notifications in foreground
+// Optional - Define the SDK behavior when receiving push notifications in foreground
 // Make sure you have read this setting's documentation from SMManagerSetting reference, before using it
 // settings.remoteMessageDisplayType = .notification
 ```
@@ -404,7 +404,7 @@ SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshTy
 // Optional - Initialize location services
 // [settings configureLocationService];
 
-// Optional - Define the SDK behaviour when receiving push notifications in foreground
+// Optional - Define the SDK behavior when receiving push notifications in foreground
 // Make sure you have read this setting's documentation from SMManagerSetting reference, before using it
 // settings.remoteMessageDisplayType = kSMRemoteMessageDisplayType_Notification;
 ```
@@ -779,23 +779,41 @@ You can also use `navigationMenuButtonAlternateAssetName`, `navigationCloseButto
 // Switch to .hourly or .daily if you want to treat standalone inapp messages too
 let iamSetting = SMManagerSettingIAM(refreshType: .hourly)
 
-// Applies to inapp messages of type image, html, map or url
+// Applies to any type of inapp message
+iamSetting.styleOptions.linksColor = .blue
+
+// Applies to inapp messages of type image, html, map and url
 iamSetting.styleOptions.navigationTitleColor = .black
 iamSetting.styleOptions.navigationTitleFont = .systemFont(ofSize: 20, weight: .bold)
 iamSetting.styleOptions.navigationBackgroundColor = .cyan
 iamSetting.styleOptions.navigationMenuButtonColor = .blue
 iamSetting.styleOptions.navigationCloseButtonColor = .red
-iamSetting.styleOptions.navigationArrowButtonsColor = .black
 iamSetting.styleOptions.viewBackgroundColor = .cyan
 iamSetting.styleOptions.navigationMenuCloseButtonSwitchPosition = false
 iamSetting.styleOptions.presentWithTransition = true
 iamSetting.styleOptions.transition = .horizontalSlide
 iamSetting.styleOptions.transitioningDelegate = nil
-iamSetting.styleOptions.imageCanBeTapped = false
+
+// Applies to inapp messages of type url
+iamSetting.styleOptions.navigationArrowButtonsColor = .black
+
+// Applies to inapp messages of type image and url
 iamSetting.styleOptions.reloadButtonColor = .cyan
 
-// Applies to any type of inapp message
-iamSetting.styleOptions.linksColor = .blue
+// Applies to inapp messages of type image
+iamSetting.styleOptions.imageCanBeTapped = true
+
+// Applies to inapp messages of type alert
+iamSetting.styleOptions.alertBackgroundColor = .cyan
+iamSetting.styleOptions.alertTitleColor = .red
+iamSetting.styleOptions.alertTitleFont = .systemFont(ofSize: 20, weight: .semibold)
+iamSetting.styleOptions.alertBodyFont = .systemFont(ofSize: 17)
+iamSetting.styleOptions.alertBodyColor = .gray
+iamSetting.styleOptions.alertLinksSeparatorColor = .white
+iamSetting.styleOptions.alertCornerRadius = 15
+iamSetting.styleOptions.alertLinksBackgroundColor = .red
+iamSetting.styleOptions.alertLinksFont = .systemFont(ofSize: 17)
+iamSetting.styleOptions.alertLinksColor = .black
 
 settings.configureInAppMessageService(with: iamSetting)
 ```
@@ -805,23 +823,41 @@ settings.configureInAppMessageService(with: iamSetting)
 // Switch to kSMIA_RefreshType_Hourly or kSMIA_RefreshType_Daily if you want to implement standalone inapp messages too
 SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshType:kSMIA_RefreshType_None backgroundFetch:false];
 
-// Applies to inapp messages of type image, html, map or url
+// Applies to any type of inapp message
+iamSetting.styleOptions.linksColor = UIColor.blueColor;
+
+// Applies to inapp messages of type image, html, map and url
 iamSetting.styleOptions.navigationTitleColor = UIColor.blackColor;
 iamSetting.styleOptions.navigationTitleFont = [UIFont systemFontOfSize:20 weight:UIFontWeightBold];
 iamSetting.styleOptions.navigationBackgroundColor = UIColor.cyanColor;
 iamSetting.styleOptions.navigationMenuButtonColor = UIColor.blueColor;
 iamSetting.styleOptions.navigationCloseButtonColor = UIColor.redColor;
-iamSetting.styleOptions.navigationArrowButtonsColor = UIColor.blackColor;
 iamSetting.styleOptions.viewBackgroundColor = UIColor.cyanColor;
 iamSetting.styleOptions.navigationMenuCloseButtonSwitchPosition = false;
 iamSetting.styleOptions.presentWithTransition = true;
 iamSetting.styleOptions.transition = kSMViewTransition_HorizontalSlide;
 iamSetting.styleOptions.transitioningDelegate = nil;
-iamSetting.styleOptions.imageCanBeTapped = false;
+
+// Applies to inapp messages of type url
+iamSetting.styleOptions.navigationArrowButtonsColor = UIColor.blackColor;
+
+// Applies to inapp messages of type image and url
 iamSetting.styleOptions.reloadButtonColor = UIColor.cyanColor;
 
-// Applies to any type of inapp message
-iamSetting.styleOptions.linksColor = UIColor.blueColor;
+// Applies to inapp messages of type image
+iamSetting.styleOptions.imageCanBeTapped = true;
+
+// Applies to inapp messages of type alert
+iamSetting.styleOptions.alertBackgroundColor = UIColor.cyanColor;
+iamSetting.styleOptions.alertTitleColor = UIColor.redColor;
+iamSetting.styleOptions.alertTitleFont = [UIFont systemFontOfSize:20 weight:UIFontWeightSemibold];
+iamSetting.styleOptions.alertBodyFont = [UIFont systemFontOfSize:17];
+iamSetting.styleOptions.alertBodyColor = UIColor.grayColor;
+iamSetting.styleOptions.alertLinksSeparatorColor = UIColor.whiteColor;
+iamSetting.styleOptions.alertCornerRadius = 15;
+iamSetting.styleOptions.alertLinksBackgroundColor = UIColor.redColor;
+iamSetting.styleOptions.alertLinksFont = [UIFont systemFontOfSize:17];
+iamSetting.styleOptions.alertLinksColor = UIColor.blackColor;
 
 [settings configureInAppMessageServiceWith:iamSetting];
 ```
@@ -1047,7 +1083,7 @@ Once your App is correctly configured, you will be able to define your campaigns
     * `SMEventUserRegistration`
     * `SMEventUserUnregistration`
 
-* `shouldCache` property on events: if the event fails to be delivered to our backend, then by default it is cached into an internal queue. After a while, the library will automatically try to send it again. Should you want to prevent this behaviour, feel free to set this property to `false`. By default, it is set to `true`.
+* `shouldCache` property on events: if the event fails to be delivered to our backend, then by default it is cached into an internal queue. After a while, the library will automatically try to send it again. Should you want to prevent this behavior, feel free to set this property to `false`. By default, it is set to `true`.
 * You can also initialize a success block and/or a failure block that will be triggered after an event is sent to the services.
 
 <a name="events_register_unregister"></a>
@@ -1264,7 +1300,7 @@ event.shouldCache = true; // Not necessary as it is the default value
 
 <a name="notification_extensions"></a>
 ## Notification Extensions
-> Remember, for the correct behaviour of the Extensions, the `appGroupId` needs to *also* be set when [starting the SDK](#starting_sdk) from your App target.<br>Make sure the setting `LD_RUNPATH_SEARCH_PATHS`, in your extension targets, contains both `@executable_path/Frameworks` and `@executable_path/../../Frameworks` to properly load the library from the main app target.
+> Remember, for the correct behavior of the Extensions, the `appGroupId` needs to *also* be set when [starting the SDK](#starting_sdk) from your App target.<br>Make sure the setting `LD_RUNPATH_SEARCH_PATHS`, in your extension targets, contains both `@executable_path/Frameworks` and `@executable_path/../../Frameworks` to properly load the library from the main app target.
 
 Some SDK functionalities are only possible with the implementation of Notification Extension targets.
 Those functionalities available through Selligent Marketing Cloud are:

@@ -408,7 +408,7 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing7SMEvent")
 /// Confirm if the current event should be cached or not
 /// If the event fail to be delivered to your backend, then by default, it is cached into an internal queue.
 /// After a while, the library will automaticly try to send it again.
-/// Should you want to prevent this behaviour, feel free to set this property to <em>false</em>.
+/// Should you want to prevent this behavior, feel free to set this property to <em>false</em>.
 /// By default, it is set to <em>true</em>
 @property (nonatomic) BOOL shouldCache;
 /// Create an event object that will be sent to platform
@@ -911,8 +911,10 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptions")
 /// Defines whether the view controller will be presented and dismissed with a transition, for inapp messages of type html, url, image and map
 /// By default, it is set to false
 @property (nonatomic) BOOL presentWithTransition;
-/// If <code>SMInAppMessageStyleOptions/presentWithTransition</code> is set to <code>true</code> and <code>SMInAppMessageStyleOptions/transitioningDelegate</code> to <code>nil</code>, you can use one <code>SMViewTransition</code>
+/// If <code>SMInAppMessageStyleOptions/presentWithTransition</code> is set to <code>true</code> and <code>SMInAppMessageStyleOptions/transitioningDelegate</code> to <code>nil</code>, you can use one <code>SMViewTransition</code> to use default SDK transitions,
 /// By default, it is set to .horizontalSlide
+/// warning:
+/// For inapp messages of type alert, .opacity will be used regardless of the styling defined in this class
 @property (nonatomic) enum kSMViewTransition_ transition;
 /// Defines a custom UIViewControllerTransitioningDelegate to manage the view controller transition on your own, for inapp messages of type html, url, image and map
 /// By default, it is set to nil, so SDK’s default one will be used (slide left/right)
@@ -927,6 +929,36 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptions")
 /// Specifies a custom asset name the SDK needs to use for the reload button
 /// By default, it is set to <code>SM.Reload</code>
 @property (nonatomic, copy) NSString * _Nonnull reloadButtonAlternateAssetName;
+/// Sets the background color for inapp messages of type alert
+/// By default, it is set to nil and the SDK will use .systemBackground for iOS >= 13 and .white for iOS < 13
+@property (nonatomic, strong) UIColor * _Nullable alertBackgroundColor;
+/// Sets the corner radius for inapp messages of alert
+/// By default, it is set to 15
+@property (nonatomic) CGFloat alertCornerRadius;
+/// Sets the title color for inapp messages of alert
+/// By default, it is set to nil and the SDK will use .label for iOS >= 13 and .black for iOS < 13
+@property (nonatomic, strong) UIColor * _Nullable alertTitleColor;
+/// Sets the title font for inapp messages of type alert
+/// By default, it is set to .systemFont(ofSize: 17, weight: .semibold)
+@property (nonatomic, strong) UIFont * _Nonnull alertTitleFont;
+/// Sets the body color for inapp messages of alert
+/// By default, it is set to nil and the SDK will use .label for iOS >= 13 and .black for iOS < 13
+@property (nonatomic, strong) UIColor * _Nullable alertBodyColor;
+/// Sets the body font for inapp messages of type alert
+/// By default, it is set to .systemFont(ofSize: 17, weight: .semibold)
+@property (nonatomic, strong) UIFont * _Nonnull alertBodyFont;
+/// Sets the links color for inapp messages of type alert
+/// By default, it is set to nil and the SDK will use whatever is defined in <code>SMInAppMessageStyleOptions/linksColor</code>
+@property (nonatomic, strong) UIColor * _Nullable alertLinksColor;
+/// Sets the links background color for inapp messages of type alert
+/// By default, it is set to nil and the SDK will use .systemBackground for iOS >= 13 and .white for iOS < 13
+@property (nonatomic, strong) UIColor * _Nullable alertLinksBackgroundColor;
+/// Sets the links separator color for inapp messages of type alert
+/// By default, it is set to .systemGray.withAlphaComponent(0.3)
+@property (nonatomic, strong) UIColor * _Nonnull alertLinksSeparatorColor;
+/// Sets the links font for inapp messages of type alert
+/// By default, it is set to .systemFont(ofSize: 17)
+@property (nonatomic, strong) UIFont * _Nonnull alertLinksFont;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1009,15 +1041,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
-/// This method allow you to send an event with pre-defined devices informations to the back-end
-/// This call can be done at any time after starting the library.
-/// \param deviceInfos <code>SMDeviceInfos</code> object with the necessary properties to be sent
-///
-- (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
-@end
-
-
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
 /// Send an event to the Selligent platform
@@ -1040,27 +1063,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
-@protocol SMManagerUniversalLinksDelegate;
-@class SMNotificationMessage;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
-/// Used to let the app manage the behaviour of <code>deeplink</code> button types containing universal links
-/// \param delegate An object implementing <code>SMManagerUniversalLinksDelegate</code> methods
+/// This method allow you to send an event with pre-defined devices informations to the back-end
+/// This call can be done at any time after starting the library.
+/// \param deviceInfos <code>SMDeviceInfos</code> object with the necessary properties to be sent
 ///
-- (void)universalLinksDelegate:(id <SMManagerUniversalLinksDelegate> _Nonnull)delegate;
-/// Tells to the SDK that a certain <code>SMLink</code> object has been clicked.
-/// This is a convinient method when the behaviour when receiving a remote-notification is handled at App side and the standard events need to be sent back to the Selligent platform.
-/// warning:
-/// The App will be fully responsible of possible event duplication in the Selligent platform when implementing this method, as each execution will trigger a new event, so make sure to just trigger it once if you don’t want this to happen.
-/// \param link <code>SMLink</code> that needs to be marked as clicked
-///
-/// \param notificationMessage The <code>SMNotificationMessage</code> from where the link was extracted.
-///
-- (void)setLinkAsClicked:(SMLink * _Nonnull)link from:(SMNotificationMessage * _Nonnull)notificationMessage;
+- (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
 @end
-
-
-
 
 
 @class PlotSentNotification;
@@ -1071,6 +1081,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// Inherited from PlotDelegate.plotNotificationOpenedEvent(_:).
 - (void)plotNotificationOpenedEvent:(PlotSentNotification * _Nonnull)notification;
 @end
+
+
+
+@protocol SMManagerUniversalLinksDelegate;
+@class SMNotificationMessage;
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
+/// Used to let the app manage the behavior of <code>deeplink</code> button types containing universal links
+/// \param delegate An object implementing <code>SMManagerUniversalLinksDelegate</code> methods
+///
+- (void)universalLinksDelegate:(id <SMManagerUniversalLinksDelegate> _Nonnull)delegate;
+/// Tells to the SDK that a certain <code>SMLink</code> object has been clicked.
+/// This is a convinient method when the behavior when receiving a remote-notification is handled at App side and the standard events need to be sent back to the Selligent platform.
+/// warning:
+/// The App will be fully responsible of possible event duplication in the Selligent platform when implementing this method, as each execution will trigger a new event, so make sure to just trigger it once if you don’t want this to happen.
+/// \param link <code>SMLink</code> that needs to be marked as clicked
+///
+/// \param notificationMessage The <code>SMNotificationMessage</code> from where the link was extracted.
+///
+- (void)setLinkAsClicked:(SMLink * _Nonnull)link from:(SMNotificationMessage * _Nonnull)notificationMessage;
+@end
+
 
 
 
@@ -1089,6 +1121,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// This optional call will inform you if geolocation services at SDK level are enabled. it is independent of iOS location authorization
 - (BOOL)isGeoLocationEnabled SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 
@@ -1121,7 +1154,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
 - (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UIView;
 
@@ -1162,10 +1194,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing)) <PlotDelegate>
 @end
-
-
 
 
 
@@ -1210,6 +1241,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// It will remove the view controller from your App hierarchy
 - (void)removeViewController;
 @end
+
 
 
 
@@ -1290,6 +1322,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 - (void)displayNotificationWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Display the content linked to the last received remote notification (usually an in-app message).
+/// warning:
+/// Make sure to implement a Notification Service Extension for this to work properly
 /// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
 ///
 - (void)displayLastReceivedRemoteNotificationWithOptions:(SMInAppMessageStyleOptions * _Nullable)options;
@@ -1336,16 +1370,18 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing16SMManagerSetting")
 @property (nonatomic) BOOL shouldClearBadge;
 /// This setting will enable or disable the display of inapp-messages linked to a remote-notification by the SDK.
 /// After tapping a notification, the in-app will be displayed (if any).
-/// Should you want to prevent that behaviour, you can set this property to <em>false</em> before starting the library.
+/// Should you want to prevent that behavior, you can set this property to <em>false</em> before starting the library.
 /// warning:
 /// This property does not have an impact when <code>SMManager/displayNotification(id:options:)</code> or <code>SMManager/displayLastReceivedRemoteNotification(options:)</code> are called.
 /// Once you set its value to <em>true</em>, the application becomes responsible about displaying the inapp-notification linked to the received remote-notification.
 @property (nonatomic) BOOL shouldDisplayRemoteNotification;
 /// Used to add the in-app message associated to a remote notification to the in-app message list
-/// Once a new remote-notification is received, if it contains in the payload data for an in-app message, this setting will add the in-app message to the in app messages list . You will need to listen to <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code> to be informed  that an in-app message is available and you can then retrieve it with <code>SMManager/getInAppMessages()</code>.
+/// Once a new remote-notification is received, if it contains in the payload data for an in-app message, this setting will add the in-app message to the in app messages list .
+/// warning:
+/// Make sure to implement a Notification Service Extension for this to work properly
 @property (nonatomic) BOOL shouldAddInAppMessageFromPushToInAppMessageList;
-/// This value defines the behaviour that the SDK will adopt when a remote-notification is received when in Foreground.
-/// The behaviour will be as:
+/// This value defines the behavior that the SDK will adopt when a remote-notification is received when in Foreground.
+/// The behavior will be as:
 /// <ul>
 ///   <li>
 ///     <em>kSMRemoteMessageDisplayType_None</em>: nothing will be displayed.
@@ -1598,7 +1634,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMViewTransition_, "SMViewTransition", open
   kSMViewTransition_HorizontalSlide = 1,
 /// New view enters the screen sliding form the bottom while current view doesn’t move, and the other way around when the new view is dismissed
   kSMViewTransition_VerticalSlide = 2,
+/// New view enters the screen with an alpha value of 0 gradually changing it to 1, and the other way around when the new view is dismissed
+  kSMViewTransition_Opacity = 3,
 };
+
 
 
 
@@ -2036,7 +2075,7 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing7SMEvent")
 /// Confirm if the current event should be cached or not
 /// If the event fail to be delivered to your backend, then by default, it is cached into an internal queue.
 /// After a while, the library will automaticly try to send it again.
-/// Should you want to prevent this behaviour, feel free to set this property to <em>false</em>.
+/// Should you want to prevent this behavior, feel free to set this property to <em>false</em>.
 /// By default, it is set to <em>true</em>
 @property (nonatomic) BOOL shouldCache;
 /// Create an event object that will be sent to platform
@@ -2539,8 +2578,10 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptions")
 /// Defines whether the view controller will be presented and dismissed with a transition, for inapp messages of type html, url, image and map
 /// By default, it is set to false
 @property (nonatomic) BOOL presentWithTransition;
-/// If <code>SMInAppMessageStyleOptions/presentWithTransition</code> is set to <code>true</code> and <code>SMInAppMessageStyleOptions/transitioningDelegate</code> to <code>nil</code>, you can use one <code>SMViewTransition</code>
+/// If <code>SMInAppMessageStyleOptions/presentWithTransition</code> is set to <code>true</code> and <code>SMInAppMessageStyleOptions/transitioningDelegate</code> to <code>nil</code>, you can use one <code>SMViewTransition</code> to use default SDK transitions,
 /// By default, it is set to .horizontalSlide
+/// warning:
+/// For inapp messages of type alert, .opacity will be used regardless of the styling defined in this class
 @property (nonatomic) enum kSMViewTransition_ transition;
 /// Defines a custom UIViewControllerTransitioningDelegate to manage the view controller transition on your own, for inapp messages of type html, url, image and map
 /// By default, it is set to nil, so SDK’s default one will be used (slide left/right)
@@ -2555,6 +2596,36 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptions")
 /// Specifies a custom asset name the SDK needs to use for the reload button
 /// By default, it is set to <code>SM.Reload</code>
 @property (nonatomic, copy) NSString * _Nonnull reloadButtonAlternateAssetName;
+/// Sets the background color for inapp messages of type alert
+/// By default, it is set to nil and the SDK will use .systemBackground for iOS >= 13 and .white for iOS < 13
+@property (nonatomic, strong) UIColor * _Nullable alertBackgroundColor;
+/// Sets the corner radius for inapp messages of alert
+/// By default, it is set to 15
+@property (nonatomic) CGFloat alertCornerRadius;
+/// Sets the title color for inapp messages of alert
+/// By default, it is set to nil and the SDK will use .label for iOS >= 13 and .black for iOS < 13
+@property (nonatomic, strong) UIColor * _Nullable alertTitleColor;
+/// Sets the title font for inapp messages of type alert
+/// By default, it is set to .systemFont(ofSize: 17, weight: .semibold)
+@property (nonatomic, strong) UIFont * _Nonnull alertTitleFont;
+/// Sets the body color for inapp messages of alert
+/// By default, it is set to nil and the SDK will use .label for iOS >= 13 and .black for iOS < 13
+@property (nonatomic, strong) UIColor * _Nullable alertBodyColor;
+/// Sets the body font for inapp messages of type alert
+/// By default, it is set to .systemFont(ofSize: 17, weight: .semibold)
+@property (nonatomic, strong) UIFont * _Nonnull alertBodyFont;
+/// Sets the links color for inapp messages of type alert
+/// By default, it is set to nil and the SDK will use whatever is defined in <code>SMInAppMessageStyleOptions/linksColor</code>
+@property (nonatomic, strong) UIColor * _Nullable alertLinksColor;
+/// Sets the links background color for inapp messages of type alert
+/// By default, it is set to nil and the SDK will use .systemBackground for iOS >= 13 and .white for iOS < 13
+@property (nonatomic, strong) UIColor * _Nullable alertLinksBackgroundColor;
+/// Sets the links separator color for inapp messages of type alert
+/// By default, it is set to .systemGray.withAlphaComponent(0.3)
+@property (nonatomic, strong) UIColor * _Nonnull alertLinksSeparatorColor;
+/// Sets the links font for inapp messages of type alert
+/// By default, it is set to .systemFont(ofSize: 17)
+@property (nonatomic, strong) UIFont * _Nonnull alertLinksFont;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2637,15 +2708,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
-/// This method allow you to send an event with pre-defined devices informations to the back-end
-/// This call can be done at any time after starting the library.
-/// \param deviceInfos <code>SMDeviceInfos</code> object with the necessary properties to be sent
-///
-- (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
-@end
-
-
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
 /// Send an event to the Selligent platform
@@ -2668,27 +2730,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
-@protocol SMManagerUniversalLinksDelegate;
-@class SMNotificationMessage;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
-/// Used to let the app manage the behaviour of <code>deeplink</code> button types containing universal links
-/// \param delegate An object implementing <code>SMManagerUniversalLinksDelegate</code> methods
+/// This method allow you to send an event with pre-defined devices informations to the back-end
+/// This call can be done at any time after starting the library.
+/// \param deviceInfos <code>SMDeviceInfos</code> object with the necessary properties to be sent
 ///
-- (void)universalLinksDelegate:(id <SMManagerUniversalLinksDelegate> _Nonnull)delegate;
-/// Tells to the SDK that a certain <code>SMLink</code> object has been clicked.
-/// This is a convinient method when the behaviour when receiving a remote-notification is handled at App side and the standard events need to be sent back to the Selligent platform.
-/// warning:
-/// The App will be fully responsible of possible event duplication in the Selligent platform when implementing this method, as each execution will trigger a new event, so make sure to just trigger it once if you don’t want this to happen.
-/// \param link <code>SMLink</code> that needs to be marked as clicked
-///
-/// \param notificationMessage The <code>SMNotificationMessage</code> from where the link was extracted.
-///
-- (void)setLinkAsClicked:(SMLink * _Nonnull)link from:(SMNotificationMessage * _Nonnull)notificationMessage;
+- (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
 @end
-
-
-
 
 
 @class PlotSentNotification;
@@ -2699,6 +2748,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// Inherited from PlotDelegate.plotNotificationOpenedEvent(_:).
 - (void)plotNotificationOpenedEvent:(PlotSentNotification * _Nonnull)notification;
 @end
+
+
+
+@protocol SMManagerUniversalLinksDelegate;
+@class SMNotificationMessage;
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing))
+/// Used to let the app manage the behavior of <code>deeplink</code> button types containing universal links
+/// \param delegate An object implementing <code>SMManagerUniversalLinksDelegate</code> methods
+///
+- (void)universalLinksDelegate:(id <SMManagerUniversalLinksDelegate> _Nonnull)delegate;
+/// Tells to the SDK that a certain <code>SMLink</code> object has been clicked.
+/// This is a convinient method when the behavior when receiving a remote-notification is handled at App side and the standard events need to be sent back to the Selligent platform.
+/// warning:
+/// The App will be fully responsible of possible event duplication in the Selligent platform when implementing this method, as each execution will trigger a new event, so make sure to just trigger it once if you don’t want this to happen.
+/// \param link <code>SMLink</code> that needs to be marked as clicked
+///
+/// \param notificationMessage The <code>SMNotificationMessage</code> from where the link was extracted.
+///
+- (void)setLinkAsClicked:(SMLink * _Nonnull)link from:(SMNotificationMessage * _Nonnull)notificationMessage;
+@end
+
 
 
 
@@ -2717,6 +2788,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// This optional call will inform you if geolocation services at SDK level are enabled. it is independent of iOS location authorization
 - (BOOL)isGeoLocationEnabled SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 
@@ -2749,7 +2821,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
 - (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 @class UIView;
 
@@ -2790,10 +2861,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK_Geofencing)) <PlotDelegate>
 @end
-
-
 
 
 
@@ -2838,6 +2908,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// It will remove the view controller from your App hierarchy
 - (void)removeViewController;
 @end
+
 
 
 
@@ -2918,6 +2989,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 - (void)displayNotificationWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Display the content linked to the last received remote notification (usually an in-app message).
+/// warning:
+/// Make sure to implement a Notification Service Extension for this to work properly
 /// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
 ///
 - (void)displayLastReceivedRemoteNotificationWithOptions:(SMInAppMessageStyleOptions * _Nullable)options;
@@ -2964,16 +3037,18 @@ SWIFT_CLASS("_TtC29SelligentMobileSDK_Geofencing16SMManagerSetting")
 @property (nonatomic) BOOL shouldClearBadge;
 /// This setting will enable or disable the display of inapp-messages linked to a remote-notification by the SDK.
 /// After tapping a notification, the in-app will be displayed (if any).
-/// Should you want to prevent that behaviour, you can set this property to <em>false</em> before starting the library.
+/// Should you want to prevent that behavior, you can set this property to <em>false</em> before starting the library.
 /// warning:
 /// This property does not have an impact when <code>SMManager/displayNotification(id:options:)</code> or <code>SMManager/displayLastReceivedRemoteNotification(options:)</code> are called.
 /// Once you set its value to <em>true</em>, the application becomes responsible about displaying the inapp-notification linked to the received remote-notification.
 @property (nonatomic) BOOL shouldDisplayRemoteNotification;
 /// Used to add the in-app message associated to a remote notification to the in-app message list
-/// Once a new remote-notification is received, if it contains in the payload data for an in-app message, this setting will add the in-app message to the in app messages list . You will need to listen to <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code> to be informed  that an in-app message is available and you can then retrieve it with <code>SMManager/getInAppMessages()</code>.
+/// Once a new remote-notification is received, if it contains in the payload data for an in-app message, this setting will add the in-app message to the in app messages list .
+/// warning:
+/// Make sure to implement a Notification Service Extension for this to work properly
 @property (nonatomic) BOOL shouldAddInAppMessageFromPushToInAppMessageList;
-/// This value defines the behaviour that the SDK will adopt when a remote-notification is received when in Foreground.
-/// The behaviour will be as:
+/// This value defines the behavior that the SDK will adopt when a remote-notification is received when in Foreground.
+/// The behavior will be as:
 /// <ul>
 ///   <li>
 ///     <em>kSMRemoteMessageDisplayType_None</em>: nothing will be displayed.
@@ -3226,7 +3301,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMViewTransition_, "SMViewTransition", open
   kSMViewTransition_HorizontalSlide = 1,
 /// New view enters the screen sliding form the bottom while current view doesn’t move, and the other way around when the new view is dismissed
   kSMViewTransition_VerticalSlide = 2,
+/// New view enters the screen with an alpha value of 0 gradually changing it to 1, and the other way around when the new view is dismissed
+  kSMViewTransition_Opacity = 3,
 };
+
 
 
 

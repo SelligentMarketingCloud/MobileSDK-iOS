@@ -401,6 +401,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileSDK_Geofencing",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -7429,6 +7439,1066 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "alertBackgroundColor",
+            "printedName": "alertBackgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertBackgroundColor",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC20alertBackgroundColorSo7UIColorCSgvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertBackgroundColor",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC20alertBackgroundColorSo7UIColorCSgvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertBackgroundColor:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC20alertBackgroundColorSo7UIColorCSgvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC20alertBackgroundColorSo7UIColorCSgvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC20alertBackgroundColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertCornerRadius",
+            "printedName": "alertCornerRadius",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGFloat",
+                "printedName": "CoreGraphics.CGFloat",
+                "usr": "s:14CoreFoundation7CGFloatV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertCornerRadius",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17alertCornerRadius12CoreGraphics7CGFloatVvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertCornerRadius",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17alertCornerRadius12CoreGraphics7CGFloatVvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertCornerRadius:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17alertCornerRadius12CoreGraphics7CGFloatVvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17alertCornerRadius14CoreFoundation7CGFloatVvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC17alertCornerRadius12CoreGraphics7CGFloatVvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertTitleColor",
+            "printedName": "alertTitleColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertTitleColor",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertTitleColorSo7UIColorCSgvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertTitleColor",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertTitleColorSo7UIColorCSgvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertTitleColor:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertTitleColorSo7UIColorCSgvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertTitleColorSo7UIColorCSgvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertTitleColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertTitleFont",
+            "printedName": "alertTitleFont",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIFont",
+                "printedName": "UIKit.UIFont",
+                "usr": "c:objc(cs)UIFont"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertTitleFont",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertTitleFontSo6UIFontCvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertTitleFont",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertTitleFontSo6UIFontCvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertTitleFont:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertTitleFontSo6UIFontCvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertTitleFontSo6UIFontCvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertTitleFontSo6UIFontCvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertBodyColor",
+            "printedName": "alertBodyColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertBodyColor",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertBodyColorSo7UIColorCSgvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertBodyColor",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertBodyColorSo7UIColorCSgvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertBodyColor:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertBodyColorSo7UIColorCSgvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertBodyColorSo7UIColorCSgvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertBodyColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertBodyFont",
+            "printedName": "alertBodyFont",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIFont",
+                "printedName": "UIKit.UIFont",
+                "usr": "c:objc(cs)UIFont"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertBodyFont",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC13alertBodyFontSo6UIFontCvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertBodyFont",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC13alertBodyFontSo6UIFontCvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertBodyFont:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC13alertBodyFontSo6UIFontCvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC13alertBodyFontSo6UIFontCvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC13alertBodyFontSo6UIFontCvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertLinksColor",
+            "printedName": "alertLinksColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertLinksColor",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertLinksColorSo7UIColorCSgvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertLinksColor",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertLinksColorSo7UIColorCSgvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertLinksColor:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertLinksColorSo7UIColorCSgvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertLinksColorSo7UIColorCSgvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC15alertLinksColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertLinksBackgroundColor",
+            "printedName": "alertLinksBackgroundColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIColor?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertLinksBackgroundColor",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC25alertLinksBackgroundColorSo7UIColorCSgvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertLinksBackgroundColor",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC25alertLinksBackgroundColorSo7UIColorCSgvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIColor?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIColor",
+                        "printedName": "UIKit.UIColor",
+                        "usr": "c:objc(cs)UIColor"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertLinksBackgroundColor:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC25alertLinksBackgroundColorSo7UIColorCSgvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC25alertLinksBackgroundColorSo7UIColorCSgvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC25alertLinksBackgroundColorSo7UIColorCSgvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertLinksSeparatorColor",
+            "printedName": "alertLinksSeparatorColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertLinksSeparatorColor",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC24alertLinksSeparatorColorSo7UIColorCvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertLinksSeparatorColor",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC24alertLinksSeparatorColorSo7UIColorCvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertLinksSeparatorColor:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC24alertLinksSeparatorColorSo7UIColorCvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC24alertLinksSeparatorColorSo7UIColorCvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC24alertLinksSeparatorColorSo7UIColorCvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "alertLinksFont",
+            "printedName": "alertLinksFont",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIFont",
+                "printedName": "UIKit.UIFont",
+                "usr": "c:objc(cs)UIFont"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(py)alertLinksFont",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertLinksFontSo6UIFontCvp",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)alertLinksFont",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertLinksFontSo6UIFontCvg",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIFont",
+                    "printedName": "UIKit.UIFont",
+                    "usr": "c:objc(cs)UIFont"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK_Geofencing@objc(cs)SMInAppMessageStyleOptions(im)setAlertLinksFont:",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertLinksFontSo6UIFontCvs",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertLinksFontSo6UIFontCvM",
+                "mangledName": "$s29SelligentMobileSDK_Geofencing26SMInAppMessageStyleOptionsC14alertLinksFontSo6UIFontCvM",
+                "moduleName": "SelligentMobileSDK_Geofencing",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init()",
@@ -8895,6 +9965,48 @@
               "ObjC"
             ],
             "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "opacity",
+            "printedName": "opacity",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK_Geofencing.SMViewTransition.Type) -> SelligentMobileSDK_Geofencing.SMViewTransition",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMViewTransition",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                    "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMViewTransition",
+                        "printedName": "SelligentMobileSDK_Geofencing.SMViewTransition",
+                        "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK_Geofencing@E@kSMViewTransition_@kSMViewTransition_Opacity",
+            "mangledName": "$s29SelligentMobileSDK_Geofencing16SMViewTransitionO7opacityyA2CmF",
+            "moduleName": "SelligentMobileSDK_Geofencing",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
           },
           {
             "kind": "Constructor",
@@ -11954,6 +13066,16 @@
             "usr": "s:SE",
             "mangledName": "$sSE"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileSDK_Geofencing",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -23872,21 +24994,21 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "BooleanLiteral",
-      "offset": 2486,
+      "offset": 2600,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2515,
+      "offset": 2629,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2540,
+      "offset": 2654,
       "length": 2,
       "value": "\"\""
     },
@@ -24047,7 +25169,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Manager\/SMManager+RemoteNotification.swift",
       "kind": "BooleanLiteral",
-      "offset": 7931,
+      "offset": 8038,
       "length": 5,
       "value": "false"
     },
@@ -24073,21 +25195,21 @@
       "value": "\"SelligentMobileSDK_Geofencing.SMNotifAlertStandardViewController\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/StringExtension.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
       "kind": "Dictionary",
       "offset": 3064,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/StringExtension.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
       "kind": "StringLiteral",
       "offset": 3910,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/StringExtension.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
       "kind": "StringLiteral",
       "offset": 3954,
       "length": 2,
@@ -24784,7 +25906,7 @@
       "kind": "StringLiteral",
       "offset": 3890,
       "length": 7,
-      "value": "\"3.1.2\""
+      "value": "\"3.2.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -26238,21 +27360,56 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 4936,
+      "offset": 5097,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
       "kind": "StringLiteral",
-      "offset": 5364,
+      "offset": 5525,
       "length": 11,
       "value": "\"SM.Reload\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5963,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6424,
+      "length": 2,
+      "value": "17"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6901,
+      "length": 2,
+      "value": "13"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "FloatLiteral",
+      "offset": 7685,
+      "length": 3,
+      "value": "0.3"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMInAppMessageStyleOptions.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7895,
+      "length": 2,
+      "value": "17"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Errors\/SMErrorHelper.swift",
       "kind": "StringLiteral",
-      "offset": 1272,
+      "offset": 1255,
       "length": 4,
       "value": "\"%@\""
     },
@@ -26342,6 +27499,13 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/Controllers\/SMNotifMessageViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 590,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/Controllers\/SMNotifMessageViewController.swift",
       "kind": "StringLiteral",
       "offset": 209,
       "length": 28,
@@ -26350,7 +27514,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/Controllers\/SMNotifMessageViewController.swift",
       "kind": "Array",
-      "offset": 5132,
+      "offset": 6511,
       "length": 2,
       "value": "[]"
     },
@@ -26374,6 +27538,13 @@
       "offset": 186,
       "length": 14,
       "value": "\"SelligentMobileSDK_Geofencing.SMEventSetInfo\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/NSLayoutConstraintExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 535,
+      "length": 1,
+      "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Message\/SMSuccess.swift",
@@ -26406,6 +27577,13 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMViewTransition.swift",
       "kind": "IntegerLiteral",
+      "offset": 837,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMViewTransition.swift",
+      "kind": "IntegerLiteral",
       "offset": 455,
       "length": 1,
       "value": "1"
@@ -26416,6 +27594,13 @@
       "offset": 651,
       "length": 1,
       "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/SMViewTransition.swift",
+      "kind": "IntegerLiteral",
+      "offset": 837,
+      "length": 1,
+      "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAM\/Controllers\/SMNotifHtmlViewController.swift",
@@ -26684,6 +27869,41 @@
       "value": "\"SelligentMobileSDK_Geofencing.SlideTransition\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 456,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1478,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1494,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2081,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2097,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
       "kind": "BooleanLiteral",
       "offset": 730,
@@ -26894,6 +28114,20 @@
       "value": "5"
     },
     {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/SMButton.swift",
+      "kind": "IntegerLiteral",
+      "offset": 386,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/SMButton.swift",
+      "kind": "StringLiteral",
+      "offset": 174,
+      "length": 8,
+      "value": "\"SelligentMobileSDK_Geofencing.SMButton\""
+    },
+    {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAC\/SMInAppContentType.swift",
       "kind": "IntegerLiteral",
       "offset": 323,
@@ -26971,14 +28205,14 @@
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/FileManagerExtension.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/FileManagerExtension.swift",
       "kind": "BooleanLiteral",
       "offset": 315,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/FileManagerExtension.swift",
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/FileManagerExtension.swift",
       "kind": "StringLiteral",
       "offset": 330,
       "length": 2,
@@ -27764,28 +28998,28 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "BooleanLiteral",
-      "offset": 666,
+      "offset": 665,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "BooleanLiteral",
-      "offset": 905,
+      "offset": 904,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "IntegerLiteral",
-      "offset": 930,
+      "offset": 929,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1389,
+      "offset": 1388,
       "length": 2,
       "value": "\"\""
     },
@@ -27799,7 +29033,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5038,
+      "offset": 5037,
       "length": 2,
       "value": "\"\""
     },
@@ -27883,14 +29117,14 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Cache\/SMCache.swift",
       "kind": "BooleanLiteral",
-      "offset": 1033,
+      "offset": 1354,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Cache\/SMCache.swift",
       "kind": "BooleanLiteral",
-      "offset": 1511,
+      "offset": 1832,
       "length": 5,
       "value": "false"
     },
@@ -28037,21 +29271,21 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "BooleanLiteral",
-      "offset": 2246,
+      "offset": 2245,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "BooleanLiteral",
-      "offset": 2874,
+      "offset": 2770,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Settings\/SMManagerSetting.swift",
       "kind": "StringLiteral",
-      "offset": 6268,
+      "offset": 6162,
       "length": 2,
       "value": "\"\""
     },

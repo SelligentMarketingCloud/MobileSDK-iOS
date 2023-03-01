@@ -5,7 +5,7 @@
 @objc var shouldCache: Bool { get set }
 ```
 
->Confirm if the current event should be cached or not<br/>If the event fail to be delivered to your backend, then by default, it is cached into an internal queue.<br/>After a while, the library will automaticly try to send it again.<br/>Should you want to prevent this behaviour, feel free to set this property to **false**.<br/>By default, it is set to **true**
+>Confirm if the current event should be cached or not<br/>If the event fail to be delivered to your backend, then by default, it is cached into an internal queue.<br/>After a while, the library will automaticly try to send it again.<br/>Should you want to prevent this behavior, feel free to set this property to **false**.<br/>By default, it is set to **true**
 
 ```swift
 var description: String { get }
