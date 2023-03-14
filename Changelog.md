@@ -1,5 +1,10 @@
 # SDK Changelog
 
+- __SDK 3.2.1__
+
+    - Add robustness around `Opened` event sent from Notification Content Extension
+    - Fix bug that could send an `Opened` event when dismissing a notification in foreground
+    
 - __SDK 3.2.0__
 
     - Improve `SMInAppMessageStyleOptions/transition/.verticalSlide` dismiss transition smoothness

@@ -18,11 +18,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DQKBodBWq0xjXPWJRco7UqDrfzE=
+		roHok2d9Z7yXkmM/v0pdGcmBNA0=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		aP4PnOaWxhY14f5Wr90eL/q+id0=
+		V3BXYMcI8/usvNJjpjlwUI0VoeM=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		W+FUkx9klkyRiDg390ZoPksij2Y=
+		mBeQomnPKHvb4RkKNYwxUoLlT44=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		aP4PnOaWxhY14f5Wr90eL/q+id0=
+		V3BXYMcI8/usvNJjpjlwUI0VoeM=
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		7kjRUK/kpTn2aWtjl1llfTd9w1E=
+		Zj/u4dlkONcmckmI460+aYnCy8E=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -92,7 +92,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LQocSZZ/ud8r7ad+fScDUFTx+g18Un5gyciQbvxXOIM=
+			/Z35LmfTP39NPY5xLDr0Wc1BcVkoDzbwun4kgnIUDBM=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -120,14 +120,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pyIilnaniLpxmhhdjvKDUxLJaE47hiSV6l0PqHZR/Bw=
+			L4OGXn4agQ+yg6LwZo0VRrBWnRJmmhxeq+DRbFv+W78=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LQocSZZ/ud8r7ad+fScDUFTx+g18Un5gyciQbvxXOIM=
+			/Z35LmfTP39NPY5xLDr0Wc1BcVkoDzbwun4kgnIUDBM=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK_Geofencing.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -155,7 +155,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			G1suDzygz2OPnOdhKbTYflbuPwyAbx3h06uJ/BZn8/c=
+			RsjakTaxq3U76bkCRob4nxHYw2s4UZbLW4zB43gAP/M=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
