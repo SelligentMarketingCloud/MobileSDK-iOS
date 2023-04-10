@@ -48,3 +48,15 @@
 ```
 
 >Used to let the app display the in-app message linked to a remote notification<br/>
+
+```swift
+@objc func displayNotification(id: String, options: SMInAppMessageStyleOptions? = nil)
+```
+
+>Display the content of a given in-app message id.<br/>
+
+```swift
+@objc func displayInAppMessage(id: String, options: SMInAppMessageStyleOptions? = nil)
+```
+
+>Display the content of a given in-app message id.<br/>

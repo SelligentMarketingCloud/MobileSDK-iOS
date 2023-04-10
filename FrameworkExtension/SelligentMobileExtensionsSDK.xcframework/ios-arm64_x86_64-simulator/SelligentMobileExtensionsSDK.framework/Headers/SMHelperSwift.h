@@ -260,6 +260,7 @@ using UInt = size_t;
 #if defined(__OBJC__)
 
 
+
 SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK28NotificationSettingsProtocol_")
 @protocol NotificationSettingsProtocol
 @property (nonatomic, readonly) UNAuthorizationStatus authorizationStatus;
@@ -319,10 +320,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_ButtonClicked;)
 + (NSString * _Nonnull)kSMNotification_Event_ButtonClicked SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
+/// It is broadcasted shortly before displaying a Remote Notification’s content. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDisplayNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDisplayNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work.
+/// It is broadcasted shortly before dismissing the current Remote Notification’s content. It can be used to resume any paused work.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDismissNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDismissNotification SWIFT_WARN_UNUSED_RESULT;
 /// It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification.
@@ -341,11 +342,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_ButtonData;)
 + (NSString * _Nonnull)kSMNotification_Data_ButtonData SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
+/// Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_RemoteNotification;)
++ (NSString * _Nonnull)kSMNotification_Object_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_InAppMessage SWIFT_WARN_UNUSED_RESULT;
+/// Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_InAppMessage;)
++ (NSString * _Nonnull)kSMNotification_Object_InAppMessage SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance of <code>SMInAppContentMessage</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppContent</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppContent;)
 + (NSString * _Nonnull)kSMNotification_Data_InAppContent SWIFT_WARN_UNUSED_RESULT;
@@ -485,14 +492,26 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK14SMInAppMessage")
 @property (nonatomic, readonly, copy) NSString * _Nonnull title;
 /// String value providing the content of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull body;
-/// Array of <code>SMNotificationAnnotationData</code> objects for map inapp-notification
+/// <code>SMNotificationAnnotationData</code> array containing the anotations for map type messages
 @property (nonatomic, readonly, copy) NSArray<SMNotificationAnnotationData *> * _Nonnull arrayMapAnnotations;
-/// Array of <code>SMLink</code> objects
+/// <code>SMLink</code> array containing the links of the message
 @property (nonatomic, readonly, copy) NSArray<SMLink *> * _Nonnull arrayIAMLinks;
 /// String value providing the title of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsTitle;
 /// String value providing the body of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsBody;
+/// String value providing the metadata content defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSString * _Nonnull metadata;
+/// String array value providing the tag values defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
+/// String value providing the profile defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSString * _Nonnull profileId;
 /// Inherited from NSCoding.encode(with:).
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
 /// Inherited from NSCoding.encode(with:).
@@ -561,6 +580,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -576,12 +601,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
+
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -881,11 +901,13 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK30UserNotificationCenterProtoc
 - (void)requestAuthorizationWithOptions:(UNAuthorizationOptions)options completionHandler:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completionHandler;
 - (void)getCustomNotificationSettingsWithCompletionHandler:(void (^ _Nonnull)(id <NotificationSettingsProtocol> _Nonnull))completionHandler;
 - (void)getNotificationCategoriesWithCompletionHandler:(void (^ _Nonnull)(NSSet<UNNotificationCategory *> * _Nonnull))completionHandler;
+- (void)scheduleLocalNotification:(UNNotificationRequest * _Nonnull)request completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 @end
 
 
 @interface UNUserNotificationCenter (SWIFT_EXTENSION(SelligentMobileExtensionsSDK)) <UserNotificationCenterProtocol>
 - (void)getCustomNotificationSettingsWithCompletionHandler:(void (^ _Nonnull)(id <NotificationSettingsProtocol> _Nonnull))completionHandler;
+- (void)scheduleLocalNotification:(UNNotificationRequest * _Nonnull)request completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 @end
 
 
@@ -1161,6 +1183,7 @@ using UInt = size_t;
 #if defined(__OBJC__)
 
 
+
 SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK28NotificationSettingsProtocol_")
 @protocol NotificationSettingsProtocol
 @property (nonatomic, readonly) UNAuthorizationStatus authorizationStatus;
@@ -1220,10 +1243,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_ButtonClicked;)
 + (NSString * _Nonnull)kSMNotification_Event_ButtonClicked SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
+/// It is broadcasted shortly before displaying a Remote Notification’s content. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDisplayNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDisplayNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work.
+/// It is broadcasted shortly before dismissing the current Remote Notification’s content. It can be used to resume any paused work.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDismissNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDismissNotification SWIFT_WARN_UNUSED_RESULT;
 /// It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification.
@@ -1242,11 +1265,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_ButtonData;)
 + (NSString * _Nonnull)kSMNotification_Data_ButtonData SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
+/// Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_RemoteNotification;)
++ (NSString * _Nonnull)kSMNotification_Object_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_InAppMessage SWIFT_WARN_UNUSED_RESULT;
+/// Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_InAppMessage;)
++ (NSString * _Nonnull)kSMNotification_Object_InAppMessage SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance of <code>SMInAppContentMessage</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppContent</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppContent;)
 + (NSString * _Nonnull)kSMNotification_Data_InAppContent SWIFT_WARN_UNUSED_RESULT;
@@ -1386,14 +1415,26 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK14SMInAppMessage")
 @property (nonatomic, readonly, copy) NSString * _Nonnull title;
 /// String value providing the content of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull body;
-/// Array of <code>SMNotificationAnnotationData</code> objects for map inapp-notification
+/// <code>SMNotificationAnnotationData</code> array containing the anotations for map type messages
 @property (nonatomic, readonly, copy) NSArray<SMNotificationAnnotationData *> * _Nonnull arrayMapAnnotations;
-/// Array of <code>SMLink</code> objects
+/// <code>SMLink</code> array containing the links of the message
 @property (nonatomic, readonly, copy) NSArray<SMLink *> * _Nonnull arrayIAMLinks;
 /// String value providing the title of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsTitle;
 /// String value providing the body of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsBody;
+/// String value providing the metadata content defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSString * _Nonnull metadata;
+/// String array value providing the tag values defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
+/// String value providing the profile defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSString * _Nonnull profileId;
 /// Inherited from NSCoding.encode(with:).
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
 /// Inherited from NSCoding.encode(with:).
@@ -1462,6 +1503,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -1477,12 +1524,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
+
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -1782,11 +1824,13 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK30UserNotificationCenterProtoc
 - (void)requestAuthorizationWithOptions:(UNAuthorizationOptions)options completionHandler:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completionHandler;
 - (void)getCustomNotificationSettingsWithCompletionHandler:(void (^ _Nonnull)(id <NotificationSettingsProtocol> _Nonnull))completionHandler;
 - (void)getNotificationCategoriesWithCompletionHandler:(void (^ _Nonnull)(NSSet<UNNotificationCategory *> * _Nonnull))completionHandler;
+- (void)scheduleLocalNotification:(UNNotificationRequest * _Nonnull)request completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 @end
 
 
 @interface UNUserNotificationCenter (SWIFT_EXTENSION(SelligentMobileExtensionsSDK)) <UserNotificationCenterProtocol>
 - (void)getCustomNotificationSettingsWithCompletionHandler:(void (^ _Nonnull)(id <NotificationSettingsProtocol> _Nonnull))completionHandler;
+- (void)scheduleLocalNotification:(UNNotificationRequest * _Nonnull)request completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 @end
 
 

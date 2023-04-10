@@ -315,10 +315,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_ButtonClicked;)
 + (NSString * _Nonnull)kSMNotification_Event_ButtonClicked SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
+/// It is broadcasted shortly before displaying a Remote Notification’s content. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDisplayNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDisplayNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work.
+/// It is broadcasted shortly before dismissing the current Remote Notification’s content. It can be used to resume any paused work.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDismissNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDismissNotification SWIFT_WARN_UNUSED_RESULT;
 /// It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification.
@@ -337,11 +337,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_ButtonData;)
 + (NSString * _Nonnull)kSMNotification_Data_ButtonData SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
+/// Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_RemoteNotification;)
++ (NSString * _Nonnull)kSMNotification_Object_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_InAppMessage SWIFT_WARN_UNUSED_RESULT;
+/// Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_InAppMessage;)
++ (NSString * _Nonnull)kSMNotification_Object_InAppMessage SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance of <code>SMInAppContentMessage</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppContent</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppContent;)
 + (NSString * _Nonnull)kSMNotification_Data_InAppContent SWIFT_WARN_UNUSED_RESULT;
@@ -845,14 +851,26 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK14SMInAppMessage")
 @property (nonatomic, readonly, copy) NSString * _Nonnull title;
 /// String value providing the content of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull body;
-/// Array of <code>SMNotificationAnnotationData</code> objects for map inapp-notification
+/// <code>SMNotificationAnnotationData</code> array containing the anotations for map type messages
 @property (nonatomic, readonly, copy) NSArray<SMNotificationAnnotationData *> * _Nonnull arrayMapAnnotations;
-/// Array of <code>SMLink</code> objects
+/// <code>SMLink</code> array containing the links of the message
 @property (nonatomic, readonly, copy) NSArray<SMLink *> * _Nonnull arrayIAMLinks;
 /// String value providing the title of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsTitle;
 /// String value providing the body of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsBody;
+/// String value providing the metadata content defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSString * _Nonnull metadata;
+/// String array value providing the tag values defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
+/// String value providing the profile defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSString * _Nonnull profileId;
 /// Inherited from NSCoding.encode(with:).
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
 /// Inherited from NSCoding.encode(with:).
@@ -1040,21 +1058,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
 /// This method allow you to send an event with pre-defined devices informations to the back-end
 /// This call can be done at any time after starting the library.
 /// \param deviceInfos <code>SMDeviceInfos</code> object with the necessary properties to be sent
 ///
 - (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
-@end
-
-
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
 @end
 
 
@@ -1071,9 +1082,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
+
+
+
 
 @protocol SMManagerUniversalLinksDelegate;
-@class SMNotificationMessage;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
 /// Used to let the app manage the behavior of <code>deeplink</code> button types containing universal links
@@ -1086,12 +1105,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// The App will be fully responsible of possible event duplication in the Selligent platform when implementing this method, as each execution will trigger a new event, so make sure to just trigger it once if you don’t want this to happen.
 /// \param link <code>SMLink</code> that needs to be marked as clicked
 ///
-/// \param notificationMessage The <code>SMNotificationMessage</code> from where the link was extracted.
+/// \param from The <code>SMBaseMessage</code> from where the link was extracted.
 ///
-- (void)setLinkAsClicked:(SMLink * _Nonnull)link from:(SMNotificationMessage * _Nonnull)notificationMessage;
+- (void)setLinkAsClicked:(SMLink * _Nonnull)link from:(SMBaseMessage * _Nonnull)message;
+/// This method must be called whenever a user has clicked on a link where you manage its display
+/// The action behind the link will be triggered, and the corresponding Clicked event will be sent to the backend
+/// \param link The <code>SMLink</code> you want to trigger
+///
+/// \param message The <code>SMBaseMessage</code> where the link is from
+///
+- (void)executeLinkAction:(SMLink * _Nonnull)link message:(SMBaseMessage * _Nonnull)message;
 @end
-
-
 
 
 
@@ -1129,15 +1153,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 /// \param inAppContent The <code>SMInAppContentMessage</code> where the link is from
 ///
-- (void)executeLinkAction:(SMLink * _Nonnull)link inAppContent:(SMInAppContentMessage * _Nonnull)inAppContent;
+- (void)executeLinkAction:(SMLink * _Nonnull)link inAppContent:(SMInAppContentMessage * _Nonnull)inAppContent SWIFT_DEPRECATED_MSG("Renamed to `SMManager/executeLinkAction(_:message:)`");
 /// This will tell the SDK to fetch the IAC, if the OS allows to so at that time
 /// \param completion The completion block to be processed, provided by the background fetch delegate call
 ///
 - (void)performIACFetchWithCompletion:(void (^ _Nonnull)(UIBackgroundFetchResult))completion;
 @end
 
+
+
 @class UNNotificationResponse;
 @class UNNotification;
+@class SMNotificationMessage;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
 /// Mandatory AP when using UserNotifications framework, to be included in userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler.
@@ -1163,7 +1190,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
 - (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 
@@ -1212,6 +1238,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+
 @protocol SMManagerInAppMessageDelegate;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
@@ -1248,11 +1275,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 /// \param inAppMessage The <code>SMInAppMessage</code> where the link is from
 ///
-- (void)executeLinkAction:(SMLink * _Nonnull)link inAppMessage:(SMInAppMessage * _Nonnull)inAppMessage;
+- (void)executeLinkAction:(SMLink * _Nonnull)link inAppMessage:(SMInAppMessage * _Nonnull)inAppMessage SWIFT_DEPRECATED_MSG("Renamed to `SMManager/executeLinkAction(_:message:)`");
 /// Used to let the app display the in-app message linked to a remote notification
 /// \param delegate An object implementing <code>SMManagerInAppMessageDelegate</code> methods
 ///
 - (void)inAppMessageDelegate:(id <SMManagerInAppMessageDelegate> _Nonnull)delegate;
+/// Display the content of a given in-app message id.
+/// \param id The in-app message Id to display
+///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)displayNotificationWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options SWIFT_DEPRECATED_MSG("Renamed to `SMManager/displayInAppMessage(id:options:)`");
+/// Display the content of a given in-app message id.
+/// \param id The in-app message Id to display
+///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)displayInAppMessageWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options;
 @end
 
 @class NSData;
@@ -1282,23 +1321,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// \param error Error object provided by the UIApplicationDelegate
 ///
 - (void)didFailToRegisterForRemoteNotificationsWith:(NSError * _Nonnull)error;
-/// Display the content linked to a remote notification (usually an in-app message) or the in-app message content directly.
-/// \param id The notification Id to display
-///
-/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
-///
-- (void)displayNotificationWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Display the content linked to the last received remote notification (usually an in-app message).
 /// warning:
 /// Make sure to implement a Notification Service Extension for this to work properly
 /// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
 ///
-- (void)displayLastReceivedRemoteNotificationWithOptions:(SMInAppMessageStyleOptions * _Nullable)options;
+- (void)displayLastReceivedRemoteNotificationWithOptions:(SMInAppMessageStyleOptions * _Nullable)options SWIFT_DEPRECATED_MSG("Renamed to `SMManager/displayLastReceivedNotificationContent(options:)`");
+/// Display the content linked to the last received remote notification (usually an in-app message).
+/// warning:
+/// Make sure to implement a Notification Service Extension for this to work properly
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)displayLastReceivedNotificationContentWithOptions:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Retrieves the last received remote-notification content
 ///
 /// returns:
 /// Dictionary containing “id” and “title” keys.
-- (NSDictionary<NSString *, NSString *> * _Nullable)retrieveLastRemoteNotification SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, NSString *> * _Nullable)retrieveLastRemoteNotification SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Depracated, use `SMManager/retrieveLastReceivedNotificationContent()` which returns an SMNotificationMessage");
+/// Retrieves the last received remote-notification content
+///
+/// returns:
+/// The SMNotificationMessage from the last received remote-notification, or nil if no one is found.
+- (SMNotificationMessage * _Nullable)retrieveLastReceivedNotificationContent SWIFT_WARN_UNUSED_RESULT;
 /// Tells to the SDK that a certain <code>SMNotificationMessage</code> object has been seen.
 /// The SDK will send an opened event to the Selligent platform.
 /// warning:
@@ -1315,6 +1359,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// \param completionHandler The block-completion to be processed after the download, provided by the delegate call
 ///
 - (void)didReceiveRemoteNotification:(NSDictionary * _Nonnull)userInfo completionHandler:(void (^ _Nullable)(UIBackgroundFetchResult))completionHandler;
+/// Displays the last received Selligent push notification (if any)
+/// warning:
+/// Use it carefully to not generate an endless loop since the notifications displayed by this method will also trigger the userNotificationCenter:willPresentNotification:withCompletionHandler method from UserNotifications framework . For the same reason, <code>SMManagerSetting/remoteMessageDisplayType</code> will also apply here and can potentially block its display.
+- (void)displayLastReceivedNotification;
 @end
 
 
@@ -1939,10 +1987,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 /// It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_ButtonClicked;)
 + (NSString * _Nonnull)kSMNotification_Event_ButtonClicked SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
+/// It is broadcasted shortly before displaying a Remote Notification’s content. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDisplayNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDisplayNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work.
+/// It is broadcasted shortly before dismissing the current Remote Notification’s content. It can be used to resume any paused work.
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDismissNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDismissNotification SWIFT_WARN_UNUSED_RESULT;
 /// It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification.
@@ -1961,11 +2009,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_ButtonData;)
 + (NSString * _Nonnull)kSMNotification_Data_ButtonData SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
+/// Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_RemoteNotification;)
++ (NSString * _Nonnull)kSMNotification_Object_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_InAppMessage SWIFT_WARN_UNUSED_RESULT;
+/// Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_InAppMessage;)
++ (NSString * _Nonnull)kSMNotification_Object_InAppMessage SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance of <code>SMInAppContentMessage</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppContent</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppContent;)
 + (NSString * _Nonnull)kSMNotification_Data_InAppContent SWIFT_WARN_UNUSED_RESULT;
@@ -2469,14 +2523,26 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK14SMInAppMessage")
 @property (nonatomic, readonly, copy) NSString * _Nonnull title;
 /// String value providing the content of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull body;
-/// Array of <code>SMNotificationAnnotationData</code> objects for map inapp-notification
+/// <code>SMNotificationAnnotationData</code> array containing the anotations for map type messages
 @property (nonatomic, readonly, copy) NSArray<SMNotificationAnnotationData *> * _Nonnull arrayMapAnnotations;
-/// Array of <code>SMLink</code> objects
+/// <code>SMLink</code> array containing the links of the message
 @property (nonatomic, readonly, copy) NSArray<SMLink *> * _Nonnull arrayIAMLinks;
 /// String value providing the title of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsTitle;
 /// String value providing the body of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsBody;
+/// String value providing the metadata content defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSString * _Nonnull metadata;
+/// String array value providing the tag values defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
+/// String value providing the profile defined when sending out the communication
+/// warning:
+/// Currently not sent from the backend (future-proof property)
+@property (nonatomic, readonly, copy) NSString * _Nonnull profileId;
 /// Inherited from NSCoding.encode(with:).
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
 /// Inherited from NSCoding.encode(with:).
@@ -2664,21 +2730,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
 /// This method allow you to send an event with pre-defined devices informations to the back-end
 /// This call can be done at any time after starting the library.
 /// \param deviceInfos <code>SMDeviceInfos</code> object with the necessary properties to be sent
 ///
 - (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
-@end
-
-
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
 @end
 
 
@@ -2695,9 +2754,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
+
+
+
 
 @protocol SMManagerUniversalLinksDelegate;
-@class SMNotificationMessage;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
 /// Used to let the app manage the behavior of <code>deeplink</code> button types containing universal links
@@ -2710,12 +2777,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// The App will be fully responsible of possible event duplication in the Selligent platform when implementing this method, as each execution will trigger a new event, so make sure to just trigger it once if you don’t want this to happen.
 /// \param link <code>SMLink</code> that needs to be marked as clicked
 ///
-/// \param notificationMessage The <code>SMNotificationMessage</code> from where the link was extracted.
+/// \param from The <code>SMBaseMessage</code> from where the link was extracted.
 ///
-- (void)setLinkAsClicked:(SMLink * _Nonnull)link from:(SMNotificationMessage * _Nonnull)notificationMessage;
+- (void)setLinkAsClicked:(SMLink * _Nonnull)link from:(SMBaseMessage * _Nonnull)message;
+/// This method must be called whenever a user has clicked on a link where you manage its display
+/// The action behind the link will be triggered, and the corresponding Clicked event will be sent to the backend
+/// \param link The <code>SMLink</code> you want to trigger
+///
+/// \param message The <code>SMBaseMessage</code> where the link is from
+///
+- (void)executeLinkAction:(SMLink * _Nonnull)link message:(SMBaseMessage * _Nonnull)message;
 @end
-
-
 
 
 
@@ -2753,15 +2825,18 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 /// \param inAppContent The <code>SMInAppContentMessage</code> where the link is from
 ///
-- (void)executeLinkAction:(SMLink * _Nonnull)link inAppContent:(SMInAppContentMessage * _Nonnull)inAppContent;
+- (void)executeLinkAction:(SMLink * _Nonnull)link inAppContent:(SMInAppContentMessage * _Nonnull)inAppContent SWIFT_DEPRECATED_MSG("Renamed to `SMManager/executeLinkAction(_:message:)`");
 /// This will tell the SDK to fetch the IAC, if the OS allows to so at that time
 /// \param completion The completion block to be processed, provided by the background fetch delegate call
 ///
 - (void)performIACFetchWithCompletion:(void (^ _Nonnull)(UIBackgroundFetchResult))completion;
 @end
 
+
+
 @class UNNotificationResponse;
 @class UNNotification;
+@class SMNotificationMessage;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
 /// Mandatory AP when using UserNotifications framework, to be included in userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler.
@@ -2787,7 +2862,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
 - (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 
@@ -2836,6 +2910,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+
 @protocol SMManagerInAppMessageDelegate;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
@@ -2872,11 +2947,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 /// \param inAppMessage The <code>SMInAppMessage</code> where the link is from
 ///
-- (void)executeLinkAction:(SMLink * _Nonnull)link inAppMessage:(SMInAppMessage * _Nonnull)inAppMessage;
+- (void)executeLinkAction:(SMLink * _Nonnull)link inAppMessage:(SMInAppMessage * _Nonnull)inAppMessage SWIFT_DEPRECATED_MSG("Renamed to `SMManager/executeLinkAction(_:message:)`");
 /// Used to let the app display the in-app message linked to a remote notification
 /// \param delegate An object implementing <code>SMManagerInAppMessageDelegate</code> methods
 ///
 - (void)inAppMessageDelegate:(id <SMManagerInAppMessageDelegate> _Nonnull)delegate;
+/// Display the content of a given in-app message id.
+/// \param id The in-app message Id to display
+///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)displayNotificationWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options SWIFT_DEPRECATED_MSG("Renamed to `SMManager/displayInAppMessage(id:options:)`");
+/// Display the content of a given in-app message id.
+/// \param id The in-app message Id to display
+///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)displayInAppMessageWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options;
 @end
 
 @class NSData;
@@ -2906,23 +2993,28 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// \param error Error object provided by the UIApplicationDelegate
 ///
 - (void)didFailToRegisterForRemoteNotificationsWith:(NSError * _Nonnull)error;
-/// Display the content linked to a remote notification (usually an in-app message) or the in-app message content directly.
-/// \param id The notification Id to display
-///
-/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
-///
-- (void)displayNotificationWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Display the content linked to the last received remote notification (usually an in-app message).
 /// warning:
 /// Make sure to implement a Notification Service Extension for this to work properly
 /// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
 ///
-- (void)displayLastReceivedRemoteNotificationWithOptions:(SMInAppMessageStyleOptions * _Nullable)options;
+- (void)displayLastReceivedRemoteNotificationWithOptions:(SMInAppMessageStyleOptions * _Nullable)options SWIFT_DEPRECATED_MSG("Renamed to `SMManager/displayLastReceivedNotificationContent(options:)`");
+/// Display the content linked to the last received remote notification (usually an in-app message).
+/// warning:
+/// Make sure to implement a Notification Service Extension for this to work properly
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)displayLastReceivedNotificationContentWithOptions:(SMInAppMessageStyleOptions * _Nullable)options;
 /// Retrieves the last received remote-notification content
 ///
 /// returns:
 /// Dictionary containing “id” and “title” keys.
-- (NSDictionary<NSString *, NSString *> * _Nullable)retrieveLastRemoteNotification SWIFT_WARN_UNUSED_RESULT;
+- (NSDictionary<NSString *, NSString *> * _Nullable)retrieveLastRemoteNotification SWIFT_WARN_UNUSED_RESULT SWIFT_DEPRECATED_MSG("Depracated, use `SMManager/retrieveLastReceivedNotificationContent()` which returns an SMNotificationMessage");
+/// Retrieves the last received remote-notification content
+///
+/// returns:
+/// The SMNotificationMessage from the last received remote-notification, or nil if no one is found.
+- (SMNotificationMessage * _Nullable)retrieveLastReceivedNotificationContent SWIFT_WARN_UNUSED_RESULT;
 /// Tells to the SDK that a certain <code>SMNotificationMessage</code> object has been seen.
 /// The SDK will send an opened event to the Selligent platform.
 /// warning:
@@ -2939,6 +3031,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// \param completionHandler The block-completion to be processed after the download, provided by the delegate call
 ///
 - (void)didReceiveRemoteNotification:(NSDictionary * _Nonnull)userInfo completionHandler:(void (^ _Nullable)(UIBackgroundFetchResult))completionHandler;
+/// Displays the last received Selligent push notification (if any)
+/// warning:
+/// Use it carefully to not generate an endless loop since the notifications displayed by this method will also trigger the userNotificationCenter:willPresentNotification:withCompletionHandler method from UserNotifications framework . For the same reason, <code>SMManagerSetting/remoteMessageDisplayType</code> will also apply here and can potentially block its display.
+- (void)displayLastReceivedNotification;
 @end
 
 

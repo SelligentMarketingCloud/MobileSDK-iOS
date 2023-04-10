@@ -17,13 +17,13 @@
 @objc var arrayMapAnnotations: [SMNotificationAnnotationData] { get }
 ```
 
->Array of ``SMNotificationAnnotationData`` objects for map inapp-notification
+>``SMNotificationAnnotationData`` array containing the anotations for map type messages
 
 ```swift
 @objc var arrayIAMLinks: [SMLink] { get }
 ```
 
->Array of ``SMLink`` objects
+>``SMLink`` array containing the links of the message
 
 ```swift
 @objc var apsTitle: String { get }

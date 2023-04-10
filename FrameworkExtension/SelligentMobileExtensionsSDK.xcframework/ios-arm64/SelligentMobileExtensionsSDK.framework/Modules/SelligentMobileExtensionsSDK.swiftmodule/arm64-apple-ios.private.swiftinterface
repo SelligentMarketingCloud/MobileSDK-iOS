@@ -66,8 +66,12 @@ import _StringProcessing
   @objc public static let kSMNotification_Event_DidReceiveInAppContent: Swift.String
   @objc public static let kSMNotification_Event_DidReceiveDeviceId: Swift.String
   @objc public static let kSMNotification_Data_ButtonData: Swift.String
+  @available(*, deprecated, message: "Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage")
   @objc public static let kSMNotification_Data_RemoteNotification: Swift.String
+  @objc public static let kSMNotification_Object_RemoteNotification: Swift.String
+  @available(*, deprecated, message: "Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage")
   @objc public static let kSMNotification_Data_InAppMessage: Swift.String
+  @objc public static let kSMNotification_Object_InAppMessage: Swift.String
   @objc public static let kSMNotification_Data_InAppContent: Swift.String
   @objc public static let kSMNotification_Data_DeviceId: Swift.String
   @objc override dynamic public init()
@@ -173,6 +177,15 @@ extension SelligentMobileExtensionsSDK.SMManager {
     get
   }
   @objc public var apsBody: Swift.String {
+    get
+  }
+  @objc public var metadata: Swift.String {
+    get
+  }
+  @objc public var tags: [Swift.String] {
+    get
+  }
+  @objc public var profileId: Swift.String {
     get
   }
   @objc override public func encode(with coder: Foundation.NSCoder)

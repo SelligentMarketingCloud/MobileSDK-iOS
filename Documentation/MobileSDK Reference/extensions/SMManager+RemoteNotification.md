@@ -38,19 +38,25 @@
 >Optional API to be included in application:didFailToRegisterForRemoteNotificationsWithError:<br/>
 
 ```swift
-@objc func displayNotification(id: String, options: SMInAppMessageStyleOptions? = nil)
-```
-
->Display the content linked to a remote notification (usually an in-app message) or the in-app message content directly.<br/>
-
-```swift
 @objc func displayLastReceivedRemoteNotification(options: SMInAppMessageStyleOptions? = nil)
 ```
 
 >Display the content linked to the last received remote notification (usually an in-app message).<br/> 
 
 ```swift
+@objc func displayLastReceivedNotificationContent(options: SMInAppMessageStyleOptions? = nil)
+```
+
+>Display the content linked to the last received remote notification (usually an in-app message).<br/> 
+
+```swift
 @objc func retrieveLastRemoteNotification() -> [String: String]?
+```
+
+>Retrieves the last received remote-notification content<br/>
+
+```swift
+@objc func retrieveLastReceivedNotificationContent() -> SMNotificationMessage?
 ```
 
 >Retrieves the last received remote-notification content<br/>
@@ -66,3 +72,9 @@
 ```
 
 >Mandatory API to be included in application:didReceiveRemoteNotification:fetchCompletionHandler when dealing with Silent Push<br/>The SDK will send an opened event to the Selligent platform.<br/>
+
+```swift
+@objc func displayLastReceivedNotification()
+```
+
+>Displays the last received Selligent push notification (if any)<br/>

@@ -353,7 +353,7 @@ let clientId = "YourClientId"
 let privateKey = "YourPrivateKey"
 
 // Create the SMManagerSetting instance
-let settings: SMManagerSetting = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
 
 // Optional - Default value is true
 settings.shouldClearBadge = true
@@ -611,13 +611,16 @@ SMManager.shared.setNotificationMessageAsSeen(notificationMessage)
 // Given a valid SMLink and SMNotificationMessage, the SDK will send the corresponding Clicked event to the Selligent platform
 SMManager.shared.setLinkAsClicked(link, from: notificationMessage)
 
-// Display last received Push Notification
-SMManager.shared.displayLastReceivedRemoteNotification()
-// OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
-// SMManager.shared.displayLastReceivedRemoteNotification(options: SMInAppMessageStyleOptions?)
+// Displays the last received Push Notification
+SMManager.shared.displayLastReceivedNotification()
 
-// Retrieve last Push Notification (Dictionary with id and title)
-SMManager.shared.retrieveLastRemoteNotification()
+// Display last received Push Notification content
+SMManager.shared.displayLastReceivedNotificationContent()
+// OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+// SMManager.shared.displayLastReceivedNotificationContent(options: SMInAppMessageStyleOptions?)
+
+// Retrieve last Push Notification content (SMNotificationMessage)
+SMManager.shared.retrieveLastReceivedNotificationContent()
 ```
 
 **Objective-C**
@@ -631,13 +634,16 @@ SMManager.shared.retrieveLastRemoteNotification()
 // Given a valid SMLink and SMNotificationMessage, the SDK will send the corresponding Clicked event to the Selligent platform
 [[SMManager shared] setLinkAsClicked:link from:notificationMessage];
 
-// Display last received Push Notification
-[[SMManager shared] displayLastReceivedRemoteNotificationWithOptions:nil];
-// OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
-// [[SMManager shared] displayLastReceivedRemoteNotificationWithOptions:SMInAppMessageStyleOptions];
+// Displays the last received Push Notification
+[[SMManager shared] displayLastReceivedNotification];
 
-// Retrieve last Push Notification (NSDictionary with id and title)
- [[SMManager shared] retrieveLastRemoteNotification];
+// Display last received Push Notification content
+[[SMManager shared] displayLastReceivedNotificationContentWithOptions:nil];
+// OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
+// [[SMManager shared] displayLastReceivedNotificationContentWithOptions:SMInAppMessageStyleOptions];
+
+// Retrieve last Push Notification content (SMNotificationMessage)
+[[SMManager shared] retrieveLastReceivedNotificationContent];
 ```
 
 <a name="push_broadcasts"></a>
@@ -646,11 +652,11 @@ SMManager.shared.retrieveLastRemoteNotification()
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | `SMConstants.kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification. |
-| `SMConstants.kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md)). |
-| `SMConstants.kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work (see `SMConstants.kSMNotification_Event_WillDisplayNotification`). |
+| `SMConstants.kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification's content'. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md)). |
+| `SMConstants.kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification's content'. It can be used to resume any paused work (see `SMConstants.kSMNotification_Event_WillDisplayNotification`). |
 | `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification. |
 | `SMConstants.kSMNotification_Data_ButtonData` | `String` Key | Use this Key to retrieve the object [SMLink](MobileSDK%20Reference/Classes/SMLink.md), from the NSNotification-name `SMConstants.kSMNotification_Event_ButtonClicked`. |
-| `SMConstants.kSMNotification_Data_RemoteNotification` | `String` Key | Use this Key to retrieve a `Dictionary` instance with the Push ID and title, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification`. |
+| `SMConstants.kSMNotification_Object_RemoteNotification` | `String` Key | Use this Key to retrieve a `SMNotificationMessage` instance with the Push content, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification`. |
 
 Examples can be found [here](#broadcasts_examples).
 
@@ -685,7 +691,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveInApp
 
 @objc func didReceiveInAppMessage(_ notif: Notification) {
     let dictIAM = notif.userInfo
-    let array: Array = dictIAM![SMConstants.kSMNotification_Data_InAppMessage] as! [AnyObject]
+    let array = dictIAM![SMConstants.kSMNotification_Object_InAppMessage] as! [SMInAppMessage]
 }
 ```
 
@@ -695,7 +701,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveInApp
 
 - (void) didReceiveInAppMessage:(NSNotification *)notif {
     NSDictionary *dictIAM = [notif userInfo];
-    NSMutableArray *arrayIAM = [dictIAM objectForKey:SMConstants.kSMNotification_Data_InAppMessage];
+    NSMutableArray *arrayIAM = [dictIAM objectForKey:SMConstants.kSMNotification_Object_InAppMessage];
 }
 ```
 
@@ -703,16 +709,16 @@ Once your IAM is retrieved you can for example create an inbox page and when the
 
 **Swift**
 ```swift
-SMManager.shared.displayNotification(id: "notificationID")
+SMManager.shared.displayInAppMessage(id: "notificationID")
 // OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
-// SMManager.shared.displayNotification(id: "notificationID", options: SMInAppMessageStyleOptions?)
+// SMManager.shared.displayInAppMessage(id: "notificationID", options: SMInAppMessageStyleOptions?)
 ```
 
 **Objective-C**
 ```objective-c
-[[SMManager shared] displayNotificationWithId:@"notificationID" options:nil];
+[[SMManager shared] displayInAppMessageWithId:@"notificationID" options:nil];
 // OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
-// [[SMManager shared] displayNotificationWithId:@"notificationID" options:SMInAppMessageStyleOptions];
+// [[SMManager shared] displayInAppMessageWithId:@"notificationID" options:SMInAppMessageStyleOptions];
 ```
 
 ### With your own layout
@@ -1032,7 +1038,7 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | `SMConstants.kSMNotification_Event_DidReceiveInAppMessage ` | `NSNotification` name | It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages. |
-| `SMConstants.kSMNotification_Data_InAppMessage ` | `String` Key | Use this Key to retrieve an `Array` instance with `Dictionary` instances containing id and title properties, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
+| `SMConstants.kSMNotification_Object_InAppMessage ` | `String` Key | Use this Key to retrieve an `SMInAppMessage` array, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
 
 Examples can be found [here](#broadcasts_examples).
 
@@ -1373,7 +1379,7 @@ let clientId = "YourClientId"
 let privateKey = "YourPrivateKey"
     
 // Create the SMManagerSetting instance
-let settings: SMManagerSetting = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
 
 // Provide the App Groupd Id to the SDK
 settings.appGroupId = "group.yourGroupName"
@@ -1419,7 +1425,7 @@ class NotificationService: UNNotificationServiceExtension {
 
     override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping(UNNotificationContent) -> Void) {
         self.contentHandler = contentHandler
-        self.bestAttemptContent = (request.content.mutableCopy() as? UNMutableNotificationContent)
+        self.bestAttemptContent = request.content.mutableCopy() as? UNMutableNotificationContent
 
         // Init and start the SDK
         let url = "YourProvidedURL"
@@ -1427,7 +1433,7 @@ class NotificationService: UNNotificationServiceExtension {
         let privateKey = "YourPrivateKey"
         
         // Create the SMManagerSetting instance
-        let settings: SMManagerSetting = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
 
         // Provide the App Group Id to the SDK
         settings.appGroupId = "group.yourGroupName"
@@ -1440,13 +1446,14 @@ class NotificationService: UNNotificationServiceExtension {
             self.bestAttemptContent = content
             
             // Call the completion handler when done
-            contentHandler(self.bestAttemptContent)
+            contentHandler(self.bestAttemptContent ?? content)
         }
     }
     
     // Don't implement if you are not using the Encryption feature
     /*override func serviceExtensionTimeWillExpire() {
-        if let contentHandler = self.contentHandler, let bestAttemptContent = self.bestAttemptContent {
+        if let contentHandler = self.contentHandler,
+           let bestAttemptContent = self.bestAttemptContent {
             // Mark the message as still encrypted.
             bestAttemptContent.subtitle = "(Encrypted)"
             bestAttemptContent.body = ""
@@ -1521,7 +1528,7 @@ class NotificationService: UNNotificationServiceExtension {
         let privateKey = "YourPrivateKey"
 
         // Create the SMManagerSetting instance
-        let settings: SMManagerSetting = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
 
         // Provide the App Group Id to the SDK
         settings.appGroupId = "group.yourGroupName"
@@ -1651,27 +1658,20 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     @IBOutlet var bodyLabel: UILabel?
     @IBOutlet weak var imageView: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any required interface initialization here.
-    }
-
     func didReceive(_ notification: UNNotification) {
         // UI elements from the storyboard
         self.titleLabel?.text = notification.request.content.title
         self.bodyLabel?.text = notification.request.content.body
     
         // "SELLIGENT_IMAGE" category must be configured
-        if notification.request.content.attachments.count > 0 {
-            let attachment: UNNotificationAttachment = notification.request.content.attachments[0];
+        if let attachment = notification.request.content.attachments.first,
+           attachment.url.startAccessingSecurityScopedResource() {
 
-            if attachment.url.startAccessingSecurityScopedResource() {
-                let imageData = NSData(contentsOf: attachment.url)
-                let image = UIImage(data: imageData! as Data)
-
-                self.imageView?.image = image
-                attachment.url.stopAccessingSecurityScopedResource()
+            if let imageData = NSData(contentsOf: attachment.url) {
+                self.imageView.image = UIImage(data: imageData as Data)
             }
+
+            attachment.url.stopAccessingSecurityScopedResource()
         }
 
         // Init and start the SDK
@@ -1680,7 +1680,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         let privateKey = "YourPrivateKey"
 
         // Create the SMManagerSetting instance
-        let settings: SMManagerSetting = try! SMManagerSetting(url: url, clientID: clientId, privateKey: privateKey)
+        let settings = try! SMManagerSetting(url: url, clientID: clientId, privateKey: privateKey)
 
         // Provide the App Group Id to the SDK
         settings.appGroupId = "group.yourGroupName"
@@ -1718,11 +1718,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 @end
      
 @implementation NotificationViewController
-
-- (void) viewDidLoad {
-    [super viewDidLoad];
-    // Do any required interface initialization here.
-}
  
 - (void) didReceiveNotification:(UNNotification *)notification {
     self.titleLabel.text = notification.request.content.title;
@@ -1779,8 +1774,8 @@ You can listen to some `NSNotification` by observing the correct notification na
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | `SMConstants.kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification. |
-| `SMConstants.kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/shouldDisplayRemoteNotification)). |
-| `SMConstants.kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work (see `SMConstants.kSMNotification_Event_WillDisplayNotification`). |
+| `SMConstants.kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification's content'. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/shouldDisplayRemoteNotification)). |
+| `SMConstants.kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification's content'. It can be used to resume any paused work (see `SMConstants.kSMNotification_Event_WillDisplayNotification`). |
 | `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification. |
 | `SMConstants.kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages. |
 | `SMConstants.kSMNotification_Event_DidReceiveDeviceId` | `NSNotification` name | It is broadcasted shortly after receiving a Selligent deviceId value. It can be used to manage the received device id. |
@@ -1791,8 +1786,8 @@ You can listen to some `NSNotification` by observing the correct notification na
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | `SMConstants.kSMNotification_Data_ButtonData` | `String` Key | Use this Key to retrieve the object [SMLink](MobileSDK%20Reference/Classes/SMLink.md), from the NSNotification-name `SMConstants.kSMNotification_Event_ButtonClicked`. |
-| `SMConstants.kSMNotification_Data_RemoteNotification` | `String` Key | Use this Key to retrieve a `Dictionary` instance containing push ID and title properties, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification`. |
-| `SMConstants.kSMNotification_Data_InAppMessage` | `String` Key | Use this Key to retrieve an `Array` instance with `Dictionary` instances containing id and title as properties, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
+| `SMConstants.kSMNotification_Object_RemoteNotification` | `String` Key | Use this Key to retrieve a `SMNotificationMessage` instance with the Push content, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification`. |
+| `SMConstants.kSMNotification_Object_InAppMessage` | `String` Key | Use this Key to retrieve an `SMInAppMessage` array, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
 | `SMConstants.kSMNotification_Data_DeviceId` | `String` Key | Use this Key to retrieve a `String` instance with the Selligent deviceId value, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveDeviceId`. |
 
 <a name="broadcasts_examples"></a>
@@ -1809,8 +1804,8 @@ NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWi
 
 // Notifications selectors
 @objc func anyMethodNameDidReceiveInAppMessage(notif: NSNotification) {
-        let dict = notif.userInfo
-        let inAppData = dict![SMConstants.kSMNotification_Data_InAppMessage]
+    let dict = notif.userInfo
+    let inAppData = dict![SMConstants.kSMNotification_Object_InAppMessage]
 }
 
 @objc func anyMethodNameButtonClicked(notif: NSNotification) {
@@ -1820,7 +1815,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWi
 
 @objc func anyMethodNameDidReceiveRemoteNotification(notif: NSNotification) {
     let dict = notif.userInfo
-    let notifData = dict![NSNotification.Name(rawValue: SMConstants.kSMNotification_Data_DeviceId)]
+    let notifData = dict![NSNotification.Name(rawValue: SMConstants.kSMNotification_Object_RemoteNotification)]
 }
 
 @objc func anyMethodNameWillDisplayNotification(notif: NSNotification) {}
@@ -1839,7 +1834,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWi
 // Notifications selectors
 - (void) anyMethodNameDidReceiveInAppMessage:(NSNotification *)notif {
     NSDictionary *dict =[notif userInfo];
-    NSDictionary *inAppData = dict[SMConstants.kSMNotification_Data_InAppMessage];
+    NSDictionary *inAppData = dict[SMConstants.kSMNotification_Object_InAppMessage];
 }
 
 - (void) anyMethodNameButtonClicked:(NSNotification *)notif {
@@ -1849,7 +1844,7 @@ NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWi
 
 - (void) anyMethodNameDidReceiveRemoteNotification:(NSNotification *)notif {
     NSDictionary *dict =[notif userInfo];
-    NSDictionary *notifData = dict[SMConstants.kSMNotification_Data_RemoteNotification];
+    NSDictionary *notifData = dict[SMConstants.kSMNotification_Object_RemoteNotification];
 }
 
 - (void) anyMethodNameWillDisplayNotification:(NSNotification *)notif {}

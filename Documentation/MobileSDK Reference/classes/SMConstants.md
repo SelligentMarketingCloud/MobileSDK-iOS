@@ -17,13 +17,13 @@
 @objc static let kSMNotification_Event_WillDisplayNotification: String { get }
 ```
 
->It is broadcasted shortly before displaying a Remote Notification. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable ``SMManagerSetting/shouldDisplayRemoteNotification``
+>It is broadcasted shortly before displaying a Remote Notification's content. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable ``SMManagerSetting/shouldDisplayRemoteNotification``
 
 ```swift
 @objc static let kSMNotification_Event_WillDismissNotification: String { get }
 ```
 
->It is broadcasted shortly before dismissing the current Remote Notification. It can be used to resume any paused work.
+>It is broadcasted shortly before dismissing the current Remote Notification's content. It can be used to resume any paused work.
 
 ```swift
 @objc static let kSMNotification_Event_DidReceiveRemoteNotification: String { get }
@@ -62,10 +62,22 @@
 >Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name ``SMConstants/kSMNotification_Event_DidReceiveRemoteNotification``.
 
 ```swift
+@objc static let kSMNotification_Object_RemoteNotification: String { get }
+```
+
+>Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name ``SMConstants/kSMNotification_Event_DidReceiveRemoteNotification``.
+
+```swift
 @objc static let kSMNotification_Data_InAppMessage: String { get }
 ```
 
 >Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name ``SMConstants/kSMNotification_Event_DidReceiveInAppMessage``.
+
+```swift
+@objc static let kSMNotification_Object_InAppMessage: String { get }
+```
+
+>Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name ``SMConstants/kSMNotification_Event_DidReceiveInAppMessage``.
 
 ```swift
 @objc static let kSMNotification_Data_InAppContent: String { get }

@@ -69,11 +69,15 @@ extension SelligentMobileSDK.SMManager {
   @objc dynamic public func disableRemoteNotification()
   @objc dynamic public func didRegisterForRemoteNotifications(deviceToken: Foundation.Data)
   @objc dynamic public func didFailToRegisterForRemoteNotifications(with error: Swift.Error)
-  @objc dynamic public func displayNotification(id: Swift.String, options: SelligentMobileSDK.SMInAppMessageStyleOptions? = nil)
+  @available(*, deprecated, message: "Renamed to `SMManager/displayLastReceivedNotificationContent(options:)`")
   @objc dynamic public func displayLastReceivedRemoteNotification(options: SelligentMobileSDK.SMInAppMessageStyleOptions? = nil)
+  @objc dynamic public func displayLastReceivedNotificationContent(options: SelligentMobileSDK.SMInAppMessageStyleOptions? = nil)
+  @available(*, deprecated, message: "Depracated, use `SMManager/retrieveLastReceivedNotificationContent()` which returns an SMNotificationMessage")
   @objc dynamic public func retrieveLastRemoteNotification() -> [Swift.String : Swift.String]?
+  @objc dynamic public func retrieveLastReceivedNotificationContent() -> SelligentMobileSDK.SMNotificationMessage?
   @objc dynamic public func setNotificationMessageAsSeen(_ message: SelligentMobileSDK.SMNotificationMessage)
   @objc dynamic public func didReceiveRemoteNotification(_ userInfo: [Swift.AnyHashable : Any], completionHandler: ((UIKit.UIBackgroundFetchResult) -> Swift.Void)?)
+  @objc dynamic public func displayLastReceivedNotification()
 }
 @objc @_hasMissingDesignatedInitializers public class SMEventUserLogin : SelligentMobileSDK.SMEventUser {
   @objc public init(profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
@@ -86,8 +90,12 @@ extension SelligentMobileSDK.SMManager {
   @objc dynamic public func setInAppMessageAsSeen(_ message: SelligentMobileSDK.SMInAppMessage)
   @objc dynamic public func setInAppMessageAsUnseen(_ message: SelligentMobileSDK.SMInAppMessage)
   @objc dynamic public func setInAppMessageAsDeleted(_ message: SelligentMobileSDK.SMInAppMessage)
+  @available(*, deprecated, message: "Renamed to `SMManager/executeLinkAction(_:message:)`")
   @objc dynamic public func executeLinkAction(_ link: SelligentMobileSDK.SMLink, inAppMessage: SelligentMobileSDK.SMInAppMessage)
   @objc dynamic public func inAppMessageDelegate(_ delegate: SelligentMobileSDK.SMManagerInAppMessageDelegate)
+  @available(*, deprecated, message: "Renamed to `SMManager/displayInAppMessage(id:options:)`")
+  @objc dynamic public func displayNotification(id: Swift.String, options: SelligentMobileSDK.SMInAppMessageStyleOptions? = nil)
+  @objc dynamic public func displayInAppMessage(id: Swift.String, options: SelligentMobileSDK.SMInAppMessageStyleOptions? = nil)
 }
 @objc @_hasMissingDesignatedInitializers public class SMEventUser : SelligentMobileSDK.SMEvent {
   @objc deinit
@@ -159,6 +167,15 @@ extension SelligentMobileSDK.SMManager {
   @objc public var apsBody: Swift.String {
     get
   }
+  @objc public var metadata: Swift.String {
+    get
+  }
+  @objc public var tags: [Swift.String] {
+    get
+  }
+  @objc public var profileId: Swift.String {
+    get
+  }
   @objc override public func encode(with coder: Foundation.NSCoder)
   @objc required public init(coder: Foundation.NSCoder)
   @objc deinit
@@ -216,8 +233,12 @@ extension SelligentMobileSDK.SMManager {
   @objc public static let kSMNotification_Event_DidReceiveInAppContent: Swift.String
   @objc public static let kSMNotification_Event_DidReceiveDeviceId: Swift.String
   @objc public static let kSMNotification_Data_ButtonData: Swift.String
+  @available(*, deprecated, message: "Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage")
   @objc public static let kSMNotification_Data_RemoteNotification: Swift.String
+  @objc public static let kSMNotification_Object_RemoteNotification: Swift.String
+  @available(*, deprecated, message: "Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage")
   @objc public static let kSMNotification_Data_InAppMessage: Swift.String
+  @objc public static let kSMNotification_Object_InAppMessage: Swift.String
   @objc public static let kSMNotification_Data_InAppContent: Swift.String
   @objc public static let kSMNotification_Data_DeviceId: Swift.String
   @objc override dynamic public init()
@@ -431,7 +452,8 @@ extension SelligentMobileSDK.SMManager {
 }
 extension SelligentMobileSDK.SMManager {
   @objc dynamic public func universalLinksDelegate(_ delegate: SelligentMobileSDK.SMManagerUniversalLinksDelegate)
-  @objc dynamic public func setLinkAsClicked(_ link: SelligentMobileSDK.SMLink, from notificationMessage: SelligentMobileSDK.SMNotificationMessage)
+  @objc dynamic public func setLinkAsClicked(_ link: SelligentMobileSDK.SMLink, from message: SelligentMobileSDK.SMBaseMessage)
+  @objc dynamic public func executeLinkAction(_ link: SelligentMobileSDK.SMLink, message: SelligentMobileSDK.SMBaseMessage)
 }
 @objc public class SMDeviceInfos : ObjectiveC.NSObject {
   @objc public init(externalId: Swift.String)
@@ -551,6 +573,7 @@ extension SelligentMobileSDK.SMManager {
   @objc dynamic public func show(controller: SelligentMobileSDK.SMInAppContentViewController, in view: UIKit.UIView, of viewController: UIKit.UIViewController)
   @objc dynamic public func getInAppContents(for category: Swift.String, type: SelligentMobileSDK.SMInAppContentType) -> [SelligentMobileSDK.SMInAppContentMessage]
   @objc dynamic public func setInAppContentAsSeen(_ content: SelligentMobileSDK.SMInAppContentMessage)
+  @available(*, deprecated, message: "Renamed to `SMManager/executeLinkAction(_:message:)`")
   @objc dynamic public func executeLinkAction(_ link: SelligentMobileSDK.SMLink, inAppContent: SelligentMobileSDK.SMInAppContentMessage)
   @objc dynamic public func performIACFetch(completion: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void)
 }

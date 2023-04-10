@@ -1,10 +1,23 @@
 # SDK Changelog
 
+- __SDK 3.3.0__
+
+    - Deprecate `SMManager/displayLastReceivedRemoteNotification(options:)` in favor of `SMManager/displayLastReceivedNotificationContent(options:)`
+    - Deprecate `SMManager/displayNotification(id:options:)` in favor of `SMManager/displayInAppMessage(id:options:)`
+    - Deprecate `SMManager/retrieveLastRemoteNotification()`
+    - Add `SMManager/displayLastReceivedNotification()` to display the last Selligent push notification
+    - Add `SMManager/retrieveLastReceivedNotificationContent()` which returns a `SMNotificationMessage` instead of a `Dictionary` with `id` and `title`
+    - Deprecate `SMConstants/kSMNotification_Data_RemoteNotification`
+    - Add `SMConstants/kSMNotification_Object_RemoteNotification` which returns a `SMNotificationMessage` instead of a `Dictionary` with `id` and `title`
+    - Deprecate `SMConstants/kSMNotification_Data_InAppMessage`
+    - Add `SMConstants/kSMNotification_Object_InAppMessage` which returns an array of `SMInAppMessage` instead of an array of `Dictionary` with `id` and `title`
+    - Deprecate `SMManager/executeLinkAction(_:inAppMessage:)` and `SMManager/executeLinkAction(_:inAppContent:)` in favor of `SMManager/executeLinkAction(_:message:)`
+    
 - __SDK 3.2.1__
 
     - Add robustness around `Opened` event sent from Notification Content Extension
     - Fix bug that could send an `Opened` event when dismissing a notification in foreground
-    
+
 - __SDK 3.2.0__
 
     - Improve `SMInAppMessageStyleOptions/transition/.verticalSlide` dismiss transition smoothness

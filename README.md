@@ -27,7 +27,7 @@ By incorporating our latest SDK for iOS in your app, we support you in handling 
 
     if you are using geofencing capabilities (it will also install dependency to PlotPlugin): ``pod 'SelligentMobileSDK/Framework_Geofencing'``
         
-    if you have app extensions (to be included in the App target): ``pod 'SelligentMobileSDK/FrameworkExtension'``
+    if you have app extensions (to be included in the extension targets): ``pod 'SelligentMobileSDK/FrameworkExtension'``
 
     and then run ``pod install`` or ``pod update``
 
@@ -39,4 +39,4 @@ Please check our <a href="https://github.com/SelligentMarketingCloud/MobileSDK-i
 
 Use our <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation/MobileSDK%20Reference#mobilesdk-reference">Reference manual</a> to quickly check all our available methods.
 
-Download our <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation/IOSSDKTemplate.zip">example application</a> to see how our SDK needs to be implemented. Do note though that it is just an example to see where/how the SDK code needs to be integrated but it is not supposed to be used as a base project for your App, or anything similar.
+Download our <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Documentation/iOSSDKTemplate.zip">example application</a> to see how our SDK needs to be implemented. Do note though that it is just an example to see where/how the SDK code needs to be integrated but it is not supposed to be used as a base project for your App, or anything similar.
