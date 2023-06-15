@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.platform                    = :ios, "11.0"
   s.name                        = "SelligentMobileSDK"
-  s.version                     = "3.3.0"
+  s.version                     = "3.4.0"
   s.summary                     = "Selligent Marketing Cloud - Mobile SDK for iOS"
   s.description                 = <<-DESC
     The Selligent Marketing Cloud - Mobile SDK is a tool that enables you to use the Selligent Marketing Cloud - Mobile feature in a very easy and straightforward way.
@@ -17,11 +17,6 @@ Pod::Spec.new do |s|
 
   s.subspec "Framework" do |sf|
     sf.vendored_frameworks      = "Framework/SelligentMobileSDK.xcframework"
-  end
-  
-  s.subspec "Framework_Geofencing" do |sfg|
-    sfg.vendored_frameworks     = "Framework_Geofencing/SelligentMobileSDK_Geofencing.xcframework"
-    sfg.dependency "PlotPlugin"
   end
   
   s.subspec "FrameworkExtension" do |sf|

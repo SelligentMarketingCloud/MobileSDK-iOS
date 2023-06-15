@@ -1025,8 +1025,6 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMLogLevel_, "SMLogLevel", open) {
   kSMLogLevel_Error = 3,
 /// Print only HTTP-requests stuff
   kSMLogLevel_HttpCall = 4,
-/// Print only location-requests stuff
-  kSMLogLevel_Location = 5,
 /// Print everything. Do not use for release!
   kSMLogLevel_All = -1,
 };

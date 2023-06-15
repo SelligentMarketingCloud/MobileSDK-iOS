@@ -33,8 +33,6 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
 * [**Deep Linking**](#deep_linking)
   * [**Add entries to your app .plist file**](#plist_entries)
   * [**Universal Links**](#universal_links)
-* [**External framework**](#external_framework)
-  * [**Permission for geolocation**](#geolocation_permission)
 * [**Starting the SDK**](#starting_sdk)
   * [**Push Notifications**](#push_notifications)
     * [**Register for Push Notifications**](#register_for_push)
@@ -52,7 +50,6 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
   * [**Implement WKNavigationDelegate**](#wknavigationdelegate)
   * [**Display IAM linked to a Push Notification**](#display_iam_from_push)
   * [**Broadcasts**](#iam_broadcasts)
-* [**Geolocation**](#geolocation)
 * [**Events**](#events)
   * [**Registration / Unregistration**](#events_register_unregister)
   * [**Login/Logout**](#events_login_logout)
@@ -76,7 +73,7 @@ The purpose of this document is to detail how to install the SDK into your App a
 * For more detailed technical reference of the SDK please refer to <a href="MobileSDK Reference/#mobilesdk-reference">**MobileSDK Reference**</a>.
 * For an example of implementation check the <a href="IOSSDKTemplate.zip">**IOSSDKTemplate**</a> project.
 
->**Important Remark:** Core version of the SDK is fully compliant to AppTrackingTransparency framework as we never make any usage of [data used to track the device](https://developer.apple.com/app-store/app-privacy-details/) (except if you are using the geolocation version of the SDK). The device ID is for example a generated ID provided by the Selligent platform to the SDK at launch time.<br/> About the PlotProjects Geolocation version of the SDK please refer to [PlotProjects FAQs](https://www.plotprojects.com/faqs/) for more information.
+>**Important Remark:** Core version of the SDK is fully compliant to AppTrackingTransparency framework as we never make any usage of [data used to track the device](https://developer.apple.com/app-store/app-privacy-details/). The device ID is for example a generated ID provided by the Selligent platform to the SDK at launch time.
 
 <a name="apns_key"></a>
 ## Create an APNS Key
@@ -179,8 +176,6 @@ To start using the SDK, you need to import its module:
 **Swift**
 ```swift
 import SelligentMobileSDK
-// OR if you are using the version with geolocation
-import SelligentMobileSDK_Geofencing
 // OR In App extensions
 import SelligentMobileExtensionsSDK
 ```
@@ -188,8 +183,6 @@ import SelligentMobileExtensionsSDK
 **Objective-C**
 ```swift
 @import SelligentMobileSDK;
-// OR if you are using the version with geolocation
-@import SelligentMobileSDK_Geofencing;
 // OR In App extensions
 @import SelligentMobileExtensionsSDK;
 ```
@@ -281,9 +274,6 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 // AppUniversalLinksDelegateExample.h
 @import SelligentMobileSDK;
 
-// OR
-// @import SelligentMobileSDK_Geofencing;
-
 @interface AppUniversalLinksDelegateExample : NSObject <SMManagerUniversalLinksDelegate>
 @end
 
@@ -299,22 +289,6 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 
 @end
 ```
-
-<a name="external_framework"></a>
-## External framework
-If you consider using the Geolocation module of the library and you have the correct version of the Selligent SDK, you will need to embed **PlotProjects.framework** besides the Selligent SDK in your App.
-> Since SDK v2.1, minimum supported version of PlotProjects is v3.2.0.
-> Since SDK v2.7.5, minimum supported version of PlotProjects is v3.5.0.
-
-You will also need to configure it with the **plotconfig.json** file in the root folder of your project ([learn more](#geolocation)).
-
-<a name="geolocation_permission"></a>
-### Permission for geolocation
-Add the `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription` and `NSMotionUsageDescription` Keys in your **Info.plist** file (Xcode displays these Keys as `Privacy - Location When In Use Usage Description`, `Privacy - Location Always and When In Use Usage Description` and `Privacy - Motion Usage Description` in the editor).
-
-Add the `NSLocationAlwaysUsageDescription` Key to your Info.plist file (Xcode displays this Key as `Privacy - Location Always Usage Description` in the editor).
-
-Pay attention to the description that you will provide to those Keys, as that is what will be displayed to the user when the permissions are asked.
 
 <a name="starting_sdk"></a>
 ## Starting the SDK
@@ -344,7 +318,6 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   | `remoteMessageDisplayType` | This value defines the behavior that the SDK will adopt when a remote-notification is received when in Foreground ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/remoteMessageDisplayType)). |
   
 * Optionally initialize and configure In-App Messages.
-* Optionally configure location services (may not be available depending on your SDK version).
 
 **Swift**
 ```swift
@@ -369,9 +342,6 @@ settings.appGroupId = "group.yourGroupName"
 // Optional - Initialize In-App Messages settings
 let settingIAM = SMManagerSettingIAM(refreshType: .daily)
 settings.configureInAppMessageService(with: settingIAM)
-
-// Optional - Initialize location services
-// settings.configureLocationService()
 
 // Optional - Define the SDK behavior when receiving push notifications in foreground
 // Make sure you have read this setting's documentation from SMManagerSetting reference, before using it
@@ -400,9 +370,6 @@ settings.appGroupId = @"group.yourGroupName";
 // Initialize In-App Messages settings - other constructors exist (cf. documentation)
 SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshType:kSMIA_RefreshType_Daily backgroundFetch:false];
 [settings configureInAppMessageServiceWith:iamSetting];
-
-// Optional - Initialize location services
-// [settings configureLocationService];
 
 // Optional - Define the SDK behavior when receiving push notifications in foreground
 // Make sure you have read this setting's documentation from SMManagerSetting reference, before using it
@@ -664,7 +631,7 @@ Examples can be found [here](#broadcasts_examples).
 ## In-App Messages
 <a name="enable_iam"></a>
 ### Enable IAM
-If In-App Messages (we will refer to them with IAM) are correctly configured ([learn more](#starting_sdk)), you will need to enable them once, wherever you want in your App, by calling:
+If In-App Messages (we will refer to them with IAM) are correctly configured ([learn more](#starting_sdk)), you will need to enable them once, wherever you want in your App (but after calling the `SMManager/start(with:)`), by calling:
 
 **Swift**
 ```swift
@@ -936,8 +903,6 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
 // AppWKNavigationDelegateExample.m
 #import "AppWKNavigationDelegateExample.h"
 @import SelligentMobileSDK;
-// OR
-// @import SelligentMobileSDK_Geofencing;
 
 @implementation AppWKNavigationDelegateExample
 
@@ -1008,8 +973,6 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 // AppInAppMessageDelegateExample.h
 #import <Foundation/Foundation.h>
 @import SelligentMobileSDK;
-// OR
-// @import SelligentMobileSDK_Geofencing;
 
 @interface AppInAppMessageDelegateExample: NSObject<SMManagerInAppMessageDelegate>
 @end
@@ -1017,8 +980,6 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 // AppInAppMessageDelegateExample.m
 #import "AppInAppMessageDelegateExample.h"
 @import SelligentMobileSDK;
-// OR
-// @import SelligentMobileSDK_Geofencing;
 
 @implementation AppInAppMessageDelegateExample
 
@@ -1041,44 +1002,6 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 | `SMConstants.kSMNotification_Object_InAppMessage ` | `String` Key | Use this Key to retrieve an `SMInAppMessage` array, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
 
 Examples can be found [here](#broadcasts_examples).
-
-<a name="geolocation"></a>
-## Geolocation
-Geolocation is managed through a 3rd party framework: `PlotProjects.framework`. To fully use this feature, you will have to download a **specific version of the SDK**, contact Selligent support for more information and embed the `PlotProjects.framework` in your App.
-> Since SDK v2.1, minimum supported version of PlotProjects is v3.2.0).
-> Since SDK v2.7.5, minimum supported version of PlotProjects is v3.5.0.
-
-Beside this, PlotProjects framework needs the presence of a config file `plotconfig.json` ([learn more](https://www.plotprojects.com/documentation/#ConfigurationFile)) at the root of your project. 
-The content of this file will look like:
-```json
-{
-    "publicToken": "REPLACE_ME",
-    "enableOnFirstRun": true,
-    "maxRegionsMonitored": 10,
-    "automaticallyAskLocationPermission": true
-}
-```
-
-| Property | Description |
-| --------- | --------- |
-| `publicToken` | Will be the token provided for you to be able to use PlotProjects framework. |
-| `enableOnFirstRun` | Will allow you to enable PlotProjects framework automatically if value is set to true, otherwise you will need to call `SMManager/enableGeoLocation()`. |
-| `maxRegionsMonitored` | Is the maximum regions monitored by PlotProjects. The value of this property should be an integer between 5 and 20. This allows to keep some regions in case you want to monitor regions with another tool or by yourself. Keep in mind that the maximum regions that iOS allows to monitor is 20. |
-| `automaticallyAskLocationPermission` | If set to true and your plist file is correctly configured ([learn more](#geolocation_permission)), then iOS opt-in dialog for geolocation will be displayed when the module is enabled for the first time. If set to false, you will be able to ask user opt-in whenever you want. Try considering this [best practice](https://www.plotprojects.com/blog/how-to-convince-your-app-users-to-opt-in-for-location-permissions-on-ios-13/) if you desire to do it this way. |
-
-Whenever you decide to enable PlotProjects framework, another method exists which allows you to disable it:
-
-**Swift**
-```swift
-SMManager.shared.disableGeoLocation()
-```
-
-**Objective-C**
-```objective-c
-[[SMManager shared] disableGeoLocation];
-```
-
-Once your App is correctly configured, you will be able to define your campaigns in PlotProjects dashboard.
 
 <a name="events"></a>
 ## Events
@@ -1885,7 +1808,6 @@ This method `SMManager/apply(_:)` will allow you to debug the library.<br>
 | `warning` | Only warning messages are printed. |
 | `error` | Only error messages are printed. |
 | `httpCall` | Print only http related messages. |
-| `location` | Print only location related messages. |
 | `all` | Print everything. Do not use for release!!! |
 
 **Swift**

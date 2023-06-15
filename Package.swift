@@ -11,9 +11,6 @@ let package = Package(
             name: "SelligentMobileSDK",
             targets: ["SelligentMobileSDK"]),
         .library(
-            name: "SelligentMobileSDK_Geofencing",
-            targets: ["SelligentMobileSDK_Geofencing"]),
-        .library(
             name: "SelligentMobileExtensionsSDK",
             targets: ["SelligentMobileExtensionsSDK"])
     ],
@@ -21,9 +18,6 @@ let package = Package(
         .binaryTarget(
            name: "SelligentMobileSDK",
            path: "Framework/SelligentMobileSDK.xcframework"),
-        .binaryTarget(
-           name: "SelligentMobileSDK_Geofencing",
-           path: "Framework_Geofencing/SelligentMobileSDK_Geofencing.xcframework"),
         .binaryTarget(
            name: "SelligentMobileExtensionsSDK",
            path: "FrameworkExtension/SelligentMobileExtensionsSDK.xcframework")

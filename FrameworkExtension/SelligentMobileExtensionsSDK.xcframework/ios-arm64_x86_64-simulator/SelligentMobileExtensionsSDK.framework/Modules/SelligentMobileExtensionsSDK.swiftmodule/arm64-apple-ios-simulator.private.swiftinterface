@@ -3,7 +3,6 @@
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SelligentMobileExtensionsSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import CommonCrypto
-import CoreLocation
 import Foundation
 import MapKit
 import Network
@@ -264,7 +263,6 @@ extension SelligentMobileExtensionsSDK.SMManager {
   case warning = 2
   case error = 3
   case httpCall = 4
-  case location = 5
   case all = -1
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int

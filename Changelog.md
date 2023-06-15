@@ -1,5 +1,10 @@
 # SDK Changelog
 
+- __SDK 3.4.0__
+
+    - Fix bug where isViewed flag wasn't properly stored in the `last push message` object
+    - Remove geolocation feature
+    
 - __SDK 3.3.0__
 
     - Deprecate `SMManager/displayLastReceivedRemoteNotification(options:)` in favor of `SMManager/displayLastReceivedNotificationContent(options:)`

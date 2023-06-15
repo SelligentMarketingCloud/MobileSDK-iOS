@@ -34,12 +34,6 @@ case httpCall = 4
 >Print only HTTP-requests stuff
 
 ```swift
-case location = 5
-```
-
->Print only location-requests stuff
-
-```swift
 case all = -1
 ```
 
