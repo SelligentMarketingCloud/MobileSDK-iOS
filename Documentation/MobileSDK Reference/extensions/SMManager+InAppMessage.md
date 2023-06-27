@@ -60,3 +60,9 @@
 ```
 
 >Display the content of a given in-app message id.<br/>
+
+```swift
+@objc func areInAppMessagesEnabled() -> SMInAppMessageServiceState
+```
+
+>Gets the current state of the in-app message service.<br/>

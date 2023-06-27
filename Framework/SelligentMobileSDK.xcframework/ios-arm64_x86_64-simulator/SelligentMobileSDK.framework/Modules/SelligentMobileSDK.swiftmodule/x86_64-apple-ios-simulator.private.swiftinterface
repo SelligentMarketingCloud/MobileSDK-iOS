@@ -95,6 +95,7 @@ extension SelligentMobileSDK.SMManager {
   @available(*, deprecated, message: "Renamed to `SMManager/displayInAppMessage(id:options:)`")
   @objc dynamic public func displayNotification(id: Swift.String, options: SelligentMobileSDK.SMInAppMessageStyleOptions? = nil)
   @objc dynamic public func displayInAppMessage(id: Swift.String, options: SelligentMobileSDK.SMInAppMessageStyleOptions? = nil)
+  @objc dynamic public func areInAppMessagesEnabled() -> SelligentMobileSDK.SMInAppMessageServiceState
 }
 @objc @_hasMissingDesignatedInitializers public class SMEventUser : SelligentMobileSDK.SMEvent {
   @objc deinit
@@ -387,6 +388,16 @@ extension SelligentMobileSDK.SMManager {
     get
   }
 }
+@objc(kSMInAppMessageServiceState_) public enum SMInAppMessageServiceState : Swift.Int {
+  case undefined = 0
+  case disabled = 1
+  case enabled = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 extension SelligentMobileSDK.SMManager {
   @objc dynamic public func sendDeviceInfo(_ deviceInfos: SelligentMobileSDK.SMDeviceInfos)
 }
@@ -652,6 +663,9 @@ extension SelligentMobileSDK.SMNotificationMessageType : Swift.RawRepresentable 
 extension SelligentMobileSDK.SMInAppContentType : Swift.Equatable {}
 extension SelligentMobileSDK.SMInAppContentType : Swift.Hashable {}
 extension SelligentMobileSDK.SMInAppContentType : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMInAppMessageServiceState : Swift.Equatable {}
+extension SelligentMobileSDK.SMInAppMessageServiceState : Swift.Hashable {}
+extension SelligentMobileSDK.SMInAppMessageServiceState : Swift.RawRepresentable {}
 extension SelligentMobileSDK.SMInAppRefreshType : Swift.Equatable {}
 extension SelligentMobileSDK.SMInAppRefreshType : Swift.Hashable {}
 extension SelligentMobileSDK.SMInAppRefreshType : Swift.RawRepresentable {}

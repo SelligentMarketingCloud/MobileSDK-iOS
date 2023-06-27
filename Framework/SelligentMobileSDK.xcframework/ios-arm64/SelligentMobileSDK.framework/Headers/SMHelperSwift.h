@@ -879,6 +879,15 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK14SMInAppMessage")
 
 
 
+typedef SWIFT_ENUM_NAMED(NSInteger, kSMInAppMessageServiceState_, "SMInAppMessageServiceState", open) {
+/// In-app message service hasn’t been explicitly enabled or disabled just yet, thus it will remain disabled from an operational point of view
+  kSMInAppMessageServiceState_Undefined = 0,
+/// In-app message service has explicitly been disabled.
+  kSMInAppMessageServiceState_Disabled = 1,
+/// In-app message service has explicitly been enabled.
+  kSMInAppMessageServiceState_Enabled = 2,
+};
+
 enum kSMViewTransition_ : NSInteger;
 @protocol UIViewControllerTransitioningDelegate;
 
@@ -1057,7 +1066,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
-
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
 /// This method allow you to send an event with pre-defined devices informations to the back-end
 /// This call can be done at any time after starting the library.
@@ -1065,6 +1073,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 - (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
 @end
+
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
+
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
@@ -1079,13 +1096,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (void)apply:(enum kSMLogLevel_)logLevel;
 @end
 
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
 
 
 
@@ -1119,6 +1129,34 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+@class UNNotificationResponse;
+@class UNNotification;
+@class SMNotificationMessage;
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
+/// Mandatory AP when using UserNotifications framework, to be included in userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler.
+/// Handles remote notification actions.
+/// \param response An UNNotificationResponse that contains information about the notification and the interaction the user has done with it, provided by the delegate call
+///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)didReceive:(UNNotificationResponse * _Nonnull)response options:(SMInAppMessageStyleOptions * _Nullable)options;
+/// Mandatory API when using UserNotifications framework, to be included in userNotificationCenter:willPresentNotification:withCompletionHandler
+/// Handles incoming remote notifications when the app is in foreground.
+/// \param notification An UNNotification that contains information about the notification
+///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+/// \param completionHandler A completion handler that will be called with a specific UNNotificationPresentationOption depending on the <code>SMManagerSetting/remoteMessageDisplayType</code> value specified when starting the SDK. If no completion is provided, the SDK will just send the push received event and won’t manage any kind of display/action after the remote notification was clicked
+///
+- (void)willPresent:(UNNotification * _Nonnull)notification options:(SMInAppMessageStyleOptions * _Nullable)options completionHandler:(void (^ _Nullable)(UNNotificationPresentationOptions))completionHandler;
+/// Optional API, retrieves the <code>SMNotificationMessage</code> object from a given userInfo.
+/// To be used for custom implementations when you need to get the Selligent push object from the provided userInfo to know what has been provided from the backend and use it.
+///
+/// returns:
+/// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
+- (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
+@end
 
 @class UIView;
 
@@ -1160,34 +1198,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
-@class UNNotificationResponse;
-@class UNNotification;
-@class SMNotificationMessage;
 
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
-/// Mandatory AP when using UserNotifications framework, to be included in userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler.
-/// Handles remote notification actions.
-/// \param response An UNNotificationResponse that contains information about the notification and the interaction the user has done with it, provided by the delegate call
-///
-/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
-///
-- (void)didReceive:(UNNotificationResponse * _Nonnull)response options:(SMInAppMessageStyleOptions * _Nullable)options;
-/// Mandatory API when using UserNotifications framework, to be included in userNotificationCenter:willPresentNotification:withCompletionHandler
-/// Handles incoming remote notifications when the app is in foreground.
-/// \param notification An UNNotification that contains information about the notification
-///
-/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
-///
-/// \param completionHandler A completion handler that will be called with a specific UNNotificationPresentationOption depending on the <code>SMManagerSetting/remoteMessageDisplayType</code> value specified when starting the SDK. If no completion is provided, the SDK will just send the push received event and won’t manage any kind of display/action after the remote notification was clicked
-///
-- (void)willPresent:(UNNotification * _Nonnull)notification options:(SMInAppMessageStyleOptions * _Nullable)options completionHandler:(void (^ _Nullable)(UNNotificationPresentationOptions))completionHandler;
-/// Optional API, retrieves the <code>SMNotificationMessage</code> object from a given userInfo.
-/// To be used for custom implementations when you need to get the Selligent push object from the provided userInfo to know what has been provided from the backend and use it.
-///
-/// returns:
-/// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
-- (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
-@end
 
 
 
@@ -1232,8 +1243,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// It will remove the view controller from your App hierarchy
 - (void)removeViewController;
 @end
-
-
 
 
 
@@ -1290,6 +1299,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
 ///
 - (void)displayInAppMessageWithId:(NSString * _Nonnull)id options:(SMInAppMessageStyleOptions * _Nullable)options;
+/// Gets the current state of the in-app message service.
+///
+/// returns:
+/// A <code>SMInAppMessageServiceState</code> value which defines the current service state.
+- (enum kSMInAppMessageServiceState_)areInAppMessagesEnabled SWIFT_WARN_UNUSED_RESULT;
 @end
 
 @class NSData;

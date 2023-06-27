@@ -12028,6 +12028,30 @@
           },
           {
             "kind": "Function",
+            "name": "areInAppMessagesEnabled",
+            "printedName": "areInAppMessagesEnabled()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SMInAppMessageServiceState",
+                "printedName": "SelligentMobileSDK.SMInAppMessageServiceState",
+                "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@SelligentMobileSDK@objc(cs)SMManager(im)areInAppMessagesEnabled",
+            "mangledName": "$s18SelligentMobileSDK9SMManagerC23areInAppMessagesEnabledAA04SMInG19MessageServiceStateOyF",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "apply",
             "printedName": "apply(_:)",
             "children": [
@@ -13674,6 +13698,270 @@
         "moduleName": "SelligentMobileSDK",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SMInAppMessageServiceState",
+        "printedName": "SMInAppMessageServiceState",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "undefined",
+            "printedName": "undefined",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK.SMInAppMessageServiceState.Type) -> SelligentMobileSDK.SMInAppMessageServiceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMInAppMessageServiceState",
+                    "printedName": "SelligentMobileSDK.SMInAppMessageServiceState",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK.SMInAppMessageServiceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMInAppMessageServiceState",
+                        "printedName": "SelligentMobileSDK.SMInAppMessageServiceState",
+                        "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_@kSMInAppMessageServiceState_Undefined",
+            "mangledName": "$s18SelligentMobileSDK26SMInAppMessageServiceStateO9undefinedyA2CmF",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "disabled",
+            "printedName": "disabled",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK.SMInAppMessageServiceState.Type) -> SelligentMobileSDK.SMInAppMessageServiceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMInAppMessageServiceState",
+                    "printedName": "SelligentMobileSDK.SMInAppMessageServiceState",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK.SMInAppMessageServiceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMInAppMessageServiceState",
+                        "printedName": "SelligentMobileSDK.SMInAppMessageServiceState",
+                        "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_@kSMInAppMessageServiceState_Disabled",
+            "mangledName": "$s18SelligentMobileSDK26SMInAppMessageServiceStateO8disabledyA2CmF",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "enabled",
+            "printedName": "enabled",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK.SMInAppMessageServiceState.Type) -> SelligentMobileSDK.SMInAppMessageServiceState",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMInAppMessageServiceState",
+                    "printedName": "SelligentMobileSDK.SMInAppMessageServiceState",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK.SMInAppMessageServiceState.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMInAppMessageServiceState",
+                        "printedName": "SelligentMobileSDK.SMInAppMessageServiceState",
+                        "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_@kSMInAppMessageServiceState_Enabled",
+            "mangledName": "$s18SelligentMobileSDK26SMInAppMessageServiceStateO7enabledyA2CmF",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "RawDocComment",
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileSDK.SMInAppMessageServiceState?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMInAppMessageServiceState",
+                    "printedName": "SelligentMobileSDK.SMInAppMessageServiceState",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18SelligentMobileSDK26SMInAppMessageServiceStateO8rawValueACSgSi_tcfc",
+            "mangledName": "$s18SelligentMobileSDK26SMInAppMessageServiceStateO8rawValueACSgSi_tcfc",
+            "moduleName": "SelligentMobileSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18SelligentMobileSDK26SMInAppMessageServiceStateO8rawValueSivp",
+            "mangledName": "$s18SelligentMobileSDK26SMInAppMessageServiceStateO8rawValueSivp",
+            "moduleName": "SelligentMobileSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18SelligentMobileSDK26SMInAppMessageServiceStateO8rawValueSivg",
+                "mangledName": "$s18SelligentMobileSDK26SMInAppMessageServiceStateO8rawValueSivg",
+                "moduleName": "SelligentMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@SelligentMobileSDK@E@kSMInAppMessageServiceState_",
+        "mangledName": "$s18SelligentMobileSDK26SMInAppMessageServiceStateO",
+        "moduleName": "SelligentMobileSDK",
+        "objc_name": "kSMInAppMessageServiceState_",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
         ]
       },
       {
@@ -26244,7 +26532,7 @@
       "kind": "StringLiteral",
       "offset": 4802,
       "length": 7,
-      "value": "\"3.4.0\""
+      "value": "\"3.5.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -28370,13 +28658,6 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1879,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/SMManager.swift",
-      "kind": "BooleanLiteral",
       "offset": 2038,
       "length": 5,
       "value": "false"
@@ -28611,6 +28892,48 @@
       "offset": 189,
       "length": 17,
       "value": "\"SelligentMobileSDK.SMEventPushOpened\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessageServiceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 455,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessageServiceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 559,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessageServiceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 658,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessageServiceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 455,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessageServiceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 559,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessageServiceState.swift",
+      "kind": "IntegerLiteral",
+      "offset": 658,
+      "length": 1,
+      "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/Action\/SMEventButtonClicked.swift",

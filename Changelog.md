@@ -1,5 +1,12 @@
 # SDK Changelog
 
+- __SDK 3.5.0__
+
+    - Add `SMManager/areInAppMessagesEnabled` to get the current status of the in-app message service state
+    - `last push message` isViewed flag is now set synchronously
+    - Fix bug where only push messages containing in-app messages would be added as the `last push message` when the app was in the background/killed
+    - Fix bug where `SMManager/displayLastReceivedNotification` would display the push without the `Rich Content` when using `SMManagerSetting/shouldAddInAppMessageFromPushToInAppMessageList` and having called `SMManager/displayInAppMessage(id:options:)` or `SMManager/displayNotification(id:options:)` previously, for the same `notification Id`
+    
 - __SDK 3.4.0__
 
     - Fix bug where isViewed flag wasn't properly stored in the `last push message` object

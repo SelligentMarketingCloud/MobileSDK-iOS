@@ -636,11 +636,17 @@ If In-App Messages (we will refer to them with IAM) are correctly configured ([l
 **Swift**
 ```swift
 SMManager.shared.enable(inAppMessage: true)
+
+// This helper method will return the current state of the in-app message service
+let state = SMManager.shared.areInAppMessagesEnabled()
 ```
 
 **Objective-C**
 ```objective-c
 [[SMManager shared] enableInAppMessage:true];
+
+// This helper method will return the current state of the in-app message service
+kSMInAppMessageServiceState_ state = [[SMManager shared] areInAppMessagesEnabled];
 ```
 
 > It is also possible to fetch IAM in background mode ([learn more](MobileSDK%20Reference/Classes/SMManagerSettingIAM.md)).
@@ -1603,7 +1609,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         let privateKey = "YourPrivateKey"
 
         // Create the SMManagerSetting instance
-        let settings = try! SMManagerSetting(url: url, clientID: clientId, privateKey: privateKey)
+        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
 
         // Provide the App Group Id to the SDK
         settings.appGroupId = "group.yourGroupName"

@@ -44,6 +44,7 @@
 -   [SMError](enums/SMError.md)
 -   [SMFrameworkType](enums/SMFrameworkType.md)
 -   [SMInAppContentType](enums/SMInAppContentType.md)
+-   [SMInAppMessageServiceState](enums/SMInAppMessageServiceState.md)
 -   [SMInAppRefreshType](enums/SMInAppRefreshType.md)
 -   [SMLogLevel](enums/SMLogLevel.md)
 -   [SMMessageNature](enums/SMMessageNature.md)

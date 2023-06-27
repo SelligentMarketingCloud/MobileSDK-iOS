@@ -520,6 +520,15 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK14SMInAppMessage")
 
 
 
+typedef SWIFT_ENUM_NAMED(NSInteger, kSMInAppMessageServiceState_, "SMInAppMessageServiceState", open) {
+/// In-app message service hasn’t been explicitly enabled or disabled just yet, thus it will remain disabled from an operational point of view
+  kSMInAppMessageServiceState_Undefined = 0,
+/// In-app message service has explicitly been disabled.
+  kSMInAppMessageServiceState_Disabled = 1,
+/// In-app message service has explicitly been enabled.
+  kSMInAppMessageServiceState_Enabled = 2,
+};
+
 enum kSMNotificationButtonType_ : NSInteger;
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK6SMLink")
@@ -578,13 +587,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
-
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Set the log level of the library console.
@@ -599,6 +601,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
 
 
 
@@ -1441,6 +1450,15 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK14SMInAppMessage")
 
 
 
+typedef SWIFT_ENUM_NAMED(NSInteger, kSMInAppMessageServiceState_, "SMInAppMessageServiceState", open) {
+/// In-app message service hasn’t been explicitly enabled or disabled just yet, thus it will remain disabled from an operational point of view
+  kSMInAppMessageServiceState_Undefined = 0,
+/// In-app message service has explicitly been disabled.
+  kSMInAppMessageServiceState_Disabled = 1,
+/// In-app message service has explicitly been enabled.
+  kSMInAppMessageServiceState_Enabled = 2,
+};
+
 enum kSMNotificationButtonType_ : NSInteger;
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK6SMLink")
@@ -1499,13 +1517,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
-
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Set the log level of the library console.
@@ -1520,6 +1531,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
 
 
 

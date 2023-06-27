@@ -129,6 +129,16 @@ extension SelligentMobileExtensionsSDK.SMManager {
 @objc public protocol SMManagerUniversalLinksDelegate {
   @objc func executeLinkAction(_ url: Foundation.URL)
 }
+@objc(kSMInAppMessageServiceState_) public enum SMInAppMessageServiceState : Swift.Int {
+  case undefined = 0
+  case disabled = 1
+  case enabled = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SMManagerSetting : ObjectiveC.NSObject {
   @objc public var clearCacheIntervalValue: SelligentMobileExtensionsSDK.SMClearCache
   @objc public var appGroupId: Swift.String
@@ -321,6 +331,9 @@ extension SelligentMobileExtensionsSDK.SMManager {
 extension SelligentMobileExtensionsSDK.SMNotificationMessageType : Swift.Equatable {}
 extension SelligentMobileExtensionsSDK.SMNotificationMessageType : Swift.Hashable {}
 extension SelligentMobileExtensionsSDK.SMNotificationMessageType : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMInAppMessageServiceState : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMInAppMessageServiceState : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMInAppMessageServiceState : Swift.RawRepresentable {}
 extension SelligentMobileExtensionsSDK.SMMessageNature : Swift.Equatable {}
 extension SelligentMobileExtensionsSDK.SMMessageNature : Swift.Hashable {}
 extension SelligentMobileExtensionsSDK.SMMessageNature : Swift.RawRepresentable {}
