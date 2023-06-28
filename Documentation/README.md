@@ -1,5 +1,5 @@
 # iOS – Using the SDK
-<a name="foreword"></a>
+
 ## Foreword
 
 Copyright
@@ -16,182 +16,198 @@ User is aware that this manual may contain errors or inaccuracies and that it ma
 
 Selligent welcomes any recommendations or suggestions regarding the manual, as it helps to continuously improve the quality of our products and manuals.
 
-<a name="contents"></a>
 ## Table of Contents
 
-* [**Foreword**](#foreword)
-* [**Table of contents**](#contents)
-* [**Intro**](#intro)
-* [**Create an APNS Key**](#apns_key)
-  * [**Enable Push Notifications**](#enable_push_notifications)
-  * [**Create a Key**](#create_key)
-* [**Include the SDK in your target**](#include_sdk)
-  * [**Swift package import**](#import_swift_package)
-  * [**CocoaPods import**](#import_cocoa)
-  * [**Manual import**](#import_manual)
-  * [**Using the SDK**](#using_the_sdk)
-* [**Deep Linking**](#deep_linking)
-  * [**Add entries to your app .plist file**](#plist_entries)
-  * [**Universal Links**](#universal_links)
-* [**Starting the SDK**](#starting_sdk)
-  * [**Push Notifications**](#push_notifications)
-    * [**Register for Push Notifications**](#register_for_push)
-    * [**Register for Provisional Push Notifications**](#register_for_provisional_push)
-    * [**Provide the Device token to the SDK**](#provide_device_token)
-    * [**Provide Push Notifications status to the SDK**](#provide_information_sdk)
-    * [**Disable Selligent Push Notifications**](#disable_selligent_push)
-    * [**Listening and displaying the Push Notifications**](#displaying_push)
-    * [**Helper methods**](#notification_helper_methods)
-    * [**Broadcasts**](#push_broadcasts)
-* [**In-App Messages**](#inapp_messages)
-  * [**Enable IAM**](#enable_iam)
-  * [**Display IAM**](#display_iam)
-  * [**Styling IAM**](#styling_iam)
-  * [**Implement WKNavigationDelegate**](#wknavigationdelegate)
-  * [**Display IAM linked to a Push Notification**](#display_iam_from_push)
-  * [**Broadcasts**](#iam_broadcasts)
-* [**Events**](#events)
-  * [**Registration / Unregistration**](#events_register_unregister)
-  * [**Login/Logout**](#events_login_logout)
-  * [**Custom**](#events_custom)
-* [**Notification Extensions**](#notification_extensions)
-  * [**General set up**](#extensions_setup)
-  * [**Notification Service Extension**](#service_extension)
-  * [**Notification Content Extension**](#content_extension)
-* [**Broadcasts summary**](#broadcasts_summary)
-  * [**Event broadcasts**](#event_broadcasts)
-  * [**Data broadcasts**](#data_broadcasts)
-  * [**Examples**](#broadcasts_examples)
-* [**Miscellaneous**](#miscellaneous)
-  * [**Reload**](#reload)
-  * [**LogLevel**](#loglevel)
-  * [**Retrieve Device ID**](#deviceId)
+- [iOS – Using the SDK](#ios--using-the-sdk)
+  - [Foreword](#foreword)
+  - [Table of Contents](#table-of-contents)
+  - [Intro](#intro)
+  - [Create an APNS Key](#create-an-apns-key)
+    - [Enable Push Notifications](#enable-push-notifications)
+    - [Create a Key](#create-a-key)
+  - [Include the SDK in your target](#include-the-sdk-in-your-target)
+    - [Swift package import](#swift-package-import)
+    - [Cocoapods import](#cocoapods-import)
+    - [Manual import](#manual-import)
+    - [Using the SDK](#using-the-sdk)
+  - [Deep Linking](#deep-linking)
+    - [Add entries to your App .plist file](#add-entries-to-your-app-plist-file)
+    - [Universal Links](#universal-links)
+  - [Starting the SDK](#starting-the-sdk)
+    - [Push Notifications](#push-notifications)
+    - [Register for Push Notifications](#register-for-push-notifications)
+    - [Register for Provisional Push Notifications](#register-for-provisional-push-notifications)
+    - [Provide the Device token to the SDK](#provide-the-device-token-to-the-sdk)
+    - [Provide Push Notifications status to the SDK](#provide-push-notifications-status-to-the-sdk)
+    - [Disable Selligent Push Notifications](#disable-selligent-push-notifications)
+    - [Listening and displaying the Push Notifications](#listening-and-displaying-the-push-notifications)
+    - [Helper methods](#helper-methods)
+    - [Broadcasts](#broadcasts)
+  - [In-App Messages](#in-app-messages)
+    - [Enable IAM](#enable-iam)
+    - [Display IAM](#display-iam)
+    - [With SDK helper functions](#with-sdk-helper-functions)
+    - [With your own layout](#with-your-own-layout)
+    - [Styling IAM](#styling-iam)
+    - [Implement WKNavigationDelegate](#implement-wknavigationdelegate)
+    - [Display IAM linked to a Push Notification](#display-iam-linked-to-a-push-notification)
+    - [Broadcasts](#broadcasts-1)
+  - [Events](#events)
+    - [Registration / Unregistration](#registration--unregistration)
+    - [SMUserEventRegistration](#smusereventregistration)
+    - [SMEventUserUnregistration](#smeventuserunregistration)
+    - [Login/Logout](#loginlogout)
+    - [SMEventUserLogin](#smeventuserlogin)
+    - [SMEventUserLogout](#smeventuserlogout)
+    - [Custom](#custom)
+    - [SMEvent](#smevent)
+  - [Notification Extensions](#notification-extensions)
+    - [General set up](#general-set-up)
+    - [Notification Service Extension](#notification-service-extension)
+      - [Service Extension Configuration](#service-extension-configuration)
+      - [Start the SDK from the service extension](#start-the-sdk-from-the-service-extension)
+      - [Push notification content modification before displaying to user](#push-notification-content-modification-before-displaying-to-user)
+    - [Notification Content Extension](#notification-content-extension)
+      - [Content Extension Configuration](#content-extension-configuration)
+      - [Start the SDK from the content extension](#start-the-sdk-from-the-content-extension)
+  - [Broadcasts summary](#broadcasts-summary)
+    - [Event broadcasts](#event-broadcasts)
+    - [Data broadcasts](#data-broadcasts)
+    - [Examples](#examples)
+  - [Miscellaneous](#miscellaneous)
+    - [Reload](#reload)
+    - [LogLevel](#loglevel)
+    - [Retrieve Device Id](#retrieve-device-id)
 
-<a name="intro"></a>
 ## Intro
+
 The purpose of this document is to detail how to install the SDK into your App and how to easily start using it.
-* For more detailed technical reference of the SDK please refer to <a href="MobileSDK Reference/#mobilesdk-reference">**MobileSDK Reference**</a>.
-* For an example of implementation check the <a href="IOSSDKTemplate.zip">**IOSSDKTemplate**</a> project.
+
+- For more detailed technical reference of the SDK please refer to [**MobileSDK Reference**](MobileSDK%20Reference/#reference-documentation).
+- For an example of implementation check the [**IOSSDKTemplate**](IOSSDKTemplate.zip) project.
 
 >**Important Remark:** Core version of the SDK is fully compliant to AppTrackingTransparency framework as we never make any usage of [data used to track the device](https://developer.apple.com/app-store/app-privacy-details/). The device ID is for example a generated ID provided by the Selligent platform to the SDK at launch time.
 
-<a name="apns_key"></a>
 ## Create an APNS Key
-<a name="enable_push_notifications"></a>
+
 ### Enable Push Notifications
+
 To enable Push Notifications, go to the [Apple Developer Portal](https://developer.apple.com/) and login to your account.
 
 <details>
+  <summary>When logged in, go to the Certificates, Identifiers & Profiles section to manage the certificates.</summary>
 
-  <summary>When logged in, go to the Certificates, Identifiers & Profiles section to manage the certificates.</summary><br/>
-    
-  ![](images/Picture1.png)
+  ![Certificates](images/Picture1.png)
 </details>
 
 <details>
-  <summary>In the Certificates, Identifiers & Profiles page go to Identifiers.</summary><br/>
-    
-  ![](images/Picture2.png)
+  <summary>In the Certificates, Identifiers & Profiles page go to Identifiers.</summary>
+
+  ![Certificates](images/Picture2.png)
 </details>
 
 <details>
-  <summary>In the list of your App IDs select the App that you want to edit.</summary><br/>
-    
-  ![](images/Picture3.png)
+  <summary>In the list of your App IDs select the App that you want to edit.</summary>
+
+  ![App ids](images/Picture3.png)
 </details>
 
 <details>
-  <summary>In the list of capabilities enable Push Notifications.</summary><br/>
-    
-  ![](images/Picture4.png)
+  <summary>In the list of capabilities enable Push Notifications.</summary>
+
+  ![Capabilities](images/Picture4.png)
 </details>
 
 <details>
-  <summary>In this screen you can also note the Bundle ID and Team ID associated to your App as you will need to provide them to Selligent.</summary><br/>
-    
-  ![](images/Picture5.png)
+  <summary>In this screen you can also note the Bundle ID and Team ID associated to your App as you will need to provide them to Selligent.</summary>
+
+  ![Token details](images/Picture5.png)
 </details>
 
-<a name="create_key"></a>
 ### Create a Key
+
 <details>
-  <summary>Back to the Certificates, Identifiers & Profiles page go to Keys and click on the + button to add a new Key.</summary><br/>
-    
-  ![](images/Picture7.png)
+  <summary>Back to the Certificates, Identifiers & Profiles page go to Keys and click on the + button to add a new Key.</summary>
+
+  ![Certificates](images/Picture7.png)
 </details>
 
 <details>
-  <summary>Give a name to your Key, enable Apple Push Notifications service (APNS) and click on "continue" and then "register" in the next screen.</summary><br/>
-    
-  ![](images/Picture8.png)
-  ![](images/Picture9.png)
+  <summary>Give a name to your Key, enable Apple Push Notifications service (APNS) and click on "continue" and then "register" in the next screen.</summary>
+
+  ![Key details 1](images/Picture8.png)
+  ![Key details 2](images/Picture9.png)
 </details>
 
 <details>
   <summary>In the next screen, carefully read the warning,  note down the Key ID and download it (you can only download the Key once!).</summary><br/>
-    
-  ![](images/Picture11.png)
+
+  ![Warning](images/Picture11.png)
 </details>
 
 To use Selligent Push services you will need to provide us with:
+
 - the downloaded **.p8** file
 - the **Key ID**
 - your **Team ID**
 - the **Bundle ID** of the App
 
-<a name="include_sdk"></a>
 ## Include the SDK in your target
-<a name="import_swift_package"></a>
-#### Swift package import
+
+### Swift package import
+
 To install our SDK via Swift Package Manager, refer to the ([README](../README.md)).
 
-<a name="import_cocoa"></a>
-#### Cocoapods import
+### Cocoapods import
+
 To install our SDK via Cocoapods, refer to the ([README](../README.md)).
 
-<a name="import_manual"></a>
-#### Manual import
+### Manual import
+
 <details>
-  <summary>Right click on your App target and select "Add Files to YOURTARGET".</summary><br/>
-    
-  ![](images/Picture12.png)
+  <summary>Right click on your App target and select "Add Files to YOURTARGET".</summary>
+
+  ![Add to target](images/Picture12.png)
 </details>
 
 <details>
-  <summary>Select the framework(s) folder(s) (the main folder containing the header and the lib files). Depending on your project, check the option "Copy items if needed" and select the "Create groups" option.</summary><br/>
-    
-  ![](images/Picture13.png)
+  <summary>Select the framework(s) folder(s) (the main folder containing the header and the lib files). Depending on your project, check the option "Copy items if needed" and select the "Create groups" option.</summary>
+
+  ![Framework selection](images/Picture13.png)
 </details>
 
 <details>
-  <summary>Make sure it is embedded (only) in your main App target. For extension target(s) you just need to import the module in the files where it will be needed.</summary><br/>
-    
-  ![](images/Picture37.png)
+  <summary>Make sure it is embedded (only) in your main App target. For extension target(s) you just need to import the module in the files where it will be needed.</summary>
+
+  ![Embedded App target](images/Picture37.png)
 </details>
 
-<a name="using_the_sdk"></a>
-#### Using the SDK
+### Using the SDK
+
 To start using the SDK, you need to import its module:
 
-**Swift**
+Swift
+
 ```swift
 import SelligentMobileSDK
 // OR In App extensions
 import SelligentMobileExtensionsSDK
 ```
 
-**Objective-C**
-```swift
+Objective-C
+
+```objective-c
 @import SelligentMobileSDK;
 // OR In App extensions
 @import SelligentMobileExtensionsSDK;
 ```
 
-<a name="deep_linking"></a>
 ## Deep Linking
-<a name="plist_entries"></a>
+
 ### Add entries to your App .plist file
+
 You should configure correctly the **plist** of your App to allow this to work, by registering a custom URL scheme:
+
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
@@ -207,6 +223,7 @@ You should configure correctly the **plist** of your App to allow this to work, 
 ```
 
 You will also have to add `LSApplicationQueriesSchemes` Key, with your scheme as string, to allow your App to open the URL:
+
 ```xml
 <key>LSApplicationQueriesSchemes</key>
 <array>
@@ -216,7 +233,8 @@ You will also have to add `LSApplicationQueriesSchemes` Key, with your scheme as
 
 By doing this, you will be able to parse the URL and process it like you want in openURL.
 
-**Swift**
+Swift
+
 ```swift
 // When the SDK calls for example:
 let url = URL(string: "yourscheme://anypage")!
@@ -230,7 +248,8 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 } 
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // When the SDK calls for example:
 NSURL *url = [NSURL URLWithString:@"yourscheme://anypage"];
@@ -243,15 +262,17 @@ NSURL *url = [NSURL URLWithString:@"yourscheme://anypage"];
     return true;
 }
 ```
+
 If everything is correctly set then when the user receives a Push and clicks it, the App will open, and it will trigger the `appscheme://anypage`.
 
-<a name="universal_links"></a>
 ### Universal Links
+
 By default, universal links in a button from a Push/IAM/IAC will open the default browser, to avoid this and catch them on the App and apply any logic you want, you will need to create a class that implements the `SMManagerUniversalLinksDelegate` and provide it to the SDK.
 
 > The delegate will only get triggered from `deeplink` button types defined in Selligent Marketing Cloud, whose URL scheme is `http` or `https`.
 
-**Swift**
+Swift
+  
 ```swift
 // Provide an instance of a class implementing SMManagerUniversalLinksDelegate to the SDK (you can do that for example at launch time)
 SMManager.shared.universalLinksDelegate(AppUniversalLinksDelegateExample())
@@ -265,7 +286,8 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // Provide an instance of a class implementing SMManagerUniversalLinksDelegate to the SDK (you can do that for example at launch time)
 [[SMManager shared] universalLinksDelegate:[AppUniversalLinksDelegateExample new]];
@@ -290,36 +312,39 @@ class AppUniversalLinksDelegateExample: NSObject, SMManagerUniversalLinksDelegat
 @end
 ```
 
-<a name="starting_sdk"></a>
 ## Starting the SDK
+
 To start the library, please follow the steps below (will mainly happen in your `UIApplication`'s delegate).
 The following must be done in:
 
-**Swift**
+Swift
+
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 ```
 
-* Create an instance of `SMManagerSetting` with the **url**, **clientId** and **privateKey** provided by Selligent.
-* Set the following optional properties according to your needs:
+- Create an instance of `SMManagerSetting` with the **url**, **clientId** and **privateKey** provided by Selligent.
+- Set the following optional properties according to your needs:
   
   | Property | Description |
   | --------- | --------- |
   | `shouldClearBadge` | If you want the SDK to manage badge clearance. |
-  | `shouldDisplayRemoteNotification` | If you want to prevent the display of Push Notifications by the SDK and manage it in your App ([learn more](#notification_helper_methods)). |
-  | `shouldAddInAppMessageFromPushToInAppMessageList` | If you want to add the In-App Message associated to a Push Notification to the In-App Message list ([learn more](#display_iam)). |
+  | `shouldDisplayRemoteNotification` | If you want to prevent the display of Push Notifications by the SDK and manage it in your App ([learn more](#helper-methods)). |
+  | `shouldAddInAppMessageFromPushToInAppMessageList` | If you want to add the In-App Message associated to a Push Notification to the In-App Message list ([learn more](#display-iam)). |
   | `clearCacheIntervalValue` | Define the interval value to clear the SDK internal cache (this setting is only used for messages that do not have an expiration date – otherwise expiration date of the message will be taken into account for lifetime of the message in cache). |
-  | `appGroupId` | Provide the App GroupId to the SDK (`group.yourGroupName`) that you will have previously configured in your Apple Developer Portal. This is mandatory when you use one Notification extension (service and/or content) ([learn more](#notification_extensions)). |
-  | `remoteMessageDisplayType` | This value defines the behavior that the SDK will adopt when a remote-notification is received when in Foreground ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/remoteMessageDisplayType)). |
+  | `appGroupId` | Provide the App GroupId to the SDK (`group.yourGroupName`) that you will have previously configured in your Apple Developer Portal. This is mandatory when you use one Notification extension (service and/or content) ([learn more](#notification-extensions)). |
+  | `remoteMessageDisplayType` | This value defines the behavior that the SDK will adopt when a remote-notification is received when in Foreground ([learn more](MobileSDK%20Reference/classes/SMManagerSetting.md#/api/name/remoteMessageDisplayType)). |
   
-* Optionally initialize and configure In-App Messages.
+ -Optionally initialize and configure In-App Messages.
 
-**Swift**
+Swift
+
 ```swift
 let url = "YourProvidedURL"
 let clientId = "YourClientId"
@@ -348,7 +373,8 @@ settings.configureInAppMessageService(with: settingIAM)
 // settings.remoteMessageDisplayType = .notification
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 NSString *url = @"YourProvidedURL";
 NSString *clientId = @"YourClientId";
@@ -378,30 +404,34 @@ SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshTy
 
 **Mandatory**: call the `start` API of the SDK right afterwards.
 
-**Swift**
+Swift
+
 ```swift
 // Starting the SDK
 SMManager.shared.start(with: settings)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // Starting the SDK
 [[SMManager shared] startWith:settings];
 ```
 
-<a name="push_notifications"></a>
 ### Push Notifications
-<a name="register_for_push"></a>
+
 ### Register for Push Notifications
+
 Starting the library won't register for Push Notifications. You will need to call:
 
-**Swift**
+Swift
+
 ```swift
 SMManager.shared.registerForRemoteNotification()
 ```
 
-**Objective-C**
+  Objective-C
+
 ```objective-c
 [[SMManager shared] registerForRemoteNotification];
 ```
@@ -411,77 +441,86 @@ This can be called whenever you need to do it in your App.
 > Not doing so would make it impossible for Selligent to receive the necessary **device push token**, to be used when sending Push Notifications.
 
 <details>
-  <summary>You can then customize the way you inform the user before the display of iOS alert which will let the user allow Push Notifications for the App on the device (the iOS alert is displayed only once).</summary><br/>
-    
-  ![](images/Picture17.png)
+  <summary>You can then customize the way you inform the user before the display of iOS alert which will let the user allow Push Notifications for the App on the device (the iOS alert is displayed only once).</summary>
+
+  ![Push permission](images/Picture17.png)
 </details>
 
-<a name="register_for_provisional_push"></a>
 ### Register for Provisional Push Notifications
+
 > This option is only available for iOS 12+.
 
 You can also decide to first ask for the Provisional push authorization (which will provide a valid push token but will not show any prompt to the user), if you want to contact users that did not decide about the Push permission yet (you can call `registerForRemoteNotification` later and it will still display the push permission prompt to the user).
 
-**Swift**
+Swift
+
 ```swift
 SMManager.shared.registerForProvisionalRemoteNotification()
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 [[SMManager shared] registerForProvisionalRemoteNotification];
 ```
+
 > If you want to segmentate your campaigns based on the type of authorization (provisional/normal), you can contact your Selligent TC or our support team to make the necessary configurations in the platform, to have it available.
 
-<a name="provide_device_token"></a>
 ### Provide the Device token to the SDK
+
 If the user has accepted to receive Push Notifications, the device will be given a **device push token** by Apple, that you must provide to the Selligent platform. To do that you must implement:
 
-**Swift**
+Swift
+
 ```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     SMManager.shared.didRegisterForRemoteNotifications(deviceToken: deviceToken)
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 - (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [[SMManager shared] didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 ```
 
-<a name="provide_information_sdk"></a>
 ### Provide Push Notifications status to the SDK
+
 > Optional, the SDK is able to get this information by itself. It is useful though for debugging possible issues.
 
-**Swift**
+Swift
+
 ```swift
 func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
     SMManager.shared.didFailToRegisterForRemoteNotifications(with: error)
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 - (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     [[SMManager shared] didFailToRegisterForRemoteNotificationsWithError:error];
 }
 ```
 
-<a name="disable_selligent_push"></a>
 ### Disable Selligent Push Notifications
+
 By default, Selligent Push Notifications are enabled and, if the device is correctly registered to iOS, then you don't have anything else to do.
 
 But if you want to disable (or enable) Selligent Pushes only (and still be able to receive other third party pushes), you have the possibility to do so by using:
 
-**Swift**
+Swift
+
 ```swift
 SMManager.shared.enableRemoteNotification()
 SMManager.shared.disableRemoteNotification()
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 [[SMManager shared] enableRemoteNotification];
 [[SMManager shared] disableRemoteNotification];
@@ -489,11 +528,12 @@ SMManager.shared.disableRemoteNotification()
 
 Keep in mind that if, at device level, the Push Notifications are not registered and enabled then `enableRemoteNotification` won't be enough to receive Selligent Pushes.
 
-<a name="displaying_push"></a>
 ### Listening and displaying the Push Notifications
+
 Implement the below methods to properly display and react to push notifications.
 
-**Swift**
+Swift
+
 ```swift
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]?) -> Bool {
@@ -524,7 +564,8 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // AppDelegate.h
 #import <UserNotifications/UserNotifications.h>
@@ -563,11 +604,12 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive respo
 
 > You can also implement specific delegates when your App supports background modes ([learn more](MobileSDK%20Reference/Categories/SMManager+SilentPush.md)).
 
-<a name="notification_helper_methods"></a>
 ### Helper methods
+
 There are some useful methods which allow you to manage when you want to display the Push Notification in your own way, when `SMManagerSetting/shouldDisplayRemoteNotification` is set to `false` or when working with different `SMManagerSetting/remoteMessageDisplayType` values (and the App is in foreground).
 
-**Swift**
+Swift
+
 ```swift
 // Retrieves the SMNotificationMessage object from the given userInfo Dictionary, if any
 SMManager.shared.retrieveNotificationMessage(userInfo)
@@ -590,7 +632,8 @@ SMManager.shared.displayLastReceivedNotificationContent()
 SMManager.shared.retrieveLastReceivedNotificationContent()
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // Retrieves the SMNotificationMessage object from the given userInfo Dictionary, if any
 [[SMManager shared] retrieveNotificationMessage:userInfo];
@@ -613,27 +656,27 @@ SMManager.shared.retrieveLastReceivedNotificationContent()
 [[SMManager shared] retrieveLastReceivedNotificationContent];
 ```
 
-<a name="push_broadcasts"></a>
 ### Broadcasts
 
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | `SMConstants.kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification. |
-| `SMConstants.kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification's content'. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md)). |
+| `SMConstants.kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification's content'. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/classes/SMManagerSetting.md)). |
 | `SMConstants.kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification's content'. It can be used to resume any paused work (see `SMConstants.kSMNotification_Event_WillDisplayNotification`). |
 | `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification. |
-| `SMConstants.kSMNotification_Data_ButtonData` | `String` Key | Use this Key to retrieve the object [SMLink](MobileSDK%20Reference/Classes/SMLink.md), from the NSNotification-name `SMConstants.kSMNotification_Event_ButtonClicked`. |
+| `SMConstants.kSMNotification_Data_ButtonData` | `String` Key | Use this Key to retrieve the object [SMLink](MobileSDK%20Reference/classes/SMLink.md), from the NSNotification-name `SMConstants.kSMNotification_Event_ButtonClicked`. |
 | `SMConstants.kSMNotification_Object_RemoteNotification` | `String` Key | Use this Key to retrieve a `SMNotificationMessage` instance with the Push content, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification`. |
 
-Examples can be found [here](#broadcasts_examples).
+Examples can be found [here](#examples).
 
-<a name="inapp_messages"></a>
 ## In-App Messages
-<a name="enable_iam"></a>
-### Enable IAM
-If In-App Messages (we will refer to them with IAM) are correctly configured ([learn more](#starting_sdk)), you will need to enable them once, wherever you want in your App (but after calling the `SMManager/start(with:)`), by calling:
 
-**Swift**
+### Enable IAM
+
+If In-App Messages (we will refer to them with IAM) are correctly configured ([learn more](#starting-the-sdk)), you will need to enable them once, wherever you want in your App (but after calling the `SMManager/start(with:)`), by calling:
+
+- Swift
+
 ```swift
 SMManager.shared.enable(inAppMessage: true)
 
@@ -641,7 +684,8 @@ SMManager.shared.enable(inAppMessage: true)
 let state = SMManager.shared.areInAppMessagesEnabled()
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 [[SMManager shared] enableInAppMessage:true];
 
@@ -649,16 +693,18 @@ let state = SMManager.shared.areInAppMessagesEnabled()
 kSMInAppMessageServiceState_ state = [[SMManager shared] areInAppMessagesEnabled];
 ```
 
-> It is also possible to fetch IAM in background mode ([learn more](MobileSDK%20Reference/Classes/SMManagerSettingIAM.md)).
+> It is also possible to fetch IAM in background mode ([learn more](MobileSDK%20Reference/classes/SMManagerSettingIAM.md)).
 
-<a name="display_iam"></a>
 ### Display IAM
-To retrieve the IAM delivered to the device you must listen to `SMConstants.kSMNotification_Event_DidReceiveInAppMessage` ([learn more](#iam_broadcasts)).
+
+To retrieve the IAM delivered to the device you must listen to `SMConstants.kSMNotification_Event_DidReceiveInAppMessage` ([learn more](#broadcasts-1)).
 
 ### With SDK helper functions
+
 This will provide you an `Array` of `Dictionary` containing 2 properties: **id** and **title**, for each **new** IAM available for the device (for the full list of known + new IAM you can use `SMManager/getInAppMessages()`, check next documentation section)
 
-**Swift**
+Swift
+
 ```swift
 NotificationCenter.default.addObserver(self, selector: #selector(didReceiveInAppMessage(_:)), name: NSNotification.Name(rawValue: SMConstants.kSMNotification_Event_DidReceiveInAppMessage), object: nil)
 
@@ -668,7 +714,8 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveInApp
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveInAppMessage:) name:SMConstants.kSMNotification_Event_DidReceiveInAppMessage object:nil];
 
@@ -680,14 +727,16 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveInApp
 
 Once your IAM is retrieved you can for example create an inbox page and when the user clicks on the IAM you can tell the SDK to display it calling:
 
-**Swift**
+Swift
+
 ```swift
 SMManager.shared.displayInAppMessage(id: "notificationID")
 // OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
 // SMManager.shared.displayInAppMessage(id: "notificationID", options: SMInAppMessageStyleOptions?)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 [[SMManager shared] displayInAppMessageWithId:@"notificationID" options:nil];
 // OR if you want to give specific styling to this particular IAM (different than the global styling provided in `SMManagerSetting/configureInAppMessageService(with:)`)
@@ -695,9 +744,11 @@ SMManager.shared.displayInAppMessage(id: "notificationID")
 ```
 
 ### With your own layout
+
 Once notified that new IAM are available, you can access all their properties from App side (so you can display them with your own UI), you can also request for the full list of `not-expired` IAM to the SDK. This will give you more flexibility when displaying them.
 
-**Swift**
+Swift
+
 ```swift
 // This method will provide you an array of SMInAppMessage, all received and not expired IAM
 let inAppMessages = SMManager.shared.getInAppMessages()
@@ -722,7 +773,8 @@ if inAppMessages.count > 0 {
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // This method will provide you an array of SMInAppMessage, all received and not expired IAM
 NSArray *inAppMessages = [[SMManager shared] getInAppMessages];
@@ -746,14 +798,15 @@ if (inAppMessages.count > 0) {
 }
 ```
 
-<a name="styling_iam"></a>
 ### Styling IAM
-Since SDK v3.0.0 you can now easily personalize the way IAM are displayed without needing to do it via global `.appearance()`. 
+
+Since SDK v3.0.0 you can now easily personalize the way IAM are displayed without needing to do it via global `.appearance()`.
 You need to set it before configuring your IAM service `SMManagerSetting/configureInAppMessageService(with:)` and before starting the SDK `SMManager/start(with:)`.
 Additionally, you can replace the default SDK images used in the navigation bar by having any of the following `image assets` in your main app's bundle: `SM.Close`, `SM.Menu`, `SM.Back`, `SM.Forward` and `SM.Reload`. Make sure the width and height of these assets are equal and that they are transparent PNG/vector image.
 You can also use `navigationMenuButtonAlternateAssetName`, `navigationCloseButtonAlternateAssetName`, `navigationArrowBackButtonAlternateAssetName`,  `navigationArrowForwardButtonAlternateAssetName` and `reloadButtonAlternateAssetName` properties to use different images depending on the IAM (or from where is it being displayed)
 
-**Swift**
+Swift
+
 ```swift
 // Switch to .hourly or .daily if you want to treat standalone inapp messages too
 let iamSetting = SMManagerSettingIAM(refreshType: .hourly)
@@ -797,7 +850,8 @@ iamSetting.styleOptions.alertLinksColor = .black
 settings.configureInAppMessageService(with: iamSetting)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // Switch to kSMIA_RefreshType_Hourly or kSMIA_RefreshType_Daily if you want to implement standalone inapp messages too
 SMManagerSettingIAM *iamSetting = [[SMManagerSettingIAM alloc] initWithRefreshType:kSMIA_RefreshType_None backgroundFetch:false];
@@ -841,8 +895,8 @@ iamSetting.styleOptions.alertLinksColor = UIColor.blackColor;
 [settings configureInAppMessageServiceWith:iamSetting];
 ```
 
-<a name="wknavigationdelegate"></a>
 ### Implement WKNavigationDelegate
+
 When an IAM of type URL/PAGE is displayed by the SDK in a webView, if you wish for example to process the clicked link inside the webView on the App side, the SDK gives you the ability to do so by having a class in your App that implements the `WKNavigationDelegate` and providing an instance of this class to the SDK.
 
 > This is necessary if you want to have deep and universal links working from within this type of SDK IAM.
@@ -851,7 +905,8 @@ To achieve this, you can call the method `SMManager/inAppMessageWKNavigationDele
 
 You will also need to call `SMManager/removeViewController()` whenever you wish to close the webView controller displayed by the SDK.
 
-**Swift**
+Swift
+
 ```swift
 // Provide an instance of a class implementing WKNavigatonDelegate to the SDK (you can do that for example at launch time)
 SMManager.shared.inAppMessageWKNavigationDelegate(AppWKNavigationDelegateExample())
@@ -893,7 +948,8 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // Provide an instance of a class implementing WKNavigatonDelegate to the SDK (you can do that for example at launch time)
 [[SMManager shared] inAppMessageWKNavigationDelegate:[AppWKNavigationDelegateExample new]];
@@ -948,13 +1004,14 @@ class AppWKNavigationDelegateExample: NSObject, WKNavigationDelegate {
 @end
 ```
 
-<a name="display_iam_from_push"></a>
 ### Display IAM linked to a Push Notification
+
 When an IAM is available with the payload of a Push Notification, you can also decide to process its content and display it on App side.
 
 To achieve this, you can call the method `SMManager/inAppMessageDelegate(_:)` and give the instance of the class that will be in charge of implementing the `SMManagerInAppMessageDelegate` methods as a parameter.
 
-**Swift**
+Swift
+
 ```swift
 // Provide an instance of a class implementing SMManagerInAppMessageDelegate to the SDK (you can do that for example at launch time)
 SMManager.shared.inAppMessageDelegate(AppInAppMessageDelegateExample())
@@ -970,7 +1027,8 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // Provide an instance of a class implementing SMManagerInAppMessageDelegate to the SDK (you can do that for example at launch time)
 [[SMManager shared] inAppMessageDelegate:[AppInAppMessageDelegateExample new]];
@@ -999,31 +1057,31 @@ class AppInAppMessageDelegateExample: NSObject,SMManagerInAppMessageDelegate {
 @end
 ```
 
-<a name="iam_broadcasts"></a>
 ### Broadcasts
 
 | Name | Type | Description |
 | --------- | --------- | --------- |
-| `SMConstants.kSMNotification_Event_DidReceiveInAppMessage ` | `NSNotification` name | It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages. |
-| `SMConstants.kSMNotification_Object_InAppMessage ` | `String` Key | Use this Key to retrieve an `SMInAppMessage` array, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
+| `SMConstants.kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages. |
+| `SMConstants.kSMNotification_Object_InAppMessage` | `String` Key | Use this Key to retrieve an `SMInAppMessage` array, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
 
-Examples can be found [here](#broadcasts_examples).
+Examples can be found [here](#examples).
 
-<a name="events"></a>
 ## Events
-* Sending any set of data to the backend can be done with `SMManager/send(_:)`.
-* Default events are available for you to be used. They all inherit from `SMEvent` and are configurable through their constructors:
-    * `SMEventUserLogin`
-    * `SMEventUserLogout`
-    * `SMEventUserRegistration`
-    * `SMEventUserUnregistration`
 
-* `shouldCache` property on events: if the event fails to be delivered to our backend, then by default it is cached into an internal queue. After a while, the library will automatically try to send it again. Should you want to prevent this behavior, feel free to set this property to `false`. By default, it is set to `true`.
-* You can also initialize a success block and/or a failure block that will be triggered after an event is sent to the services.
+- Sending any set of data to the backend can be done with `SMManager/send(_:)`.
+- Default events are available for you to be used. They all inherit from `SMEvent` and are configurable through their constructors:
+  - `SMEventUserLogin`
+  - `SMEventUserLogout`
+  - `SMEventUserRegistration`
+  - `SMEventUserUnregistration`
 
-<a name="events_register_unregister"></a>
+- `shouldCache` property on events: if the event fails to be delivered to our backend, then by default it is cached into an internal queue. After a while, the library will automatically try to send it again. Should you want to prevent this behavior, feel free to set this property to `false`. By default, it is set to `true`.
+- You can also initialize a success block and/or a failure block that will be triggered after an event is sent to the services.
+
 ### Registration / Unregistration
+
 Constructors:
+
 ```swift
 SMEventUserRegistration(profileId: String = "", properties: [AnyHashable: Any]? = nil)
 SMEventUserUnregistration(profileId: String = "", properties: [AnyHashable: Any]? = nil)
@@ -1035,12 +1093,14 @@ SMEventUserUnregistration(profileId: String = "", properties: [AnyHashable: Any]
 | `properties` | A `Dictionary` containing additional user data you want to provide to Selligent. |
 
 ### SMUserEventRegistration
+
 This object is used to send a **register** event to the server with the custom profile identifier of the user, potential data and a callback, with the purpose of linking the device to an user.
 
 You can use an alternate key/value field to search for the user, in the `Dictionary`.
 > This event will create a new user in your Selligent database, if none was found.
 
-**Swift**
+Swift
+
 ```swift
 let event = SMEventUserRegistration(profileId: "externalProfileId", properties: ["key": "value"])
 
@@ -1055,7 +1115,8 @@ event.apply { success in
 SMManager.shared.send(event)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 SMEventUserRegistration *event = [[SMEventUserRegistration alloc] initWithProfileId:@"externalProfileId" properties:@{@"key":@"value"}];
     
@@ -1071,10 +1132,12 @@ event.shouldCache = true; // Not necessary as it is the default value
 ```
 
 ### SMEventUserUnregistration
+
 This object is used to send an **unregister** event to the server with the custom profile identifier of the user, potential data, and a callback.
 > This event is not unlinking the user from the device (automatically), at the moment.
 
-**Swift**
+Swift
+
 ```swift
 let event = SMEventUserUnregistration(profileId: "externalProfileId", properties: ["key": "value"])
 
@@ -1089,7 +1152,8 @@ event.apply { success in
 SMManager.shared.send(event)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 SMEventUserUnregistration *event = [[SMEventUserUnregistration alloc] initWithProfileId:@"externalProfileId" properties:@{@"key":@"value"}];
 
@@ -1104,9 +1168,10 @@ event.shouldCache = true; // Not necessary as it is the default value
 [[SMManager shared] send:event];
 ```
 
-<a name="events_login_logout"></a>
 ### Login/Logout
+
 Constructors:
+
 ```swift
  SMEventUserLogin(profileId: String = "", properties: [AnyHashable: Any]? = nil)
  SMEventUserLogout(profileId: String = "", properties: [AnyHashable: Any]? = nil)
@@ -1118,12 +1183,14 @@ Constructors:
 | `properties` | A `Dictionary` containing additional user data you want to provide to Selligent. |
 
 ### SMEventUserLogin
+
 This object is used to send a **login** event to the server with the custom profile identifier of the user, potential data, and a callback, with the purpose of linking the device to an user.
 
 You can use an alternate key/value field to search for the user, in the `Dictionary`.
 > This event will **NOT** create a new user in your Selligent database, if none found.
 
-**Swift**
+Swift
+
 ```swift
 let event = SMEventUserLogin(profileId: "externalProfileId", properties: ["key": "value"])
 
@@ -1138,7 +1205,8 @@ event.apply { success in
 SMManager.shared.send(event)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 SMEventUserLogin *event = [[SMEventUserLogin alloc] initWithProfileId:@"externalProfileId" properties:@{@"key":@"value"}];
 
@@ -1154,11 +1222,13 @@ event.shouldCache = true; // Not necessary as it is the default value
 ```
 
 ### SMEventUserLogout
+
 This object is used to send a **logout** event to the server with the custom profile identifier of the user, potential data and a callback.
 You can use in the dictionary an alternate key/value field to search for the user
 > This event is not unlinking the user from the device (automatically), at the moment.
 
-**Swift**
+Swift
+
 ```swift
 let event = SMEventUserLogout(profileId: "externalProfileId", properties: ["key": "value"])
 
@@ -1173,7 +1243,8 @@ event.apply { success in
 SMManager.shared.send(event)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 SMEventUserLogout *event = [[SMEventUserLogout alloc] initWithProfileId:@"externalProfileId" properties:@{@"key":@"value"}];
 
@@ -1188,9 +1259,10 @@ event.shouldCache = true; // Not necessary as it is the default value
 [[SMManager shared] send:event];
 ```
 
-<a name="events_custom"></a>
 ### Custom
+
 Constructors:
+
 ```swift
 SMEvent(name: String = "", properties: [AnyHashable: Any]? = nil)
 ```
@@ -1201,9 +1273,11 @@ SMEvent(name: String = "", properties: [AnyHashable: Any]? = nil)
 | `properties` | An `Dictionary` containing additional user data you want to provide to Selligent. |
 
 ### SMEvent
+
 This object is used to send a custom event to the server with some data and a callback, for the only purpose of storing data.
 
-**Swift**
+Swift
+
 ```swift
 let event = SMEvent(name: "PRODUCT_PURCHASE", properties: ["key": "value"])
 
@@ -1218,7 +1292,8 @@ event.apply { success in
 SMManager.shared.send(event)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 SMEvent *event = [[SMEvent alloc] initWithName:@"PRODUCT_PURCHASE" properties:@{@"key":@"value"}];
 
@@ -1233,75 +1308,81 @@ event.shouldCache = true; // Not necessary as it is the default value
 [[SMManager shared] send:event];
 ```
 
-<a name="notification_extensions"></a>
 ## Notification Extensions
-> Remember, for the correct behavior of the Extensions, the `appGroupId` needs to *also* be set when [starting the SDK](#starting_sdk) from your App target.<br>Make sure the setting `LD_RUNPATH_SEARCH_PATHS`, in your extension targets, contains both `@executable_path/Frameworks` and `@executable_path/../../Frameworks` to properly load the library from the main app target.
+
+> Remember, for the correct behavior of the Extensions, the `appGroupId` needs to *also* be set when [starting the SDK](#starting-the-sdk) from your App target.<br>Make sure the setting `LD_RUNPATH_SEARCH_PATHS`, in your extension targets, contains both `@executable_path/Frameworks` and `@executable_path/../../Frameworks` to properly load the library from the main app target.
 
 Some SDK functionalities are only possible with the implementation of Notification Extension targets.
 Those functionalities available through Selligent Marketing Cloud are:
-* Push action buttons: buttons to be displayed inside the notification center.
-* Decrypt an encrypted payload.
-* Rich Push content.
+
+- Push action buttons: buttons to be displayed inside the notification center.
+- Decrypt an encrypted payload.
+- Rich Push content.
 
 They are only available from within Selligent Marketing Cloud.
 
-<a name="extensions_setup"></a>
 ### General set up
+
 To correctly use those extensions a first set up must be done inside your [Apple Developer Account](https://developer.apple.com/account/).
 
 <details>
-  <summary>Connect to your account and go to Identifiers to create a new App Group.</summary><br/>
-    
-  ![](images/Picture19.png)
-  ![](images/Picture20.png)
+  <summary>Connect to your account and go to Identifiers to create a new App Group.</summary>
+
+  ![App Group page1](images/Picture19.png)
+  ![App Group page2](images/Picture20.png)
 </details>
 
 <details>
-  <summary>Create an App Group named "group.yourGroupName".</summary><br/>
-    
-  ![](images/Picture21.png)
+  <summary>Create an App Group named "group.yourGroupName".</summary>
+
+  ![Create App Group](images/Picture21.png)
 </details>
 
 When this is done, you will need to enable App group capabilities and check `group.yourGroupName` in the Capabilities tab of your main App target.
 
 <details>
-  <summary>You can do this either in your Apple Developer Account.</summary><br/>
-    
-  ![](images/Picture22.png)
-  ![](images/Picture23.png)
+  <summary>You can do this either in your Apple Developer Account.</summary>
+
+  ![App Group capabilities1](images/Picture22.png)
+  ![App Group capabilities2](images/Picture23.png)
 </details>
 
 <details>
-  <summary>Or directly in your Xcode project.</summary><br/>
-    
-  ![](images/Picture24.png)
+  <summary>Or directly in your Xcode project.</summary>
+
+  ![App Group capabilities3](images/Picture24.png)
 </details>
 
-<a name="service_extension"></a>
 ### Notification Service Extension
-This extension will allow:
-* To decrypt a payload before it is provided in the Push banner.
-* To download the media of the Rich Push payload.
 
-### Configuration
+This extension will allow:
+
+- To decrypt a payload before it is provided in the Push banner.
+- To download the media of the Rich Push payload.
+
+#### Service Extension Configuration
+
 <details>
-  <summary>To get started you will need to add a new target "Notification Service Extension" to your project.</summary><br/>
-    
-  ![](images/Picture25.png)
+  <summary>To get started you will need to add a new target "Notification Service Extension" to your project.</summary>
+
+  ![Notification Service Extension](images/Picture25.png)
 </details>
 
 Note the creation of the files (in Swift in this example):
-* `NotificationService.swift`: a subclass of `UNNotificationServiceExtension`.
-* `Info.plist`
+
+- `NotificationService.swift`: a subclass of `UNNotificationServiceExtension`.
+- `Info.plist`
 
 <details>
-  <summary>In the capabilities of your notification service extension target, enable App groups and check "group.yourGroupName".</summary><br/>
-    
-  ![](images/Picture24.png)
+  <summary>In the capabilities of your notification service extension target, enable App groups and check "group.yourGroupName".</summary>
+
+  ![Extension App Group](images/Picture24.png)
 </details>
 
-### Start the SDK from inside the extension
-**Swift**
+#### Start the SDK from the service extension
+
+Swift
+
 ```swift
 let url = "YourProvidedURL"
 let clientId = "YourClientId"
@@ -1317,7 +1398,8 @@ settings.appGroupId = "group.yourGroupName"
 SMManager.shared.startExtension(with: settings)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 NSString *url = @"YourProvidedURL";
 NSString *clientId = @"YourClientId";
@@ -1333,16 +1415,18 @@ settings.appGroupId = @"group.yourGroupName";
 [[SMManager shared] startExtensionWith:settings];
 ```
 
-### Push notification content modification before displaying to user
+#### Push notification content modification before displaying to user
+
 Once your service extension is correctly configured and the library is started, the extension will allow you to modify the Push content before displaying it to the user.
 
 This feature is used by the SDK to `decrypt` the payload if it is flagged as encrypted.
 
 You have the possibility to choose between two methods: either you want to manage the call to the block, which is executed with the modified content, by yourself, or you want to let the library manage this for you.
 
-* In the first case, a `UNMutableNotificationContent` object will be returned to you.
+- In the first case, a `UNMutableNotificationContent` object will be returned to you.
 
-**Swift**
+Swift
+
 ```swift
 import UserNotifications
 import SelligentMobileExtensionsSDK
@@ -1392,7 +1476,8 @@ class NotificationService: UNNotificationServiceExtension {
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 #import "NotificationService.h"
 @import SelligentMobileExtensionsSDK;
@@ -1441,10 +1526,11 @@ class NotificationService: UNNotificationServiceExtension {
  
 @end
 ```
-    
-* In the second case, the SDK will manage everything.
 
-**Swift**
+- In the second case, the SDK will manage everything.
+
+Swift
+
 ```swift
 import UserNotifications
 import SelligentMobileExtensionsSDK
@@ -1477,7 +1563,8 @@ class NotificationService: UNNotificationServiceExtension {
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 #import "NotificationService.h"
 @import SelligentMobileExtensionsSDK;
@@ -1512,35 +1599,38 @@ class NotificationService: UNNotificationServiceExtension {
 @end
 ```
 
-> Remember, if the content can't be decrypted or if `serviceExtensionTimeWillExpire` has been called before decryption is complete, "(Encrypted)" will be the values of all encrypted payload properties (when using Encryption feature). <br>
+> Remember, if the content can't be decrypted or if `serviceExtensionTimeWillExpire` has been called before decryption is complete, "(Encrypted)" will be the values of all encrypted payload properties (when using Encryption feature).<br>
 > If you don't choose to use encryption feature, do not call SDK `serviceExtensionTimeWillExpire` and let the original push payload to be used.
 
 For more information on Notification service extension you can also refer to [Apple documentation](https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications).
 
-<a name="content_extension"></a>
 ### Notification Content Extension
+
 This extension will:
-* Provide to you the content of the Rich Push media (if the extension is not present and depending on the type of the media, iOS will use a default template to display the message, but in this case the action buttons won't be displayed).
-* Display action buttons in the Push.
+
+- Provide to you the content of the Rich Push media (if the extension is not present and depending on the type of the media, iOS will use a default template to display the message, but in this case the action buttons won't be displayed).
+- Display action buttons in the Push.
 
 > This Extension is triggered when performing a `long press` or `3D touch` in a Push Notification.
 
-### Configuration
+#### Content Extension Configuration
+
 <details>
-  <summary>To get started you will need to add a new target "Notification Content Extension" to your project.</summary><br/>
-    
-  ![](images/Picture30.png)
+  <summary>To get started you will need to add a new target "Notification Content Extension" to your project.</summary>
+
+  ![Notification Content Extension](images/Picture30.png)
 </details>
 
 You will notice the creation of those files (in Objective C in this example):
-* `MainInterface.storyboard`: where you will be able to design the notification
-* `NotificationViewController.m`: an `UIViewController` subclass
-* `Info.plist`
+
+- `MainInterface.storyboard`: where you will be able to design the notification
+- `NotificationViewController.m`: an `UIViewController` subclass
+- `Info.plist`
 
 <details>
-  <summary>In the capabilities of your target enable App groups and check "group.yourGroupName".</summary><br/>
-    
-  ![](images/Picture24.png)
+  <summary>In the capabilities of your target enable App groups and check "group.yourGroupName".</summary>
+
+  ![Content Extension AppGroup](images/Picture24.png)
 </details>
 
 Now you will need to associate the Extension with a Selligent Notification Category.
@@ -1554,9 +1644,9 @@ By default, the Selligent category will be `SELLIGENT_BUTTON`. If you plan to al
 To set the category in your content extension, just open the `Info.plist` of the extension, find the `NSExtensionAttributes` dictionary and set the value of the `UNNotificationExtensionCategory` Key.
 
 <details>
-  <summary>You can add both categories by making UNNotificationExtensionCategory an Array.</summary><br/>
-    
-  ![](images/Picture33.png)
+  <summary>You can add both categories by making UNNotificationExtensionCategory an Array.</summary>
+
+  ![Content Extension Categories](images/Picture33.png)
 </details>
 
 The storyboard will allow you to customize the display of the Push Notifications.
@@ -1565,16 +1655,18 @@ If you want to keep the default one, just hide the `UIView` created by default a
 
 For more information about Notification Content Extensions please check the [Apple documentation](https://developer.apple.com/documentation/usernotificationsui/customizing_the_appearance_of_notifications).
 
-### Start the SDK from inside the extension
+#### Start the SDK from the content extension
+
 <details>
-  <summary>If you have correctly added a Selligent Notification Content Extension target to your project, you will be able to display Rich Push media and action buttons directly in the Push Notification.</summary><br/>
-    
-  ![](images/Picture36.png)
+  <summary>If you have correctly added a Selligent Notification Content Extension target to your project, you will be able to display Rich Push media and action buttons directly in the Push Notification.</summary>
+
+  ![Rich Push](images/Picture36.png)
 </details>
 
 > Do note that if you want to support `GIF` format you will need to implement it on your own, from the provided image `NSData`.
 
-**Swift**
+Swift
+
 ```swift
 import UIKit
 import UserNotifications
@@ -1631,7 +1723,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 #import "NotificationViewController.h"
 #import <UserNotifications/UserNotifications.h>
@@ -1694,35 +1787,34 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 @end
 ```
 
-<a name="broadcasts_summary"></a>
 ## Broadcasts summary
+
 You can listen to some `NSNotification` by observing the correct notification name.
-<a name="event_broadcasts"></a>
+
 ### Event broadcasts
 
 | Name | Type | Description |
 | --------- | --------- | --------- |
 | `SMConstants.kSMNotification_Event_ButtonClicked` | `NSNotification` name | It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification. |
-| `SMConstants.kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification's content'. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/Classes/SMManagerSetting.md#/api/name/shouldDisplayRemoteNotification)). |
+| `SMConstants.kSMNotification_Event_WillDisplayNotification` | `NSNotification` name | It is broadcasted shortly before displaying a Remote Notification's content'. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable `shouldDisplayRemoteNotification` ([learn more](MobileSDK%20Reference/classes/SMManagerSetting.md#/api/name/shouldDisplayRemoteNotification)). |
 | `SMConstants.kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification's content'. It can be used to resume any paused work (see `SMConstants.kSMNotification_Event_WillDisplayNotification`). |
 | `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification. |
 | `SMConstants.kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages. |
 | `SMConstants.kSMNotification_Event_DidReceiveDeviceId` | `NSNotification` name | It is broadcasted shortly after receiving a Selligent deviceId value. It can be used to manage the received device id. |
 
-<a name="data_broadcasts"></a>
 ### Data broadcasts
 
 | Name | Type | Description |
 | --------- | --------- | --------- |
-| `SMConstants.kSMNotification_Data_ButtonData` | `String` Key | Use this Key to retrieve the object [SMLink](MobileSDK%20Reference/Classes/SMLink.md), from the NSNotification-name `SMConstants.kSMNotification_Event_ButtonClicked`. |
+| `SMConstants.kSMNotification_Data_ButtonData` | `String` Key | Use this Key to retrieve the object [SMLink](MobileSDK%20Reference/classes/SMLink.md), from the NSNotification-name `SMConstants.kSMNotification_Event_ButtonClicked`. |
 | `SMConstants.kSMNotification_Object_RemoteNotification` | `String` Key | Use this Key to retrieve a `SMNotificationMessage` instance with the Push content, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification`. |
 | `SMConstants.kSMNotification_Object_InAppMessage` | `String` Key | Use this Key to retrieve an `SMInAppMessage` array, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
 | `SMConstants.kSMNotification_Data_DeviceId` | `String` Key | Use this Key to retrieve a `String` instance with the Selligent deviceId value, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveDeviceId`. |
 
-<a name="broadcasts_examples"></a>
 ### Examples
 
-**Swift**
+Swift
+
 ```swift
 // Listen to broadcasting
 NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameDidReceiveInAppMessage(notif:)), name: NSNotification.Name(rawValue: SMConstants.kSMNotification_Event_DidReceiveInAppMessage), object: nil)
@@ -1751,7 +1843,8 @@ NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWi
 @objc func anyMethodNameWillDismissNotification(notif: NSNotification) {}
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // Listen to broadcasting
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(anyMethodNameDidReceiveInAppMessage:) name:SMConstants.kSMNotification_Event_DidReceiveInAppMessage object:nil];
@@ -1780,30 +1873,32 @@ NotificationCenter.default.addObserver(self, selector: #selector(anyMethodNameWi
 - (void) anyMethodNameWillDismissNotification:(NSNotification *)notif {}
 ```
 
-<a name="miscellaneous"></a>
 ## Miscellaneous
-<a name="reload"></a>
+
 ### Reload
+
 In case you want to change the web service URL, there is a reload method to restart the SDK.
 It takes as parameter the same `SMSetting` object as the start method (all the values must be set in the object, even if they did not change).
 > **IMPORTANT**: This method is for development purposes only, not meant to be used in production.
 
-**Swift**
+Swift
+
 ```swift
 let settings = try! SMManagerSetting(url: currentUrl, clientId: clientId, privateKey: privateKey)
 
 SMManager.shared.reload(settings)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 SMManagerSetting *settings = [[SMManagerSetting alloc] initWithUrl:currentUrl clientId:clientId privateKey:privateKey error:nil];
 
 [[SMManager shared] reloadWithSettings:settings];
 ```
 
-<a name="loglevel"></a>
 ### LogLevel
+
 This method `SMManager/apply(_:)` will allow you to debug the library.<br>
 `SMLogLevel` values:
 
@@ -1816,24 +1911,27 @@ This method `SMManager/apply(_:)` will allow you to debug the library.<br>
 | `httpCall` | Print only http related messages. |
 | `all` | Print everything. Do not use for release!!! |
 
-**Swift**
+Swift
+
 ```swift
 SMManager.shared.apply(.all)
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 [[SMManager shared] apply:kSMLogLevel_All];
 ```
 
-<a name="deviceId"></a>
 ### Retrieve Device Id
+
 In case you need the Selligent device ID, you can retrieve it using `SMManager/deviceId`.<br>
 To be notified if the device Id has changed, the App must register to the correct notification `SMConstants/kSMNotification_Event_DidReceiveDeviceId`.
 
 The Notification will provide the new device ID to the App (Key `SMConstants/kSMNotification_Data_DeviceId`).
 
-**Swift**
+Swift
+
 ```swift
 // Retrieve the device Id
 SMManager.shared.deviceId
@@ -1847,7 +1945,8 @@ NotificationCenter.default.addObserver(self, selector: #selector(didReceiveDevic
 }
 ```
 
-**Objective-C**
+Objective-C
+
 ```objective-c
 // Retrieve the device ID
 [[SMManager shared] deviceId];
