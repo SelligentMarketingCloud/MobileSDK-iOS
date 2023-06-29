@@ -1,5 +1,8 @@
 # SDK Changelog
 
+- __SDK 3.5.1__
+    - Add missing CFBundleShortVersionString in SelligentMobileExtensionsSDK.xcframework
+
 - __SDK 3.5.0__
 
     - Add `SMManager/areInAppMessagesEnabled` to get the current status of the in-app message service state
