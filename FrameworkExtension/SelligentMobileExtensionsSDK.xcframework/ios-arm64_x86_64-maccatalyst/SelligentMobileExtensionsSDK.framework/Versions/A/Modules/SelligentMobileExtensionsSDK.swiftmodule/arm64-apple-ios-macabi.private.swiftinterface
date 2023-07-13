@@ -1,0 +1,379 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios13.1-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SelligentMobileExtensionsSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import Foundation
+import MapKit
+import Network
+@_exported import SelligentMobileExtensionsSDK
+import StoreKit
+import Swift
+import SystemConfiguration
+import UIKit
+import UserNotifications
+import UserNotificationsUI
+import WebKit
+import _Concurrency
+import _StringProcessing
+@objc @_hasMissingDesignatedInitializers public class SMEvent : ObjectiveC.NSObject, Foundation.NSCoding, Foundation.NSSecureCoding {
+  @objc public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public var shouldCache: Swift.Bool
+  @objc public init(name: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
+  @objc public func apply(successBlock: ((SelligentMobileExtensionsSDK.SMSuccess) -> Swift.Void)? = nil, failureBlock: ((SelligentMobileExtensionsSDK.SMFailure) -> Swift.Void)? = nil)
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SMNotificationAnnotationData : ObjectiveC.NSObject, Foundation.NSCoding, MapKit.MKAnnotation, Foundation.NSSecureCoding {
+  @objc public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public var coordinate: CoreLocation.CLLocationCoordinate2D {
+    get
+  }
+  @objc public var title: Swift.String? {
+    get
+  }
+  @objc public var subtitle: Swift.String? {
+    get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SMNotificationMessage : SelligentMobileExtensionsSDK.SMInAppMessage {
+  @objc override public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public var mediaUrl: Swift.String {
+    get
+  }
+  @objc public var mainAction: SelligentMobileExtensionsSDK.SMLink? {
+    get
+  }
+  @objc public var notificationButtons: [SelligentMobileExtensionsSDK.SMLink] {
+    get
+  }
+  @objc override public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SMConstants : ObjectiveC.NSObject {
+  @objc public static let kSMErrorDomain: Swift.String
+  @objc public static let kSMNotification_Event_ButtonClicked: Swift.String
+  @objc public static let kSMNotification_Event_WillDisplayNotification: Swift.String
+  @objc public static let kSMNotification_Event_WillDismissNotification: Swift.String
+  @objc public static let kSMNotification_Event_DidReceiveRemoteNotification: Swift.String
+  @objc public static let kSMNotification_Event_DidReceiveInAppMessage: Swift.String
+  @objc public static let kSMNotification_Event_DidReceiveInAppContent: Swift.String
+  @objc public static let kSMNotification_Event_DidReceiveDeviceId: Swift.String
+  @objc public static let kSMNotification_Data_ButtonData: Swift.String
+  @available(*, deprecated, message: "Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage")
+  @objc public static let kSMNotification_Data_RemoteNotification: Swift.String
+  @objc public static let kSMNotification_Object_RemoteNotification: Swift.String
+  @available(*, deprecated, message: "Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage")
+  @objc public static let kSMNotification_Data_InAppMessage: Swift.String
+  @objc public static let kSMNotification_Object_InAppMessage: Swift.String
+  @objc public static let kSMNotification_Data_InAppContent: Swift.String
+  @objc public static let kSMNotification_Data_DeviceId: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(kSMNotificationMessageType_) public enum SMNotificationMessageType : Swift.Int, Swift.Codable {
+  case unknown = -2
+  case hidden = -1
+  case alert = 0
+  case html = 1
+  case url = 2
+  case image = 3
+  case map = 4
+  case passbook = 5
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension SelligentMobileExtensionsSDK.SMManager {
+  @objc dynamic public func startExtension(with settings: SelligentMobileExtensionsSDK.SMManagerSetting)
+  @available(macCatalyst 14.0, *)
+  @objc dynamic public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+  @objc dynamic public func didReceive(_ notification: UserNotifications.UNNotification, context: Foundation.NSExtensionContext?)
+  @objc dynamic public func didReceive(request: UserNotifications.UNNotificationRequest, completion: @escaping (UserNotifications.UNMutableNotificationContent) -> Swift.Void)
+  @objc dynamic public func didReceive(_ request: UserNotifications.UNNotificationRequest, contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
+  @objc dynamic public func serviceExtensionTimeWillExpire()
+  @objc dynamic public func retrieveNotificationMessage(_ userInfo: [Swift.AnyHashable : Any]) -> SelligentMobileExtensionsSDK.SMNotificationMessage?
+}
+@objc @_hasMissingDesignatedInitializers public class SMEventUser : SelligentMobileExtensionsSDK.SMEvent {
+  @objc override public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SMLink : ObjectiveC.NSObject, Foundation.NSCoding, Foundation.NSSecureCoding {
+  @objc public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public var idButtonData: Swift.String {
+    get
+  }
+  @objc public var label: Swift.String {
+    get
+  }
+  @objc public var value: Swift.String {
+    get
+  }
+  @objc public var type: SelligentMobileExtensionsSDK.SMNotificationButtonType {
+    get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension SelligentMobileExtensionsSDK.SMManager {
+  @objc dynamic public func apply(_ logLevel: SelligentMobileExtensionsSDK.SMLogLevel)
+}
+@objc public protocol SMMessage {
+  @objc var messageSM: Swift.String { get }
+}
+@objc public protocol SMManagerUniversalLinksDelegate {
+  @objc func executeLinkAction(_ url: Foundation.URL)
+}
+@objc(kSMInAppMessageServiceState_) public enum SMInAppMessageServiceState : Swift.Int {
+  case undefined = 0
+  case disabled = 1
+  case enabled = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SMManagerSetting : ObjectiveC.NSObject {
+  @objc public var clearCacheIntervalValue: SelligentMobileExtensionsSDK.SMClearCache
+  @objc public var appGroupId: Swift.String
+  @objc public init(url: Swift.String, clientId: Swift.String, privateKey: Swift.String) throws
+  @objc public init(url: Swift.String, appId: Swift.String, apiKey: Swift.String, legacyPrivateKey: Swift.String? = nil) throws
+  @objc deinit
+}
+@objc(kSMMN_) public enum SMMessageNature : Swift.Int, Swift.CustomStringConvertible {
+  case push = 0
+  case iaContent = 1
+  case iaMessage = 2
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class SMFailure : ObjectiveC.NSObject, SelligentMobileExtensionsSDK.SMMessage {
+  @objc public var messageSM: Swift.String {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SMInAppMessage : SelligentMobileExtensionsSDK.SMBaseMessage {
+  @objc override public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public var title: Swift.String {
+    get
+  }
+  @objc public var body: Swift.String {
+    get
+  }
+  @objc public var arrayMapAnnotations: [SelligentMobileExtensionsSDK.SMNotificationAnnotationData] {
+    get
+  }
+  @objc public var arrayIAMLinks: [SelligentMobileExtensionsSDK.SMLink] {
+    get
+  }
+  @objc public var apsTitle: Swift.String {
+    get
+  }
+  @objc public var apsBody: Swift.String {
+    get
+  }
+  @objc public var metadata: Swift.String {
+    get
+  }
+  @objc public var tags: [Swift.String] {
+    get
+  }
+  @objc public var profileId: Swift.String {
+    get
+  }
+  @objc override public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc(kSMRemoteMessageDisplayType_) public enum SMRemoteMessageDisplayType : Swift.Int {
+  case unknown = 0
+  case none = 1
+  case notification = 2
+  case automatic = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SMManager : ObjectiveC.NSObject {
+  @objc public var versionLib: Swift.String {
+    @objc get
+  }
+  @objc public var deviceId: Swift.String {
+    @objc get
+  }
+  @objc public static let shared: SelligentMobileExtensionsSDK.SMManager
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SMBaseMessage : ObjectiveC.NSObject, Foundation.NSCoding, Foundation.NSSecureCoding {
+  @objc public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc public var idMessage: Swift.String {
+    get
+  }
+  @objc public var receptionDate: Foundation.Date {
+    get
+  }
+  @objc public var expirationDate: Foundation.Date? {
+    get
+  }
+  @objc public var creationDate: Foundation.Date {
+    get
+  }
+  @objc public var isViewed: Swift.Bool {
+    get
+  }
+  @objc public var type: SelligentMobileExtensionsSDK.SMNotificationMessageType {
+    get
+  }
+  @objc public func encode(with coder: Foundation.NSCoder)
+  @objc required public init(coder: Foundation.NSCoder)
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc deinit
+}
+extension SelligentMobileExtensionsSDK.SMManager {
+  @objc dynamic public func send(_ event: SelligentMobileExtensionsSDK.SMEvent)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class SMUIViewController : UIKit.UIViewController {
+  @objc deinit
+}
+@objc(kSMClearCache_) public enum SMClearCache : Swift.Int {
+  case none = 0
+  case auto = 1
+  case week = 2
+  case month = 3
+  case quarter = 4
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(kSMLogLevel_) public enum SMLogLevel : Swift.Int {
+  case none = 0
+  case info = 1
+  case warning = 2
+  case error = 3
+  case httpCall = 4
+  case all = -1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(kSMDisplayMode_) public enum SMDisplayMode : Swift.Int {
+  case unknown = -1
+  case onlyOnce = 0
+  case untilReplaced = 1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class SMSuccess : ObjectiveC.NSObject, SelligentMobileExtensionsSDK.SMMessage {
+  @objc public var messageSM: Swift.String {
+    get
+  }
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum SMError : Swift.Int {
+  case missingParameters = 1000
+  case wrongParameters = 1001
+  case wrongAppSettings = 2000
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc(kSMNotificationButtonType_) public enum SMNotificationButtonType : Swift.Int {
+  case unknown = -1
+  case simple = 0
+  case openPhoneCall = 1
+  case openSms = 2
+  case openMail = 3
+  case openBrowser = 4
+  case openApplication = 5
+  case rateApplication = 6
+  case customActionBroadcastEvent = 7
+  case passbook = 11
+  case deepLink = 13
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension SelligentMobileExtensionsSDK.SMNotificationMessageType : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMNotificationMessageType : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMNotificationMessageType : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMInAppMessageServiceState : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMInAppMessageServiceState : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMInAppMessageServiceState : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMMessageNature : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMMessageNature : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMMessageNature : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMRemoteMessageDisplayType : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMRemoteMessageDisplayType : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMRemoteMessageDisplayType : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMClearCache : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMClearCache : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMClearCache : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMLogLevel : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMLogLevel : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMLogLevel : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMDisplayMode : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMDisplayMode : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMDisplayMode : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMError : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMError : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMError : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMNotificationButtonType : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMNotificationButtonType : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMNotificationButtonType : Swift.RawRepresentable {}

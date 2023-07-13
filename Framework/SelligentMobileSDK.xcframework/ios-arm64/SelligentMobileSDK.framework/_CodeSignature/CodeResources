@@ -6,11 +6,11 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		O3M73wf3P99VRfgfhEStAJmXMig=
+		LfgpyqWhUtt38wM7rT5/f/8EOh0=
 		</data>
 		<key>Headers/SMHelperSwift.h</key>
 		<data>
-		XeGHvRwfKeMP/Hiir1h1jl0eGjM=
+		4KhQOz2dpVkytbA7oCa7VRBkAHo=
 		</data>
 		<key>Headers/SelligentMobileSDK.h</key>
 		<data>
@@ -18,31 +18,35 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		SMCdcpLyOHnIcJ0T+4GLuBlq0Pc=
+		2TCiYOLREW98za1aDFz0vBHRrVw=
 		</data>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		slPbFgaOGR5RCRaOGhjDrDd2j0E=
+		7LQciyMt46VIkR3CtjdJTDwAYtY=
 		</data>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		FZKNIUnRN09Fv6d3l3pAnPffhK0=
+		7jNEDcrbCf4y/BsiGteJHE7gHPY=
 		</data>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		9ib9SY5+FogTF6rfUe/pAVTCO6Q=
+		AWh/Rs/ziNKlq38+KKdO9ljqTCQ=
 		</data>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		FZKNIUnRN09Fv6d3l3pAnPffhK0=
+		7jNEDcrbCf4y/BsiGteJHE7gHPY=
 		</data>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		uK1/6781W5gDFIjOl7lqvSRRbK4=
+		NiPiZMm8P26sMoiK0Qz9ARt4ooM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
 		TcLk33oqUEjy3iGtrCUuDG8rYWQ=
+		</data>
+		<key>PrivacyInfo.xcprivacy</key>
+		<data>
+		Giob4CkWtInUx6V60JxdxVwPgvM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -51,14 +55,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uV8j6vWzivbJi47fEctJDjFQHZ5JqcpM3UsQcxlbclo=
+			Swh3VkegGjxdF9jSAeZpdZn/zpY6R9RRLSGp8ZG0Un0=
 			</data>
 		</dict>
 		<key>Headers/SMHelperSwift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QWIADRo5pxsWWausVSCcb1Ec24ZbF/S9OtYvRhthzCA=
+			drHqSJShWCOuGIzFj/E5aZgVG6mOWQPXMbvrf+j1Qck=
 			</data>
 		</dict>
 		<key>Headers/SelligentMobileSDK.h</key>
@@ -72,35 +76,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fAK4QY8XR5g3FA3WCv296+Kfgs0+MiSb8OGnbcFIiME=
+			ABmZMUJAaYLjLkdEagnqbSqK9ZueRCL5y8ig8O6jhcQ=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5A3XMHmYh5wF4sSUCfDLX5hrOToHXlk8Mn08MClk3AQ=
+			flGRbm+3q7AvQH5Q+PvAYc7GQA0zYSLQunyHlGrGdig=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SGDYNwb3Vq1TnzTV2pEXtuGkIsimGnn68KYnYaJmU+E=
+			ONYxw3ubNrVPS0WfTtHkg7p5G7/TUQEuMi+F63PKxyg=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5A3XMHmYh5wF4sSUCfDLX5hrOToHXlk8Mn08MClk3AQ=
+			flGRbm+3q7AvQH5Q+PvAYc7GQA0zYSLQunyHlGrGdig=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7ITLXn/yf4n1hDmXCwL7H8Lcpc9mjx2fHaRQdw8blS0=
+			owb0L6/VHTEwXyhZ+DDEHeXX7iPNDr6Zr+GgdtthUe0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -108,6 +112,13 @@
 			<key>hash2</key>
 			<data>
 			5Eu/jnNc4lM0mudVuHBQStig23L7zC9FvrNEV7s+wxc=
+			</data>
+		</dict>
+		<key>PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YPD5Yd6Y6qli0/zvYblZadHlqnTKuZIZtAL88JexCI8=
 			</data>
 		</dict>
 	</dict>

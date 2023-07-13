@@ -267,7 +267,10 @@ enum kSMNotificationMessageType_ : NSInteger;
 @class NSCoder;
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK13SMBaseMessage")
-@interface SMBaseMessage : NSObject <NSCoding>
+@interface SMBaseMessage : NSObject <NSSecureCoding>
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// String value of the message Id
 @property (nonatomic, readonly, copy) NSString * _Nonnull idMessage;
 /// Date value of the message reception date
@@ -409,7 +412,10 @@ typedef SWIFT_ENUM(NSInteger, SMError, open) {
 @class SMFailure;
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK7SMEvent")
-@interface SMEvent : NSObject <NSCoding>
+@interface SMEvent : NSObject <NSSecureCoding>
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// Confirm if the current event should be cached or not
 /// If the event fail to be delivered to your backend, then by default, it is cached into an internal queue.
 /// After a while, the library will automaticly try to send it again.
@@ -442,6 +448,9 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK7SMEvent")
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK11SMEventUser")
 @interface SMEventUser : SMEvent
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithName:(NSString * _Nonnull)name properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
 @end
@@ -449,6 +458,9 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK11SMEventUser")
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK16SMEventUserLogin")
 @interface SMEventUserLogin : SMEventUser
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// Create an <code>SMEventUserLogin</code> event object that will be sent to selligent platform when user logs in
 /// \param profileId The profile identifier (legacy <code>mail</code>)  of the user
 ///
@@ -460,6 +472,9 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK16SMEventUserLogin")
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK17SMEventUserLogout")
 @interface SMEventUserLogout : SMEventUser
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// Create an <code>SMEventUserLogout</code> event object that will be sent to selligent platform when user logs out
 /// \param profileId The profile identifier (legacy <code>mail</code>) of the user
 ///
@@ -471,6 +486,9 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK17SMEventUserLogout")
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK23SMEventUserRegistration")
 @interface SMEventUserRegistration : SMEventUser
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// Create an <code>SMEventUserRegistration</code> event object that will be sent to selligent platform when user registers
 /// \param profileId The profile identifier (legacy <code>mail</code>) of the user
 ///
@@ -482,6 +500,9 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK23SMEventUserRegistration")
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK25SMEventUserUnregistration")
 @interface SMEventUserUnregistration : SMEventUser
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// Create an <code>SMEventUserUnregistration</code> event object that will be sent to selligent platform when user unregisters
 /// \param profileId The profile identifier (legacy <code>mail</code>)  of the user
 ///
@@ -589,6 +610,9 @@ enum kSMInAppContentType_ : NSInteger;
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK21SMInAppContentMessage")
 @interface SMInAppContentMessage : SMBaseMessage
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// String value providing the title of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull title;
 /// String value providing the content of the message
@@ -847,6 +871,9 @@ SWIFT_CLASS("_TtC18SelligentMobileSDK31SMInAppContentURLViewController")
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK14SMInAppMessage")
 @interface SMInAppMessage : SMBaseMessage
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// String value providing the title of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull title;
 /// String value providing the content of the message
@@ -1002,7 +1029,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMIA_RefreshType_, "SMInAppRefreshType", op
 enum kSMNotificationButtonType_ : NSInteger;
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK6SMLink")
-@interface SMLink : NSObject <NSCoding>
+@interface SMLink : NSObject <NSSecureCoding>
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// String value providing the id of the button
 @property (nonatomic, readonly, copy) NSString * _Nonnull idButtonData;
 /// String value providing the label of the button
@@ -1128,7 +1158,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
-
 @class UNNotificationResponse;
 @class UNNotification;
 @class SMNotificationMessage;
@@ -1157,6 +1186,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
 - (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 @class UIView;
 
@@ -1195,7 +1225,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 - (void)performIACFetchWithCompletion:(void (^ _Nonnull)(UIBackgroundFetchResult))completion;
 @end
-
 
 
 
@@ -1243,6 +1272,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// It will remove the view controller from your App hierarchy
 - (void)removeViewController;
 @end
+
 
 
 
@@ -1543,7 +1573,10 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMMN_, "SMMessageNature", open) {
 
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK28SMNotificationAnnotationData")
-@interface SMNotificationAnnotationData : NSObject <NSCoding, MKAnnotation>
+@interface SMNotificationAnnotationData : NSObject <NSSecureCoding, MKAnnotation>
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// CLLocationCoordinate2D instance providing the annotation’s coordinate
 /// *
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
@@ -1592,6 +1625,9 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationButtonType_, "SMNotificationB
 
 SWIFT_CLASS("_TtC18SelligentMobileSDK21SMNotificationMessage")
 @interface SMNotificationMessage : SMInAppMessage
+/// Indicates whether NSSecureCoding is supported
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
++ (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 /// String value providing the title of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull mediaUrl;
 /// String value providing the content of the message

@@ -4,7 +4,8 @@ import PackageDescription
 let package = Package(
     name: "SelligentMobileSDK",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v12),
+        .macCatalyst(.v13)
     ],
     products: [
         .library(

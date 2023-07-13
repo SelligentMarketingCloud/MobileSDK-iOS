@@ -21,6 +21,55 @@
         "children": [
           {
             "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMEvent(cpy)supportsSecureCoding",
+            "mangledName": "$s28SelligentMobileExtensionsSDK7SMEventC20supportsSecureCodingSbvpZ",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "static": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMEvent(cm)supportsSecureCoding",
+                "mangledName": "$s28SelligentMobileExtensionsSDK7SMEventC20supportsSecureCodingSbvgZ",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "static": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "shouldCache",
             "printedName": "shouldCache",
             "children": [
@@ -488,6 +537,55 @@
         "children": [
           {
             "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationAnnotationData(cpy)supportsSecureCoding",
+            "mangledName": "$s28SelligentMobileExtensionsSDK28SMNotificationAnnotationDataC20supportsSecureCodingSbvpZ",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "static": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationAnnotationData(cm)supportsSecureCoding",
+                "mangledName": "$s28SelligentMobileExtensionsSDK28SMNotificationAnnotationDataC20supportsSecureCodingSbvgZ",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "static": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "coordinate",
             "printedName": "coordinate",
             "children": [
@@ -852,6 +950,58 @@
         "name": "SMNotificationMessage",
         "printedName": "SMNotificationMessage",
         "children": [
+          {
+            "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationMessage(cpy)supportsSecureCoding",
+            "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationMessageC20supportsSecureCodingSbvpZ",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "static": true,
+            "overriding": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationMessage(cm)supportsSecureCoding",
+                "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationMessageC20supportsSecureCodingSbvgZ",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "static": true,
+                "overriding": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "mediaUrl",
@@ -2666,6 +2816,58 @@
         "printedName": "SMEventUser",
         "children": [
           {
+            "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMEventUser(cpy)supportsSecureCoding",
+            "mangledName": "$s28SelligentMobileExtensionsSDK11SMEventUserC20supportsSecureCodingSbvpZ",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "static": true,
+            "overriding": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMEventUser(cm)supportsSecureCoding",
+                "mangledName": "$s28SelligentMobileExtensionsSDK11SMEventUserC20supportsSecureCodingSbvgZ",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "static": true,
+                "overriding": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(name:properties:)",
@@ -2842,6 +3044,55 @@
         "name": "SMLink",
         "printedName": "SMLink",
         "children": [
+          {
+            "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMLink(cpy)supportsSecureCoding",
+            "mangledName": "$s28SelligentMobileExtensionsSDK6SMLinkC20supportsSecureCodingSbvpZ",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "static": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMLink(cm)supportsSecureCoding",
+                "mangledName": "$s28SelligentMobileExtensionsSDK6SMLinkC20supportsSecureCodingSbvgZ",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "static": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "idButtonData",
@@ -4696,6 +4947,58 @@
         "children": [
           {
             "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMInAppMessage(cpy)supportsSecureCoding",
+            "mangledName": "$s28SelligentMobileExtensionsSDK14SMInAppMessageC20supportsSecureCodingSbvpZ",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "static": true,
+            "overriding": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMInAppMessage(cm)supportsSecureCoding",
+                "mangledName": "$s28SelligentMobileExtensionsSDK14SMInAppMessageC20supportsSecureCodingSbvgZ",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "static": true,
+                "overriding": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "title",
             "printedName": "title",
             "children": [
@@ -5887,6 +6190,7 @@
             "declAttributes": [
               "Dynamic",
               "ObjC",
+              "Available",
               "RawDocComment"
             ],
             "isFromExtension": true,
@@ -6306,6 +6610,55 @@
         "name": "SMBaseMessage",
         "printedName": "SMBaseMessage",
         "children": [
+          {
+            "kind": "Var",
+            "name": "supportsSecureCoding",
+            "printedName": "supportsSecureCoding",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMBaseMessage(cpy)supportsSecureCoding",
+            "mangledName": "$s28SelligentMobileExtensionsSDK13SMBaseMessageC20supportsSecureCodingSbvpZ",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "static": true,
+            "objc_name": "supportsSecureCoding",
+            "declAttributes": [
+              "ObjC",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMBaseMessage(cm)supportsSecureCoding",
+                "mangledName": "$s28SelligentMobileExtensionsSDK13SMBaseMessageC20supportsSecureCodingSbvgZ",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "static": true,
+                "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Var",
             "name": "idMessage",
@@ -9474,28 +9827,28 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "BooleanLiteral",
-      "offset": 665,
+      "offset": 813,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "BooleanLiteral",
-      "offset": 904,
+      "offset": 1052,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "IntegerLiteral",
-      "offset": 929,
+      "offset": 1077,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "StringLiteral",
-      "offset": 1388,
+      "offset": 1536,
       "length": 2,
       "value": "\"\""
     },
@@ -9509,7 +9862,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/SMEvent.swift",
       "kind": "StringLiteral",
-      "offset": 5037,
+      "offset": 5185,
       "length": 2,
       "value": "\"\""
     },
@@ -9523,21 +9876,21 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "StringLiteral",
-      "offset": 363,
+      "offset": 504,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "IntegerLiteral",
-      "offset": 2768,
+      "offset": 2909,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "StringLiteral",
-      "offset": 2799,
+      "offset": 2940,
       "length": 2,
       "value": "\"\""
     },
@@ -9679,7 +10032,7 @@
       "kind": "StringLiteral",
       "offset": 4802,
       "length": 7,
-      "value": "\"3.5.1\""
+      "value": "\"3.6.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -11448,49 +11801,49 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 354,
+      "offset": 502,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 479,
+      "offset": 627,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 604,
+      "offset": 752,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 884,
+      "offset": 1032,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "BooleanLiteral",
-      "offset": 2600,
+      "offset": 2743,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2629,
+      "offset": 2772,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2654,
+      "offset": 2797,
       "length": 2,
       "value": "\"\""
     },
@@ -11826,49 +12179,49 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 345,
+      "offset": 486,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 472,
+      "offset": 613,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 979,
+      "offset": 1120,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 1118,
+      "offset": 1259,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 1459,
+      "offset": 1600,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 2023,
+      "offset": 2164,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessage.swift",
       "kind": "StringLiteral",
-      "offset": 4516,
+      "offset": 4657,
       "length": 2,
       "value": "\"\""
     },
@@ -11878,27 +12231,6 @@
       "offset": 191,
       "length": 14,
       "value": "\"SelligentMobileExtensionsSDK.SMInAppMessage\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
-      "kind": "Dictionary",
-      "offset": 3064,
-      "length": 3,
-      "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
-      "kind": "StringLiteral",
-      "offset": 3678,
-      "length": 28,
-      "value": "\"CFBundleShortVersionString\""
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/Base\/StringExtension.swift",
-      "kind": "StringLiteral",
-      "offset": 3722,
-      "length": 2,
-      "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/SMRemoteMessageDisplayType.swift",
@@ -12036,21 +12368,21 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Helpers\/SMReachabilityHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4019,
+      "offset": 3968,
       "length": 11,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Helpers\/SMReachabilityHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4019,
+      "offset": 3968,
       "length": 11,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Helpers\/SMReachabilityHelper.swift",
       "kind": "IntegerLiteral",
-      "offset": 4019,
+      "offset": 3968,
       "length": 11,
       "value": "1"
     },
@@ -12064,42 +12396,42 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMBaseMessage.swift",
       "kind": "StringLiteral",
-      "offset": 335,
+      "offset": 483,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMBaseMessage.swift",
       "kind": "BooleanLiteral",
-      "offset": 902,
+      "offset": 1050,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMBaseMessage.swift",
       "kind": "BooleanLiteral",
-      "offset": 4756,
+      "offset": 4904,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMBaseMessage.swift",
       "kind": "BooleanLiteral",
-      "offset": 4797,
+      "offset": 4945,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMBaseMessage.swift",
       "kind": "StringLiteral",
-      "offset": 4829,
+      "offset": 4977,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMBaseMessage.swift",
       "kind": "StringLiteral",
-      "offset": 4873,
+      "offset": 5021,
       "length": 2,
       "value": "\"\""
     },
@@ -12113,7 +12445,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMBaseMessage.swift",
       "kind": "BooleanLiteral",
-      "offset": 6865,
+      "offset": 7013,
       "length": 4,
       "value": "true"
     },
@@ -12245,8 +12577,22 @@
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Globals.swift",
+      "kind": "StringLiteral",
+      "offset": 1334,
+      "length": 9,
+      "value": "\"file:\/\/\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Globals.swift",
+      "kind": "StringLiteral",
+      "offset": 1820,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Globals.swift",
       "kind": "BooleanLiteral",
-      "offset": 429,
+      "offset": 2357,
       "length": 5,
       "value": "false"
     },

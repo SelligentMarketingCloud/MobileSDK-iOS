@@ -1,5 +1,12 @@
 # SDK Changelog
 
+- __SDK 3.6.0__
+    - Raise minimum supported version to iOS 12
+    - Add compatibility with xCode 15 and iOS 17
+    - Add Privacy manifest (PrivacyInfo.xcprivacy)
+    - Add codesigning to provided .xcframework
+    - Add support for MacCatalyst (minimum macCatalyst version: 13 (macOS 10.15))
+    
 - __SDK 3.5.1__
     - Add missing CFBundleShortVersionString in SelligentMobileExtensionsSDK.xcframework
 

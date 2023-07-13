@@ -7,8 +7,8 @@ The Selligent Marketing Cloud - Mobile SDK is a tool that enables you to use the
 By incorporating our latest SDK for iOS in your app, we support you in handling Push Notifications, In-App Messages, standard and custom events as well as registrations, unregistrations, logins and logouts in the App.
 
 # MobileSDK-iOS Integration
-> **Minimum iOS version supported in the master branch: 11**<br/>
-> **Maximum iOS version supported in the master branch: 16**
+> **Minimum supported iOS version: 12**
+> **Minimum supported macCatalyst version: 13 (macOS 10.15)**
 
 - To integrate the library yourself just download, depending of your needs one of those links: 
     - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Framework">Framework</a>: The main SDK to include in your App target

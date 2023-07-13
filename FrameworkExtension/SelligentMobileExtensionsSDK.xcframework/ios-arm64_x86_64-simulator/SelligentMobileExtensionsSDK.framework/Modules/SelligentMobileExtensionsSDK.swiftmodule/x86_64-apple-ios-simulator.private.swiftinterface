@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
-// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SelligentMobileExtensionsSDK
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SelligentMobileExtensionsSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import CommonCrypto
 import Foundation
@@ -16,7 +16,10 @@ import UserNotificationsUI
 import WebKit
 import _Concurrency
 import _StringProcessing
-@objc @_hasMissingDesignatedInitializers public class SMEvent : ObjectiveC.NSObject, Foundation.NSCoding {
+@objc @_hasMissingDesignatedInitializers public class SMEvent : ObjectiveC.NSObject, Foundation.NSCoding, Foundation.NSSecureCoding {
+  @objc public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   @objc public var shouldCache: Swift.Bool
   @objc public init(name: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
   @objc public func apply(successBlock: ((SelligentMobileExtensionsSDK.SMSuccess) -> Swift.Void)? = nil, failureBlock: ((SelligentMobileExtensionsSDK.SMFailure) -> Swift.Void)? = nil)
@@ -27,7 +30,10 @@ import _StringProcessing
   }
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class SMNotificationAnnotationData : ObjectiveC.NSObject, Foundation.NSCoding, MapKit.MKAnnotation {
+@objc @_hasMissingDesignatedInitializers public class SMNotificationAnnotationData : ObjectiveC.NSObject, Foundation.NSCoding, MapKit.MKAnnotation, Foundation.NSSecureCoding {
+  @objc public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   @objc public var coordinate: CoreLocation.CLLocationCoordinate2D {
     get
   }
@@ -42,6 +48,9 @@ import _StringProcessing
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class SMNotificationMessage : SelligentMobileExtensionsSDK.SMInAppMessage {
+  @objc override public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   @objc public var mediaUrl: Swift.String {
     get
   }
@@ -93,6 +102,7 @@ import _StringProcessing
 }
 extension SelligentMobileExtensionsSDK.SMManager {
   @objc dynamic public func startExtension(with settings: SelligentMobileExtensionsSDK.SMManagerSetting)
+  @available(macCatalyst 14.0, *)
   @objc dynamic public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
   @objc dynamic public func didReceive(_ notification: UserNotifications.UNNotification, context: Foundation.NSExtensionContext?)
   @objc dynamic public func didReceive(request: UserNotifications.UNNotificationRequest, completion: @escaping (UserNotifications.UNMutableNotificationContent) -> Swift.Void)
@@ -101,9 +111,15 @@ extension SelligentMobileExtensionsSDK.SMManager {
   @objc dynamic public func retrieveNotificationMessage(_ userInfo: [Swift.AnyHashable : Any]) -> SelligentMobileExtensionsSDK.SMNotificationMessage?
 }
 @objc @_hasMissingDesignatedInitializers public class SMEventUser : SelligentMobileExtensionsSDK.SMEvent {
+  @objc override public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class SMLink : ObjectiveC.NSObject, Foundation.NSCoding {
+@objc @_hasMissingDesignatedInitializers public class SMLink : ObjectiveC.NSObject, Foundation.NSCoding, Foundation.NSSecureCoding {
+  @objc public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   @objc public var idButtonData: Swift.String {
     get
   }
@@ -170,6 +186,9 @@ extension SelligentMobileExtensionsSDK.SMManager {
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class SMInAppMessage : SelligentMobileExtensionsSDK.SMBaseMessage {
+  @objc override public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   @objc public var title: Swift.String {
     get
   }
@@ -222,7 +241,10 @@ extension SelligentMobileExtensionsSDK.SMManager {
   @objc public static let shared: SelligentMobileExtensionsSDK.SMManager
   @objc deinit
 }
-@objc @_hasMissingDesignatedInitializers public class SMBaseMessage : ObjectiveC.NSObject, Foundation.NSCoding {
+@objc @_hasMissingDesignatedInitializers public class SMBaseMessage : ObjectiveC.NSObject, Foundation.NSCoding, Foundation.NSSecureCoding {
+  @objc public class var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
   @objc public var idMessage: Swift.String {
     get
   }
