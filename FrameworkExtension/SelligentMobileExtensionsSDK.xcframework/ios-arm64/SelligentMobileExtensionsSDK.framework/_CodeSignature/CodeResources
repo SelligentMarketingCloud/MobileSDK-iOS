@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/SMHelperSwift.h</key>
 		<data>
-		zi82PmcRIJEHgqKtPcgWsnynOIs=
+		rdUedcGLmGdvzeW6DF7uIWaNM5I=
 		</data>
 		<key>Headers/SelligentMobileExtensionsSDK.h</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		aVTefxFAFqTMJshSi6J7K8S1peU=
+		dCHhy4KwHHhDPlOpcylTGkAGHVc=
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		tLlQC/alw6AeY8cgAXuKrOYFw2c=
+		lpqtJu6AIgVjZC9vhQm9TdrhjCo=
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		hXlg5hoAKKqtcg57I/DPxk/lgQM=
+		0duTKS2xQmDCQkK4Yb0OJZ+8F2k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -51,7 +51,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			h5bNu87RRU0U7Cwj2BVXLpXgvp83wvE9uuD0stOxkX4=
+			jRCE/WI6JPnD+8dSnc7KcWeEwUlRPM16scF+b38Ti8s=
 			</data>
 		</dict>
 		<key>Headers/SelligentMobileExtensionsSDK.h</key>
@@ -65,7 +65,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BOiUC/9wOkEDScZ6DW5BzfILF4WO2rscJyPIaw0lUxs=
+			8dJF9dXRZyZE6M8wV09JVL9hWF/+OhTKcgko6tZNwko=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -93,7 +93,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SH/lZ/YTBk+uKVXEIFNwbonC7lKRnJVfkqCLAss51Wg=
+			/hUqrGPyg4wYbqoPl6H6ZaQst14H20DdG4RiTN0E6t8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

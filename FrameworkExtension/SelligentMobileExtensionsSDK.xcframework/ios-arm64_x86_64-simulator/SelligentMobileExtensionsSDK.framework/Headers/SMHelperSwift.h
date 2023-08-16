@@ -611,6 +611,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
+
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Set the log level of the library console.
 /// This is an optional setting that may help you debug the library calls.
@@ -621,15 +630,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// \param logLevel Specify the appropiate <code>SMLogLevel</code> for the SDK to use.
 ///
 - (void)apply:(enum kSMLogLevel_)logLevel;
-@end
-
-
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
 @end
 
 
@@ -919,6 +919,7 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 @property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(ios,introduced=13.0);
 @property (nonatomic, readonly, strong) UIWindow * _Nullable currentWindow;
 @end
+
 
 
 
@@ -1570,6 +1571,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
+
+
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Set the log level of the library console.
 /// This is an optional setting that may help you debug the library calls.
@@ -1580,15 +1590,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// \param logLevel Specify the appropiate <code>SMLogLevel</code> for the SDK to use.
 ///
 - (void)apply:(enum kSMLogLevel_)logLevel;
-@end
-
-
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
 @end
 
 
@@ -1878,6 +1879,7 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 @property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(ios,introduced=13.0);
 @property (nonatomic, readonly, strong) UIWindow * _Nullable currentWindow;
 @end
+
 
 
 
