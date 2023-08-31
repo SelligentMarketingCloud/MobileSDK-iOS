@@ -505,6 +505,482 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotificationsUI",
+        "printedName": "UserNotificationsUI",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SMNotificationContentViewController",
+        "printedName": "SMNotificationContentViewController",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "settings",
+            "printedName": "settings",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMManagerSetting",
+                    "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting",
+                    "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMManagerSetting"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(py)settings",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC8settingsAA16SMManagerSettingCSgvp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Custom",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMManagerSetting",
+                        "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting",
+                        "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMManagerSetting"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)settings",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC8settingsAA16SMManagerSettingCSgvg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMManagerSetting",
+                        "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting",
+                        "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMManagerSetting"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)setSettings:",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC8settingsAA16SMManagerSettingCSgvs",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC8settingsAA16SMManagerSettingCSgvM",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC8settingsAA16SMManagerSettingCSgvM",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "notificationButtonClicksShouldOpenTheApp",
+            "printedName": "notificationButtonClicksShouldOpenTheApp",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(py)notificationButtonClicksShouldOpenTheApp",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC40notificationButtonClicksShouldOpenTheAppSbvp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Custom",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)notificationButtonClicksShouldOpenTheApp",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC40notificationButtonClicksShouldOpenTheAppSbvg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)setNotificationButtonClicksShouldOpenTheApp:",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC40notificationButtonClicksShouldOpenTheAppSbvs",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC40notificationButtonClicksShouldOpenTheAppSbvM",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC40notificationButtonClicksShouldOpenTheAppSbvM",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nibName:bundle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SMNotificationContentViewController",
+                "printedName": "SelligentMobileExtensionsSDK.SMNotificationContentViewController",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)initWithNibName:bundle:",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "overriding": true,
+            "objc_name": "initWithNibName:bundle:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)viewDidLoad",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC11viewDidLoadyyF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didReceive",
+            "printedName": "didReceive(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotification",
+                "printedName": "UserNotifications.UNNotification",
+                "usr": "c:objc(cs)UNNotification"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)didReceiveNotification:",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC10didReceiveyySo14UNNotificationCF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "objc_name": "didReceiveNotification:",
+            "declAttributes": [
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didReceive",
+            "printedName": "didReceive(_:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotificationResponse",
+                "printedName": "UserNotifications.UNNotificationResponse",
+                "usr": "c:objc(cs)UNNotificationResponse"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UNNotificationContentExtensionResponseOption",
+                    "printedName": "UserNotificationsUI.UNNotificationContentExtensionResponseOption",
+                    "usr": "c:@E@UNNotificationContentExtensionResponseOption"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)didReceiveNotificationResponse:completionHandler:",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC10didReceive_17completionHandlerySo22UNNotificationResponseC_ySo0mf9ExtensionN6OptionVctF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "objc_name": "didReceiveNotificationResponse:completionHandler:",
+            "declAttributes": [
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Available",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController",
+        "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "isOpen": true,
+        "declAttributes": [
+          "Custom",
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIViewController",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIViewController",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -3512,6 +3988,16 @@
       },
       {
         "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -3735,8 +4221,38 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "SelligentMobileExtensionsSDK",
         "declAttributes": [
@@ -5644,6 +6160,404 @@
         "moduleName": "SelligentMobileExtensionsSDK",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SMNotificationService",
+        "printedName": "SMNotificationService",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "settings",
+            "printedName": "settings",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMManagerSetting",
+                    "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting",
+                    "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMManagerSetting"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(py)settings",
+            "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC8settingsAA16SMManagerSettingCSgvp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMManagerSetting",
+                        "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting",
+                        "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMManagerSetting"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(im)settings",
+                "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC8settingsAA16SMManagerSettingCSgvg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMManagerSetting",
+                        "printedName": "SelligentMobileExtensionsSDK.SMManagerSetting",
+                        "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMManagerSetting"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(im)setSettings:",
+                "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC8settingsAA16SMManagerSettingCSgvs",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28SelligentMobileExtensionsSDK21SMNotificationServiceC8settingsAA16SMManagerSettingCSgvM",
+                "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC8settingsAA16SMManagerSettingCSgvM",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encryptionEnabled",
+            "printedName": "encryptionEnabled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(py)encryptionEnabled",
+            "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC17encryptionEnabledSbvp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(im)encryptionEnabled",
+                "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC17encryptionEnabledSbvg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(im)setEncryptionEnabled:",
+                "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC17encryptionEnabledSbvs",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28SelligentMobileExtensionsSDK21SMNotificationServiceC17encryptionEnabledSbvM",
+                "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC17encryptionEnabledSbvM",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "didReceive",
+            "printedName": "didReceive(_:withContentHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotificationRequest",
+                "printedName": "UserNotifications.UNNotificationRequest",
+                "usr": "c:objc(cs)UNNotificationRequest"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UserNotifications.UNNotificationContent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UNNotificationContent",
+                    "printedName": "UserNotifications.UNNotificationContent",
+                    "usr": "c:objc(cs)UNNotificationContent"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(im)didReceiveNotificationRequest:withContentHandler:",
+            "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC10didReceive_18withContentHandlerySo21UNNotificationRequestC_ySo0lJ0CctF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "overriding": true,
+            "objc_name": "didReceiveNotificationRequest:withContentHandler:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "serviceExtensionTimeWillExpire",
+            "printedName": "serviceExtensionTimeWillExpire()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(im)serviceExtensionTimeWillExpire",
+            "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC30serviceExtensionTimeWillExpireyyF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "overriding": true,
+            "objc_name": "serviceExtensionTimeWillExpire",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SMNotificationService",
+                "printedName": "SelligentMobileExtensionsSDK.SMNotificationService",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService(im)init",
+            "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceCACycfc",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationService",
+        "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationServiceC",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "isOpen": true,
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UNNotificationServiceExtension",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UserNotifications.UNNotificationServiceExtension",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
         ]
       },
       {
@@ -8894,6 +9808,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -9880,6 +10804,34 @@
       "value": "\"\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 906,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 972,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1025,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1078,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationAnnotationData.swift",
       "kind": "StringLiteral",
       "offset": 219,
@@ -10045,7 +10997,7 @@
       "kind": "StringLiteral",
       "offset": 4802,
       "length": 7,
-      "value": "\"3.6.1\""
+      "value": "\"3.7.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -11917,6 +12869,41 @@
       "value": "\"GET\""
     },
     {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 456,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1478,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1494,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2081,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/UIViewExtension.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2097,
+      "length": 4,
+      "value": "true"
+    },
+    {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/IAM\/SMInAppMessageServiceState.swift",
       "kind": "IntegerLiteral",
       "offset": 455,
@@ -12244,6 +13231,13 @@
       "offset": 191,
       "length": 14,
       "value": "\"SelligentMobileExtensionsSDK.SMInAppMessage\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationService.swift",
+      "kind": "BooleanLiteral",
+      "offset": 676,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/SMRemoteMessageDisplayType.swift",
@@ -12902,6 +13896,20 @@
       "offset": 511,
       "length": 4,
       "value": "2000"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/NSLayoutConstraintExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 506,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/Extensions\/View\/NSLayoutConstraintExtension.swift",
+      "kind": "IntegerLiteral",
+      "offset": 539,
+      "length": 1,
+      "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",

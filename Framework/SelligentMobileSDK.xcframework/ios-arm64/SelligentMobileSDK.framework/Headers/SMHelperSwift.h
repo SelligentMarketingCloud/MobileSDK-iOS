@@ -1107,6 +1107,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @end
 
 
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
+/// This method allow you to send an event with pre-defined devices informations to the back-end
+/// This call can be done at any time after starting the library.
+/// \param deviceInfos <code>SMDeviceInfos</code> object with the necessary properties to be sent
+///
+- (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
+@end
+
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
 /// Send an event to the Selligent platform
@@ -1115,15 +1123,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (void)send:(SMEvent * _Nonnull)event;
 @end
 
-
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
-/// This method allow you to send an event with pre-defined devices informations to the back-end
-/// This call can be done at any time after starting the library.
-/// \param deviceInfos <code>SMDeviceInfos</code> object with the necessary properties to be sent
-///
-- (void)sendDeviceInfo:(SMDeviceInfos * _Nonnull)deviceInfos;
-@end
 
 
 
@@ -1159,6 +1158,36 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
+
+
+@class UNNotificationResponse;
+@class UNNotification;
+@class SMNotificationMessage;
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
+/// Mandatory AP when using UserNotifications framework, to be included in userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler.
+/// Handles remote notification actions.
+/// \param response An UNNotificationResponse that contains information about the notification and the interaction the user has done with it, provided by the delegate call
+///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+- (void)didReceive:(UNNotificationResponse * _Nonnull)response options:(SMInAppMessageStyleOptions * _Nullable)options;
+/// Mandatory API when using UserNotifications framework, to be included in userNotificationCenter:willPresentNotification:withCompletionHandler
+/// Handles incoming remote notifications when the app is in foreground.
+/// \param notification An UNNotification that contains information about the notification
+///
+/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
+///
+/// \param completionHandler A completion handler that will be called with a specific UNNotificationPresentationOption depending on the <code>SMManagerSetting/remoteMessageDisplayType</code> value specified when starting the SDK. If no completion is provided, the SDK will just send the push received event and won’t manage any kind of display/action after the remote notification was clicked
+///
+- (void)willPresent:(UNNotification * _Nonnull)notification options:(SMInAppMessageStyleOptions * _Nullable)options completionHandler:(void (^ _Nullable)(UNNotificationPresentationOptions))completionHandler;
+/// Optional API, retrieves the <code>SMNotificationMessage</code> object from a given userInfo.
+/// To be used for custom implementations when you need to get the Selligent push object from the provided userInfo to know what has been provided from the backend and use it.
+///
+/// returns:
+/// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
+- (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 @class UIView;
@@ -1199,35 +1228,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (void)performIACFetchWithCompletion:(void (^ _Nonnull)(UIBackgroundFetchResult))completion;
 @end
 
-
-@class UNNotificationResponse;
-@class UNNotification;
-@class SMNotificationMessage;
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileSDK))
-/// Mandatory AP when using UserNotifications framework, to be included in userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler.
-/// Handles remote notification actions.
-/// \param response An UNNotificationResponse that contains information about the notification and the interaction the user has done with it, provided by the delegate call
-///
-/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
-///
-- (void)didReceive:(UNNotificationResponse * _Nonnull)response options:(SMInAppMessageStyleOptions * _Nullable)options;
-/// Mandatory API when using UserNotifications framework, to be included in userNotificationCenter:willPresentNotification:withCompletionHandler
-/// Handles incoming remote notifications when the app is in foreground.
-/// \param notification An UNNotification that contains information about the notification
-///
-/// \param options <code>SMInAppMessageStyleOptions</code> object allowing you to customize the in app message appearance. If not specified, it will use the one passed in <code>SMManagerSetting/configureInAppMessageService(with:)</code>
-///
-/// \param completionHandler A completion handler that will be called with a specific UNNotificationPresentationOption depending on the <code>SMManagerSetting/remoteMessageDisplayType</code> value specified when starting the SDK. If no completion is provided, the SDK will just send the push received event and won’t manage any kind of display/action after the remote notification was clicked
-///
-- (void)willPresent:(UNNotification * _Nonnull)notification options:(SMInAppMessageStyleOptions * _Nullable)options completionHandler:(void (^ _Nullable)(UNNotificationPresentationOptions))completionHandler;
-/// Optional API, retrieves the <code>SMNotificationMessage</code> object from a given userInfo.
-/// To be used for custom implementations when you need to get the Selligent push object from the provided userInfo to know what has been provided from the backend and use it.
-///
-/// returns:
-/// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
-- (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
-@end
 
 
 
@@ -1690,6 +1690,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMViewTransition_, "SMViewTransition", open
 /// New view enters the screen with an alpha value of 0 gradually changing it to 1, and the other way around when the new view is dismissed
   kSMViewTransition_Opacity = 3,
 };
+
 
 
 

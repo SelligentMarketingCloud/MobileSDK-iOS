@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		H4WD4+jgAi0XZCKrSRXZzQJPL+0=
+		Y2FXzFIymoG+G/+YKHob2dmMxe0=
 		</data>
 		<key>Resources/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -19,7 +19,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HNczc13ZyZUVDCLws+nq79ZZ2V2HChxU/506dsYEOsk=
+			1DD0ipOjNZDlBG5vs/CAGSps/Q2o/dLTfVDdgARfzlc=
 			</data>
 		</dict>
 		<key>Headers/SelligentMobileExtensionsSDK.h</key>
@@ -33,70 +33,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qGUAAAhnLm8bT4yu4oJpHY6MTbT3A4D3Il5742BS0hs=
+			+WWFEc+G7HL+xIgP6kcWEBMknrJHJQaT1VIB/tpUcRY=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s4J6LSW7Xi55CpfTpDA4QFdQ60RR+WKa9GgykZ+hdhs=
+			Gptypqrh+1+KGu3hbJmmO47JMEnJ+BwNYyvJpzjpsyQ=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IGr9xwIWKN9vx8nBUxXx5dv1X61p/ePj0vbc4zuL8k4=
+			/Poc8MOOs1w5v8co6ml6coIOXoZqNoGEZ8N76tC8ksg=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s4J6LSW7Xi55CpfTpDA4QFdQ60RR+WKa9GgykZ+hdhs=
+			Gptypqrh+1+KGu3hbJmmO47JMEnJ+BwNYyvJpzjpsyQ=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AT9kPxm5X1xrQy1Me8FemBbqnZ8NMI4xBsV6pJKBi9g=
+			CiMveNvLIrK7ZlHlPhwlzeVmHY6hIGm5XX/kSQaDyqE=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qGUAAAhnLm8bT4yu4oJpHY6MTbT3A4D3Il5742BS0hs=
+			+WWFEc+G7HL+xIgP6kcWEBMknrJHJQaT1VIB/tpUcRY=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3OLoEv6j9Pod4zmIvUAtqDwam55BmEbyUgUiXgHJXdM=
+			qRWvfQrS5LogGdrOznOgNPtedoBQVWbrYUD3FP+QYXM=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1Ln/6+BXKJEhxiRwmfjQ23sZ48oupCsPCjEOymLz8So=
+			yF3RCeIPV099WvJNW7mTQoMrzF3Evvfw6z0nQbdDk5M=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3OLoEv6j9Pod4zmIvUAtqDwam55BmEbyUgUiXgHJXdM=
+			qRWvfQrS5LogGdrOznOgNPtedoBQVWbrYUD3FP+QYXM=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-macabi.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4UZvXarZd0z2JiGxz96R0Q17x/6GLddbgRhC4Pla/7s=
+			w1MFBtFOvvofwD9v5k/oSqWihAqVWObJy+TUTaXtL0w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -110,7 +110,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YyYmytlBF26vjI8aCskP4eXwcfcaqeyLvfQlgfG5y2o=
+			yo/p20zs83Lzqx3QaTT5nLObI+GsrPqPF32FiH8KHOc=
 			</data>
 		</dict>
 		<key>Resources/PrivacyInfo.xcprivacy</key>

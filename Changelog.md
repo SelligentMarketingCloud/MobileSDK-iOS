@@ -1,5 +1,10 @@
 # SDK Changelog
 
+- __SDK 3.7.0__
+    - Add easier way to implement Notification Content and Notification Service extensions by subclassing `SMNotificationContentViewController` and `SMNotificationService`
+    - Add out of the box support for GIF in Rich Push (Image) when subclassing `SMNotificationContentViewController`
+    - Add GIF support for in-app messages and in-app contents of type `image`
+    
 - __SDK 3.6.1__
     - Fix bug where in-app messages could not display, in some occasions, if the app was also running with multiple UIWIndow and/or multiple UIWindowScene
     - Fix bug where SMEventSetInfo and SMEventSetInfoIAM could not be sent, in some occasions, if multiple events were also being sent and the app was in the background

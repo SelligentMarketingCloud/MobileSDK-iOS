@@ -65,11 +65,10 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
     - [General set up](#general-set-up)
     - [Notification Service Extension](#notification-service-extension)
       - [Service Extension Configuration](#service-extension-configuration)
-      - [Start the SDK from the service extension](#start-the-sdk-from-the-service-extension)
-      - [Push notification content modification before displaying to user](#push-notification-content-modification-before-displaying-to-user)
+      - [Service Extension Implementation](#service-extension-implementation)
     - [Notification Content Extension](#notification-content-extension)
       - [Content Extension Configuration](#content-extension-configuration)
-      - [Start the SDK from the content extension](#start-the-sdk-from-the-content-extension)
+      - [Content Extension Implementation](#content-extension-implementation)
   - [Broadcasts summary](#broadcasts-summary)
     - [Event broadcasts](#event-broadcasts)
     - [Data broadcasts](#data-broadcasts)
@@ -78,6 +77,8 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
     - [Reload](#reload)
     - [LogLevel](#loglevel)
     - [Retrieve Device Id](#retrieve-device-id)
+    - [Notification Service Extension - Manual Implementation](#notification-service-extension---manual-implementation)
+    - [Notification Content Extension - Manual Implementation](#notification-content-extension---manual-implementation)
 
 ## Intro
 
@@ -1379,230 +1380,30 @@ Note the creation of the files (in Swift in this example):
   ![Extension App Group](images/Picture24.png)
 </details>
 
-#### Start the SDK from the service extension
+#### Service Extension Implementation
+
+> If you rather prefer a manual implementation for whatever reason, you can continue the implementation from [here](#notification-service-extension---manual-implementation)
 
 Swift
 
 ```swift
-let url = "YourProvidedURL"
-let clientId = "YourClientId"
-let privateKey = "YourPrivateKey"
-    
-// Create the SMManagerSetting instance
-let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
-
-// Provide the App Groupd Id to the SDK
-settings.appGroupId = "group.yourGroupName"
-
-// Start the SDK
-SMManager.shared.startExtension(with: settings)
-```
-
-Objective-C
-
-```objective-c
-NSString *url = @"YourProvidedURL";
-NSString *clientId = @"YourClientId";
-NSString *privateKey = @"YourPrivateKey";
-    
-// Create the SMManagerSetting instance
-SMManagerSetting *settings = [[SMManagerSetting alloc] initWithUrl:url clientId:clientId privateKey:privateKey error:nil];
-
-// Provide the App Groupd Id to the SDK
-settings.appGroupId = @"group.yourGroupName";
-
-// Start the SDK
-[[SMManager shared] startExtensionWith:settings];
-```
-
-#### Push notification content modification before displaying to user
-
-Once your service extension is correctly configured and the library is started, the extension will allow you to modify the Push content before displaying it to the user.
-
-This feature is used by the SDK to `decrypt` the payload if it is flagged as encrypted.
-
-You have the possibility to choose between two methods: either you want to manage the call to the block, which is executed with the modified content, by yourself, or you want to let the library manage this for you.
-
-- In the first case, a `UNMutableNotificationContent` object will be returned to you.
-
-Swift
-
-```swift
-import UserNotifications
 import SelligentMobileExtensionsSDK
 
-class NotificationService: UNNotificationServiceExtension {
-    // Storage for the completion handler and content.
-    var contentHandler: ((UNNotificationContent) -> Void)?
-    var bestAttemptContent: UNMutableNotificationContent?
+class NotificationService: SMNotificationService {
+    override init() {
+        super.init()
 
-    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping(UNNotificationContent) -> Void) {
-        self.contentHandler = contentHandler
-        self.bestAttemptContent = request.content.mutableCopy() as? UNMutableNotificationContent
-
-        // Init and start the SDK
-        let url = "YourProvidedURL"
-        let clientId = "YourClientId"
-        let privateKey = "YourPrivateKey"
-        
-        // Create the SMManagerSetting instance
-        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
-
-        // Provide the App Group Id to the SDK
-        settings.appGroupId = "group.yourGroupName"
-
-        // Start the SDK
-        SMManager.shared.startExtension(with: settings)
-
-        // Provide the request with the original notification content to the SDK and return the updated Notification content
-        SMManager.shared.didReceive(request: request) { content in
-            self.bestAttemptContent = content
-            
-            // Call the completion handler when done
-            contentHandler(self.bestAttemptContent ?? content)
-        }
-    }
-    
-    // Don't implement if you are not using the Encryption feature
-    /*override func serviceExtensionTimeWillExpire() {
-        if let contentHandler = self.contentHandler,
-           let bestAttemptContent = self.bestAttemptContent {
-            // Mark the message as still encrypted.
-            bestAttemptContent.subtitle = "(Encrypted)"
-            bestAttemptContent.body = ""
-            contentHandler(bestAttemptContent)
-        }
-    }*/
-}
-```
-
-Objective-C
-
-```objective-c
-#import "NotificationService.h"
-@import SelligentMobileExtensionsSDK;
-
-@interface NotificationService()
-@property(nonatomic, strong)void(^contentHandler)(UNNotificationContent *contentToDeliver);
-@property(nonatomic, strong)UNMutableNotificationContent *bestAttemptContent;
-@end
-
-@implementation NotificationService
-
-- (void) didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void(^)(UNNotificationContent *_Nonnull))contentHandler {
-    self.contentHandler = contentHandler;
-    self.bestAttemptContent = request.content.mutableCopy;
-    
-    // Init and start the SDK
-    NSString *url = @"YourProvidedURL";
-    NSString *clientId = @"YourClientId";
-    NSString *privateKey = @"YourPrivateKey";
-    
-    // Create the SMManagerSetting instance
-    SMManagerSetting *settings = [[SMManagerSetting alloc] initWithUrl:url clientId:clientId privateKey:privateKey error:nil];
-
-    // Provide the App Group Id to the SDK
-    settings.appGroupId = @"group.yourGroupName";
-
-    // Starting the library
-    [[SMManager shared] startExtensionWith:settings];
-
-    // Provide the request with the original notification content to the SDK and return the updated Notification content
-    [[SMManager shared] didReceiveWithRequest:request completion:^(UNMutableNotificationContent * _Nonnull content) {
-        self.bestAttemptContent = content;
-        
-        // Call the completion handler when done
-        contentHandler(self.bestAttemptContent);
-    }];
-}
-
-// Don't implement if you are not using the Encryption feature
-/*- (void) serviceExtensionTimeWillExpire {
-    // Mark the message as still encrypted.
-    self.bestAttemptContent.subtitle = @"(Encrypted)";
-    self.bestAttemptContent.body = @"";
-    self.contentHandler(self.bestAttemptContent);
-}*/
- 
-@end
-```
-
-- In the second case, the SDK will manage everything.
-
-Swift
-
-```swift
-import UserNotifications
-import SelligentMobileExtensionsSDK
-
-class NotificationService: UNNotificationServiceExtension {
-    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping(UNNotificationContent) -> Void) {
-        // Init and start the SDK
         let url = "YourProvidedURL"
         let clientId = "YourClientId"
         let privateKey = "YourPrivateKey"
 
-        // Create the SMManagerSetting instance
-        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
-
-        // Provide the App Group Id to the SDK
-        settings.appGroupId = "group.yourGroupName"
-
-        // Start the SDK
-        SMManager.shared.startExtension(with: settings)
-
-        // Provide the request with the original Notification content to the SDK and the contentHandler
-        SMManager.shared.didReceive(request, contentHandler: contentHandler)
+        self.settings = try? SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+        self.settings?.appGroupId = "group.yourGroupName"
+        // Whether encryption is enabled or not (needs to be aligned with the Selligent backend configuration), default false
+        // self.encryptionEnabled = true
     }
-
-    // Don't implement if you are not using the Encryption feature
-    /*override func serviceExtensionTimeWillExpire() {
-        // Mark the message as still encrypted.
-        SMManager.shared.serviceExtensionTimeWillExpire()
-    }*/
 }
 ```
-
-Objective-C
-
-```objective-c
-#import "NotificationService.h"
-@import SelligentMobileExtensionsSDK;
-
-@implementation NotificationService
-
-- (void) didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void(^)(UNNotificationContent *_Nonnull))contentHandler {
-    // Init and start the SDK
-    NSString *url = @"YourProvidedURL";
-    NSString *clientId = @"YourClientId";
-    NSString *privateKey = @"YourPrivateKey";
-    
-    // Create the SMManagerSetting instance
-    SMManagerSetting *settings = [[SMManagerSetting alloc] initWithUrl:url clientId:clientId privateKey:privateKey error:nil];
-
-    // Provide the App Group Id to the SDK
-    settings.appGroupId = @"group.yourGroupName";
-
-    // Starting the library
-    [[SMManager shared] startExtensionWith:settings];
-
-    // Provide the request with the original Notification content to the SDK and the contentHandler
-    [[SMManager shared] didReceive:request contentHandler:contentHandler];
-}
-
-// Don't implement if you are not using the Encryption feature
-/*- (void) serviceExtensionTimeWillExpire {
-    // Mark the message as still encrypted.
-    [[SMManager shared] serviceExtensionTimeWillExpire];
-}*/
- 
-@end
-```
-
-> Remember, if the content can't be decrypted or if `serviceExtensionTimeWillExpire` has been called before decryption is complete, "(Encrypted)" will be the values of all encrypted payload properties (when using Encryption feature).<br>
-> If you don't choose to use encryption feature, do not call SDK `serviceExtensionTimeWillExpire` and let the original push payload to be used.
-
-For more information on Notification service extension you can also refer to [Apple documentation](https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications).
 
 ### Notification Content Extension
 
@@ -1633,15 +1434,13 @@ You will notice the creation of those files (in Objective C in this example):
   ![Content Extension AppGroup](images/Picture24.png)
 </details>
 
-Now you will need to associate the Extension with a Selligent Notification Category.
+> If you rather prefer a manual implementation for whatever reason, you can continue the implementation from [here](#notification-content-extension---manual-implementation)
 
-A category is a property inside the payload that will inform your App which extension should manage the content of the payload.
+Delete the `MainInterface.storyboard`.
 
-It is mandatory to have one once a button is present in the payload and should be displayed in the notification center.
-
-By default, the Selligent category will be `SELLIGENT_BUTTON`. If you plan to also send Rich Push, Selligent provides you the ability to have a specific extension to manage the way you want to display it in the UI. The category will be named `SELLIGENT_IMAGE` in this case.
-
-To set the category in your content extension, just open the `Info.plist` of the extension, find the `NSExtensionAttributes` dictionary and set the value of the `UNNotificationExtensionCategory` Key.
+Open the `Info.plist` of the extension, find the `NSExtensionAttributes` dictionary and set the value of the `UNNotificationExtensionCategory` Key to an array of strings containing: `SELLIGENT_BUTTON` and `SELLIGENT_IMAGE`, then set the `UNNotificationExtensionDefaultContentHidden` Key to `YES`.
+Find the `NSExtensionMainStoryboard` property and remove it.
+Add the `NSExtensionPrincipalClass` property with `$(PRODUCT_MODULE_NAME).NotificationViewController` as its value.
 
 <details>
   <summary>You can add both categories by making UNNotificationExtensionCategory an Array.</summary>
@@ -1649,13 +1448,7 @@ To set the category in your content extension, just open the `Info.plist` of the
   ![Content Extension Categories](images/Picture33.png)
 </details>
 
-The storyboard will allow you to customize the display of the Push Notifications.
-
-If you want to keep the default one, just hide the `UIView` created by default and do not set the `UNNotificationExtensionDefaultContentHidden` Key. On the other hand, set the Key to `YES` and customize the display of the body and title of your notification.
-
-For more information about Notification Content Extensions please check the [Apple documentation](https://developer.apple.com/documentation/usernotificationsui/customizing_the_appearance_of_notifications).
-
-#### Start the SDK from the content extension
+#### Content Extension Implementation
 
 <details>
   <summary>If you have correctly added a Selligent Notification Content Extension target to your project, you will be able to display Rich Push media and action buttons directly in the Push Notification.</summary>
@@ -1663,128 +1456,27 @@ For more information about Notification Content Extensions please check the [App
   ![Rich Push](images/Picture36.png)
 </details>
 
-> Do note that if you want to support `GIF` format you will need to implement it on your own, from the provided image `NSData`.
-
 Swift
 
 ```swift
-import UIKit
-import UserNotifications
-import UserNotificationsUI
 import SelligentMobileExtensionsSDK
 
-class NotificationViewController: UIViewController, UNNotificationContentExtension {
-    // UI elements from the storyboard
-    @IBOutlet var titleLabel: UILabel?
-    @IBOutlet var bodyLabel: UILabel?
-    @IBOutlet weak var imageView: UIImageView!
-    
-    func didReceive(_ notification: UNNotification) {
-        // UI elements from the storyboard
-        self.titleLabel?.text = notification.request.content.title
-        self.bodyLabel?.text = notification.request.content.body
-    
-        // "SELLIGENT_IMAGE" category must be configured
-        if let attachment = notification.request.content.attachments.first,
-           attachment.url.startAccessingSecurityScopedResource() {
-
-            if let imageData = NSData(contentsOf: attachment.url) {
-                self.imageView.image = UIImage(data: imageData as Data)
-            }
-
-            attachment.url.stopAccessingSecurityScopedResource()
-        }
-
-        // Init and start the SDK
+class NotificationViewController: SMNotificationContentViewController {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
         let url = "YourProvidedURL"
         let clientId = "YourClientId"
         let privateKey = "YourPrivateKey"
 
-        // Create the SMManagerSetting instance
-        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+        self.settings = try? SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+        self.settings?.appGroupId = "group.yourGroupName"
 
-        // Provide the App Group Id to the SDK
-        settings.appGroupId = "group.yourGroupName"
-
-        // Start the SDK
-        SMManager.shared.startExtension(with: settings)
-        
-        // SDK API to add Push Notification buttons
-        // "SELLIGENT_BUTTON" category must be configured
-        SMManager.shared.didReceive(notification, context: self.extensionContext)
+        // Whether clicking in a notification button should (always) open the App first, default true.
+        // If set to false, actions that do not need the app to be opened to be executed, won't open it (i.e Open Url, Deeplink, Mail, SMS...)
+        // self.notificationButtonClicksShouldOpenTheApp = false
     }
-    
-    // If you want the Push Notification buttons to be processed without the need of opening the App
-    // This won't clear the application's badge, you will need to handle the badge of your app when it is opened
-    // Make sure you have read the Universal Links section of the documentation before implementing this
-    /*func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping(UNNotificationContentExtensionResponseOption) -> Void) {
-        SMManager.shared.didReceive(response, completionHandler: completion)
-    }*/
 }
-```
-
-Objective-C
-
-```objective-c
-#import "NotificationViewController.h"
-#import <UserNotifications/UserNotifications.h>
-#import <UserNotificationsUI/UserNotificationsUI.h>
-@import SelligentMobileExtensionsSDK;
-
-@interface NotificationViewController () <UNNotificationContentExtension>
-// UI elements from the storyboard
-@property(weak, nonatomic)IBOutlet UILabel *titleLabel;
-@property(weak, nonatomic)IBOutlet UILabel *bodyLabel;
-@property(weak, nonatomic)IBOutlet UIImageView *imageView;
-
-@end
-     
-@implementation NotificationViewController
- 
-- (void) didReceiveNotification:(UNNotification *)notification {
-    self.titleLabel.text = notification.request.content.title;
-    self.bodyLabel.text = notification.request.content.body;
-    
-    // "SELLIGENT_IMAGE" category must be configured
-    if notification.request.content.attachments.count > 0 {
-        UNNotificationAttachment *attachment = notification.request.content.attachments[0];
-        
-        if attachment.URL.startAccessingSecurityScopedResource {
-            NSData *imageData = [NSData dataWithContentsOfURL:attachment.URL];
-            UIImage *image = [UIImage imageWithData:imageData];
-            
-            self.imageView.image = image;
-            [attachment.URL stopAccessingSecurityScopedResource];
-        }
-    }
-    
-    // Init and start the SDK
-    NSString *url = @"YourProvidedURL";
-    NSString *clientId = @"YourClientId";
-    NSString *privateKey = @"YourPrivateKey";
-    
-    // Create the SMManagerSetting instance
-    SMManagerSetting *settings = [[SMManagerSetting alloc] initWithUrl:url clientId:clientId privateKey:privateKey error:nil];
-
-    // Provide the App Group Id to the SDK
-    settings.appGroupId = @"group.yourGroupName";
-
-    // Starting the library
-    [[SMManager shared] startExtensionWith:settings];
-
-    // SDK API to add Push Notification buttons
-    // "SELLIGENT_BUTTON" category must be configured
-    [[SMManager shared] didReceive:notification context:self.extensionContext];
-}
-
-// If you want the Push Notification buttons to be processed without the need of opening the App
-// This won't clear the application's badge, you will need to handle the badge of your app when it is opened
-// Make sure you have read the Universal Links section of the documentation before implementing this
-/*- (void) didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void(^)(UNNotificationContentExtensionResponseOption option))completion {
-    [[SMManager shared] didReceive:response completionHandler:completionHandler];
-}*/
-    
-@end
 ```
 
 ## Broadcasts summary
@@ -1958,4 +1650,339 @@ Objective-C
     NSDictionary *dict = [notif userInfo];
     NSString *deviceId = [dict objectForKey:SMConstants.kSMNotification_Data_DeviceId];
 }
+```
+
+### Notification Service Extension - Manual Implementation
+
+Once your service extension is correctly configured and the library is started, the extension will allow you to modify the Push content before displaying it to the user.
+
+This feature is also used by the SDK to `decrypt` the payload if it is flagged as encrypted.
+
+You have the possibility to choose between two methods: either you want to manage the call to the block, which is executed with the modified content, by yourself, or you want to let the library manage this for you.
+
+- In the first case, a `UNMutableNotificationContent` object will be returned to you.
+
+Swift
+
+```swift
+import UserNotifications
+import SelligentMobileExtensionsSDK
+
+class NotificationService: UNNotificationServiceExtension {
+    // Storage for the completion handler and content.
+    var contentHandler: ((UNNotificationContent) -> Void)?
+    var bestAttemptContent: UNMutableNotificationContent?
+
+    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping(UNNotificationContent) -> Void) {
+        self.contentHandler = contentHandler
+        self.bestAttemptContent = request.content.mutableCopy() as? UNMutableNotificationContent
+
+        // Init and start the SDK
+        let url = "YourProvidedURL"
+        let clientId = "YourClientId"
+        let privateKey = "YourPrivateKey"
+        
+        // Create the SMManagerSetting instance
+        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+
+        // Provide the App Group Id to the SDK
+        settings.appGroupId = "group.yourGroupName"
+
+        // Start the SDK
+        SMManager.shared.startExtension(with: settings)
+
+        // Provide the request with the original notification content to the SDK and return the updated Notification content
+        SMManager.shared.didReceive(request: request) { content in
+            self.bestAttemptContent = content
+            
+            // Call the completion handler when done
+            contentHandler(self.bestAttemptContent ?? content)
+        }
+    }
+    
+    // Don't implement if you are not using the Encryption feature
+    /*override func serviceExtensionTimeWillExpire() {
+        if let contentHandler = self.contentHandler,
+           let bestAttemptContent = self.bestAttemptContent {
+            // Mark the message as still encrypted.
+            bestAttemptContent.title = "(Encrypted)"
+            bestAttemptContent.body = ""
+            contentHandler(bestAttemptContent)
+        }
+    }*/
+}
+```
+
+Objective-C
+
+```objective-c
+#import "NotificationService.h"
+@import SelligentMobileExtensionsSDK;
+
+@interface NotificationService()
+@property(nonatomic, strong)void(^contentHandler)(UNNotificationContent *contentToDeliver);
+@property(nonatomic, strong)UNMutableNotificationContent *bestAttemptContent;
+@end
+
+@implementation NotificationService
+
+- (void) didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void(^)(UNNotificationContent *_Nonnull))contentHandler {
+    self.contentHandler = contentHandler;
+    self.bestAttemptContent = request.content.mutableCopy;
+    
+    // Init and start the SDK
+    NSString *url = @"YourProvidedURL";
+    NSString *clientId = @"YourClientId";
+    NSString *privateKey = @"YourPrivateKey";
+    
+    // Create the SMManagerSetting instance
+    SMManagerSetting *settings = [[SMManagerSetting alloc] initWithUrl:url clientId:clientId privateKey:privateKey error:nil];
+
+    // Provide the App Group Id to the SDK
+    settings.appGroupId = @"group.yourGroupName";
+
+    // Starting the library
+    [[SMManager shared] startExtensionWith:settings];
+
+    // Provide the request with the original notification content to the SDK and return the updated Notification content
+    [[SMManager shared] didReceiveWithRequest:request completion:^(UNMutableNotificationContent * _Nonnull content) {
+        self.bestAttemptContent = content;
+        
+        // Call the completion handler when done
+        contentHandler(self.bestAttemptContent);
+    }];
+}
+
+// Don't implement if you are not using the Encryption feature
+/*- (void) serviceExtensionTimeWillExpire {
+    // Mark the message as still encrypted.
+    self.bestAttemptContent.title = @"(Encrypted)";
+    self.bestAttemptContent.body = @"";
+    self.contentHandler(self.bestAttemptContent);
+}*/
+ 
+@end
+```
+
+- In the second case, the SDK will manage everything.
+
+Swift
+
+```swift
+import UserNotifications
+import SelligentMobileExtensionsSDK
+
+class NotificationService: UNNotificationServiceExtension {
+    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping(UNNotificationContent) -> Void) {
+        // Init and start the SDK
+        let url = "YourProvidedURL"
+        let clientId = "YourClientId"
+        let privateKey = "YourPrivateKey"
+
+        // Create the SMManagerSetting instance
+        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+
+        // Provide the App Group Id to the SDK
+        settings.appGroupId = "group.yourGroupName"
+
+        // Start the SDK
+        SMManager.shared.startExtension(with: settings)
+
+        // Provide the request with the original Notification content to the SDK and the contentHandler
+        SMManager.shared.didReceive(request, contentHandler: contentHandler)
+    }
+
+    // Don't implement if you are not using the Encryption feature
+    /*override func serviceExtensionTimeWillExpire() {
+        // Mark the message as still encrypted.
+        SMManager.shared.serviceExtensionTimeWillExpire()
+    }*/
+}
+```
+
+Objective-C
+
+```objective-c
+#import "NotificationService.h"
+@import SelligentMobileExtensionsSDK;
+
+@implementation NotificationService
+
+- (void) didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void(^)(UNNotificationContent *_Nonnull))contentHandler {
+    // Init and start the SDK
+    NSString *url = @"YourProvidedURL";
+    NSString *clientId = @"YourClientId";
+    NSString *privateKey = @"YourPrivateKey";
+    
+    // Create the SMManagerSetting instance
+    SMManagerSetting *settings = [[SMManagerSetting alloc] initWithUrl:url clientId:clientId privateKey:privateKey error:nil];
+
+    // Provide the App Group Id to the SDK
+    settings.appGroupId = @"group.yourGroupName";
+
+    // Starting the library
+    [[SMManager shared] startExtensionWith:settings];
+
+    // Provide the request with the original Notification content to the SDK and the contentHandler
+    [[SMManager shared] didReceive:request contentHandler:contentHandler];
+}
+
+// Don't implement if you are not using the Encryption feature
+/*- (void) serviceExtensionTimeWillExpire {
+    // Mark the message as still encrypted.
+    [[SMManager shared] serviceExtensionTimeWillExpire];
+}*/
+ 
+@end
+```
+
+> Remember, if the content can't be decrypted or if `serviceExtensionTimeWillExpire` has been called before decryption is complete, "(Encrypted)" will be the values of all encrypted payload properties (when using Encryption feature).<br>
+> If you don't choose to use encryption feature, do not call SDK `serviceExtensionTimeWillExpire` and let the original push payload to be used.
+
+For more information on Notification service extension you can also refer to [Apple documentation](https://developer.apple.com/documentation/usernotifications/modifying_content_in_newly_delivered_notifications).
+
+### Notification Content Extension - Manual Implementation
+
+Open the `Info.plist` of the extension, find the `NSExtensionAttributes` dictionary and set the value of the `UNNotificationExtensionCategory` Key to an array of strings containing: `SELLIGENT_BUTTON` and `SELLIGENT_IMAGE`, then set the `UNNotificationExtensionDefaultContentHidden` Key to `YES`.
+
+<details>
+  <summary>You can add both categories by making UNNotificationExtensionCategory an Array.</summary>
+
+  ![Content Extension Categories](images/Picture33.png)
+</details>
+
+The storyboard will allow you to customize the display of the Push Notifications.
+
+If you want to keep the default one, just hide the `UIView` created by default and do not set the `UNNotificationExtensionDefaultContentHidden` Key. On the other hand, set the Key to `YES` and customize the display of the body and title of your notification.
+
+For more information about Notification Content Extensions please check the [Apple documentation](https://developer.apple.com/documentation/usernotificationsui/customizing_the_appearance_of_notifications).
+
+<details>
+  <summary>If you have correctly added a Selligent Notification Content Extension target to your project, you will be able to display Rich Push media and action buttons directly in the Push Notification.</summary>
+
+  ![Rich Push](images/Picture36.png)
+</details>
+
+> Do note that if you want to support `GIF` format you will need to implement it on your own, from the provided image `NSData`.
+
+Swift
+
+```swift
+import UIKit
+import UserNotifications
+import UserNotificationsUI
+import SelligentMobileExtensionsSDK
+
+class NotificationViewController: UIViewController, UNNotificationContentExtension {
+    // UI elements from the storyboard
+    @IBOutlet var titleLabel: UILabel?
+    @IBOutlet var bodyLabel: UILabel?
+    @IBOutlet weak var imageView: UIImageView!
+    
+    func didReceive(_ notification: UNNotification) {
+        // UI elements from the storyboard
+        self.titleLabel?.text = notification.request.content.title
+        self.bodyLabel?.text = notification.request.content.body
+    
+        // "SELLIGENT_IMAGE" category must be configured
+        if let attachment = notification.request.content.attachments.first,
+           attachment.url.startAccessingSecurityScopedResource() {
+
+            if let imageData = NSData(contentsOf: attachment.url) {
+                self.imageView.image = UIImage(data: imageData as Data)
+            }
+
+            attachment.url.stopAccessingSecurityScopedResource()
+        }
+
+        // Init and start the SDK
+        let url = "YourProvidedURL"
+        let clientId = "YourClientId"
+        let privateKey = "YourPrivateKey"
+
+        // Create the SMManagerSetting instance
+        let settings = try! SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
+
+        // Provide the App Group Id to the SDK
+        settings.appGroupId = "group.yourGroupName"
+
+        // Start the SDK
+        SMManager.shared.startExtension(with: settings)
+        
+        // SDK API to add Push Notification buttons
+        // "SELLIGENT_BUTTON" category must be configured
+        SMManager.shared.didReceive(notification, context: self.extensionContext)
+    }
+    
+    // If you want the Push Notification buttons to be processed without the need of opening the App
+    // This won't clear the application's badge, you will need to handle the badge of your app when it is opened
+    // Make sure you have read the Universal Links section of the documentation before implementing this
+    /*func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping(UNNotificationContentExtensionResponseOption) -> Void) {
+        SMManager.shared.didReceive(response, completionHandler: completion)
+    }*/
+}
+```
+
+Objective-C
+
+```objective-c
+#import "NotificationViewController.h"
+#import <UserNotifications/UserNotifications.h>
+#import <UserNotificationsUI/UserNotificationsUI.h>
+@import SelligentMobileExtensionsSDK;
+
+@interface NotificationViewController () <UNNotificationContentExtension>
+// UI elements from the storyboard
+@property(weak, nonatomic)IBOutlet UILabel *titleLabel;
+@property(weak, nonatomic)IBOutlet UILabel *bodyLabel;
+@property(weak, nonatomic)IBOutlet UIImageView *imageView;
+
+@end
+     
+@implementation NotificationViewController
+ 
+- (void) didReceiveNotification:(UNNotification *)notification {
+    self.titleLabel.text = notification.request.content.title;
+    self.bodyLabel.text = notification.request.content.body;
+    
+    // "SELLIGENT_IMAGE" category must be configured
+    if notification.request.content.attachments.count > 0 {
+        UNNotificationAttachment *attachment = notification.request.content.attachments[0];
+        
+        if attachment.URL.startAccessingSecurityScopedResource {
+            NSData *imageData = [NSData dataWithContentsOfURL:attachment.URL];
+            UIImage *image = [UIImage imageWithData:imageData];
+            
+            self.imageView.image = image;
+            [attachment.URL stopAccessingSecurityScopedResource];
+        }
+    }
+    
+    // Init and start the SDK
+    NSString *url = @"YourProvidedURL";
+    NSString *clientId = @"YourClientId";
+    NSString *privateKey = @"YourPrivateKey";
+    
+    // Create the SMManagerSetting instance
+    SMManagerSetting *settings = [[SMManagerSetting alloc] initWithUrl:url clientId:clientId privateKey:privateKey error:nil];
+
+    // Provide the App Group Id to the SDK
+    settings.appGroupId = @"group.yourGroupName";
+
+    // Starting the library
+    [[SMManager shared] startExtensionWith:settings];
+
+    // SDK API to add Push Notification buttons
+    // "SELLIGENT_BUTTON" category must be configured
+    [[SMManager shared] didReceive:notification context:self.extensionContext];
+}
+
+// If you want the Push Notification buttons to be processed without the need of opening the App
+// This won't clear the application's badge, you will need to handle the badge of your app when it is opened
+// Make sure you have read the Universal Links section of the documentation before implementing this
+/*- (void) didReceiveNotificationResponse:(UNNotificationResponse *)response completionHandler:(void(^)(UNNotificationContentExtensionResponseOption option))completion {
+    [[SMManager shared] didReceive:response completionHandler:completionHandler];
+}*/
+    
+@end
 ```

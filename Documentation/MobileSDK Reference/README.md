@@ -32,7 +32,9 @@
 -   [SMManagerSettingIAC](classes/SMManagerSettingIAC.md)
 -   [SMManagerSettingIAM](classes/SMManagerSettingIAM.md)
 -   [SMNotificationAnnotationData](classes/SMNotificationAnnotationData.md)
+-   [SMNotificationContentViewController](classes/SMNotificationContentViewController.md)
 -   [SMNotificationMessage](classes/SMNotificationMessage.md)
+-   [SMNotificationService](classes/SMNotificationService.md)
 -   [SMSuccess](classes/SMSuccess.md)
 -   [SMUIViewController](classes/SMUIViewController.md)
 

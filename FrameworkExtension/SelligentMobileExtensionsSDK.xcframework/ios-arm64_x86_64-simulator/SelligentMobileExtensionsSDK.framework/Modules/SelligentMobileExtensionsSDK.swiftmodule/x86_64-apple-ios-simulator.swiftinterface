@@ -30,6 +30,18 @@ import _StringProcessing
   }
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class SMNotificationContentViewController : UIKit.UIViewController, UserNotificationsUI.UNNotificationContentExtension {
+  @objc @_Concurrency.MainActor(unsafe) public var settings: SelligentMobileExtensionsSDK.SMManagerSetting?
+  @objc @_Concurrency.MainActor(unsafe) public var notificationButtonClicksShouldOpenTheApp: Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @available(*, unavailable, message: "This class does not support NSCoding")
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc public func didReceive(_ notification: UserNotifications.UNNotification)
+  @available(macCatalyst 14.0, *)
+  @_Concurrency.MainActor(unsafe) @objc public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+  @objc deinit
+}
 @objc @_hasMissingDesignatedInitializers public class SMNotificationAnnotationData : ObjectiveC.NSObject, Foundation.NSCoding, MapKit.MKAnnotation, Foundation.NSSecureCoding {
   @objc public class var supportsSecureCoding: Swift.Bool {
     @objc get
@@ -218,6 +230,14 @@ extension SelligentMobileExtensionsSDK.SMManager {
   }
   @objc override public func encode(with coder: Foundation.NSCoder)
   @objc required public init(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class SMNotificationService : UserNotifications.UNNotificationServiceExtension {
+  @objc public var settings: SelligentMobileExtensionsSDK.SMManagerSetting?
+  @objc public var encryptionEnabled: Swift.Bool
+  @objc override dynamic public func didReceive(_ request: UserNotifications.UNNotificationRequest, withContentHandler contentHandler: @escaping (UserNotifications.UNNotificationContent) -> Swift.Void)
+  @objc override dynamic public func serviceExtensionTimeWillExpire()
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc(kSMRemoteMessageDisplayType_) public enum SMRemoteMessageDisplayType : Swift.Int {

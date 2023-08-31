@@ -261,6 +261,7 @@ using UInt = size_t;
 
 
 
+
 SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK28NotificationSettingsProtocol_")
 @protocol NotificationSettingsProtocol
 @property (nonatomic, readonly) UNAuthorizationStatus authorizationStatus;
@@ -611,13 +612,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
-
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Send an event to the Selligent platform
 /// \param event <code>SMEvent</code> object with your event.
 ///
 - (void)send:(SMEvent * _Nonnull)event;
 @end
+
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -632,6 +633,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (void)apply:(enum kSMLogLevel_)logLevel;
 @end
 
+@class UNMutableNotificationContent;
+@class UNNotificationContent;
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+- (void)setNotificationAsEncryptedWithBestAttemptContent:(UNMutableNotificationContent * _Nonnull)bestAttemptContent contentHandler:(void (^ _Nullable)(UNNotificationContent * _Nonnull))contentHandler;
+@end
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -643,8 +650,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @class UNNotification;
 @class NSExtensionContext;
 @class UNNotificationRequest;
-@class UNMutableNotificationContent;
-@class UNNotificationContent;
 @class SMNotificationMessage;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -813,6 +818,34 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationButtonType_, "SMNotificationB
   kSMNotificationButtonType_DeepLink = 13,
 };
 
+@class NSBundle;
+
+SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewController")
+@interface SMNotificationContentViewController : UIViewController <UNNotificationContentExtension>
+/// <code>SMManagerSetting</code> object that will be used when dealing with the extension behaviour
+@property (nonatomic, strong) SMManagerSetting * _Nullable settings;
+/// Whether clicking in a notification button should (always) open the App first, default true.
+/// If set to false, actions that do not need the app to be opened to be executed, won’t open it (i.e Open Url, Deeplink, Mail, SMS…)
+@property (nonatomic) BOOL notificationButtonClicksShouldOpenTheApp;
+/// Default initializer called by UNNotificationContentExtension
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+/// Inherited from NSCoding.encode(with:).
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE_MSG("This class does not support NSCoding");
+/// Creates an specific implementation of the UNNotificationContentExtension view
+- (void)viewDidLoad;
+/// Handles the UNNotificationContentExtension behaviour when a push is to be expanded
+/// \param notification The given <code>UNNotification</code> object
+///
+- (void)didReceiveNotification:(UNNotification * _Nonnull)notification;
+/// Handles the UNNotificationContentExtension behaviour when clicking in a notification button
+/// \param response The given <code>UNNotificationResponse</code> object
+///
+/// \param completion The given <code>(UNNotificationContentExtensionResponseOption) -> Void</code> object
+///
+- (void)didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(UNNotificationContentExtensionResponseOption))completion SWIFT_AVAILABILITY(maccatalyst,introduced=14.0);
+@end
+
+
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationMessage")
 @interface SMNotificationMessage : SMInAppMessage
@@ -849,6 +882,24 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationMessageType_, "SMNotification
 /// In App message of passbook type.
   kSMNotificationMessageType_Passbook = 5,
 };
+
+
+SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationService")
+@interface SMNotificationService : UNNotificationServiceExtension
+/// <code>SMManagerSetting</code> object that will be used when dealing with the extension behaviour
+@property (nonatomic, strong) SMManagerSetting * _Nullable settings;
+/// Whether encryption is enabled or not (needs to be aligned with the Selligent backend configuration), default false
+@property (nonatomic) BOOL encryptionEnabled;
+/// Handles the UNNotificationServiceExtension behaviour when a push is received
+/// \param request The given <code>UNNotificationRequest</code> object
+///
+/// \param contentHandler The given <code>(UNNotificationContent) -> Void</code> object
+///
+- (void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
+/// If encryption is enabled and the process times out, the push content will be marked as “(Encrypted)” before being delivered to the user
+- (void)serviceExtensionTimeWillExpire;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMRemoteMessageDisplayType_, "SMRemoteMessageDisplayType", open) {
 /// Default value when not explicitly set
@@ -889,7 +940,6 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK8SMUIView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK18SMUIViewController")
 @interface SMUIViewController : UIViewController
@@ -919,6 +969,8 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 @property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(ios,introduced=13.0);
 @property (nonatomic, readonly, strong) UIWindow * _Nullable currentWindow;
 @end
+
+
 
 
 
@@ -1221,6 +1273,7 @@ using UInt = size_t;
 
 
 
+
 SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK28NotificationSettingsProtocol_")
 @protocol NotificationSettingsProtocol
 @property (nonatomic, readonly) UNAuthorizationStatus authorizationStatus;
@@ -1571,13 +1624,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 
-
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Send an event to the Selligent platform
 /// \param event <code>SMEvent</code> object with your event.
 ///
 - (void)send:(SMEvent * _Nonnull)event;
 @end
+
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -1592,6 +1645,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (void)apply:(enum kSMLogLevel_)logLevel;
 @end
 
+@class UNMutableNotificationContent;
+@class UNNotificationContent;
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+- (void)setNotificationAsEncryptedWithBestAttemptContent:(UNMutableNotificationContent * _Nonnull)bestAttemptContent contentHandler:(void (^ _Nullable)(UNNotificationContent * _Nonnull))contentHandler;
+@end
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -1603,8 +1662,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 @class UNNotification;
 @class NSExtensionContext;
 @class UNNotificationRequest;
-@class UNMutableNotificationContent;
-@class UNNotificationContent;
 @class SMNotificationMessage;
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -1773,6 +1830,34 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationButtonType_, "SMNotificationB
   kSMNotificationButtonType_DeepLink = 13,
 };
 
+@class NSBundle;
+
+SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewController")
+@interface SMNotificationContentViewController : UIViewController <UNNotificationContentExtension>
+/// <code>SMManagerSetting</code> object that will be used when dealing with the extension behaviour
+@property (nonatomic, strong) SMManagerSetting * _Nullable settings;
+/// Whether clicking in a notification button should (always) open the App first, default true.
+/// If set to false, actions that do not need the app to be opened to be executed, won’t open it (i.e Open Url, Deeplink, Mail, SMS…)
+@property (nonatomic) BOOL notificationButtonClicksShouldOpenTheApp;
+/// Default initializer called by UNNotificationContentExtension
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+/// Inherited from NSCoding.encode(with:).
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE_MSG("This class does not support NSCoding");
+/// Creates an specific implementation of the UNNotificationContentExtension view
+- (void)viewDidLoad;
+/// Handles the UNNotificationContentExtension behaviour when a push is to be expanded
+/// \param notification The given <code>UNNotification</code> object
+///
+- (void)didReceiveNotification:(UNNotification * _Nonnull)notification;
+/// Handles the UNNotificationContentExtension behaviour when clicking in a notification button
+/// \param response The given <code>UNNotificationResponse</code> object
+///
+/// \param completion The given <code>(UNNotificationContentExtensionResponseOption) -> Void</code> object
+///
+- (void)didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(UNNotificationContentExtensionResponseOption))completion SWIFT_AVAILABILITY(maccatalyst,introduced=14.0);
+@end
+
+
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationMessage")
 @interface SMNotificationMessage : SMInAppMessage
@@ -1809,6 +1894,24 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationMessageType_, "SMNotification
 /// In App message of passbook type.
   kSMNotificationMessageType_Passbook = 5,
 };
+
+
+SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationService")
+@interface SMNotificationService : UNNotificationServiceExtension
+/// <code>SMManagerSetting</code> object that will be used when dealing with the extension behaviour
+@property (nonatomic, strong) SMManagerSetting * _Nullable settings;
+/// Whether encryption is enabled or not (needs to be aligned with the Selligent backend configuration), default false
+@property (nonatomic) BOOL encryptionEnabled;
+/// Handles the UNNotificationServiceExtension behaviour when a push is received
+/// \param request The given <code>UNNotificationRequest</code> object
+///
+/// \param contentHandler The given <code>(UNNotificationContent) -> Void</code> object
+///
+- (void)didReceiveNotificationRequest:(UNNotificationRequest * _Nonnull)request withContentHandler:(void (^ _Nonnull)(UNNotificationContent * _Nonnull))contentHandler;
+/// If encryption is enabled and the process times out, the push content will be marked as “(Encrypted)” before being delivered to the user
+- (void)serviceExtensionTimeWillExpire;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMRemoteMessageDisplayType_, "SMRemoteMessageDisplayType", open) {
 /// Default value when not explicitly set
@@ -1849,7 +1952,6 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK8SMUIView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSBundle;
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK18SMUIViewController")
 @interface SMUIViewController : UIViewController
@@ -1879,6 +1981,8 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 @property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(ios,introduced=13.0);
 @property (nonatomic, readonly, strong) UIWindow * _Nullable currentWindow;
 @end
+
+
 
 
 
