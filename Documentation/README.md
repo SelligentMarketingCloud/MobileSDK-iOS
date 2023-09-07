@@ -1090,7 +1090,7 @@ SMEventUserUnregistration(profileId: String = "", properties: [AnyHashable: Any]
 
 | Property | Description |
 | --------- | --------- |
-| `profileId` | The custom profile identifier (legacy `mail`)  of the user as a `String`. |
+| `profileId` | The custom profile identifier (`mail` in our v1 platform) of the user as a `String`. |
 | `properties` | A `Dictionary` containing additional user data you want to provide to Selligent. |
 
 ### SMUserEventRegistration
@@ -1098,12 +1098,13 @@ SMEventUserUnregistration(profileId: String = "", properties: [AnyHashable: Any]
 This object is used to send a **register** event to the server with the custom profile identifier of the user, potential data and a callback, with the purpose of linking the device to an user.
 
 You can use an alternate key/value field to search for the user, in the `Dictionary`.
+> Make sure to leave the `profileId` empty (or with the correct `mail` of the user, when targeting our v1 platform and using an alternate key/value field for user linking purposes.
 > This event will create a new user in your Selligent database, if none was found.
 
 Swift
 
 ```swift
-let event = SMEventUserRegistration(profileId: "externalProfileId", properties: ["key": "value"])
+let event = SMEventUserRegistration(profileId: "user@mail.com", properties: ["USER_ID": "123"])
 
 // Optional
 event.shouldCache = true // Not necessary as it is the default value
@@ -1119,7 +1120,7 @@ SMManager.shared.send(event)
 Objective-C
 
 ```objective-c
-SMEventUserRegistration *event = [[SMEventUserRegistration alloc] initWithProfileId:@"externalProfileId" properties:@{@"key":@"value"}];
+SMEventUserRegistration *event = [[SMEventUserRegistration alloc] initWithProfileId:@"user@mail.com" properties:@{@"USER_ID":@"123"}];
     
 // Optional
 event.shouldCache = true; // Not necessary as it is the default value
@@ -1140,7 +1141,7 @@ This object is used to send an **unregister** event to the server with the custo
 Swift
 
 ```swift
-let event = SMEventUserUnregistration(profileId: "externalProfileId", properties: ["key": "value"])
+let event = SMEventUserUnregistration(profileId: "user@mail.com", properties: ["USER_ID": "123"])
 
 // Optional
 event.shouldCache = true // Not necessary as it is the default value
@@ -1156,7 +1157,7 @@ SMManager.shared.send(event)
 Objective-C
 
 ```objective-c
-SMEventUserUnregistration *event = [[SMEventUserUnregistration alloc] initWithProfileId:@"externalProfileId" properties:@{@"key":@"value"}];
+SMEventUserUnregistration *event = [[SMEventUserUnregistration alloc] initWithProfileId:@"user@mail.com" properties:@{@"USER_ID":@"123"}];
 
 // Optional
 event.shouldCache = true; // Not necessary as it is the default value
@@ -1180,7 +1181,7 @@ Constructors:
 
 | Property | Description |
 | --------- | --------- |
-| `profileId` | The custom profile identifier (legacy `mail`)  of the user as a `String`. |
+| `profileId` | The custom profile identifier (`mail` in our v1 platform) of the user as a `String`. |
 | `properties` | A `Dictionary` containing additional user data you want to provide to Selligent. |
 
 ### SMEventUserLogin
@@ -1188,12 +1189,13 @@ Constructors:
 This object is used to send a **login** event to the server with the custom profile identifier of the user, potential data, and a callback, with the purpose of linking the device to an user.
 
 You can use an alternate key/value field to search for the user, in the `Dictionary`.
+> Make sure to leave the `profileId` empty (or with the correct `mail` of the user, when targeting our v1 platform and using an alternate key/value field for user linking purposes.
 > This event will **NOT** create a new user in your Selligent database, if none found.
 
 Swift
 
 ```swift
-let event = SMEventUserLogin(profileId: "externalProfileId", properties: ["key": "value"])
+let event = SMEventUserLogin(profileId: "user@mail.com", properties: ["USER_ID": "123"])
 
 // Optional
 event.shouldCache = true // Not necessary as it is the default value
@@ -1209,7 +1211,7 @@ SMManager.shared.send(event)
 Objective-C
 
 ```objective-c
-SMEventUserLogin *event = [[SMEventUserLogin alloc] initWithProfileId:@"externalProfileId" properties:@{@"key":@"value"}];
+SMEventUserLogin *event = [[SMEventUserLogin alloc] initWithProfileId:@"user@mail.com" properties:@{@"USER_ID":@"123"}];
 
 // Optional
 event.shouldCache = true; // Not necessary as it is the default value
@@ -1231,7 +1233,7 @@ You can use in the dictionary an alternate key/value field to search for the use
 Swift
 
 ```swift
-let event = SMEventUserLogout(profileId: "externalProfileId", properties: ["key": "value"])
+let event = SMEventUserLogout(profileId: "user@mail.com", properties: ["USER_ID": "123"])
 
 // Optional
 event.shouldCache = true // Not necessary as it is the default value
@@ -1247,7 +1249,7 @@ SMManager.shared.send(event)
 Objective-C
 
 ```objective-c
-SMEventUserLogout *event = [[SMEventUserLogout alloc] initWithProfileId:@"externalProfileId" properties:@{@"key":@"value"}];
+SMEventUserLogout *event = [[SMEventUserLogout alloc] initWithProfileId:@"user@mail.com" properties:@{@"USER_ID":@"123"}];
 
 // Optional
 event.shouldCache = true; // Not necessary as it is the default value
