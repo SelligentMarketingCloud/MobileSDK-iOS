@@ -2,6 +2,8 @@
 // swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SelligentMobileExtensionsSDK
 // swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AVKit
 import CommonCrypto
 import Foundation
 import MapKit
@@ -36,10 +38,23 @@ import _StringProcessing
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @available(*, unavailable, message: "This class does not support NSCoding")
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc public func didReceive(_ notification: UserNotifications.UNNotification)
+  @_Concurrency.MainActor(unsafe) @objc open func didReceive(_ notification: UserNotifications.UNNotification)
   @available(macCatalyst 14.0, *)
-  @_Concurrency.MainActor(unsafe) @objc public func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc open func didReceive(_ response: UserNotifications.UNNotificationResponse, completionHandler completion: @escaping (UserNotificationsUI.UNNotificationContentExtensionResponseOption) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @available(macCatalystApplicationExtension 14.0, macCatalyst 14.0, *)
+  @_Concurrency.MainActor(unsafe) @objc public var mediaPlayPauseButtonType: UserNotificationsUI.UNNotificationContentExtensionMediaPlayPauseButtonType {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var mediaPlayPauseButtonTintColor: UIKit.UIColor {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var mediaPlayPauseButtonFrame: CoreFoundation.CGRect {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc public func mediaPlay()
+  @_Concurrency.MainActor(unsafe) @objc public func mediaPause()
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers public class SMNotificationAnnotationData : ObjectiveC.NSObject, Foundation.NSCoding, MapKit.MKAnnotation, Foundation.NSSecureCoding {
@@ -62,6 +77,9 @@ import _StringProcessing
 @objc @_hasMissingDesignatedInitializers public class SMNotificationMessage : SelligentMobileExtensionsSDK.SMInAppMessage {
   @objc override public class var supportsSecureCoding: Swift.Bool {
     @objc get
+  }
+  @objc public var mediaType: SelligentMobileExtensionsSDK.SMNotificationMediaType {
+    get
   }
   @objc public var mediaUrl: Swift.String {
     get
@@ -352,6 +370,17 @@ extension SelligentMobileExtensionsSDK.SMManager {
     get
   }
 }
+@objc(kSMNotificationMediaType_) public enum SMNotificationMediaType : Swift.Int {
+  case unknown = -1
+  case audio = 2
+  case image = 3
+  case video = 4
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc(kSMNotificationButtonType_) public enum SMNotificationButtonType : Swift.Int {
   case unknown = -1
   case simple = 0
@@ -394,6 +423,9 @@ extension SelligentMobileExtensionsSDK.SMDisplayMode : Swift.RawRepresentable {}
 extension SelligentMobileExtensionsSDK.SMError : Swift.Equatable {}
 extension SelligentMobileExtensionsSDK.SMError : Swift.Hashable {}
 extension SelligentMobileExtensionsSDK.SMError : Swift.RawRepresentable {}
+extension SelligentMobileExtensionsSDK.SMNotificationMediaType : Swift.Equatable {}
+extension SelligentMobileExtensionsSDK.SMNotificationMediaType : Swift.Hashable {}
+extension SelligentMobileExtensionsSDK.SMNotificationMediaType : Swift.RawRepresentable {}
 extension SelligentMobileExtensionsSDK.SMNotificationButtonType : Swift.Equatable {}
 extension SelligentMobileExtensionsSDK.SMNotificationButtonType : Swift.Hashable {}
 extension SelligentMobileExtensionsSDK.SMNotificationButtonType : Swift.RawRepresentable {}

@@ -17,7 +17,7 @@
 @objc var activityIndicatorStyle: UIActivityIndicatorView.Style { get set }
 ```
 
->Set the UIActivityIndicator style<br/>By default, it is UIActivityIndicatorView.Style.gray
+>Set the UIActivityIndicator style<br/>By default, it is UIActivityIndicatorView.Style.gray / UIActivityIndicatorView.Style.medium
 
 ```swift
 @objc var isStatusBarHidden: Bool { get set }

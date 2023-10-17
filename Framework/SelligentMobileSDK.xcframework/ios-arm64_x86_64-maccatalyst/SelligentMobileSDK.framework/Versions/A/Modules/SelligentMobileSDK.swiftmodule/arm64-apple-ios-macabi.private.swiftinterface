@@ -476,6 +476,9 @@ extension SelligentMobileSDK.SMManager {
   @objc override public class var supportsSecureCoding: Swift.Bool {
     @objc get
   }
+  @objc public var mediaType: SelligentMobileSDK.SMNotificationMediaType {
+    get
+  }
   @objc public var mediaUrl: Swift.String {
     get
   }
@@ -497,6 +500,17 @@ extension SelligentMobileSDK.SMManager {
 @objc public class SMDeviceInfos : ObjectiveC.NSObject {
   @objc public init(externalId: Swift.String)
   @objc deinit
+}
+@objc(kSMNotificationMediaType_) public enum SMNotificationMediaType : Swift.Int {
+  case unknown = -1
+  case audio = 2
+  case image = 3
+  case video = 4
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 @objc public protocol SMManagerInAppMessageDelegate {
   @objc func display(_ inAppMessage: SelligentMobileSDK.SMInAppMessage)
@@ -708,6 +722,9 @@ extension SelligentMobileSDK.SMInAppRefreshType : Swift.RawRepresentable {}
 extension SelligentMobileSDK.SMFrameworkType : Swift.Equatable {}
 extension SelligentMobileSDK.SMFrameworkType : Swift.Hashable {}
 extension SelligentMobileSDK.SMFrameworkType : Swift.RawRepresentable {}
+extension SelligentMobileSDK.SMNotificationMediaType : Swift.Equatable {}
+extension SelligentMobileSDK.SMNotificationMediaType : Swift.Hashable {}
+extension SelligentMobileSDK.SMNotificationMediaType : Swift.RawRepresentable {}
 extension SelligentMobileSDK.SMError : Swift.Equatable {}
 extension SelligentMobileSDK.SMError : Swift.Hashable {}
 extension SelligentMobileSDK.SMError : Swift.RawRepresentable {}

@@ -1,5 +1,11 @@
 # SDK Changelog
 
+- __SDK 3.8.0__
+    - Add video and audio handling in Notification Content extensions when subclassing `SMNotificationContentViewController`
+    - Add public visibility to `SMNotificationMessage/mediaType` property
+    - Add public visibility to `SMNotificationMediaType` enum
+    - PushOpened event is no longer sent when expanding a Rich Push (align with Android)
+    
 - __SDK 3.7.0__
     - Add easier way to implement Notification Content and Notification Service extensions by subclassing `SMNotificationContentViewController` and `SMNotificationService`
     - Add out of the box support for GIF in Rich Push (Image) when subclassing `SMNotificationContentViewController`

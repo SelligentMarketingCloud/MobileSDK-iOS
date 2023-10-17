@@ -15682,6 +15682,56 @@
           },
           {
             "kind": "Var",
+            "name": "mediaType",
+            "printedName": "mediaType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SMNotificationMediaType",
+                "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileSDK@objc(cs)SMNotificationMessage(py)mediaType",
+            "mangledName": "$s18SelligentMobileSDK21SMNotificationMessageC9mediaTypeAA0d5MediaG0Ovp",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileSDK@objc(cs)SMNotificationMessage(im)mediaType",
+                "mangledName": "$s18SelligentMobileSDK21SMNotificationMessageC9mediaTypeAA0d5MediaG0Ovg",
+                "moduleName": "SelligentMobileSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "mediaUrl",
             "printedName": "mediaUrl",
             "children": [
@@ -16186,6 +16236,298 @@
         "moduleName": "SelligentMobileSDK",
         "declAttributes": [
           "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SMNotificationMediaType",
+        "printedName": "SMNotificationMediaType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK.SMNotificationMediaType.Type) -> SelligentMobileSDK.SMNotificationMediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMNotificationMediaType",
+                        "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                        "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_@kSMNotificationMediaType_Unknown",
+            "mangledName": "$s18SelligentMobileSDK23SMNotificationMediaTypeO7unknownyA2CmF",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "audio",
+            "printedName": "audio",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK.SMNotificationMediaType.Type) -> SelligentMobileSDK.SMNotificationMediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMNotificationMediaType",
+                        "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                        "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_@kSMNotificationMediaType_Audio",
+            "mangledName": "$s18SelligentMobileSDK23SMNotificationMediaTypeO5audioyA2CmF",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "image",
+            "printedName": "image",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK.SMNotificationMediaType.Type) -> SelligentMobileSDK.SMNotificationMediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMNotificationMediaType",
+                        "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                        "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_@kSMNotificationMediaType_Image",
+            "mangledName": "$s18SelligentMobileSDK23SMNotificationMediaTypeO5imageyA2CmF",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "video",
+            "printedName": "video",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileSDK.SMNotificationMediaType.Type) -> SelligentMobileSDK.SMNotificationMediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMNotificationMediaType",
+                        "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                        "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_@kSMNotificationMediaType_Video",
+            "mangledName": "$s18SelligentMobileSDK23SMNotificationMediaTypeO5videoyA2CmF",
+            "moduleName": "SelligentMobileSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileSDK.SMNotificationMediaType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18SelligentMobileSDK23SMNotificationMediaTypeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s18SelligentMobileSDK23SMNotificationMediaTypeO8rawValueACSgSi_tcfc",
+            "moduleName": "SelligentMobileSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18SelligentMobileSDK23SMNotificationMediaTypeO8rawValueSivp",
+            "mangledName": "$s18SelligentMobileSDK23SMNotificationMediaTypeO8rawValueSivp",
+            "moduleName": "SelligentMobileSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18SelligentMobileSDK23SMNotificationMediaTypeO8rawValueSivg",
+                "mangledName": "$s18SelligentMobileSDK23SMNotificationMediaTypeO8rawValueSivg",
+                "moduleName": "SelligentMobileSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@SelligentMobileSDK@E@kSMNotificationMediaType_",
+        "mangledName": "$s18SelligentMobileSDK23SMNotificationMediaTypeO",
+        "moduleName": "SelligentMobileSDK",
+        "objc_name": "kSMNotificationMediaType_",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
         ]
       },
       {
@@ -26244,28 +26586,28 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 1032,
+      "offset": 1026,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "BooleanLiteral",
-      "offset": 2743,
+      "offset": 2737,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2772,
+      "offset": 2766,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2797,
+      "offset": 2791,
       "length": 2,
       "value": "\"\""
     },
@@ -26412,7 +26754,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserRegistration.swift",
       "kind": "StringLiteral",
-      "offset": 853,
+      "offset": 880,
       "length": 2,
       "value": "\"\""
     },
@@ -26433,7 +26775,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserLogin.swift",
       "kind": "StringLiteral",
-      "offset": 831,
+      "offset": 857,
       "length": 2,
       "value": "\"\""
     },
@@ -27170,7 +27512,7 @@
       "kind": "StringLiteral",
       "offset": 4802,
       "length": 7,
-      "value": "\"3.7.0\""
+      "value": "\"3.8.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -29653,7 +29995,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserLogout.swift",
       "kind": "StringLiteral",
-      "offset": 738,
+      "offset": 757,
       "length": 2,
       "value": "\"\""
     },
@@ -29737,7 +30079,7 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Event\/User\/SMEventUserUnregistration.swift",
       "kind": "StringLiteral",
-      "offset": 766,
+      "offset": 784,
       "length": 2,
       "value": "\"\""
     },
@@ -29912,21 +30254,21 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "StringLiteral",
-      "offset": 504,
+      "offset": 689,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "IntegerLiteral",
-      "offset": 2909,
+      "offset": 3029,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "StringLiteral",
-      "offset": 2940,
+      "offset": 3060,
       "length": 2,
       "value": "\"\""
     },
@@ -29954,84 +30296,56 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 244,
+      "offset": 282,
       "length": 2,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 264,
+      "offset": 302,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 283,
+      "offset": 321,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 302,
+      "offset": 340,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 244,
+      "offset": 282,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 264,
+      "offset": 302,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 283,
+      "offset": 321,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 302,
-      "length": 1,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 244,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 264,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 283,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 302,
+      "offset": 340,
       "length": 1,
       "value": "4"
     },
@@ -30087,315 +30401,315 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 1008,
+      "offset": 1058,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1234,
+      "offset": 1284,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1460,
+      "offset": 1510,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1676,
+      "offset": 1726,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 1904,
+      "offset": 1954,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 2139,
+      "offset": 2189,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 2326,
+      "offset": 2376,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 2528,
+      "offset": 2578,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 2540,
+      "offset": 2590,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 2551,
+      "offset": 2601,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 2563,
+      "offset": 2613,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 2760,
+      "offset": 2810,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 3205,
+      "offset": 3255,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 3349,
+      "offset": 3399,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 3641,
+      "offset": 3691,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 3932,
+      "offset": 3982,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 4237,
+      "offset": 4287,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 5148,
+      "offset": 5198,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 5327,
+      "offset": 5377,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 5487,
+      "offset": 5537,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 5639,
+      "offset": 5689,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 5929,
+      "offset": 5979,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 6076,
+      "offset": 6126,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "BooleanLiteral",
-      "offset": 6426,
+      "offset": 6476,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 6690,
+      "offset": 6740,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 6702,
+      "offset": 6752,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 6713,
+      "offset": 6763,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 6725,
+      "offset": 6775,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 6885,
+      "offset": 6935,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 7041,
+      "offset": 7091,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 7189,
+      "offset": 7239,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 7662,
+      "offset": 7712,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 7965,
+      "offset": 8015,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 8814,
+      "offset": 8864,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 8968,
+      "offset": 9018,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 9123,
+      "offset": 9173,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 9323,
+      "offset": 9373,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 9464,
+      "offset": 9514,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 9742,
+      "offset": 9792,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 10027,
+      "offset": 10077,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "IntegerLiteral",
-      "offset": 10172,
+      "offset": 10222,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 10675,
+      "offset": 10725,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 10687,
+      "offset": 10737,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 10698,
+      "offset": 10748,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Views\/IAC\/SMInAppContentStyleOptions.swift",
       "kind": "FloatLiteral",
-      "offset": 10710,
+      "offset": 10760,
       "length": 3,
       "value": "0.8"
     },

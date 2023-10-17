@@ -342,7 +342,7 @@ Objective-C
   | `appGroupId` | Provide the App GroupId to the SDK (`group.yourGroupName`) that you will have previously configured in your Apple Developer Portal. This is mandatory when you use one Notification extension (service and/or content) ([learn more](#notification-extensions)). |
   | `remoteMessageDisplayType` | This value defines the behavior that the SDK will adopt when a remote-notification is received when in Foreground ([learn more](MobileSDK%20Reference/classes/SMManagerSetting.md#/api/name/remoteMessageDisplayType)). |
   
- -Optionally initialize and configure In-App Messages.
+ - Optionally initialize and configure In-App Messages.
 
 Swift
 

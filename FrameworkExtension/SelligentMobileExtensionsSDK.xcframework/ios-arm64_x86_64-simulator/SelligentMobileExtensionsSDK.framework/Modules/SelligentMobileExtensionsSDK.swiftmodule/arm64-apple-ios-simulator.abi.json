@@ -528,6 +528,13 @@
         "moduleName": "SelligentMobileExtensionsSDK"
       },
       {
+        "kind": "Import",
+        "name": "AVKit",
+        "printedName": "AVKit",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK"
+      },
+      {
         "kind": "TypeDecl",
         "name": "SMNotificationContentViewController",
         "printedName": "SMNotificationContentViewController",
@@ -804,33 +811,6 @@
           },
           {
             "kind": "Function",
-            "name": "viewDidLoad",
-            "printedName": "viewDidLoad()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)viewDidLoad",
-            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC11viewDidLoadyyF",
-            "moduleName": "SelligentMobileExtensionsSDK",
-            "overriding": true,
-            "objc_name": "viewDidLoad",
-            "declAttributes": [
-              "Dynamic",
-              "ObjC",
-              "Custom",
-              "Override",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "didReceive",
             "printedName": "didReceive(_:)",
             "children": [
@@ -850,6 +830,7 @@
             "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)didReceiveNotification:",
             "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC10didReceiveyySo14UNNotificationCF",
             "moduleName": "SelligentMobileExtensionsSDK",
+            "isOpen": true,
             "objc_name": "didReceiveNotification:",
             "declAttributes": [
               "ObjC",
@@ -898,12 +879,267 @@
             "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)didReceiveNotificationResponse:completionHandler:",
             "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC10didReceive_17completionHandlerySo22UNNotificationResponseC_ySo0mf9ExtensionN6OptionVctF",
             "moduleName": "SelligentMobileExtensionsSDK",
+            "isOpen": true,
             "objc_name": "didReceiveNotificationResponse:completionHandler:",
             "declAttributes": [
               "ObjC",
               "Custom",
               "AccessControl",
               "Available",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)viewDidLoad",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC11viewDidLoadyyF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewWillDisappear",
+            "printedName": "viewWillDisappear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)viewWillDisappear:",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC17viewWillDisappearyySbF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "overriding": true,
+            "objc_name": "viewWillDisappear:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "mediaPlayPauseButtonType",
+            "printedName": "mediaPlayPauseButtonType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotificationContentExtensionMediaPlayPauseButtonType",
+                "printedName": "UserNotificationsUI.UNNotificationContentExtensionMediaPlayPauseButtonType",
+                "usr": "c:@E@UNNotificationContentExtensionMediaPlayPauseButtonType"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(py)mediaPlayPauseButtonType",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC24mediaPlayPauseButtonTypeSo014UNNotificationf14ExtensionMediajklM0Vvp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "objc_name": "mediaPlayPauseButtonType",
+            "declAttributes": [
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Available",
+              "Available",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UNNotificationContentExtensionMediaPlayPauseButtonType",
+                    "printedName": "UserNotificationsUI.UNNotificationContentExtensionMediaPlayPauseButtonType",
+                    "usr": "c:@E@UNNotificationContentExtensionMediaPlayPauseButtonType"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)mediaPlayPauseButtonType",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC24mediaPlayPauseButtonTypeSo014UNNotificationf14ExtensionMediajklM0Vvg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "objc_name": "mediaPlayPauseButtonType",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mediaPlayPauseButtonTintColor",
+            "printedName": "mediaPlayPauseButtonTintColor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIColor",
+                "printedName": "UIKit.UIColor",
+                "usr": "c:objc(cs)UIColor"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(py)mediaPlayPauseButtonTintColor",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC29mediaPlayPauseButtonTintColorSo7UIColorCvp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "objc_name": "mediaPlayPauseButtonTintColor",
+            "declAttributes": [
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIColor",
+                    "printedName": "UIKit.UIColor",
+                    "usr": "c:objc(cs)UIColor"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)mediaPlayPauseButtonTintColor",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC29mediaPlayPauseButtonTintColorSo7UIColorCvg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "objc_name": "mediaPlayPauseButtonTintColor",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mediaPlayPauseButtonFrame",
+            "printedName": "mediaPlayPauseButtonFrame",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(py)mediaPlayPauseButtonFrame",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC25mediaPlayPauseButtonFrameSo6CGRectVvp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "objc_name": "mediaPlayPauseButtonFrame",
+            "declAttributes": [
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGRect",
+                    "printedName": "CoreFoundation.CGRect",
+                    "usr": "c:@S@CGRect"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)mediaPlayPauseButtonFrame",
+                "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC25mediaPlayPauseButtonFrameSo6CGRectVvg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "objc_name": "mediaPlayPauseButtonFrame",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "mediaPlay",
+            "printedName": "mediaPlay()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)mediaPlay",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC9mediaPlayyyF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "objc_name": "mediaPlay",
+            "declAttributes": [
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "mediaPause",
+            "printedName": "mediaPause()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationContentViewController(im)mediaPause",
+            "mangledName": "$s28SelligentMobileExtensionsSDK35SMNotificationContentViewControllerC10mediaPauseyyF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "objc_name": "mediaPause",
+            "declAttributes": [
+              "ObjC",
+              "Custom",
+              "AccessControl",
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
@@ -1471,6 +1707,56 @@
                 "static": true,
                 "overriding": true,
                 "objc_name": "supportsSecureCoding",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mediaType",
+            "printedName": "mediaType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SMNotificationMediaType",
+                "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationMessage(py)mediaType",
+            "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationMessageC9mediaTypeAA0e5MediaH0Ovp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "SetterAccess",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@SelligentMobileExtensionsSDK@objc(cs)SMNotificationMessage(im)mediaType",
+                "mangledName": "$s28SelligentMobileExtensionsSDK21SMNotificationMessageC9mediaTypeAA0e5MediaH0Ovg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
                 "declAttributes": [
                   "ObjC"
                 ],
@@ -3926,6 +4212,16 @@
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
         "declKind": "Import",
         "moduleName": "SelligentMobileExtensionsSDK",
         "declAttributes": [
@@ -9827,6 +10123,298 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "SMNotificationMediaType",
+        "printedName": "SMNotificationMediaType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileExtensionsSDK.SMNotificationMediaType.Type) -> SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMNotificationMediaType",
+                        "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                        "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_@kSMNotificationMediaType_Unknown",
+            "mangledName": "$s28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO7unknownyA2CmF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "audio",
+            "printedName": "audio",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileExtensionsSDK.SMNotificationMediaType.Type) -> SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMNotificationMediaType",
+                        "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                        "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_@kSMNotificationMediaType_Audio",
+            "mangledName": "$s28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO5audioyA2CmF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "image",
+            "printedName": "image",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileExtensionsSDK.SMNotificationMediaType.Type) -> SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMNotificationMediaType",
+                        "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                        "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_@kSMNotificationMediaType_Image",
+            "mangledName": "$s28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO5imageyA2CmF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Var",
+            "name": "video",
+            "printedName": "video",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(SelligentMobileExtensionsSDK.SMNotificationMediaType.Type) -> SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SMNotificationMediaType",
+                        "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                        "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_@kSMNotificationMediaType_Video",
+            "mangledName": "$s28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO5videoyA2CmF",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SMNotificationMediaType",
+                    "printedName": "SelligentMobileExtensionsSDK.SMNotificationMediaType",
+                    "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO8rawValueACSgSi_tcfc",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO8rawValueSivp",
+            "mangledName": "$s28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO8rawValueSivp",
+            "moduleName": "SelligentMobileExtensionsSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO8rawValueSivg",
+                "mangledName": "$s28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO8rawValueSivg",
+                "moduleName": "SelligentMobileExtensionsSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@SelligentMobileExtensionsSDK@E@kSMNotificationMediaType_",
+        "mangledName": "$s28SelligentMobileExtensionsSDK23SMNotificationMediaTypeO",
+        "moduleName": "SelligentMobileExtensionsSDK",
+        "objc_name": "kSMNotificationMediaType_",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -10803,30 +11391,58 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 906,
+      "offset": 919,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 972,
+      "offset": 989,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1025,
+      "offset": 1047,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 1078,
+      "offset": 1100,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1153,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 1246,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1395,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Templates\/SMNotificationContentViewController.swift",
+      "kind": "FloatLiteral",
+      "offset": 1441,
+      "length": 4,
+      "value": "50.0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationAnnotationData.swift",
@@ -10838,21 +11454,21 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "StringLiteral",
-      "offset": 504,
+      "offset": 689,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "IntegerLiteral",
-      "offset": 2909,
+      "offset": 3029,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMessage.swift",
       "kind": "StringLiteral",
-      "offset": 2940,
+      "offset": 3060,
       "length": 2,
       "value": "\"\""
     },
@@ -10994,7 +11610,7 @@
       "kind": "StringLiteral",
       "offset": 4802,
       "length": 7,
-      "value": "\"3.7.0\""
+      "value": "\"3.8.0\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -12784,28 +13400,28 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 1032,
+      "offset": 1026,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "BooleanLiteral",
-      "offset": 2743,
+      "offset": 2737,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2772,
+      "offset": 2766,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Link\/SMLink.swift",
       "kind": "StringLiteral",
-      "offset": 2797,
+      "offset": 2791,
       "length": 2,
       "value": "\"\""
     },
@@ -13911,84 +14527,56 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 244,
+      "offset": 282,
       "length": 2,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 264,
+      "offset": 302,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 283,
+      "offset": 321,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 302,
+      "offset": 340,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 244,
+      "offset": 282,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 264,
+      "offset": 302,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 283,
+      "offset": 321,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
       "kind": "IntegerLiteral",
-      "offset": 302,
-      "length": 1,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 244,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 264,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 283,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Data\/Notification\/SMNotificationMediaType.swift",
-      "kind": "IntegerLiteral",
-      "offset": 302,
+      "offset": 340,
       "length": 1,
       "value": "4"
     },

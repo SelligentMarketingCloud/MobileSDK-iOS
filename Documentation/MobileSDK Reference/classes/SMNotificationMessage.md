@@ -2,6 +2,12 @@
 
 ## Properties
 ```swift
+@objc var mediaType { get }
+```
+
+>The ``SMNotificationMediaType`` type of rich media that the notification has.
+
+```swift
 @objc var mediaUrl: String { get }
 ```
 

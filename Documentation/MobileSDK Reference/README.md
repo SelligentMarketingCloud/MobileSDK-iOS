@@ -51,6 +51,7 @@
 -   [SMLogLevel](enums/SMLogLevel.md)
 -   [SMMessageNature](enums/SMMessageNature.md)
 -   [SMNotificationButtonType](enums/SMNotificationButtonType.md)
+-   [SMNotificationMediaType](enums/SMNotificationMediaType.md)
 -   [SMNotificationMessageType](enums/SMNotificationMessageType.md)
 -   [SMRemoteMessageDisplayType](enums/SMRemoteMessageDisplayType.md)
 -   [SMViewTransition](enums/SMViewTransition.md)

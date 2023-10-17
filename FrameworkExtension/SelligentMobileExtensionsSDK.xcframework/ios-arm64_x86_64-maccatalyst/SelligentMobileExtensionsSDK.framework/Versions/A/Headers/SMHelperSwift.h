@@ -262,6 +262,7 @@ using UInt = size_t;
 
 
 
+
 SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK28NotificationSettingsProtocol_")
 @protocol NotificationSettingsProtocol
 @property (nonatomic, readonly) UNAuthorizationStatus authorizationStatus;
@@ -613,15 +614,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
-
-
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Set the log level of the library console.
 /// This is an optional setting that may help you debug the library calls.
 /// This call can be done at any time (before or after starting the library).
@@ -632,6 +624,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 - (void)apply:(enum kSMLogLevel_)logLevel;
 @end
+
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
+
 
 @class UNMutableNotificationContent;
 @class UNNotificationContent;
@@ -819,6 +820,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationButtonType_, "SMNotificationB
 };
 
 @class NSBundle;
+@class UIColor;
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewController")
 @interface SMNotificationContentViewController : UIViewController <UNNotificationContentExtension>
@@ -831,8 +833,6 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewContro
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 /// Inherited from NSCoding.encode(with:).
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE_MSG("This class does not support NSCoding");
-/// Creates an specific implementation of the UNNotificationContentExtension view
-- (void)viewDidLoad;
 /// Handles the UNNotificationContentExtension behaviour when a push is to be expanded
 /// \param notification The given <code>UNNotification</code> object
 ///
@@ -843,8 +843,29 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewContro
 /// \param completion The given <code>(UNNotificationContentExtensionResponseOption) -> Void</code> object
 ///
 - (void)didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(UNNotificationContentExtensionResponseOption))completion SWIFT_AVAILABILITY(maccatalyst,introduced=14.0);
+/// Called after the view has been loaded. For view controllers created in code, this is after -loadView. For view controllers unarchived from a nib, this is after the view is set.
+- (void)viewDidLoad;
+/// Called when the view is about to be dismissed, covered, or otherwise hidden.
+- (void)viewWillDisappear:(BOOL)animated;
+/// Implement this property when you want the system to display a media playback button in your notification interface. Return an appropriate constant indicating the type of button you want.
+@property (nonatomic, readonly) UNNotificationContentExtensionMediaPlayPauseButtonType mediaPlayPauseButtonType SWIFT_AVAILABILITY(maccatalyst,introduced=14.0) SWIFT_AVAILABILITY(maccatalyst_app_extension,introduced=14.0);
+/// The tint color for the media playback button.
+@property (nonatomic, readonly, strong) UIColor * _Nonnull mediaPlayPauseButtonTintColor;
+/// The frame rectangle to use for displaying a media playback button.
+@property (nonatomic, readonly) CGRect mediaPlayPauseButtonFrame;
+/// Tells you to begin playback of your media content.
+- (void)mediaPlay;
+/// Tells you to pause playback of your media content.
+- (void)mediaPause;
 @end
 
+
+typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationMediaType_, "SMNotificationMediaType", open) {
+  kSMNotificationMediaType_Unknown = -1,
+  kSMNotificationMediaType_Audio = 2,
+  kSMNotificationMediaType_Image = 3,
+  kSMNotificationMediaType_Video = 4,
+};
 
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationMessage")
@@ -852,6 +873,8 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationMessage")
 /// Indicates whether NSSecureCoding is supported
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
+/// The <code>SMNotificationMediaType</code> type of rich media that the notification has.
+@property (nonatomic, readonly) enum kSMNotificationMediaType_ mediaType;
 /// String value providing the title of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull mediaUrl;
 /// String value providing the content of the message
@@ -966,7 +989,7 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 
 
 @interface UIApplication (SWIFT_EXTENSION(SelligentMobileExtensionsSDK)) <UIApplicationProtocol>
-@property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(ios,introduced=13.0);
+@property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(maccatalyst,introduced=13.1) SWIFT_AVAILABILITY(ios,introduced=13.0);
 @property (nonatomic, readonly, strong) UIWindow * _Nullable currentWindow;
 @end
 
@@ -1274,6 +1297,7 @@ using UInt = size_t;
 
 
 
+
 SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK28NotificationSettingsProtocol_")
 @protocol NotificationSettingsProtocol
 @property (nonatomic, readonly) UNAuthorizationStatus authorizationStatus;
@@ -1625,15 +1649,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
-
-
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
 /// Set the log level of the library console.
 /// This is an optional setting that may help you debug the library calls.
 /// This call can be done at any time (before or after starting the library).
@@ -1644,6 +1659,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 - (void)apply:(enum kSMLogLevel_)logLevel;
 @end
+
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Selligent platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
+
 
 @class UNMutableNotificationContent;
 @class UNNotificationContent;
@@ -1831,6 +1855,7 @@ typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationButtonType_, "SMNotificationB
 };
 
 @class NSBundle;
+@class UIColor;
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewController")
 @interface SMNotificationContentViewController : UIViewController <UNNotificationContentExtension>
@@ -1843,8 +1868,6 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewContro
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 /// Inherited from NSCoding.encode(with:).
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE_MSG("This class does not support NSCoding");
-/// Creates an specific implementation of the UNNotificationContentExtension view
-- (void)viewDidLoad;
 /// Handles the UNNotificationContentExtension behaviour when a push is to be expanded
 /// \param notification The given <code>UNNotification</code> object
 ///
@@ -1855,8 +1878,29 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewContro
 /// \param completion The given <code>(UNNotificationContentExtensionResponseOption) -> Void</code> object
 ///
 - (void)didReceiveNotificationResponse:(UNNotificationResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(UNNotificationContentExtensionResponseOption))completion SWIFT_AVAILABILITY(maccatalyst,introduced=14.0);
+/// Called after the view has been loaded. For view controllers created in code, this is after -loadView. For view controllers unarchived from a nib, this is after the view is set.
+- (void)viewDidLoad;
+/// Called when the view is about to be dismissed, covered, or otherwise hidden.
+- (void)viewWillDisappear:(BOOL)animated;
+/// Implement this property when you want the system to display a media playback button in your notification interface. Return an appropriate constant indicating the type of button you want.
+@property (nonatomic, readonly) UNNotificationContentExtensionMediaPlayPauseButtonType mediaPlayPauseButtonType SWIFT_AVAILABILITY(maccatalyst,introduced=14.0) SWIFT_AVAILABILITY(maccatalyst_app_extension,introduced=14.0);
+/// The tint color for the media playback button.
+@property (nonatomic, readonly, strong) UIColor * _Nonnull mediaPlayPauseButtonTintColor;
+/// The frame rectangle to use for displaying a media playback button.
+@property (nonatomic, readonly) CGRect mediaPlayPauseButtonFrame;
+/// Tells you to begin playback of your media content.
+- (void)mediaPlay;
+/// Tells you to pause playback of your media content.
+- (void)mediaPause;
 @end
 
+
+typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationMediaType_, "SMNotificationMediaType", open) {
+  kSMNotificationMediaType_Unknown = -1,
+  kSMNotificationMediaType_Audio = 2,
+  kSMNotificationMediaType_Image = 3,
+  kSMNotificationMediaType_Video = 4,
+};
 
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationMessage")
@@ -1864,6 +1908,8 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationMessage")
 /// Indicates whether NSSecureCoding is supported
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
+/// The <code>SMNotificationMediaType</code> type of rich media that the notification has.
+@property (nonatomic, readonly) enum kSMNotificationMediaType_ mediaType;
 /// String value providing the title of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull mediaUrl;
 /// String value providing the content of the message
@@ -1978,7 +2024,7 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK21UIApplicationProtocol_")
 
 
 @interface UIApplication (SWIFT_EXTENSION(SelligentMobileExtensionsSDK)) <UIApplicationProtocol>
-@property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(ios,introduced=13.0);
+@property (nonatomic, readonly, strong) UIWindowScene * _Nullable currentWindowScene SWIFT_AVAILABILITY(maccatalyst,introduced=13.1) SWIFT_AVAILABILITY(ios,introduced=13.0);
 @property (nonatomic, readonly, strong) UIWindow * _Nullable currentWindow;
 @end
 
