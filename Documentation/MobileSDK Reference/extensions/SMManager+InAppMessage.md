@@ -5,7 +5,7 @@
 @objc func enable(inAppMessage: Bool)
 ```
 
->Call this API in order to enable / disable the IAM-service according to your application's need.<br/>
+>Call this API in order to enable / disable the IAM-service according to your application's need<br/>
 
 ```swift
 @objc func performIAMFetch(completion: @escaping (UIBackgroundFetchResult) -> Void)

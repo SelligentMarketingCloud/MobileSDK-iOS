@@ -5,7 +5,7 @@
 @objc func show(controller: SMInAppContentViewController, in view: UIView, of viewController: UIViewController)
 ```
 
->Call to show an ``SMInAppContentViewController``.<br/>The viewcontroller will take all available space in  the container view<br/>
+>Call to show an ``SMInAppContentViewController``.<br/>The viewcontroller will take all available space in  the container view.<br/>
 
 ```swift
 @objc func getInAppContents(for category: String, type: SMInAppContentType) -> [SMInAppContentMessage]

@@ -7,19 +7,19 @@
 case unknown = -1
 ```
 
->Any received button-type not in this enumeration type will be considered as unknown
+>Any received button-type not in this enumeration will be considered as unknown
 
 ```swift
 case simple = 0
 ```
 
->A button-type that will have no action but when clicked will send back button value to the platform
+>A button-type that will have no action but when will send back a Clicked event to the platform
 
 ```swift
 case openPhoneCall = 1
 ```
 
->A button-type that will open the Phone application with a ready to use number to dial
+>A button-type that will open the phone application with a ready to use number to dial
 
 ```swift
 case openSms = 2
@@ -31,40 +31,40 @@ case openSms = 2
 case openMail = 3
 ```
 
->A button-type that will open the mail application
+>A button-type that will open the mail application with a ready to send email address
 
 ```swift
 case openBrowser = 4
 ```
 
->Button that will open a ready to use safari-browser
+>A button-type that will open safari with a specific URL
 
 ```swift
 case openApplication = 5
 ```
 
->Button that will open a third party application
+>A button-type that will open a third party application
 
 ```swift
 case rateApplication = 6
 ```
 
->Button-type which will allow application rating.
+>A button-type which will allow application rating.
 
 ```swift
 case customActionBroadcastEvent = 7
 ```
 
->Button that will trigger a notification inside the application for any interested listener.<br/>You may register in your application to a specific event from NSNotificationCenter. The notification is broadcasted as soon as the push is received.<br/>Your back-end team should inform you about the notification-name.
+>A button-type that will trigger a notification inside the application for any interested listener.<br/>You may register in your application to a specific event from NSNotificationCenter. The notification is broadcasted as soon as button is clicked.<br/>Your back-end team should inform you about the notification-name.
 
 ```swift
 case passbook = 11
 ```
 
->Button-type which will allow user to add pkpass file inside wallet app
+>A button-type which will allow to open a pkpass file
 
 ```swift
 case deepLink = 13
 ```
 
->Button-type which will allow user depplink inside specific page in the app
+>A button-type which will allow user to execute a depplink

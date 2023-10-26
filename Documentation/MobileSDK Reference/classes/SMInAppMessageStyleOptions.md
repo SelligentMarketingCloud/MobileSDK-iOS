@@ -101,7 +101,7 @@
 @objc var imageCanBeTapped: Bool { get set }
 ```
 
->Defines whether inapps of type image can be tapped.<br/>If set to true, it will use the first link defined in Selligent UI and will remove it from the list of links to show after clicking in the Menu button (hidding it if no other link has been defined)<br/>By default, it is set to false
+>Defines whether inapps of type image can be tapped.<br/>If set to true, it will use the first link defined in Marigold Engage UI and will remove it from the list of links to show after clicking in the Menu button (hidding it if no other link has been defined)<br/>By default, it is set to false
 
 ```swift
 @objc var reloadButtonColor: UIColor? { get set }

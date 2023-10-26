@@ -4,17 +4,17 @@
 
 Copyright
 
-The contents of this manual cover material copyrighted by Selligent. Selligent reserves all intellectual property rights on the manual, which should be treated as confidential information as defined under the agreed upon software licence/lease terms and conditions.
+The contents of this manual cover material copyrighted by Marigold. Marigold reserves all intellectual property rights on the manual, which should be treated as confidential information as defined under the agreed upon software licence/lease terms and conditions.
 
-The use and distribution of this manual is strictly limited to authorised users of the Selligent Interactive Marketing Software (hereafter the "Software") and can only be used for the purpose of using the Software under the agreed upon software licence/lease terms and conditions. Upon termination of the right to use the Software, this manual and any copies made must either be returned to Selligent or be destroyed, at the latest two weeks after the right to use the Software has ended.
+The use and distribution of this manual is strictly limited to authorised users of the Marigold Interactive Marketing Software (hereafter the "Software") and can only be used for the purpose of using the Software under the agreed upon software licence/lease terms and conditions. Upon termination of the right to use the Software, this manual and any copies made must either be returned to Marigold or be destroyed, at the latest two weeks after the right to use the Software has ended.
 
-With the exception of the first sentence of the previous paragraph, no part of this manual may be reprinted or reproduced or distributed or utilised in any form or by any electronic, mechanical or other means, not known or hereafter invented, included photocopying and recording, or in any information storage or retrieval or distribution system, without the prior permission in writing from Selligent.
+With the exception of the first sentence of the previous paragraph, no part of this manual may be reprinted or reproduced or distributed or utilised in any form or by any electronic, mechanical or other means, not known or hereafter invented, included photocopying and recording, or in any information storage or retrieval or distribution system, without the prior permission in writing from Marigold.
 
-Selligent will not be responsible or liable for any accidental or inevitable damage that may result from unauthorised access or modifications.
+Marigold will not be responsible or liable for any accidental or inevitable damage that may result from unauthorised access or modifications.
 
 User is aware that this manual may contain errors or inaccuracies and that it may be revised without advance notice. This manual is updated frequently.
 
-Selligent welcomes any recommendations or suggestions regarding the manual, as it helps to continuously improve the quality of our products and manuals.
+Marigold welcomes any recommendations or suggestions regarding the manual, as it helps to continuously improve the quality of our products and manuals.
 
 ## Table of Contents
 
@@ -39,7 +39,7 @@ Selligent welcomes any recommendations or suggestions regarding the manual, as i
     - [Register for Provisional Push Notifications](#register-for-provisional-push-notifications)
     - [Provide the Device token to the SDK](#provide-the-device-token-to-the-sdk)
     - [Provide Push Notifications status to the SDK](#provide-push-notifications-status-to-the-sdk)
-    - [Disable Selligent Push Notifications](#disable-selligent-push-notifications)
+    - [Disable Marigold Engage Push Notifications](#disable-marigold-engage-push-notifications)
     - [Listening and displaying the Push Notifications](#listening-and-displaying-the-push-notifications)
     - [Helper methods](#helper-methods)
     - [Broadcasts](#broadcasts)
@@ -87,7 +87,7 @@ The purpose of this document is to detail how to install the SDK into your App a
 - For more detailed technical reference of the SDK please refer to [**MobileSDK Reference**](MobileSDK%20Reference/#reference-documentation).
 - For an example of implementation check the [**IOSSDKTemplate**](IOSSDKTemplate.zip) project.
 
->**Important Remark:** Core version of the SDK is fully compliant to AppTrackingTransparency framework as we never make any usage of [data used to track the device](https://developer.apple.com/app-store/app-privacy-details/). The device ID is for example a generated ID provided by the Selligent platform to the SDK at launch time.
+>**Important Remark:** Core version of the SDK is fully compliant to AppTrackingTransparency framework as we never make any usage of [data used to track the device](https://developer.apple.com/app-store/app-privacy-details/). The device ID is for example a generated ID provided by the Marigold Engage platform to the SDK at launch time.
 
 ## Create an APNS Key
 
@@ -120,7 +120,7 @@ To enable Push Notifications, go to the [Apple Developer Portal](https://develop
 </details>
 
 <details>
-  <summary>In this screen you can also note the Bundle ID and Team ID associated to your App as you will need to provide them to Selligent.</summary>
+  <summary>In this screen you can also note the Bundle ID and Team ID associated to your App as you will need to provide them to Marigold.</summary>
 
   ![Token details](images/Picture5.png)
 </details>
@@ -146,7 +146,7 @@ To enable Push Notifications, go to the [Apple Developer Portal](https://develop
   ![Warning](images/Picture11.png)
 </details>
 
-To use Selligent Push services you will need to provide us with:
+To use Marigold Engage Push services you will need to provide us with:
 
 - the downloaded **.p8** file
 - the **Key ID**
@@ -270,7 +270,7 @@ If everything is correctly set then when the user receives a Push and clicks it,
 
 By default, universal links in a button from a Push/IAM/IAC will open the default browser, to avoid this and catch them on the App and apply any logic you want, you will need to create a class that implements the `SMManagerUniversalLinksDelegate` and provide it to the SDK.
 
-> The delegate will only get triggered from `deeplink` button types defined in Selligent Marketing Cloud, whose URL scheme is `http` or `https`.
+> The delegate will only get triggered from `deeplink` button types defined in Marigold Engage, whose URL scheme is `http` or `https`.
 
 Swift
   
@@ -330,7 +330,7 @@ Objective-C
 - (BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 ```
 
-- Create an instance of `SMManagerSetting` with the **url**, **clientId** and **privateKey** provided by Selligent.
+- Create an instance of `SMManagerSetting` with the **url**, **clientId** and **privateKey** provided by Marigold.
 - Set the following optional properties according to your needs:
   
   | Property | Description |
@@ -438,8 +438,8 @@ SMManager.shared.registerForRemoteNotification()
 ```
 
 This can be called whenever you need to do it in your App.
-> If you plan to trigger this when a certain page or criteria is met, do take into account to also trigger it for users that have already given the Push permission in a previous version of the App without the Selligent SDK.<br>
-> Not doing so would make it impossible for Selligent to receive the necessary **device push token**, to be used when sending Push Notifications.
+> If you plan to trigger this when a certain page or criteria is met, do take into account to also trigger it for users that have already given the Push permission in a previous version of the App without the Marigold Engage SDK.<br>
+> Not doing so would make it impossible for Marigold Engage to receive the necessary **device push token**, to be used when sending Push Notifications.
 
 <details>
   <summary>You can then customize the way you inform the user before the display of iOS alert which will let the user allow Push Notifications for the App on the device (the iOS alert is displayed only once).</summary>
@@ -465,11 +465,11 @@ Objective-C
 [[SMManager shared] registerForProvisionalRemoteNotification];
 ```
 
-> If you want to segmentate your campaigns based on the type of authorization (provisional/normal), you can contact your Selligent TC or our support team to make the necessary configurations in the platform, to have it available.
+> If you want to segmentate your campaigns based on the type of authorization (provisional/normal), you can contact your Marigold Engage TC or our support team to make the necessary configurations in the platform, to have it available.
 
 ### Provide the Device token to the SDK
 
-If the user has accepted to receive Push Notifications, the device will be given a **device push token** by Apple, that you must provide to the Selligent platform. To do that you must implement:
+If the user has accepted to receive Push Notifications, the device will be given a **device push token** by Apple, that you must provide to the Marigold Engage platform. To do that you must implement:
 
 Swift
 
@@ -507,11 +507,11 @@ Objective-C
 }
 ```
 
-### Disable Selligent Push Notifications
+### Disable Marigold Engage Push Notifications
 
-By default, Selligent Push Notifications are enabled and, if the device is correctly registered to iOS, then you don't have anything else to do.
+By default, Marigold Engage Push Notifications are enabled and, if the device is correctly registered to iOS, then you don't have anything else to do.
 
-But if you want to disable (or enable) Selligent Pushes only (and still be able to receive other third party pushes), you have the possibility to do so by using:
+But if you want to disable (or enable) Marigold Engage Pushes only (and still be able to receive other third party pushes), you have the possibility to do so by using:
 
 Swift
 
@@ -527,7 +527,7 @@ Objective-C
 [[SMManager shared] disableRemoteNotification];
 ```
 
-Keep in mind that if, at device level, the Push Notifications are not registered and enabled then `enableRemoteNotification` won't be enough to receive Selligent Pushes.
+Keep in mind that if, at device level, the Push Notifications are not registered and enabled then `enableRemoteNotification` won't be enough to receive Marigold Engage Pushes.
 
 ### Listening and displaying the Push Notifications
 
@@ -615,10 +615,10 @@ Swift
 // Retrieves the SMNotificationMessage object from the given userInfo Dictionary, if any
 SMManager.shared.retrieveNotificationMessage(userInfo)
 
-// Given a valid SMNotificationMessage, the SDK will send the corresponding Opened event to the Selligent platform
+// Given a valid SMNotificationMessage, the SDK will send the corresponding Opened event to the Marigold Engage platform
 SMManager.shared.setNotificationMessageAsSeen(notificationMessage)
 
-// Given a valid SMLink and SMNotificationMessage, the SDK will send the corresponding Clicked event to the Selligent platform
+// Given a valid SMLink and SMNotificationMessage, the SDK will send the corresponding Clicked event to the Marigold Engage platform
 SMManager.shared.setLinkAsClicked(link, from: notificationMessage)
 
 // Displays the last received Push Notification
@@ -639,10 +639,10 @@ Objective-C
 // Retrieves the SMNotificationMessage object from the given userInfo Dictionary, if any
 [[SMManager shared] retrieveNotificationMessage:userInfo];
 
-// Given a valid SMNotificationMessage, the SDK will send the corresponding Opened event to the Selligent platform
+// Given a valid SMNotificationMessage, the SDK will send the corresponding Opened event to the Marigold Engage platform
 [[SMManager shared] setNotificationMessageAsSeen:notificationMessage];
 
-// Given a valid SMLink and SMNotificationMessage, the SDK will send the corresponding Clicked event to the Selligent platform
+// Given a valid SMLink and SMNotificationMessage, the SDK will send the corresponding Clicked event to the Marigold Engage platform
 [[SMManager shared] setLinkAsClicked:link from:notificationMessage];
 
 // Displays the last received Push Notification
@@ -763,7 +763,7 @@ if inAppMessages.count > 0 {
     SMManager.shared.executeLinkAction(link, inAppMessage: message)
 
     // When an IAM has been displayed to the user you will have to mandatory call
-    // This will permit to the Selligent platform to set the adequate (open) event to the IAM
+    // This will permit to the Marigold Engage platform to set the adequate (open) event to the IAM
     SMManager.shared.setInAppMessageAsSeen(message)
 
     // If you wish to remove the flag of a message as seen you can do so (this won't change the event state at platform level)
@@ -788,7 +788,7 @@ if (inAppMessages.count > 0) {
     [[SMManager shared] executeLinkAction:message.arrayIAMLinks.firstObject inAppMessage:message];
 
     // When an IAM has been displayed to the user you will have to mandatory call
-    // This will permit to the Selligent platform to set the adequate (open) event to the IAM
+    // This will permit to the Marigold Engage platform to set the adequate (open) event to the IAM
     [[SMManager shared] setInAppMessageAsSeen:message];
 
     // If you wish to remove the flag of a message as seen you can do so (this won't change the event state at platform level)
@@ -1091,7 +1091,7 @@ SMEventUserUnregistration(profileId: String = "", properties: [AnyHashable: Any]
 | Property | Description |
 | --------- | --------- |
 | `profileId` | The custom profile identifier (`mail` in our v1 platform) of the user as a `String`. |
-| `properties` | A `Dictionary` containing additional user data you want to provide to Selligent. |
+| `properties` | A `Dictionary` containing additional user data you want to provide to Marigold Engage. |
 
 ### SMUserEventRegistration
 
@@ -1099,7 +1099,7 @@ This object is used to send a **register** event to the server with the custom p
 
 You can use an alternate key/value field to search for the user, in the `Dictionary`.
 > Make sure to leave the `profileId` empty (or with the correct `mail` of the user, when targeting our v1 platform and using an alternate key/value field for user linking purposes.
-> This event will create a new user in your Selligent database, if none was found.
+> This event will create a new user in your Marigold Engage database, if none was found.
 
 Swift
 
@@ -1182,7 +1182,7 @@ Constructors:
 | Property | Description |
 | --------- | --------- |
 | `profileId` | The custom profile identifier (`mail` in our v1 platform) of the user as a `String`. |
-| `properties` | A `Dictionary` containing additional user data you want to provide to Selligent. |
+| `properties` | A `Dictionary` containing additional user data you want to provide to Marigold Engage. |
 
 ### SMEventUserLogin
 
@@ -1190,7 +1190,7 @@ This object is used to send a **login** event to the server with the custom prof
 
 You can use an alternate key/value field to search for the user, in the `Dictionary`.
 > Make sure to leave the `profileId` empty (or with the correct `mail` of the user, when targeting our v1 platform and using an alternate key/value field for user linking purposes.
-> This event will **NOT** create a new user in your Selligent database, if none found.
+> This event will **NOT** create a new user in your Marigold Engage database, if none found.
 
 Swift
 
@@ -1264,16 +1264,17 @@ event.shouldCache = true; // Not necessary as it is the default value
 
 ### Custom
 
-Constructors:
+Constructor:
 
 ```swift
-SMEvent(name: String = "", properties: [AnyHashable: Any]? = nil)
+SMEvent(name: String = "", profileId: String = "", properties: [AnyHashable: Any]? = nil)
 ```
 
 | Property | Description |
 | --------- | --------- |
 | `name` | The name for the custom event (currently not sent to the backend, future-proof property), used to identify what the event needs to do at server side. |
-| `properties` | An `Dictionary` containing additional user data you want to provide to Selligent. |
+| `profileId` | The custom profile identifier (`mail` in our v1 platform) of the user as a `String`. |
+| `properties` | An `Dictionary` containing additional user data you want to provide to Marigold Engage. |
 
 ### SMEvent
 
@@ -1282,7 +1283,7 @@ This object is used to send a custom event to the server with some data and a ca
 Swift
 
 ```swift
-let event = SMEvent(name: "PRODUCT_PURCHASE", properties: ["key": "value"])
+let event = SMEvent(name: "PRODUCT_PURCHASE", profileId: "user@mail.com", properties: ["key": "value"])
 
 // Optional
 event.shouldCache = true // Not necessary as it is the default value
@@ -1298,7 +1299,7 @@ SMManager.shared.send(event)
 Objective-C
 
 ```objective-c
-SMEvent *event = [[SMEvent alloc] initWithName:@"PRODUCT_PURCHASE" properties:@{@"key":@"value"}];
+SMEvent *event = [[SMEvent alloc] initWithName:@"PRODUCT_PURCHASE" profileId:@"user@mail.com" properties:@{@"key":@"value"}];
 
 // Optional
 event.shouldCache = true; // Not necessary as it is the default value
@@ -1316,13 +1317,13 @@ event.shouldCache = true; // Not necessary as it is the default value
 > Remember, for the correct behavior of the Extensions, the `appGroupId` needs to *also* be set when [starting the SDK](#starting-the-sdk) from your App target.<br>Make sure the setting `LD_RUNPATH_SEARCH_PATHS`, in your extension targets, contains both `@executable_path/Frameworks` and `@executable_path/../../Frameworks` to properly load the library from the main app target.
 
 Some SDK functionalities are only possible with the implementation of Notification Extension targets.
-Those functionalities available through Selligent Marketing Cloud are:
+Those functionalities available through Marigold Engage are:
 
 - Push action buttons: buttons to be displayed inside the notification center.
 - Decrypt an encrypted payload.
 - Rich Push content.
 
-They are only available from within Selligent Marketing Cloud.
+They are only available from within Marigold Engage.
 
 ### General set up
 
@@ -1401,7 +1402,7 @@ class NotificationService: SMNotificationService {
 
         self.settings = try? SMManagerSetting(url: url, clientId: clientId, privateKey: privateKey)
         self.settings?.appGroupId = "group.yourGroupName"
-        // Whether encryption is enabled or not (needs to be aligned with the Selligent backend configuration), default false
+        // Whether encryption is enabled or not (needs to be aligned with the Marigold Engage backend configuration), default false
         // self.encryptionEnabled = true
     }
 }
@@ -1453,7 +1454,7 @@ Add the `NSExtensionPrincipalClass` property with `$(PRODUCT_MODULE_NAME).Notifi
 #### Content Extension Implementation
 
 <details>
-  <summary>If you have correctly added a Selligent Notification Content Extension target to your project, you will be able to display Rich Push media and action buttons directly in the Push Notification.</summary>
+  <summary>If you have correctly added a Marigold Engage Notification Content Extension target to your project, you will be able to display Rich Push media and action buttons directly in the Push Notification.</summary>
 
   ![Rich Push](images/Picture36.png)
 </details>
@@ -1494,7 +1495,7 @@ You can listen to some `NSNotification` by observing the correct notification na
 | `SMConstants.kSMNotification_Event_WillDismissNotification` | `NSNotification` name | It is broadcasted shortly before dismissing the current Remote Notification's content'. It can be used to resume any paused work (see `SMConstants.kSMNotification_Event_WillDisplayNotification`). |
 | `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification` | `NSNotification` name | It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification. |
 | `SMConstants.kSMNotification_Event_DidReceiveInAppMessage` | `NSNotification` name | It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages. |
-| `SMConstants.kSMNotification_Event_DidReceiveDeviceId` | `NSNotification` name | It is broadcasted shortly after receiving a Selligent deviceId value. It can be used to manage the received device id. |
+| `SMConstants.kSMNotification_Event_DidReceiveDeviceId` | `NSNotification` name | It is broadcasted shortly after receiving a Marigold Engage deviceId value. It can be used to manage the received device id. |
 
 ### Data broadcasts
 
@@ -1503,7 +1504,7 @@ You can listen to some `NSNotification` by observing the correct notification na
 | `SMConstants.kSMNotification_Data_ButtonData` | `String` Key | Use this Key to retrieve the object [SMLink](MobileSDK%20Reference/classes/SMLink.md), from the NSNotification-name `SMConstants.kSMNotification_Event_ButtonClicked`. |
 | `SMConstants.kSMNotification_Object_RemoteNotification` | `String` Key | Use this Key to retrieve a `SMNotificationMessage` instance with the Push content, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveRemoteNotification`. |
 | `SMConstants.kSMNotification_Object_InAppMessage` | `String` Key | Use this Key to retrieve an `SMInAppMessage` array, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveInAppMessage`. |
-| `SMConstants.kSMNotification_Data_DeviceId` | `String` Key | Use this Key to retrieve a `String` instance with the Selligent deviceId value, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveDeviceId`. |
+| `SMConstants.kSMNotification_Data_DeviceId` | `String` Key | Use this Key to retrieve a `String` instance with the Marigold Engage deviceId value, from the NSNotification-name `SMConstants.kSMNotification_Event_DidReceiveDeviceId`. |
 
 ### Examples
 
@@ -1619,7 +1620,7 @@ Objective-C
 
 ### Retrieve Device Id
 
-In case you need the Selligent device ID, you can retrieve it using `SMManager/deviceId`.<br>
+In case you need the Marigold Engage device ID, you can retrieve it using `SMManager/deviceId`.<br>
 To be notified if the device Id has changed, the App must register to the correct notification `SMConstants/kSMNotification_Event_DidReceiveDeviceId`.
 
 The Notification will provide the new device ID to the App (Key `SMConstants/kSMNotification_Data_DeviceId`).
@@ -1860,7 +1861,7 @@ If you want to keep the default one, just hide the `UIView` created by default a
 For more information about Notification Content Extensions please check the [Apple documentation](https://developer.apple.com/documentation/usernotificationsui/customizing_the_appearance_of_notifications).
 
 <details>
-  <summary>If you have correctly added a Selligent Notification Content Extension target to your project, you will be able to display Rich Push media and action buttons directly in the Push Notification.</summary>
+  <summary>If you have correctly added a Marigold Engage Notification Content Extension target to your project, you will be able to display Rich Push media and action buttons directly in the Push Notification.</summary>
 
   ![Rich Push](images/Picture36.png)
 </details>

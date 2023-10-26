@@ -11,7 +11,7 @@
 @objc var encryptionEnabled: Bool { get set }
 ```
 
->Whether encryption is enabled or not (needs to be aligned with the Selligent backend configuration), default false
+>Whether encryption is enabled or not (needs to be aligned with the Marigold Engage backend configuration), default false
 
 ## Methods
 ```swift

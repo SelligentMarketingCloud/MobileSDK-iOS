@@ -11,4 +11,4 @@ var messageSM: String { get }
 var description: String { get }
 ```
 
->A textual representation of the receiver.
+>Description of the success

@@ -41,14 +41,14 @@
 @objc var appGroupId: String { get set }
 ```
 
->This value provides to the SDK  the app group id that you have previously defined in your apple developer portal.<br/>It is used to allow the SDK to share data between the main app and the notification extensions (service and/or content).<br/>The deviceId provided by Selligent mobile platform is stored in this container
+>This value provides to the SDK  the app group id that you have previously defined in your apple developer portal.<br/>It is used to allow the SDK to share data between the main app and the notification extensions (service and/or content).<br/>The deviceId provided by Marigold Engage mobile platform is stored in this container
 
 ## Methods
 ```swift
 @objc init(url: String, clientId: String, privateKey: String) throws
 ```
 
->Selligent v1 support. Use this init when integrating with the old system.<br/>Default-mandatory constructor to start the ``SMManager`` shared instance<br/>
+>Marigold Engage v1 support. Use this init when integrating with the old system.<br/>Default-mandatory constructor to start the ``SMManager`` shared instance<br/>
 
 ```swift
 @objc func configureInAppMessageService(with settings: SMManagerSettingIAM)

@@ -5,7 +5,7 @@
 @objc var mediaType { get }
 ```
 
->The ``SMNotificationMediaType`` type of rich media that the notification has.
+>The type of rich media that the notification has
 
 ```swift
 @objc var mediaUrl: String { get }
@@ -17,23 +17,23 @@
 @objc var mainAction: SMLink? { get }
 ```
 
->String value providing the content of the message
+>The link behind the main action of the remote notification
 
 ```swift
 @objc var notificationButtons: [SMLink] { get }
 ```
 
->String value providing the category of the message
+>Links that the remote notification has
 
 ## Methods
 ```swift
 override func encode(with coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)
 
 ```swift
 required init(coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)

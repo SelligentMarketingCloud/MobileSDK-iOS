@@ -7,46 +7,46 @@
 case unknown = -2
 ```
 
->In App message of unknown type.
+>When the value is not contained in this enum, it will be unknown
 
 ```swift
 case hidden = -1
 ```
 
->In App message of hidden type.
+>In App message of hidden type
 
 ```swift
 case alert = 0
 ```
 
->In App message of alert type.
+>In App message of alert type
 
 ```swift
 case html = 1
 ```
 
->In App message of html type.
+>In App message of html type
 
 ```swift
 case url = 2
 ```
 
->In App message of url type.
+>In App message of url type
 
 ```swift
 case image = 3
 ```
 
->In App message of image type.
+>In App message of image type
 
 ```swift
 case map = 4
 ```
 
->In App message of map type.
+>In App message of map type
 
 ```swift
 case passbook = 5
 ```
 
->In App message of passbook type.
+>In App message of passbook type

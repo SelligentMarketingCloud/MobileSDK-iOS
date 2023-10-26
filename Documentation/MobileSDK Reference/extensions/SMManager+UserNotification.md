@@ -29,7 +29,7 @@
 @objc func didReceive(_ notification: UNNotification, context: NSExtensionContext?)
 ```
 
->Mandatory API when using a Notification content extension, to be included in didReceiveNotification:.<br/>Handles the push action buttons and rich content that may be present in the selligent notification payload.<br/>
+>Mandatory API when using a Notification content extension, to be included in didReceiveNotification:.<br/>Handles the push action buttons and rich content that may be present in the Marigold Engage notification payload.<br/>
 
 ```swift
 @objc func didReceive(request: UNNotificationRequest, completion: @escaping (UNMutableNotificationContent) -> Void)
@@ -53,4 +53,4 @@
 @objc func retrieveNotificationMessage(_ userInfo: [AnyHashable: Any]) -> SMNotificationMessage?
 ```
 
->Optional API, retrieves the ``SMNotificationMessage`` object from a given userInfo.<br/>To be used for custom implementations when you need to get the Selligent push object from the provided userInfo to know what has been provided from the backend and use it.<br/>
+>Optional API, retrieves the ``SMNotificationMessage`` object from a given userInfo.<br/>To be used for custom implementations when you need to get the Marigold Engage push object from the provided userInfo to know what has been provided from the backend and use it.<br/>

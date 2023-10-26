@@ -5,4 +5,4 @@
 @objc func send(_ event: SMEvent)
 ```
 
->Send an event to the Selligent platform<br/>
+>Send an event to the Marigold Engage platform<br/>

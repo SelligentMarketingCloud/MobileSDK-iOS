@@ -7,7 +7,7 @@
 case unknown = -1
 ```
 
->This explicitely sets the displayMode to unknown
+>When the value is not contained in this enum, it will be unknown
 
 ```swift
 case onlyOnce = 0

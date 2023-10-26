@@ -23,7 +23,7 @@ import _StringProcessing
     @objc get
   }
   @objc public var shouldCache: Swift.Bool
-  @objc public init(name: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
+  @objc public init(name: Swift.String = "", profileId: Swift.String = "", properties: [Swift.AnyHashable : Any]? = nil)
   @objc public func apply(successBlock: ((SelligentMobileExtensionsSDK.SMSuccess) -> Swift.Void)? = nil, failureBlock: ((SelligentMobileExtensionsSDK.SMFailure) -> Swift.Void)? = nil)
   @objc public func encode(with coder: Foundation.NSCoder)
   @objc required public init(coder: Foundation.NSCoder)

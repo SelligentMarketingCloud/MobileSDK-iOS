@@ -23,17 +23,17 @@
 @objc var type: SMNotificationButtonType { get }
 ```
 
->The ``SMNotificationButtonType`` type of action that the button will execute.
+>The type of action the button will execute
 
 ## Methods
 ```swift
 func encode(with coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)
 
 ```swift
 required init(coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)

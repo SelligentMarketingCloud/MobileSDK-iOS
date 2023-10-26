@@ -1,5 +1,9 @@
 # SDK Changelog
 
+- __SDK 3.8.1__
+    - Fix bug where events sent from Notification Extensions would not be retried when failing
+    - Add `profileId` parameter to `SMEvent` (custom event) constructor
+    
 - __SDK 3.8.0__
     - Add video and audio handling in Notification Content extensions when subclassing `SMNotificationContentViewController`
     - Add public visibility to `SMNotificationMessage/mediaType` property

@@ -24,10 +24,10 @@
 func encode(with coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)
 
 ```swift
 required init(coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)

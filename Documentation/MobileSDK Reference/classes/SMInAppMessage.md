@@ -17,13 +17,13 @@
 @objc var arrayMapAnnotations: [SMNotificationAnnotationData] { get }
 ```
 
->``SMNotificationAnnotationData`` array containing the anotations for map type messages
+>The anotations for map type messages
 
 ```swift
 @objc var arrayIAMLinks: [SMLink] { get }
 ```
 
->``SMLink`` array containing the links of the message
+>Links that the message can contain
 
 ```swift
 @objc var apsTitle: String { get }
@@ -42,10 +42,10 @@
 override func encode(with coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)
 
 ```swift
 required init(coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)

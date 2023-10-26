@@ -23,23 +23,23 @@
 @objc var iacType: SMInAppContentType { get }
 ```
 
->``SMInAppContentType`` instance providing the in app content type of the message
+>The content type of the message
 
 ```swift
 @objc var arrayIACLinks: [SMLink] { get }
 ```
 
->Array of SMLink objects
+>Links that the message can contain
 
 ## Methods
 ```swift
 override func encode(with coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)
 
 ```swift
 required init(coder: NSCoder)
 ```
 
->Inherited from NSCoding.encode(with:).
+>Inherited from NSCoding.encode(with:)

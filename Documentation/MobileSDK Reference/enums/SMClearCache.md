@@ -7,13 +7,13 @@
 case none = 0
 ```
 
->This explicitely disable the SDK-cache mechanism.
+>This explicitly disables the SDK-cache mechanism
 
 ```swift
 case auto = 1
 ```
 
->This is the default value.
+>Default value, the SDK will automatically decide the best setting
 
 ```swift
 case week = 2

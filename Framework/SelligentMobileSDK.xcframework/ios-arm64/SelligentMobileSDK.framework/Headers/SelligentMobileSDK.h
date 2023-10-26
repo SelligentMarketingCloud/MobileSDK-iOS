@@ -3,7 +3,7 @@
 //  SelligentMobileSDK
 //
 //  Created by Thibaut Colin on 07/04/2021.
-//  Copyright © 2021 Selligent. All rights reserved.
+//  Copyright © 2023 Marigold. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

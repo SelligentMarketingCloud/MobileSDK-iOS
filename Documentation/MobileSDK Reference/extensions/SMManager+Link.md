@@ -11,7 +11,7 @@
 @objc func setLinkAsClicked(_ link: SMLink, from message: SMBaseMessage)
 ```
 
->Tells to the SDK that a certain ``SMLink`` object has been clicked.<br/>This is a convinient method when the behavior when receiving a remote-notification is handled at App side and the standard events need to be sent back to the Selligent platform.<br/>
+>Tells to the SDK that a certain ``SMLink`` object has been clicked.<br/>This is a convinient method when the behavior when receiving a remote-notification is handled at App side and the standard events need to be sent back to the Marigold Engage platform.<br/>
 
 ```swift
 @objc func executeLinkAction(_ link: SMLink, message: SMBaseMessage)

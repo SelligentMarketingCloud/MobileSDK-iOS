@@ -1,8 +1,8 @@
 # MobileSDK-iOS
 
-What is the Selligent Marketing Cloud - Mobile SDK for iOS?
+What is the Marigold Engage - Mobile SDK for iOS?
 
-The Selligent Marketing Cloud - Mobile SDK is a tool that enables you to use the Selligent Marketing Cloud - Mobile feature in a very easy and straightforward way. 
+The Marigold Engage - Mobile SDK is a tool that enables you to use the Marigold Engage - Mobile feature in a very easy and straightforward way. 
 
 By incorporating our latest SDK for iOS in your app, we support you in handling Push Notifications, In-App Messages, standard and custom events as well as registrations, unregistrations, logins and logouts in the App.
 

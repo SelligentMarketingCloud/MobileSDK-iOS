@@ -290,13 +290,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @property (nonatomic, readonly) BOOL isViewed;
 /// The inapp-message type (if any)
 @property (nonatomic, readonly) enum kSMNotificationMessageType_ type;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-/// Returns an integer that can be used as a table address in a hash table structure.
+/// Returns an integer that can be used as a table address in a hash table structure
 @property (nonatomic, readonly) NSUInteger hash;
-/// Returns a Boolean value that indicates whether the receiver and a given object are equal.
+/// Returns a Boolean value that indicates whether the receiver and a given object are equal
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -304,9 +304,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMClearCache_, "SMClearCache", open) {
-/// This explicitely disable the SDK-cache mechanism.
+/// This explicitly disables the SDK-cache mechanism
   kSMClearCache_None = 0,
-/// This is the default value.
+/// Default value, the SDK will automatically decide the best setting
   kSMClearCache_Auto = 1,
 /// Clear the cache weekly
   kSMClearCache_Week = 2,
@@ -322,46 +322,46 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK11SMConstants")
 /// Domain used by the SDK for custom error handling
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMErrorDomain;)
 + (NSString * _Nonnull)kSMErrorDomain SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification.
+/// It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_ButtonClicked;)
 + (NSString * _Nonnull)kSMNotification_Event_ButtonClicked SWIFT_WARN_UNUSED_RESULT;
 /// It is broadcasted shortly before displaying a Remote Notification’s content. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDisplayNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDisplayNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before dismissing the current Remote Notification’s content. It can be used to resume any paused work.
+/// It is broadcasted shortly before dismissing the current Remote Notification’s content. It can be used to resume any paused work
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDismissNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDismissNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification.
+/// It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_DidReceiveRemoteNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_DidReceiveRemoteNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages.
+/// It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_DidReceiveInAppMessage;)
 + (NSString * _Nonnull)kSMNotification_Event_DidReceiveInAppMessage SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly after receiving in-app contents.
+/// It is broadcasted shortly after receiving in-app contents
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_DidReceiveInAppContent;)
 + (NSString * _Nonnull)kSMNotification_Event_DidReceiveInAppContent SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly after receiving a Selligent deviceId value. It can be used to manage the received device id.
+/// It is broadcasted shortly after receiving a Marigold Engage deviceId value. It can be used to manage the received device id
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_DidReceiveDeviceId;)
 + (NSString * _Nonnull)kSMNotification_Event_DidReceiveDeviceId SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve the object <code>SMLink</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_ButtonClicked</code>.
+/// Use this Key to retrieve the object <code>SMLink</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_ButtonClicked</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_ButtonData;)
 + (NSString * _Nonnull)kSMNotification_Data_ButtonData SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
+/// Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
+/// Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_RemoteNotification;)
 + (NSString * _Nonnull)kSMNotification_Object_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
+/// Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_InAppMessage SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
+/// Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_InAppMessage;)
 + (NSString * _Nonnull)kSMNotification_Object_InAppMessage SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance of <code>SMInAppContentMessage</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppContent</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppContent;)
 + (NSString * _Nonnull)kSMNotification_Data_InAppContent SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve an <code>String</code> instance with the Selligent deviceId value, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveDeviceId</code>.
+/// Use this Key to retrieve an <code>String</code> instance with the Marigold Engage deviceId value, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveDeviceId</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_DeviceId;)
 + (NSString * _Nonnull)kSMNotification_Data_DeviceId SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -375,7 +375,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMDisplayMode_, "SMDisplayMode", open) {
-/// This explicitely sets the displayMode to unknown
+/// When the value is not contained in this enum, it will be unknown
   kSMDisplayMode_Unknown = -1,
 /// Display only once
   kSMDisplayMode_OnlyOnce = 0,
@@ -409,9 +409,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// Create an event object that will be sent to platform
 /// \param name The name for the custom event (currently not sent to the backend, future-proof property), used to identify what the event needs to do at server side
 ///
+/// \param profileId The custom profile identifier (<code>mail</code> in our v1 platform) of the user
+///
 /// \param properties A dictionary containing any kind of custom data that must be stored and managed by platform
 ///
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name properties:(NSDictionary * _Nullable)properties OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name profileId:(NSString * _Nonnull)profileId properties:(NSDictionary * _Nullable)properties OBJC_DESIGNATED_INITIALIZER;
 /// Allow to initialize a success block and/or a failure block that will be triggered after an event is sent to the platform
 /// \param successBlock Void that gives an <code>SMSuccess</code> if the event was sent properly to the platform
 ///
@@ -430,12 +432,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 
 
 
+
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK13SMEventAction")
 @interface SMEventAction : SMEvent
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name profileId:(NSString * _Nonnull)profileId properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
 @end
 
 
@@ -474,7 +477,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK11SMEventUser")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name profileId:(NSString * _Nonnull)profileId properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
 @end
 
 
@@ -489,7 +492,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK9SMFailure")
 @interface SMFailure : NSObject <SMMessage>
 /// Description of the failure
 @property (nonatomic, readonly, copy) NSString * _Nonnull messageSM;
-/// A textual representation of the receiver.
+/// Description of the failure
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -514,29 +517,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @property (nonatomic, readonly, copy) NSString * _Nonnull title;
 /// String value providing the content of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull body;
-/// <code>SMNotificationAnnotationData</code> array containing the anotations for map type messages
+/// The anotations for map type messages
 @property (nonatomic, readonly, copy) NSArray<SMNotificationAnnotationData *> * _Nonnull arrayMapAnnotations;
-/// <code>SMLink</code> array containing the links of the message
+/// Links that the message can contain
 @property (nonatomic, readonly, copy) NSArray<SMLink *> * _Nonnull arrayIAMLinks;
 /// String value providing the title of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsTitle;
 /// String value providing the body of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsBody;
 /// String value providing the metadata content defined when sending out the communication
-/// warning:
-/// Currently not sent from the backend (future-proof property)
 @property (nonatomic, readonly, copy) NSString * _Nonnull metadata;
-/// String array value providing the tag values defined when sending out the communication
-/// warning:
-/// Currently not sent from the backend (future-proof property)
+/// String array value providing the tag values defined when sending out the communication)
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
 /// String value providing the profile defined when sending out the communication
-/// warning:
-/// Currently not sent from the backend (future-proof property)
 @property (nonatomic, readonly, copy) NSString * _Nonnull profileId;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -545,9 +542,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMInAppMessageServiceState_, "SMInAppMessageServiceState", open) {
 /// In-app message service hasn’t been explicitly enabled or disabled just yet, thus it will remain disabled from an operational point of view
   kSMInAppMessageServiceState_Undefined = 0,
-/// In-app message service has explicitly been disabled.
+/// In-app message service has explicitly been disabled
   kSMInAppMessageServiceState_Disabled = 1,
-/// In-app message service has explicitly been enabled.
+/// In-app message service has explicitly been enabled
   kSMInAppMessageServiceState_Enabled = 2,
 };
 
@@ -564,11 +561,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @property (nonatomic, readonly, copy) NSString * _Nonnull label;
 /// String value providing the value of the button
 @property (nonatomic, readonly, copy) NSString * _Nonnull value;
-/// The <code>SMNotificationButtonType</code> type of action that the button will execute.
+/// The type of action the button will execute
 @property (nonatomic, readonly) enum kSMNotificationButtonType_ type;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -603,7 +600,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK9SMManager")
 @interface SMManager : NSObject
 /// The current version of the library
 @property (nonatomic, readonly, copy) NSString * _Nonnull versionLib;
-/// Currently known Selligent device Id
+/// Currently known Marigold Engage device Id
 @property (nonatomic, readonly, copy) NSString * _Nonnull deviceId;
 /// Singleton for <code>SMManager</code> which allows to access public methods and properties
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * _Nonnull shared;)
@@ -611,6 +608,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Marigold Engage platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -625,13 +629,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (void)apply:(enum kSMLogLevel_)logLevel;
 @end
 
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
 
 
 @class UNMutableNotificationContent;
@@ -667,7 +664,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 - (void)didReceive:(UNNotificationResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(UNNotificationContentExtensionResponseOption))completionHandler SWIFT_AVAILABILITY(maccatalyst,introduced=14.0);
 /// Mandatory API when using a Notification content extension, to be included in didReceiveNotification:.
-/// Handles the push action buttons and rich content that may be present in the selligent notification payload.
+/// Handles the push action buttons and rich content that may be present in the Marigold Engage notification payload.
 /// \param notification An UNNotification that contains information about the notification
 ///
 /// \param context An NSExtensionContext that contains the context information of the extension
@@ -693,10 +690,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// Do not implement this if you are not using the encryption functionality or you didn’t implement the <code>SMManager/didReceive(_:contentHandler:)</code>
 - (void)serviceExtensionTimeWillExpire;
 /// Optional API, retrieves the <code>SMNotificationMessage</code> object from a given userInfo.
-/// To be used for custom implementations when you need to get the Selligent push object from the provided userInfo to know what has been provided from the backend and use it.
+/// To be used for custom implementations when you need to get the Marigold Engage push object from the provided userInfo to know what has been provided from the backend and use it.
 ///
 /// returns:
-/// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
+/// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Marigold Engage notification.
 - (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -715,29 +712,29 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK16SMManagerSetting")
 @property (nonatomic) enum kSMClearCache_ clearCacheIntervalValue;
 /// This value provides to the SDK  the app group id that you have previously defined in your apple developer portal.
 /// It is used to allow the SDK to share data between the main app and the notification extensions (service and/or content).
-/// The deviceId provided by Selligent mobile platform is stored in this container
+/// The deviceId provided by Marigold Engage mobile platform is stored in this container
 @property (nonatomic, copy) NSString * _Nonnull appGroupId;
-/// Selligent v1 support. Use this init when integrating with the old system.
+/// Marigold Engage v1 support. Use this init when integrating with the old system.
 /// Default-mandatory constructor to start the <code>SMManager</code> shared instance
-/// \param url The endpoint of Selligent mobile servers backend
+/// \param url The endpoint of Marigold Engage mobile servers backend
 ///
-/// \param clientId Selligent’s mobile app Id to secure requests
+/// \param clientId Marigold Engage’s mobile app Id to secure requests
 ///
-/// \param privateKey Selligent’s mobile app Id to secure requests
+/// \param privateKey Marigold Engage’s mobile app Id to secure requests
 ///
 ///
 /// throws:
 /// NSError (where the <em>domain</em> will be <code>SMConstants/kSMErrorDomain</code> and the <em>code</em> will be one from <code>SMError</code>). Possible thrown codes for this method: <code>SMError/wrongParameters</code> (when any of the mandatory parameters are missing)
 - (nullable instancetype)initWithUrl:(NSString * _Nonnull)url clientId:(NSString * _Nonnull)clientId privateKey:(NSString * _Nonnull)privateKey error:(NSError * _Nullable * _Nullable)error OBJC_DESIGNATED_INITIALIZER;
-/// Selligent Delivery Cloud support. Use this init when integrating with the new system.
+/// Engage Delivery Cloud support. Use this init when integrating with the new system.
 /// Default-mandatory constructor to start the <code>SMManager</code> shared instance
-/// \param url The endpoint of Selligent mobile servers backend
+/// \param url The endpoint of Marigold Engage mobile servers backend
 ///
 /// \param appId The main app bundle Id
 ///
-/// \param apiKey Selligent mobile apiKey to secure requests
+/// \param apiKey Marigold Engage mobile apiKey to secure requests
 ///
-/// \param legacyPrivateKey Valid privateKey from Selligent v1 mobile platform (if any)
+/// \param legacyPrivateKey Valid privateKey from Marigold Engage v1 mobile platform (if any)
 ///
 ///
 /// throws:
@@ -760,11 +757,11 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK31SMManagerUniversalLinksDeleg
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMMN_, "SMMessageNature", open) {
-/// Message origin from push notification.
+/// Message origin from push notification
   kSMMN_Push = 0,
-/// Message origin from in-app content.
+/// Message origin from in-app content
   kSMMN_IaContent = 1,
-/// Message origin from push in-app message.
+/// Message origin from push in-app message
   kSMMN_IaMessage = 2,
 };
 
@@ -783,9 +780,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// String value providing the annotation’s subtitle
 /// *
 @property (nonatomic, readonly, copy) NSString * _Nullable subtitle;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -793,29 +790,29 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationButtonType_, "SMNotificationButtonType", open) {
-/// Any received button-type not in this enumeration type will be considered as unknown
+/// Any received button-type not in this enumeration will be considered as unknown
   kSMNotificationButtonType_Unknown = -1,
-/// A button-type that will have no action but when clicked will send back button value to the platform
+/// A button-type that will have no action but when will send back a Clicked event to the platform
   kSMNotificationButtonType_Simple = 0,
-/// A button-type that will open the Phone application with a ready to use number to dial
+/// A button-type that will open the phone application with a ready to use number to dial
   kSMNotificationButtonType_OpenPhoneCall = 1,
 /// A button-type that will open the sms application with a ready to dial sms
   kSMNotificationButtonType_OpenSms = 2,
-/// A button-type that will open the mail application
+/// A button-type that will open the mail application with a ready to send email address
   kSMNotificationButtonType_OpenMail = 3,
-/// Button that will open a ready to use safari-browser
+/// A button-type that will open safari with a specific URL
   kSMNotificationButtonType_OpenBrowser = 4,
-/// Button that will open a third party application
+/// A button-type that will open a third party application
   kSMNotificationButtonType_OpenApplication = 5,
-/// Button-type which will allow application rating.
+/// A button-type which will allow application rating.
   kSMNotificationButtonType_RateApplication = 6,
-/// Button that will trigger a notification inside the application for any interested listener.
-/// You may register in your application to a specific event from NSNotificationCenter. The notification is broadcasted as soon as the push is received.
+/// A button-type that will trigger a notification inside the application for any interested listener.
+/// You may register in your application to a specific event from NSNotificationCenter. The notification is broadcasted as soon as button is clicked.
 /// Your back-end team should inform you about the notification-name.
   kSMNotificationButtonType_CustomActionBroadcastEvent = 7,
-/// Button-type which will allow user to add pkpass file inside wallet app
+/// A button-type which will allow to open a pkpass file
   kSMNotificationButtonType_Passbook = 11,
-/// Button-type which will allow user depplink inside specific page in the app
+/// A button-type which will allow user to execute a depplink
   kSMNotificationButtonType_DeepLink = 13,
 };
 
@@ -861,9 +858,13 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewContro
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationMediaType_, "SMNotificationMediaType", open) {
+/// When the value is not contained in this enum, it will be unknown
   kSMNotificationMediaType_Unknown = -1,
+/// Audio media type
   kSMNotificationMediaType_Audio = 2,
+/// Image media type
   kSMNotificationMediaType_Image = 3,
+/// Video media type
   kSMNotificationMediaType_Video = 4,
 };
 
@@ -873,36 +874,36 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationMessage")
 /// Indicates whether NSSecureCoding is supported
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
-/// The <code>SMNotificationMediaType</code> type of rich media that the notification has.
+/// The type of rich media that the notification has
 @property (nonatomic, readonly) enum kSMNotificationMediaType_ mediaType;
 /// String value providing the title of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull mediaUrl;
-/// String value providing the content of the message
+/// The link behind the main action of the remote notification
 @property (nonatomic, readonly, strong) SMLink * _Nullable mainAction;
-/// String value providing the category of the message
+/// Links that the remote notification has
 @property (nonatomic, readonly, copy) NSArray<SMLink *> * _Nonnull notificationButtons;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationMessageType_, "SMNotificationMessageType", open) {
-/// In App message of unknown type.
+/// When the value is not contained in this enum, it will be unknown
   kSMNotificationMessageType_Unknown = -2,
-/// In App message of hidden type.
+/// In App message of hidden type
   kSMNotificationMessageType_Hidden = -1,
-/// In App message of alert type.
+/// In App message of alert type
   kSMNotificationMessageType_Alert = 0,
-/// In App message of html type.
+/// In App message of html type
   kSMNotificationMessageType_Html = 1,
-/// In App message of url type.
+/// In App message of url type
   kSMNotificationMessageType_Url = 2,
-/// In App message of image type.
+/// In App message of image type
   kSMNotificationMessageType_Image = 3,
-/// In App message of map type.
+/// In App message of map type
   kSMNotificationMessageType_Map = 4,
-/// In App message of passbook type.
+/// In App message of passbook type
   kSMNotificationMessageType_Passbook = 5,
 };
 
@@ -911,7 +912,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationService")
 @interface SMNotificationService : UNNotificationServiceExtension
 /// <code>SMManagerSetting</code> object that will be used when dealing with the extension behaviour
 @property (nonatomic, strong) SMManagerSetting * _Nullable settings;
-/// Whether encryption is enabled or not (needs to be aligned with the Selligent backend configuration), default false
+/// Whether encryption is enabled or not (needs to be aligned with the Marigold Engage backend configuration), default false
 @property (nonatomic) BOOL encryptionEnabled;
 /// Handles the UNNotificationServiceExtension behaviour when a push is received
 /// \param request The given <code>UNNotificationRequest</code> object
@@ -940,7 +941,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK9SMSuccess")
 @interface SMSuccess : NSObject <SMMessage>
 /// Description of the success
 @property (nonatomic, readonly, copy) NSString * _Nonnull messageSM;
-/// A textual representation of the receiver.
+/// Description of the success
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -966,9 +967,9 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK8SMUIView")
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK18SMUIViewController")
 @interface SMUIViewController : UIViewController
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE_MSG("This class does not support NSCoding");
-/// Creates a view controller with the nib file in the specified bundle.
+/// Creates a view controller with the nib file in the specified bundle
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1325,13 +1326,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @property (nonatomic, readonly) BOOL isViewed;
 /// The inapp-message type (if any)
 @property (nonatomic, readonly) enum kSMNotificationMessageType_ type;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-/// Returns an integer that can be used as a table address in a hash table structure.
+/// Returns an integer that can be used as a table address in a hash table structure
 @property (nonatomic, readonly) NSUInteger hash;
-/// Returns a Boolean value that indicates whether the receiver and a given object are equal.
+/// Returns a Boolean value that indicates whether the receiver and a given object are equal
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1339,9 +1340,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMClearCache_, "SMClearCache", open) {
-/// This explicitely disable the SDK-cache mechanism.
+/// This explicitly disables the SDK-cache mechanism
   kSMClearCache_None = 0,
-/// This is the default value.
+/// Default value, the SDK will automatically decide the best setting
   kSMClearCache_Auto = 1,
 /// Clear the cache weekly
   kSMClearCache_Week = 2,
@@ -1357,46 +1358,46 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK11SMConstants")
 /// Domain used by the SDK for custom error handling
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMErrorDomain;)
 + (NSString * _Nonnull)kSMErrorDomain SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification.
+/// It is broadcasted when the user interacts with a Remote Notification. It can be used to retrieve user action on a received remote-notification
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_ButtonClicked;)
 + (NSString * _Nonnull)kSMNotification_Event_ButtonClicked SWIFT_WARN_UNUSED_RESULT;
 /// It is broadcasted shortly before displaying a Remote Notification’s content. It can be used to pause any ongoing work before the Remote Notification is displayed. This notification-name is also triggered even if you disable <code>SMManagerSetting/shouldDisplayRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDisplayNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDisplayNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly before dismissing the current Remote Notification’s content. It can be used to resume any paused work.
+/// It is broadcasted shortly before dismissing the current Remote Notification’s content. It can be used to resume any paused work
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_WillDismissNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_WillDismissNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification.
+/// It is broadcasted shortly after receiving a Remote Notification. It can be used to decide when to display a remote-notification
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_DidReceiveRemoteNotification;)
 + (NSString * _Nonnull)kSMNotification_Event_DidReceiveRemoteNotification SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages.
+/// It is broadcasted shortly after receiving in-app messages. It can be used to manage the received in-app messages
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_DidReceiveInAppMessage;)
 + (NSString * _Nonnull)kSMNotification_Event_DidReceiveInAppMessage SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly after receiving in-app contents.
+/// It is broadcasted shortly after receiving in-app contents
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_DidReceiveInAppContent;)
 + (NSString * _Nonnull)kSMNotification_Event_DidReceiveInAppContent SWIFT_WARN_UNUSED_RESULT;
-/// It is broadcasted shortly after receiving a Selligent deviceId value. It can be used to manage the received device id.
+/// It is broadcasted shortly after receiving a Marigold Engage deviceId value. It can be used to manage the received device id
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Event_DidReceiveDeviceId;)
 + (NSString * _Nonnull)kSMNotification_Event_DidReceiveDeviceId SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve the object <code>SMLink</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_ButtonClicked</code>.
+/// Use this Key to retrieve the object <code>SMLink</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_ButtonClicked</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_ButtonData;)
 + (NSString * _Nonnull)kSMNotification_Data_ButtonData SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
+/// Use this Key to retrieve a Dictionary instance with the Push Id and title, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_RemoteNotification SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_RemoteNotification` instead which returns an SMNotificationMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>.
+/// Use this Key to retrieve an SMNotificationMessage instance with the Push content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveRemoteNotification</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_RemoteNotification;)
 + (NSString * _Nonnull)kSMNotification_Object_RemoteNotification SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
+/// Use this Key to retrieve an Array instance with Dictionary instances containing  id and title as properties, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppMessage SWIFT_DEPRECATED_MSG("Deprecated, use `SMConstants/kSMNotification_Object_InAppMessage` instead which returns an SMInAppMessage");)
 + (NSString * _Nonnull)kSMNotification_Data_InAppMessage SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>.
+/// Use this Key to retrieve an SMInAppMessage instance with the message content, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppMessage</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Object_InAppMessage;)
 + (NSString * _Nonnull)kSMNotification_Object_InAppMessage SWIFT_WARN_UNUSED_RESULT;
 /// Use this Key to retrieve an Array instance of <code>SMInAppContentMessage</code>, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveInAppContent</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_InAppContent;)
 + (NSString * _Nonnull)kSMNotification_Data_InAppContent SWIFT_WARN_UNUSED_RESULT;
-/// Use this Key to retrieve an <code>String</code> instance with the Selligent deviceId value, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveDeviceId</code>.
+/// Use this Key to retrieve an <code>String</code> instance with the Marigold Engage deviceId value, from the NSNotification-name <code>SMConstants/kSMNotification_Event_DidReceiveDeviceId</code>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull kSMNotification_Data_DeviceId;)
 + (NSString * _Nonnull)kSMNotification_Data_DeviceId SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1410,7 +1411,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMDisplayMode_, "SMDisplayMode", open) {
-/// This explicitely sets the displayMode to unknown
+/// When the value is not contained in this enum, it will be unknown
   kSMDisplayMode_Unknown = -1,
 /// Display only once
   kSMDisplayMode_OnlyOnce = 0,
@@ -1444,9 +1445,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// Create an event object that will be sent to platform
 /// \param name The name for the custom event (currently not sent to the backend, future-proof property), used to identify what the event needs to do at server side
 ///
+/// \param profileId The custom profile identifier (<code>mail</code> in our v1 platform) of the user
+///
 /// \param properties A dictionary containing any kind of custom data that must be stored and managed by platform
 ///
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name properties:(NSDictionary * _Nullable)properties OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name profileId:(NSString * _Nonnull)profileId properties:(NSDictionary * _Nullable)properties OBJC_DESIGNATED_INITIALIZER;
 /// Allow to initialize a success block and/or a failure block that will be triggered after an event is sent to the platform
 /// \param successBlock Void that gives an <code>SMSuccess</code> if the event was sent properly to the platform
 ///
@@ -1465,12 +1468,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 
 
 
+
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK13SMEventAction")
 @interface SMEventAction : SMEvent
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name profileId:(NSString * _Nonnull)profileId properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
 @end
 
 
@@ -1509,7 +1513,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK11SMEventUser")
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithName:(NSString * _Nonnull)name properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithName:(NSString * _Nonnull)name profileId:(NSString * _Nonnull)profileId properties:(NSDictionary * _Nullable)properties SWIFT_UNAVAILABLE;
 @end
 
 
@@ -1524,7 +1528,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK9SMFailure")
 @interface SMFailure : NSObject <SMMessage>
 /// Description of the failure
 @property (nonatomic, readonly, copy) NSString * _Nonnull messageSM;
-/// A textual representation of the receiver.
+/// Description of the failure
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1549,29 +1553,23 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @property (nonatomic, readonly, copy) NSString * _Nonnull title;
 /// String value providing the content of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull body;
-/// <code>SMNotificationAnnotationData</code> array containing the anotations for map type messages
+/// The anotations for map type messages
 @property (nonatomic, readonly, copy) NSArray<SMNotificationAnnotationData *> * _Nonnull arrayMapAnnotations;
-/// <code>SMLink</code> array containing the links of the message
+/// Links that the message can contain
 @property (nonatomic, readonly, copy) NSArray<SMLink *> * _Nonnull arrayIAMLinks;
 /// String value providing the title of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsTitle;
 /// String value providing the body of the remote-notification
 @property (nonatomic, readonly, copy) NSString * _Nonnull apsBody;
 /// String value providing the metadata content defined when sending out the communication
-/// warning:
-/// Currently not sent from the backend (future-proof property)
 @property (nonatomic, readonly, copy) NSString * _Nonnull metadata;
-/// String array value providing the tag values defined when sending out the communication
-/// warning:
-/// Currently not sent from the backend (future-proof property)
+/// String array value providing the tag values defined when sending out the communication)
 @property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull tags;
 /// String value providing the profile defined when sending out the communication
-/// warning:
-/// Currently not sent from the backend (future-proof property)
 @property (nonatomic, readonly, copy) NSString * _Nonnull profileId;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1580,9 +1578,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMInAppMessageServiceState_, "SMInAppMessageServiceState", open) {
 /// In-app message service hasn’t been explicitly enabled or disabled just yet, thus it will remain disabled from an operational point of view
   kSMInAppMessageServiceState_Undefined = 0,
-/// In-app message service has explicitly been disabled.
+/// In-app message service has explicitly been disabled
   kSMInAppMessageServiceState_Disabled = 1,
-/// In-app message service has explicitly been enabled.
+/// In-app message service has explicitly been enabled
   kSMInAppMessageServiceState_Enabled = 2,
 };
 
@@ -1599,11 +1597,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @property (nonatomic, readonly, copy) NSString * _Nonnull label;
 /// String value providing the value of the button
 @property (nonatomic, readonly, copy) NSString * _Nonnull value;
-/// The <code>SMNotificationButtonType</code> type of action that the button will execute.
+/// The type of action the button will execute
 @property (nonatomic, readonly) enum kSMNotificationButtonType_ type;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1638,7 +1636,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK9SMManager")
 @interface SMManager : NSObject
 /// The current version of the library
 @property (nonatomic, readonly, copy) NSString * _Nonnull versionLib;
-/// Currently known Selligent device Id
+/// Currently known Marigold Engage device Id
 @property (nonatomic, readonly, copy) NSString * _Nonnull deviceId;
 /// Singleton for <code>SMManager</code> which allows to access public methods and properties
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * _Nonnull shared;)
@@ -1646,6 +1644,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
+/// Send an event to the Marigold Engage platform
+/// \param event <code>SMEvent</code> object with your event.
+///
+- (void)send:(SMEvent * _Nonnull)event;
+@end
 
 
 @interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
@@ -1660,13 +1665,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 - (void)apply:(enum kSMLogLevel_)logLevel;
 @end
 
-
-@interface SMManager (SWIFT_EXTENSION(SelligentMobileExtensionsSDK))
-/// Send an event to the Selligent platform
-/// \param event <code>SMEvent</code> object with your event.
-///
-- (void)send:(SMEvent * _Nonnull)event;
-@end
 
 
 @class UNMutableNotificationContent;
@@ -1702,7 +1700,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 ///
 - (void)didReceive:(UNNotificationResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(UNNotificationContentExtensionResponseOption))completionHandler SWIFT_AVAILABILITY(maccatalyst,introduced=14.0);
 /// Mandatory API when using a Notification content extension, to be included in didReceiveNotification:.
-/// Handles the push action buttons and rich content that may be present in the selligent notification payload.
+/// Handles the push action buttons and rich content that may be present in the Marigold Engage notification payload.
 /// \param notification An UNNotification that contains information about the notification
 ///
 /// \param context An NSExtensionContext that contains the context information of the extension
@@ -1728,10 +1726,10 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) SMManager * 
 /// Do not implement this if you are not using the encryption functionality or you didn’t implement the <code>SMManager/didReceive(_:contentHandler:)</code>
 - (void)serviceExtensionTimeWillExpire;
 /// Optional API, retrieves the <code>SMNotificationMessage</code> object from a given userInfo.
-/// To be used for custom implementations when you need to get the Selligent push object from the provided userInfo to know what has been provided from the backend and use it.
+/// To be used for custom implementations when you need to get the Marigold Engage push object from the provided userInfo to know what has been provided from the backend and use it.
 ///
 /// returns:
-/// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Selligent notification.
+/// <code>SMNotificationMessage</code> instance containing the information extracted from the given userInfo. Returns nil if the given userInfo is not a valid Marigold Engage notification.
 - (SMNotificationMessage * _Nullable)retrieveNotificationMessage:(NSDictionary * _Nonnull)userInfo SWIFT_WARN_UNUSED_RESULT;
 @end
 
@@ -1750,29 +1748,29 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK16SMManagerSetting")
 @property (nonatomic) enum kSMClearCache_ clearCacheIntervalValue;
 /// This value provides to the SDK  the app group id that you have previously defined in your apple developer portal.
 /// It is used to allow the SDK to share data between the main app and the notification extensions (service and/or content).
-/// The deviceId provided by Selligent mobile platform is stored in this container
+/// The deviceId provided by Marigold Engage mobile platform is stored in this container
 @property (nonatomic, copy) NSString * _Nonnull appGroupId;
-/// Selligent v1 support. Use this init when integrating with the old system.
+/// Marigold Engage v1 support. Use this init when integrating with the old system.
 /// Default-mandatory constructor to start the <code>SMManager</code> shared instance
-/// \param url The endpoint of Selligent mobile servers backend
+/// \param url The endpoint of Marigold Engage mobile servers backend
 ///
-/// \param clientId Selligent’s mobile app Id to secure requests
+/// \param clientId Marigold Engage’s mobile app Id to secure requests
 ///
-/// \param privateKey Selligent’s mobile app Id to secure requests
+/// \param privateKey Marigold Engage’s mobile app Id to secure requests
 ///
 ///
 /// throws:
 /// NSError (where the <em>domain</em> will be <code>SMConstants/kSMErrorDomain</code> and the <em>code</em> will be one from <code>SMError</code>). Possible thrown codes for this method: <code>SMError/wrongParameters</code> (when any of the mandatory parameters are missing)
 - (nullable instancetype)initWithUrl:(NSString * _Nonnull)url clientId:(NSString * _Nonnull)clientId privateKey:(NSString * _Nonnull)privateKey error:(NSError * _Nullable * _Nullable)error OBJC_DESIGNATED_INITIALIZER;
-/// Selligent Delivery Cloud support. Use this init when integrating with the new system.
+/// Engage Delivery Cloud support. Use this init when integrating with the new system.
 /// Default-mandatory constructor to start the <code>SMManager</code> shared instance
-/// \param url The endpoint of Selligent mobile servers backend
+/// \param url The endpoint of Marigold Engage mobile servers backend
 ///
 /// \param appId The main app bundle Id
 ///
-/// \param apiKey Selligent mobile apiKey to secure requests
+/// \param apiKey Marigold Engage mobile apiKey to secure requests
 ///
-/// \param legacyPrivateKey Valid privateKey from Selligent v1 mobile platform (if any)
+/// \param legacyPrivateKey Valid privateKey from Marigold Engage v1 mobile platform (if any)
 ///
 ///
 /// throws:
@@ -1795,11 +1793,11 @@ SWIFT_PROTOCOL("_TtP28SelligentMobileExtensionsSDK31SMManagerUniversalLinksDeleg
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMMN_, "SMMessageNature", open) {
-/// Message origin from push notification.
+/// Message origin from push notification
   kSMMN_Push = 0,
-/// Message origin from in-app content.
+/// Message origin from in-app content
   kSMMN_IaContent = 1,
-/// Message origin from push in-app message.
+/// Message origin from push in-app message
   kSMMN_IaMessage = 2,
 };
 
@@ -1818,9 +1816,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// String value providing the annotation’s subtitle
 /// *
 @property (nonatomic, readonly, copy) NSString * _Nullable subtitle;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1828,29 +1826,29 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationButtonType_, "SMNotificationButtonType", open) {
-/// Any received button-type not in this enumeration type will be considered as unknown
+/// Any received button-type not in this enumeration will be considered as unknown
   kSMNotificationButtonType_Unknown = -1,
-/// A button-type that will have no action but when clicked will send back button value to the platform
+/// A button-type that will have no action but when will send back a Clicked event to the platform
   kSMNotificationButtonType_Simple = 0,
-/// A button-type that will open the Phone application with a ready to use number to dial
+/// A button-type that will open the phone application with a ready to use number to dial
   kSMNotificationButtonType_OpenPhoneCall = 1,
 /// A button-type that will open the sms application with a ready to dial sms
   kSMNotificationButtonType_OpenSms = 2,
-/// A button-type that will open the mail application
+/// A button-type that will open the mail application with a ready to send email address
   kSMNotificationButtonType_OpenMail = 3,
-/// Button that will open a ready to use safari-browser
+/// A button-type that will open safari with a specific URL
   kSMNotificationButtonType_OpenBrowser = 4,
-/// Button that will open a third party application
+/// A button-type that will open a third party application
   kSMNotificationButtonType_OpenApplication = 5,
-/// Button-type which will allow application rating.
+/// A button-type which will allow application rating.
   kSMNotificationButtonType_RateApplication = 6,
-/// Button that will trigger a notification inside the application for any interested listener.
-/// You may register in your application to a specific event from NSNotificationCenter. The notification is broadcasted as soon as the push is received.
+/// A button-type that will trigger a notification inside the application for any interested listener.
+/// You may register in your application to a specific event from NSNotificationCenter. The notification is broadcasted as soon as button is clicked.
 /// Your back-end team should inform you about the notification-name.
   kSMNotificationButtonType_CustomActionBroadcastEvent = 7,
-/// Button-type which will allow user to add pkpass file inside wallet app
+/// A button-type which will allow to open a pkpass file
   kSMNotificationButtonType_Passbook = 11,
-/// Button-type which will allow user depplink inside specific page in the app
+/// A button-type which will allow user to execute a depplink
   kSMNotificationButtonType_DeepLink = 13,
 };
 
@@ -1896,9 +1894,13 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK35SMNotificationContentViewContro
 
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationMediaType_, "SMNotificationMediaType", open) {
+/// When the value is not contained in this enum, it will be unknown
   kSMNotificationMediaType_Unknown = -1,
+/// Audio media type
   kSMNotificationMediaType_Audio = 2,
+/// Image media type
   kSMNotificationMediaType_Image = 3,
+/// Video media type
   kSMNotificationMediaType_Video = 4,
 };
 
@@ -1908,36 +1910,36 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationMessage")
 /// Indicates whether NSSecureCoding is supported
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
-/// The <code>SMNotificationMediaType</code> type of rich media that the notification has.
+/// The type of rich media that the notification has
 @property (nonatomic, readonly) enum kSMNotificationMediaType_ mediaType;
 /// String value providing the title of the message
 @property (nonatomic, readonly, copy) NSString * _Nonnull mediaUrl;
-/// String value providing the content of the message
+/// The link behind the main action of the remote notification
 @property (nonatomic, readonly, strong) SMLink * _Nullable mainAction;
-/// String value providing the category of the message
+/// Links that the remote notification has
 @property (nonatomic, readonly, copy) NSArray<SMLink *> * _Nonnull notificationButtons;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 typedef SWIFT_ENUM_NAMED(NSInteger, kSMNotificationMessageType_, "SMNotificationMessageType", open) {
-/// In App message of unknown type.
+/// When the value is not contained in this enum, it will be unknown
   kSMNotificationMessageType_Unknown = -2,
-/// In App message of hidden type.
+/// In App message of hidden type
   kSMNotificationMessageType_Hidden = -1,
-/// In App message of alert type.
+/// In App message of alert type
   kSMNotificationMessageType_Alert = 0,
-/// In App message of html type.
+/// In App message of html type
   kSMNotificationMessageType_Html = 1,
-/// In App message of url type.
+/// In App message of url type
   kSMNotificationMessageType_Url = 2,
-/// In App message of image type.
+/// In App message of image type
   kSMNotificationMessageType_Image = 3,
-/// In App message of map type.
+/// In App message of map type
   kSMNotificationMessageType_Map = 4,
-/// In App message of passbook type.
+/// In App message of passbook type
   kSMNotificationMessageType_Passbook = 5,
 };
 
@@ -1946,7 +1948,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK21SMNotificationService")
 @interface SMNotificationService : UNNotificationServiceExtension
 /// <code>SMManagerSetting</code> object that will be used when dealing with the extension behaviour
 @property (nonatomic, strong) SMManagerSetting * _Nullable settings;
-/// Whether encryption is enabled or not (needs to be aligned with the Selligent backend configuration), default false
+/// Whether encryption is enabled or not (needs to be aligned with the Marigold Engage backend configuration), default false
 @property (nonatomic) BOOL encryptionEnabled;
 /// Handles the UNNotificationServiceExtension behaviour when a push is received
 /// \param request The given <code>UNNotificationRequest</code> object
@@ -1975,7 +1977,7 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK9SMSuccess")
 @interface SMSuccess : NSObject <SMMessage>
 /// Description of the success
 @property (nonatomic, readonly, copy) NSString * _Nonnull messageSM;
-/// A textual representation of the receiver.
+/// Description of the success
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2001,9 +2003,9 @@ SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK8SMUIView")
 
 SWIFT_CLASS("_TtC28SelligentMobileExtensionsSDK18SMUIViewController")
 @interface SMUIViewController : UIViewController
-/// Inherited from NSCoding.encode(with:).
+/// Inherited from NSCoding.encode(with:)
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE_MSG("This class does not support NSCoding");
-/// Creates a view controller with the nib file in the specified bundle.
+/// Creates a view controller with the nib file in the specified bundle
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 @end
 

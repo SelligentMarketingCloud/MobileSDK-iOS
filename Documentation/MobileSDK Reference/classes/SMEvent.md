@@ -15,7 +15,7 @@ var description: String { get }
 
 ## Methods
 ```swift
-@objc init(name: String = "", properties: [AnyHashable: Any]? = nil)
+@objc init(name: String = "", profileId: String = "", properties: [AnyHashable: Any]? = nil)
 ```
 
 >Create an event object that will be sent to platform<br/>
