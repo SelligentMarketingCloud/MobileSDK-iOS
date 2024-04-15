@@ -1,5 +1,8 @@
 # SDK Changelog
-
+    
+- __SDK 3.8.2__
+    - Fix bug where body property of inappmessage was returning the APS title instead. When the body contained a JSON
+    
 - __SDK 3.8.1__
     - Fix bug where events sent from Notification Extensions would not be retried when failing
     - Add `profileId` parameter to `SMEvent` (custom event) constructor

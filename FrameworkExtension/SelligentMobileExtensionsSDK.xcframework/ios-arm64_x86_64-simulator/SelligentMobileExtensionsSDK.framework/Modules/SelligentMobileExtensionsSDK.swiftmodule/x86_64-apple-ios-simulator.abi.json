@@ -11635,7 +11635,7 @@
       "kind": "StringLiteral",
       "offset": 4801,
       "length": 7,
-      "value": "\"3.8.1\""
+      "value": "\"3.8.2\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
