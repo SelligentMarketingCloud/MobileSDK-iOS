@@ -1,5 +1,8 @@
 # SDK Changelog
     
+- __SDK 3.8.3
+    - Fix bug where IAM where being wrongly flagged as "seen" after clicking in the push notification ("push + iam")
+
 - __SDK 3.8.2__
     - Fix bug where body property of inappmessage was returning the APS title instead. When the body contained a JSON
     

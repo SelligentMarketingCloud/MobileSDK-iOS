@@ -14,11 +14,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		sBLtja4AQ9Gq39LocCm4tkw2rcU=
+		QA78NSVk/izkVtlaAuVZqLOcCgc=
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ocxXrS7/TrVTKzH9EYbpZO68qLY=
+		JoFiTFxjiaiCDn1iOhPuZM6tp5s=
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		NArWlj7tPS9s2RRsHyGE0fzSUnw=
+		4wbXtjlkCH+VoEF1Cc5xQ5i2gE8=
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		ocxXrS7/TrVTKzH9EYbpZO68qLY=
+		JoFiTFxjiaiCDn1iOhPuZM6tp5s=
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ySYOBLQXLTyf3xNUKMaee+JsMjU=
+		R9ofZ31nkKAhubID3ctC4432qLU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -85,7 +85,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Far6OhBXQ/1MfXF4aPzE9/TWfM9Jjqqa4pFrcy1bJaE=
+			A/8ztd373m49NIeJa/lP0fmtIw0m0LIDUOgRAU3clME=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -113,14 +113,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xMDpkv8n5mmCjEL1tfWCp4Ha3cUq0N09sdDpw6goXzI=
+			pbFV3N7fPzAJ5WbccwYCAKpOwbf6kbLbk62rxshumnw=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Far6OhBXQ/1MfXF4aPzE9/TWfM9Jjqqa4pFrcy1bJaE=
+			A/8ztd373m49NIeJa/lP0fmtIw0m0LIDUOgRAU3clME=
 			</data>
 		</dict>
 		<key>Modules/SelligentMobileExtensionsSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -148,7 +148,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2lIrpAYvDius75x/z6Y90W9A3juBH8JVLy/uHxDdXNA=
+			MN6Tmid8XPEX2vJE0r1znN0uhaO0UwiceUk0K9S5xmc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
