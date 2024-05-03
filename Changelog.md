@@ -1,5 +1,9 @@
 # SDK Changelog
     
+- __SDK 3.8.4
+    - Expanding a rich push notification will no longer show an "OK" default button (align with Android)
+    - Fix privacy manifest to include UserDefaults API declaration
+    
 - __SDK 3.8.3
     - Fix bug where IAM where being wrongly flagged as "seen" after clicking in the push notification ("push + iam")
 
