@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.platform                    = :ios, "12.0"
   s.name                        = "SelligentMobileSDK"
-  s.version                     = "3.8.4"
+  s.version                     = "3.8.5"
   s.summary                     = "Marigold Engage - Mobile SDK for iOS"
   s.description                 = <<-DESC
     The Marigold Engage - Mobile SDK is a tool that enables you to use the Marigold Engage - Mobile feature in a very easy and straightforward way.

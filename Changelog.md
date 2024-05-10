@@ -1,5 +1,8 @@
 # SDK Changelog
-    
+
+- __SDK 3.8.5
+    - Add missing Privacy manifest reasons
+
 - __SDK 3.8.4
     - Expanding a rich push notification will no longer show an "OK" default button (align with Android)
     - Fix privacy manifest to include UserDefaults API declaration
