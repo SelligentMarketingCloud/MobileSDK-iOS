@@ -1,5 +1,8 @@
 # SDK Changelog
 
+- __SDK 3.8.6
+    - Fix potential crash when operating with events with multiple threads
+    
 - __SDK 3.8.5
     - Add missing Privacy manifest reasons
 

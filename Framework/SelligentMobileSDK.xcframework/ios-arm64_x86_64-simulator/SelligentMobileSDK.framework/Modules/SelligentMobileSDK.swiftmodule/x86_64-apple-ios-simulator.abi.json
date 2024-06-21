@@ -27548,7 +27548,7 @@
       "kind": "StringLiteral",
       "offset": 4801,
       "length": 7,
-      "value": "\"3.8.5\""
+      "value": "\"3.8.6\""
     },
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Generic\/SMConstants.swift",
@@ -30143,7 +30143,14 @@
     {
       "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Network\/SMHttpRequest.swift",
       "kind": "StringLiteral",
-      "offset": 1372,
+      "offset": 402,
+      "length": 27,
+      "value": "\"temporary-event-publisher\""
+    },
+    {
+      "filePath": "\/Users\/runner\/work\/1\/s\/SMSDK\/Network\/SMHttpRequest.swift",
+      "kind": "StringLiteral",
+      "offset": 1473,
       "length": 5,
       "value": "\"GET\""
     },
