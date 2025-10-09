@@ -672,6 +672,10 @@ Examples can be found [here](#examples).
 
 ## In-App Messages
 
+In-App messages are messages retrieved periodically by the SDK.
+
+They are retrieved when the app becomes active (ie. at start, when going from background to foreground and when the orientation changes) ONLY if the last refresh is older than the value set when initializing the `SMManagerSettingIAM`.
+
 ### Enable IAM
 
 If In-App Messages (we will refer to them with IAM) are correctly configured ([learn more](#starting-the-sdk)), you will need to enable them once, wherever you want in your App (but after calling the `SMManager/start(with:)`), by calling:
