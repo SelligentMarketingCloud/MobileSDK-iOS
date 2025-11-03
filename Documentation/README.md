@@ -674,7 +674,7 @@ Examples can be found [here](#examples).
 
 In-App messages are messages retrieved periodically by the SDK.
 
-They are retrieved when the app becomes active (ie. at start, when going from background to foreground and when the orientation changes) ONLY if the last refresh is older than the value set when initializing the `SMManagerSettingIAM`.
+They are retrieved when the app becomes active (ie. at startup, when going from background to foreground and when the orientation changes) ONLY if the last refresh is older than the value set when initializing the `SMManagerSettingIAM`.
 
 ### Enable IAM
 

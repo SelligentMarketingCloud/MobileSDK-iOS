@@ -1,5 +1,9 @@
 # SDK Changelog
 
+- __SDK 3.8.7
+    - Fix bug that was causing the SDK to trigger the events error callback multiple times when the event sendout was retried due to server error
+    - Fix bug where aborted event sendouts were triggering error callback
+    
 - __SDK 3.8.6
     - Fix potential crash when operating with events with multiple threads
     

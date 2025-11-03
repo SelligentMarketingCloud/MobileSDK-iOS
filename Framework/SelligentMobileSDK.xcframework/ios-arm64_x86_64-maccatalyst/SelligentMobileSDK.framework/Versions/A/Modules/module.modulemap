@@ -1,7 +1,7 @@
 framework module SelligentMobileSDK {
   umbrella header "SelligentMobileSDK.h"
-
   export *
+
   module * { export * }
 }
 
