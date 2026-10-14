@@ -11,7 +11,7 @@
 @objc var deviceId: String { get set }
 ```
 
->Currently known Marigold Engage device Id
+>Currently known Selligent device Id
 
 ```swift
 @objc static let shared: SMManager { get }

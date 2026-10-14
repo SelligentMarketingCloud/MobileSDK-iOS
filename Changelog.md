@@ -1,20 +1,31 @@
 # SDK Changelog
 
-- __SDK 3.8.7
+- __SDK 3.10.1__
+    - Fix push messages decryption when encryption feature is enabled
+    
+- __SDK 3.10.0__
+    - Raise minimum supported version to iOS 15
+    - Compatibility checks with xCode 27.0 and iOS 27.0
+
+- __SDK 3.9.0__
+    - Raise minimum supported version to iOS 13
+    - Compatibility checks with xCode 26.1.1 and iOS 26.1
+
+- __SDK 3.8.7__
     - Fix bug that was causing the SDK to trigger the events error callback multiple times when the event sendout was retried due to server error
     - Fix bug where aborted event sendouts were triggering error callback
     
-- __SDK 3.8.6
+- __SDK 3.8.6__
     - Fix potential crash when operating with events with multiple threads
     
-- __SDK 3.8.5
+- __SDK 3.8.5__
     - Add missing Privacy manifest reasons
 
-- __SDK 3.8.4
+- __SDK 3.8.4__
     - Expanding a rich push notification will no longer show an "OK" default button (align with Android)
     - Fix privacy manifest to include UserDefaults API declaration
-    
-- __SDK 3.8.3
+
+- __SDK 3.8.3__
     - Fix bug where IAM where being wrongly flagged as "seen" after clicking in the push notification ("push + iam")
 
 - __SDK 3.8.2__
@@ -44,7 +55,7 @@
     - Add compatibility with xCode 15 and iOS 17
     - Add Privacy manifest (PrivacyInfo.xcprivacy)
     - Add codesigning to provided .xcframework
-    - Add support for MacCatalyst (minimum macCatalyst version: 13 (macOS 10.15))
+    - Add support for MacCatalyst (minimum macCatalyst version: 12)
     
 - __SDK 3.5.1__
     - Add missing CFBundleShortVersionString in SelligentMobileExtensionsSDK.xcframework

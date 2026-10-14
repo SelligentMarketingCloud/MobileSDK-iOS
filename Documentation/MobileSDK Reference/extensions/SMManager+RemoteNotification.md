@@ -17,13 +17,13 @@
 @objc func enableRemoteNotification()
 ```
 
->Use this API to enable Marigold Engage push notifications on current device, by default it is enabled.<br/>
+>Use this API to enable Selligent push notifications on current device, by default it is enabled.<br/>
 
 ```swift
 @objc func disableRemoteNotification()
 ```
 
->Use this API to disable Marigold Engage push notifications on current device, by default it is enabled.<br/>
+>Use this API to disable Selligent push notifications on current device, by default it is enabled.<br/>
 
 ```swift
 @objc func didRegisterForRemoteNotifications(deviceToken: Data)
@@ -65,16 +65,16 @@
 @objc func setNotificationMessageAsSeen(_ message: SMNotificationMessage)
 ```
 
->Tells to the SDK that a certain ``SMNotificationMessage`` object has been seen.<br/>The SDK will send an opened event to the Marigold Engage platform.<br/>
+>Tells to the SDK that a certain ``SMNotificationMessage`` object has been seen.<br/>The SDK will send an opened event to the Selligent platform.<br/>
 
 ```swift
 @objc func didReceiveRemoteNotification(_ userInfo: [AnyHashable: Any], completionHandler: ((UIBackgroundFetchResult) -> Void)?)
 ```
 
->Mandatory API to be included in application:didReceiveRemoteNotification:fetchCompletionHandler when dealing with Silent Push<br/>The SDK will send an opened event to the Marigold Engage platform.<br/>
+>Mandatory API to be included in application:didReceiveRemoteNotification:fetchCompletionHandler when dealing with Silent Push<br/>The SDK will send an opened event to the Selligent platform.<br/>
 
 ```swift
 @objc func displayLastReceivedNotification()
 ```
 
->Displays the last received Marigold Engage push notification (if any)<br/>
+>Displays the last received Selligent push notification (if any)<br/>

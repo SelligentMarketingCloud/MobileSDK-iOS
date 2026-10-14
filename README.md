@@ -1,14 +1,14 @@
 # MobileSDK-iOS
 
-What is the Marigold Engage - Mobile SDK for iOS?
+What is the Selligent by Zeta - Mobile SDK for iOS?
 
-The Marigold Engage - Mobile SDK is a tool that enables you to use the Marigold Engage - Mobile feature in a very easy and straightforward way. 
+The Selligent by Zeta - Mobile SDK is a tool that enables you to use the Selligent by Zeta - Mobile feature in a very easy and straightforward way. 
 
 By incorporating our latest SDK for iOS in your app, we support you in handling Push Notifications, In-App Messages, standard and custom events as well as registrations, unregistrations, logins and logouts in the App.
 
 # MobileSDK-iOS Integration
-> **Minimum supported iOS version: 12**
-> **Minimum supported macCatalyst version: 13 (macOS 10.15)**
+> **Minimum supported iOS version: 13**
+> **Minimum supported macCatalyst version: 13**
 
 - To integrate the library yourself just download, depending of your needs one of those links: 
     - <a href="https://github.com/SelligentMarketingCloud/MobileSDK-iOS/tree/master/Framework">Framework</a>: The main SDK to include in your App target

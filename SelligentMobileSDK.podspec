@@ -1,15 +1,15 @@
 Pod::Spec.new do |s|
-  s.platform                    = :ios, "12.0"
+  s.platform                    = :ios, "15.0"
   s.name                        = "SelligentMobileSDK"
-  s.version                     = "3.8.7"
-  s.summary                     = "Marigold Engage - Mobile SDK for iOS"
+  s.version                     = "3.10.1"
+  s.summary                     = "Selligent by Zeta - Mobile SDK for iOS"
   s.description                 = <<-DESC
-    The Marigold Engage - Mobile SDK is a tool that enables you to use the Marigold Engage - Mobile feature in a very easy and straightforward way.
+    The Selligent by Zeta - Mobile SDK is a tool that enables you to use the Selligent - Mobile feature in a very easy and straightforward way.
     By incorporating our latest SDK for iOS in your app, we support you in handling push messages, in app messages, in app content, standard and custom events as well as logins and logouts in the app.
                    DESC
   s.homepage                    = "https://www.selligent.com"
   s.license                     = { :type => "MIT", :file => "LICENSE" }
-  s.author                      = { "Marigold Engage" => "mobile@selligent.com" }
+  s.author                      = { "Selligent by Zeta" => "mobile@selligent.com" }
   s.source                      = { :git => "https://github.com/SelligentMarketingCloud/MobileSDK-iOS.git", :tag => "v" + s.version.to_s }
   s.social_media_url            = "https://twitter.com/Selligent"
   s.default_subspec             = "Framework"

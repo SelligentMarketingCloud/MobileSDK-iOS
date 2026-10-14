@@ -360,9 +360,3 @@
 ```
 
 >Set the font of links<br/>By default, it is iOS label default
-
-```swift
-@objc var linkContentEdgeInsets: UIEdgeInsets { get set }
-```
-
->Set the link content edge inset<br/>By default, it is not set

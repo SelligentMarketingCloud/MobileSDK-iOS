@@ -47,7 +47,7 @@
 @objc static let kSMNotification_Event_DidReceiveDeviceId: String { get }
 ```
 
->It is broadcasted shortly after receiving a Marigold Engage deviceId value. It can be used to manage the received device id
+>It is broadcasted shortly after receiving a Selligent deviceId value. It can be used to manage the received device id
 
 ```swift
 @objc static let kSMNotification_Data_ButtonData: String { get }
@@ -89,4 +89,4 @@
 @objc static let kSMNotification_Data_DeviceId: String { get }
 ```
 
->Use this Key to retrieve an `String` instance with the Marigold Engage deviceId value, from the NSNotification-name ``SMConstants/kSMNotification_Event_DidReceiveDeviceId``
+>Use this Key to retrieve an `String` instance with the Selligent deviceId value, from the NSNotification-name ``SMConstants/kSMNotification_Event_DidReceiveDeviceId``
